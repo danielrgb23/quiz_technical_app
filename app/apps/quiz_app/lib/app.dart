@@ -5,6 +5,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:home_flow/home_flow.dart';
 import 'package:onboarding/onboarding.dart';
 import 'package:profile_flow/profile_flow.dart';
+import 'package:quiz_flow/quiz_flow.dart';
+import 'package:stats_flow/stats_flow.dart';
 
 import 'app_router.dart';
 import 'l10n/generated/app_localizations.dart';
@@ -36,6 +38,8 @@ class _AppState extends State<App> {
         HomeLocalizations.delegate,
         OnboardingLocalizations.delegate,
         ProfileLocalizations.delegate,
+        QuizLocalizations.delegate,
+        StatsLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,

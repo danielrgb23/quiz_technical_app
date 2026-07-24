@@ -4,10 +4,17 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
+  # Manual apenas (workflow_dispatch): o pipeline de geração de questões usa
+  # a API da Anthropic e tem custo por chamada. Mesmo este job só rodando
+  # pytest (sem chamadas reais ao LLM), a decisão de quando rodá-lo é sempre
+  # do dono do projeto — nunca automática em push/PR. `generate`/`run` seguem
+  # 100% manuais e locais (ver pipeline/README.md).
   pipeline:
     name: Pipeline (Python)
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     defaults:
       run:

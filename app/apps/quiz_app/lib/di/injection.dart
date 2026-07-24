@@ -10,7 +10,10 @@ import 'package:injectable/injectable.dart';
 import 'package:onboarding/onboarding.dart';
 import 'package:profile_flow/profile_flow.dart';
 import 'package:question_bank_module/question_bank.dart';
+import 'package:quiz_flow/quiz_flow.dart';
+import 'package:quiz_module/quiz_module.dart';
 import 'package:shared/shared.dart';
+import 'package:stats_flow/stats_flow.dart';
 import 'package:user_profile_module/user_profile_module.dart';
 
 import 'injection.config.dart';
@@ -24,11 +27,14 @@ final getIt = GetIt.instance;
     ExternalModule(AuthModulePackageModule),
     ExternalModule(HomeModulePackageModule),
     ExternalModule(QuestionBankModulePackageModule),
+    ExternalModule(QuizModulePackageModule),
     ExternalModule(UserProfileModulePackageModule),
     ExternalModule(AuthFlowPackageModule),
     ExternalModule(HomeFlowPackageModule),
     ExternalModule(OnboardingPackageModule),
     ExternalModule(ProfileFlowPackageModule),
+    ExternalModule(QuizFlowPackageModule),
+    ExternalModule(StatsFlowPackageModule),
   ],
 )
 Future<void> configureDependencies(String environment) async {

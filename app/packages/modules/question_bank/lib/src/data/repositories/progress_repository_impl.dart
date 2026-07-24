@@ -63,6 +63,7 @@ class ProgressRepositoryImpl implements ProgressRepository {
                 questionId: progress.questionId,
                 correctCount: Value(progress.correctCount),
                 wrongCount: Value(progress.wrongCount),
+                consecutiveCorrect: Value(progress.consecutiveCorrect),
                 lastSeenAt: Value(progress.lastSeenAt),
                 nextReviewAt: Value(progress.nextReviewAt),
               ),

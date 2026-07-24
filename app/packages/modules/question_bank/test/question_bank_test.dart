@@ -158,7 +158,12 @@ void main() {
       final repo = ProgressRepositoryImpl(db);
       final remote = FakeProgressRemoteDataSource();
       final connectivity = StaticConnectivityProvider(online: false);
-      final queue = ProgressSyncQueue(db, remote, connectivity);
+      final queue = ProgressSyncQueue(
+        db,
+        remote,
+        FakeFlaggedRemoteDataSource(),
+        connectivity,
+      );
 
       await repo.save(
         QuestionProgress(
@@ -178,7 +183,12 @@ void main() {
       final repo = ProgressRepositoryImpl(db);
       final remote = FakeProgressRemoteDataSource();
       final connectivity = StaticConnectivityProvider(online: true);
-      final queue = ProgressSyncQueue(db, remote, connectivity);
+      final queue = ProgressSyncQueue(
+        db,
+        remote,
+        FakeFlaggedRemoteDataSource(),
+        connectivity,
+      );
 
       await repo.save(
         const QuestionProgress(questionId: 'q1', correctCount: 1),
@@ -209,6 +219,54 @@ void main() {
       final due = await repo.getDueForReview(now);
 
       expect(due.dataOrNull?.map((p) => p.questionId), ['due']);
+    });
+  });
+
+  group('report de questão (question-report)', () {
+    test('report offline não se perde; sync ao voltar a rede', () async {
+      final reportRepo = QuestionReportRepositoryImpl(db);
+      final progressRemote = FakeProgressRemoteDataSource();
+      final flaggedRemote = FakeFlaggedRemoteDataSource();
+      final connectivity = StaticConnectivityProvider(online: false);
+      final queue = ProgressSyncQueue(
+        db,
+        progressRemote,
+        flaggedRemote,
+        connectivity,
+      );
+
+      final result = await reportRepo.reportQuestion('q1');
+      expect(result.isSuccess, true);
+
+      expect(await queue.drain(), 0);
+      expect(flaggedRemote.received, isEmpty);
+
+      connectivity.online = true;
+      expect(await queue.drain(), 1);
+      expect(flaggedRemote.received, ['q1']);
+    });
+
+    test('report e progresso convivem na mesma fila sem interferir', () async {
+      final reportRepo = QuestionReportRepositoryImpl(db);
+      final progressRepo = ProgressRepositoryImpl(db);
+      final progressRemote = FakeProgressRemoteDataSource();
+      final flaggedRemote = FakeFlaggedRemoteDataSource();
+      final connectivity = StaticConnectivityProvider(online: true);
+      final queue = ProgressSyncQueue(
+        db,
+        progressRemote,
+        flaggedRemote,
+        connectivity,
+      );
+
+      await progressRepo.save(
+        const QuestionProgress(questionId: 'q1', correctCount: 1),
+      );
+      await reportRepo.reportQuestion('q2');
+
+      expect(await queue.drain(), 2);
+      expect(progressRemote.received.map((p) => p.questionId), ['q1']);
+      expect(flaggedRemote.received, ['q2']);
     });
   });
 }

@@ -8,5 +8,10 @@
   "navOnboarding": "Onboarding",
   "navLogin": "Acceder",
   "navRegister": "Registrarse",
-  "navLogout": "Salir"
+  "navLogout": "Salir",
+  "streakLabel": "{days} días de racha",
+  "dailyChallengeCta": "Desafío diario",
+  "reviewCta": "Repaso",
+  "topicsTitle": "Temas",
+  "noTopicsMessage": "Todavía no hay temas disponibles."
 }

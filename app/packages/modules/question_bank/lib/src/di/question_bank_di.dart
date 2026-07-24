@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 
 import '../data/data_sources/bank_asset_data_source.dart';
 import '../data/data_sources/bank_remote_data_source.dart';
+import '../data/data_sources/flagged_remote_data_source.dart';
 import '../data/data_sources/progress_remote_data_source.dart';
 import '../data/db/question_bank_db.dart';
 import '../domain/services/connectivity_provider.dart';
@@ -32,6 +33,10 @@ abstract class QuestionBankModule {
   @LazySingleton(as: ProgressRemoteDataSource)
   FakeProgressRemoteDataSource fakeProgressRemote() =>
       FakeProgressRemoteDataSource();
+
+  @LazySingleton(as: FlaggedRemoteDataSource)
+  FakeFlaggedRemoteDataSource fakeFlaggedRemote() =>
+      FakeFlaggedRemoteDataSource();
 
   @LazySingleton(as: ConnectivityProvider)
   StaticConnectivityProvider connectivity() =>

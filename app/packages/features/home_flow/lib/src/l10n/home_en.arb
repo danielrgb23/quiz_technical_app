@@ -17,5 +17,18 @@
   "navRegister": "Register",
   "@navRegister": { "description": "Debug navigation menu item" },
   "navLogout": "Logout",
-  "@navLogout": { "description": "Debug navigation menu item" }
+  "@navLogout": { "description": "Debug navigation menu item" },
+  "streakLabel": "{days} day streak",
+  "@streakLabel": {
+    "description": "Current streak on the dashboard",
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "dailyChallengeCta": "Daily challenge",
+  "@dailyChallengeCta": { "description": "CTA to start the daily quiz challenge" },
+  "reviewCta": "Review",
+  "@reviewCta": { "description": "CTA to start a review session with due questions" },
+  "topicsTitle": "Topics",
+  "@topicsTitle": { "description": "Section title listing quiz topics" },
+  "noTopicsMessage": "No topics available yet.",
+  "@noTopicsMessage": { "description": "Empty state when the question bank has no topics" }
 }

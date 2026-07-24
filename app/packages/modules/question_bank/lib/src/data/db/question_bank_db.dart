@@ -31,6 +31,8 @@ class Progress extends Table {
   TextColumn get questionId => text()();
   IntColumn get correctCount => integer().withDefault(const Constant(0))();
   IntColumn get wrongCount => integer().withDefault(const Constant(0))();
+  IntColumn get consecutiveCorrect =>
+      integer().withDefault(const Constant(0))();
   DateTimeColumn get lastSeenAt => dateTime().nullable()();
   DateTimeColumn get nextReviewAt => dateTime().nullable()();
 
@@ -43,6 +45,9 @@ class PendingSync extends Table {
   TextColumn get questionId => text()();
   TextColumn get payloadJson => text()();
   DateTimeColumn get createdAt => dateTime()();
+
+  /// 'progress' (default, retrocompatível) ou 'flagged' (report de questão).
+  TextColumn get type => text().withDefault(const Constant('progress'))();
 }
 
 class BankMeta extends Table {
@@ -58,7 +63,19 @@ class QuestionBankDb extends _$QuestionBankDb {
   QuestionBankDb(super.e);
 
   @override
-  int get schemaVersion => 1;
+  int get schemaVersion => 3;
+
+  @override
+  MigrationStrategy get migration => MigrationStrategy(
+    onUpgrade: (m, from, to) async {
+      if (from < 2) {
+        await m.addColumn(progress, progress.consecutiveCorrect);
+      }
+      if (from < 3) {
+        await m.addColumn(pendingSync, pendingSync.type);
+      }
+    },
+  );
 
   static const _bankVersionKey = 'bank_version';
 
@@ -116,6 +133,7 @@ QuestionProgress progressFromRow(ProgressRow row) => QuestionProgress(
   questionId: row.questionId,
   correctCount: row.correctCount,
   wrongCount: row.wrongCount,
+  consecutiveCorrect: row.consecutiveCorrect,
   lastSeenAt: row.lastSeenAt,
   nextReviewAt: row.nextReviewAt,
 );

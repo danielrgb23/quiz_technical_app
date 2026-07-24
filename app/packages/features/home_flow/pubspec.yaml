@@ -20,6 +20,10 @@ dependencies:
     path: ../../design_system
   home_module:
     path: ../../modules/home
+  question_bank_module:
+    path: ../../modules/question_bank
+  quiz_module:
+    path: ../../modules/quiz
   auto_route: ^11.0.0
   flutter_bloc: ^9.1.0
   get_it: ^8.0.3

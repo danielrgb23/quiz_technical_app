@@ -13,11 +13,14 @@ workspace:
   - packages/modules/auth
   - packages/modules/home
   - packages/modules/question_bank
+  - packages/modules/quiz
   - packages/modules/user_profile
   - packages/features/auth_flow
   - packages/features/home_flow
   - packages/features/onboarding
   - packages/features/profile_flow
+  - packages/features/quiz_flow
+  - packages/features/stats_flow
 
 dev_dependencies:
   melos: ^6.3.0

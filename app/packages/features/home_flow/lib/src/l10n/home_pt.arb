@@ -8,5 +8,10 @@
   "navOnboarding": "Onboarding",
   "navLogin": "Entrar",
   "navRegister": "Cadastrar",
-  "navLogout": "Sair"
+  "navLogout": "Sair",
+  "streakLabel": "{days} dias de streak",
+  "dailyChallengeCta": "Desafio diário",
+  "reviewCta": "Revisão",
+  "topicsTitle": "Tópicos",
+  "noTopicsMessage": "Nenhum tópico disponível ainda."
 }

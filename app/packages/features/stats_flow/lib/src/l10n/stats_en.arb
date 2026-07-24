@@ -1,0 +1,22 @@
+{
+  "@@locale": "en",
+  "statsTitle": "Statistics",
+  "streakLabel": "{days} day streak",
+  "@streakLabel": {
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "xpTotalLabel": "{xp} total XP",
+  "@xpTotalLabel": {
+    "placeholders": { "xp": { "type": "int" } }
+  },
+  "byTopicTitle": "Performance by topic",
+  "topicStatsLabel": "{seen} seen · {correct} correct · {wrong} wrong",
+  "@topicStatsLabel": {
+    "placeholders": {
+      "seen": { "type": "int" },
+      "correct": { "type": "int" },
+      "wrong": { "type": "int" }
+    }
+  },
+  "emptyStatsMessage": "Answer some questions to see your stats here."
+}

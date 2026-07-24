@@ -39,6 +39,12 @@ dependencies:
     path: ../../packages/features/profile_flow
   question_bank_module:
     path: ../../packages/modules/question_bank
+  quiz_module:
+    path: ../../packages/modules/quiz
+  quiz_flow:
+    path: ../../packages/features/quiz_flow
+  stats_flow:
+    path: ../../packages/features/stats_flow
 
   # State & DI
   flutter_bloc: ^9.1.0

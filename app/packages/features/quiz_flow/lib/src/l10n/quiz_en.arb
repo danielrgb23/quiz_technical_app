@@ -1,0 +1,47 @@
+{
+  "@@locale": "en",
+  "preSessionTitle": "Quiz: {topic}",
+  "@preSessionTitle": {
+    "placeholders": { "topic": { "type": "String" } }
+  },
+  "questionPageTitle": "Question",
+  "questionCountLabel": "Number of questions",
+  "startButtonLabel": "Start",
+  "confirmButtonLabel": "Confirm",
+  "understoodButtonLabel": "Got it",
+  "explanationLabel": "Explanation",
+  "summaryTitle": "Session summary",
+  "summaryScoreLabel": "{correct}/{total} correct",
+  "@summaryScoreLabel": {
+    "placeholders": {
+      "correct": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "xpEarnedLabel": "+{xp} XP",
+  "@xpEarnedLabel": {
+    "placeholders": { "xp": { "type": "int" } }
+  },
+  "streakLabel": "{days} day streak",
+  "@streakLabel": {
+    "placeholders": { "days": { "type": "int" } }
+  },
+  "newSessionButtonLabel": "New session",
+  "wrongAnswersTitle": "Missed questions",
+  "abandonDialogTitle": "Abandon session?",
+  "abandonDialogMessage": "Your answered questions are saved, but an incomplete session won't count toward your streak.",
+  "abandonConfirmLabel": "Abandon",
+  "abandonCancelLabel": "Continue",
+  "reportButtonLabel": "Report question",
+  "reportSuccessMessage": "Question reported. Thank you!",
+  "emptyReviewMessage": "No questions to review right now.",
+  "questionNotFoundMessage": "Question not found.",
+  "dailyChallengeTitle": "Daily challenge",
+  "questionProgressLabel": "{index}/{total}",
+  "@questionProgressLabel": {
+    "placeholders": {
+      "index": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  }
+}

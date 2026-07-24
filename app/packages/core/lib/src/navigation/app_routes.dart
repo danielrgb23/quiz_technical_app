@@ -20,4 +20,6 @@ abstract final class AppRoutes {
   static const question = '/question/:id';
   static String questionPath(String id) => '/question/$id';
   static const daily = '/daily';
+  static const review = '/review';
+  static const stats = '/stats';
 }

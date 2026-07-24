@@ -1,0 +1,9 @@
+{
+  "@@locale": "pt",
+  "statsTitle": "Estatísticas",
+  "streakLabel": "{days} dias de streak",
+  "xpTotalLabel": "{xp} XP total",
+  "byTopicTitle": "Desempenho por tópico",
+  "topicStatsLabel": "{seen} vistas · {correct} acertos · {wrong} erros",
+  "emptyStatsMessage": "Responda algumas questões para ver suas estatísticas aqui."
+}

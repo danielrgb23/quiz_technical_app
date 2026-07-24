@@ -7,7 +7,6 @@ import 'package:get_it/get_it.dart';
 
 import '../../l10n/generated/home_localizations.dart';
 import '../bloc/home_cubit.dart';
-import '../widgets/home_item_card.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -16,13 +15,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => GetIt.I<HomeCubit>()..loadItems(),
+      create: (_) => GetIt.I<HomeCubit>()..loadDashboard(),
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) => switch (state) {
           HomeFailure(:final message) => DsError(
             message: message,
             retryLabel: HomeLocalizations.of(context)!.retry,
-            onRetry: () => context.read<HomeCubit>().loadItems(),
+            onRetry: () => context.read<HomeCubit>().loadDashboard(),
           ),
           _ => _HomeContent(state: state),
         },
@@ -47,6 +46,10 @@ class _HomeContent extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.person),
             onPressed: () => context.router.pushPath(AppRoutes.profile),
+          ),
+          IconButton(
+            icon: const Icon(Icons.bar_chart),
+            onPressed: () => context.router.pushPath(AppRoutes.stats),
           ),
           PopupMenuButton<String>(
             onSelected: (value) {
@@ -80,19 +83,82 @@ class _HomeContent extends StatelessWidget {
       ),
       body: switch (state) {
         HomeInitial() || HomeLoading() => const DsLoading(),
-        HomeLoaded(:final items) =>
-          items.isEmpty
-              ? Center(child: Text(l10n.noItems))
-              : ListView.builder(
-                  padding: const EdgeInsets.all(AppSpacing.md),
-                  itemCount: items.length,
-                  itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                    child: HomeItemCard(item: items[index]),
-                  ),
-                ),
+        HomeLoaded(:final topics, :final streakDays) => _DashboardBody(
+          topics: topics,
+          streakDays: streakDays,
+          l10n: l10n,
+        ),
         _ => const SizedBox.shrink(),
       },
+    );
+  }
+}
+
+class _DashboardBody extends StatelessWidget {
+  const _DashboardBody({
+    required this.topics,
+    required this.streakDays,
+    required this.l10n,
+  });
+
+  final List<String> topics;
+  final int streakDays;
+  final HomeLocalizations l10n;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.all(AppSpacing.md),
+      children: [
+        DsCard(
+          child: Row(
+            children: [
+              const Icon(Icons.local_fire_department),
+              const SizedBox(width: AppSpacing.sm),
+              Text(l10n.streakLabel(streakDays)),
+            ],
+          ),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        SizedBox(
+          width: double.infinity,
+          child: DsButton(
+            label: l10n.dailyChallengeCta,
+            icon: Icons.today,
+            onPressed: () => context.router.pushPath(AppRoutes.daily),
+          ),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        SizedBox(
+          width: double.infinity,
+          child: DsButton(
+            label: l10n.reviewCta,
+            icon: Icons.refresh,
+            onPressed: () => context.router.pushPath(AppRoutes.review),
+          ),
+        ),
+        const SizedBox(height: AppSpacing.lg),
+        Text(l10n.topicsTitle, style: Theme.of(context).textTheme.titleMedium),
+        const SizedBox(height: AppSpacing.sm),
+        if (topics.isEmpty)
+          Padding(
+            padding: const EdgeInsets.only(top: AppSpacing.lg),
+            child: Center(child: Text(l10n.noTopicsMessage)),
+          )
+        else
+          for (final topic in topics)
+            Padding(
+              padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+              child: DsCard(
+                onTap: () =>
+                    context.router.pushPath(AppRoutes.quizTopicPath(topic)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [Text(topic), const Icon(Icons.chevron_right)],
+                ),
+              ),
+            ),
+      ],
     );
   }
 }
