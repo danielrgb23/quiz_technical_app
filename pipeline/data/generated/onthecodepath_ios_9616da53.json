@@ -1,0 +1,22 @@
+{
+  "id": "onthecodepath_ios_9616da53",
+  "source": "onthecodepath_ios",
+  "topic": "architecture",
+  "level": 2,
+  "question": "No padrão MVVM aplicado a apps mobile, qual é a responsabilidade da ViewModel?",
+  "options": [
+    "Expor o estado da tela e os comandos de intenção, transformando dados do domínio em algo exibível, sem conhecer diretamente a View",
+    "Renderizar a interface e tratar eventos de toque, mantendo referência direta aos widgets/views",
+    "Persistir os dados no banco local e gerenciar as migrações de schema",
+    "Substituir a camada de domínio, concentrando regras de negócio e acesso a APIs numa única classe",
+    "Gerenciar a navegação entre telas, instanciando as próximas Views diretamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Na MVVM, a ViewModel expõe estado observável e métodos de intenção, convertendo dados do domínio para a apresentação; ela não referencia a View — a View é quem observa a ViewModel. Renderização é papel da View, persistência é da camada de dados, e concentrar tudo numa classe violaria a separação de responsabilidades que o padrão busca.",
+  "tags": [
+    "mvvm",
+    "architecture"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

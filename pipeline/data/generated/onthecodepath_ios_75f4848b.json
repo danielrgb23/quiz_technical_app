@@ -1,0 +1,23 @@
+{
+  "id": "onthecodepath_ios_75f4848b",
+  "source": "onthecodepath_ios",
+  "topic": "architecture",
+  "level": 2,
+  "question": "O que é o delegation pattern, muito usado no iOS (UIKit)?",
+  "options": [
+    "Um objeto delega parte de suas responsabilidades a outro que implementa um protocolo, permitindo customizar comportamento sem herança",
+    "Um objeto cria cópias de si mesmo para distribuir trabalho entre várias threads",
+    "Uma classe base abstrata obriga subclasses a sobrescrever todos os métodos",
+    "Um singleton central roteia todos os eventos do app para observadores registrados",
+    "A View envia comandos diretamente ao banco de dados sem passar por camadas intermediárias"
+  ],
+  "correctIndex": 0,
+  "explanation": "Na delegação, um objeto (ex.: UITableView) mantém uma referência — tipicamente weak — a um delegate que implementa um protocolo e responde por decisões/eventos em seu nome, favorecendo composição em vez de herança. Não envolve cópias para threads nem exige herança de classe base; o padrão de eventos centralizados descrito é mais próximo de NotificationCenter, outro mecanismo.",
+  "tags": [
+    "ios",
+    "patterns",
+    "delegate"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

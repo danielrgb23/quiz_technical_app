@@ -1,0 +1,23 @@
+{
+  "id": "onthecodepath_ios_c6bccd98",
+  "source": "onthecodepath_ios",
+  "topic": "concurrency",
+  "level": 2,
+  "question": "O que é o GCD (Grand Central Dispatch) no iOS e para que ele é usado?",
+  "options": [
+    "Uma API de concorrência baseada em filas (queues) para executar trabalho em background e retornar à main queue para atualizar a UI",
+    "Um framework de persistência que sincroniza o banco local com o iCloud",
+    "O compilador da Apple que otimiza o código Swift em tempo de execução",
+    "Um padrão de arquitetura da Apple para separar View, Controller e Model",
+    "Uma ferramenta de profiling do Xcode para detectar vazamentos de memória"
+  ],
+  "correctIndex": 0,
+  "explanation": "GCD é a API de concorrência do iOS baseada em dispatch queues: você envia blocos para filas seriais ou concorrentes, tipicamente processando em background e voltando à main queue para tocar a UI. Não tem relação com persistência/iCloud, não é compilador, arquitetura nem ferramenta de profiling (esse papel é do Instruments).",
+  "tags": [
+    "ios",
+    "gcd",
+    "concurrency"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

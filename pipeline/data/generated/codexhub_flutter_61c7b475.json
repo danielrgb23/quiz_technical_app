@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_61c7b475",
+  "source": "codexhub_flutter",
+  "topic": "concurrency",
+  "level": 2,
+  "question": "O que é um isolate no Flutter/Dart e quando usá-lo?",
+  "options": [
+    "Uma unidade de execução com memória própria que roda em paralelo sem compartilhar estado, indicada para processamento pesado fora da UI",
+    "Uma thread tradicional que compartilha memória com a main thread mediante locks e mutexes",
+    "Um widget que isola parte da árvore para impedir rebuilds em cascata",
+    "Um sandbox de segurança que impede plugins de acessarem código nativo",
+    "Um modo do compilador que remove código morto (tree shaking) nos builds de release"
+  ],
+  "correctIndex": 0,
+  "explanation": "Isolates são o modelo de concorrência do Dart: cada um tem seu próprio heap e event loop, sem memória compartilhada, comunicando-se por mensagens (portas). Por isso são ideais para cálculos pesados (parsing, compressão) sem travar a UI. Diferem de threads com memória compartilhada — não há locks — e não têm relação com widgets, sandbox de plugins ou tree shaking.",
+  "tags": [
+    "dart",
+    "isolates",
+    "concurrency"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

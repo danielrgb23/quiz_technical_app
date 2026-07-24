@@ -1,0 +1,23 @@
+{
+  "id": "mindorks_android_aa700b89",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 2,
+  "question": "Como o RecyclerView melhora a performance em relação ao ListView clássico no Android?",
+  "options": [
+    "Recicla obrigatoriamente as views via ViewHolder, atualiza itens de forma granular e delega o layout a LayoutManagers plugáveis",
+    "Renderiza todos os itens da lista de uma vez na inicialização para evitar trabalho durante o scroll",
+    "Usa uma thread separada para inflar cada item, eliminando qualquer custo na main thread",
+    "Armazena os itens em cache no disco, evitando recriar views entre sessões do app",
+    "Compila os layouts XML dos itens para código nativo na instalação do app"
+  ],
+  "correctIndex": 0,
+  "explanation": "O RecyclerView torna o padrão ViewHolder obrigatório e recicla as views que saem da tela, evitando inflates e findViewById repetidos; com DiffUtil/notifyItem* atualiza apenas o que mudou, e LayoutManagers permitem listas, grades e layouts customizados. Ele não renderiza tudo de uma vez (seria o oposto da otimização), não infla itens em threads separadas nem persiste views em disco.",
+  "tags": [
+    "android",
+    "recyclerview",
+    "performance"
+  ],
+  "language": "pt-BR",
+  "generated_answer": true
+}

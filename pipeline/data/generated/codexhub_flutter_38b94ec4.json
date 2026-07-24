@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_38b94ec4",
+  "source": "codexhub_flutter",
+  "topic": "state_management",
+  "level": 2,
+  "question": "O que é gerenciamento de estado (state management) no Flutter e por que ele importa?",
+  "options": [
+    "É a estratégia para manter e propagar o estado da UI de forma previsível (ex.: Provider, BLoC/Cubit, Riverpod), separando estado da árvore de widgets",
+    "É a técnica de salvar o estado do app no storage do dispositivo a cada frame renderizado",
+    "É o mecanismo do sistema operacional que hiberna o app quando vai para background",
+    "É o uso exclusivo de setState, já que o Flutter proíbe bibliotecas externas de estado",
+    "É a configuração de rotas e deeplinks que restauram a última tela visitada"
+  ],
+  "correctIndex": 0,
+  "explanation": "State management define como o estado é criado, exposto e atualizado, e como a UI reage a mudanças — soluções como Provider, BLoC/Cubit e Riverpod organizam isso de forma testável e desacoplada da árvore de widgets. setState é apenas a forma mais básica, restrita ao escopo local; persistir a cada frame seria proibitivo, e ciclo de vida em background e navegação são preocupações distintas.",
+  "tags": [
+    "flutter",
+    "state-management"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

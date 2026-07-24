@@ -22,6 +22,28 @@
     "generated_answer": false
   },
   {
+    "id": "codexhub_flutter_38b94ec4",
+    "source": "codexhub_flutter",
+    "topic": "state_management",
+    "level": 2,
+    "question": "O que é gerenciamento de estado (state management) no Flutter e por que ele importa?",
+    "options": [
+      "É a estratégia para manter e propagar o estado da UI de forma previsível (ex.: Provider, BLoC/Cubit, Riverpod), separando estado da árvore de widgets",
+      "É a técnica de salvar o estado do app no storage do dispositivo a cada frame renderizado",
+      "É o mecanismo do sistema operacional que hiberna o app quando vai para background",
+      "É o uso exclusivo de setState, já que o Flutter proíbe bibliotecas externas de estado",
+      "É a configuração de rotas e deeplinks que restauram a última tela visitada"
+    ],
+    "correctIndex": 0,
+    "explanation": "State management define como o estado é criado, exposto e atualizado, e como a UI reage a mudanças — soluções como Provider, BLoC/Cubit e Riverpod organizam isso de forma testável e desacoplada da árvore de widgets. setState é apenas a forma mais básica, restrita ao escopo local; persistir a cada frame seria proibitivo, e ciclo de vida em background e navegação são preocupações distintas.",
+    "tags": [
+      "flutter",
+      "state-management"
+    ],
+    "language": "pt-BR",
+    "generated_answer": false
+  },
+  {
     "id": "codexhub_flutter_47960cf2",
     "source": "codexhub_flutter",
     "topic": "flutter",
@@ -83,6 +105,29 @@
     "tags": [
       "flutter",
       "tooling"
+    ],
+    "language": "pt-BR",
+    "generated_answer": false
+  },
+  {
+    "id": "codexhub_flutter_61c7b475",
+    "source": "codexhub_flutter",
+    "topic": "concurrency",
+    "level": 2,
+    "question": "O que é um isolate no Flutter/Dart e quando usá-lo?",
+    "options": [
+      "Uma unidade de execução com memória própria que roda em paralelo sem compartilhar estado, indicada para processamento pesado fora da UI",
+      "Uma thread tradicional que compartilha memória com a main thread mediante locks e mutexes",
+      "Um widget que isola parte da árvore para impedir rebuilds em cascata",
+      "Um sandbox de segurança que impede plugins de acessarem código nativo",
+      "Um modo do compilador que remove código morto (tree shaking) nos builds de release"
+    ],
+    "correctIndex": 0,
+    "explanation": "Isolates são o modelo de concorrência do Dart: cada um tem seu próprio heap e event loop, sem memória compartilhada, comunicando-se por mensagens (portas). Por isso são ideais para cálculos pesados (parsing, compressão) sem travar a UI. Diferem de threads com memória compartilhada — não há locks — e não têm relação com widgets, sandbox de plugins ou tree shaking.",
+    "tags": [
+      "dart",
+      "isolates",
+      "concurrency"
     ],
     "language": "pt-BR",
     "generated_answer": false
@@ -215,6 +260,187 @@
     "tags": [
       "flutter",
       "tooling"
+    ],
+    "language": "pt-BR",
+    "generated_answer": false
+  },
+  {
+    "id": "mindorks_android_0744fc1c",
+    "source": "mindorks_android",
+    "topic": "architecture",
+    "level": 2,
+    "question": "O que é injeção de dependência (DI) e qual seu principal benefício em apps mobile?",
+    "options": [
+      "As dependências são fornecidas de fora (construtor/framework) em vez de criadas pela própria classe, facilitando testes e desacoplamento",
+      "Cada classe instancia suas dependências internamente com new, garantindo encapsulamento total",
+      "É o uso obrigatório de singletons globais acessados estaticamente em qualquer camada",
+      "É uma técnica de otimização que injeta bytecode no APK para reduzir o tamanho do binário",
+      "É a cópia automática de dados entre módulos do app em tempo de compilação"
+    ],
+    "correctIndex": 0,
+    "explanation": "DI inverte o controle da criação: a classe declara o que precisa e recebe as dependências prontas (via construtor ou frameworks como Hilt/Koin/get_it). Isso desacopla implementações de abstrações e permite substituir dependências por fakes/mocks nos testes. Instanciar internamente com new é justamente o anti-padrão que a DI evita, e singletons globais estáticos dificultam testes em vez de ajudar.",
+    "tags": [
+      "di",
+      "architecture",
+      "testing"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "mindorks_android_aa700b89",
+    "source": "mindorks_android",
+    "topic": "performance",
+    "level": 2,
+    "question": "Como o RecyclerView melhora a performance em relação ao ListView clássico no Android?",
+    "options": [
+      "Recicla obrigatoriamente as views via ViewHolder, atualiza itens de forma granular e delega o layout a LayoutManagers plugáveis",
+      "Renderiza todos os itens da lista de uma vez na inicialização para evitar trabalho durante o scroll",
+      "Usa uma thread separada para inflar cada item, eliminando qualquer custo na main thread",
+      "Armazena os itens em cache no disco, evitando recriar views entre sessões do app",
+      "Compila os layouts XML dos itens para código nativo na instalação do app"
+    ],
+    "correctIndex": 0,
+    "explanation": "O RecyclerView torna o padrão ViewHolder obrigatório e recicla as views que saem da tela, evitando inflates e findViewById repetidos; com DiffUtil/notifyItem* atualiza apenas o que mudou, e LayoutManagers permitem listas, grades e layouts customizados. Ele não renderiza tudo de uma vez (seria o oposto da otimização), não infla itens em threads separadas nem persiste views em disco.",
+    "tags": [
+      "android",
+      "recyclerview",
+      "performance"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "mindorks_android_ea1c8c41",
+    "source": "mindorks_android",
+    "topic": "android",
+    "level": 2,
+    "question": "O que são os Android Architecture Components (Jetpack)?",
+    "options": [
+      "Bibliotecas como ViewModel, LiveData/Flow, Room e Lifecycle que ajudam a construir apps robustos, testáveis e conscientes do ciclo de vida",
+      "Os componentes básicos do sistema: Activity, Service, BroadcastReceiver e ContentProvider",
+      "Um conjunto de layouts XML prontos fornecidos pelo Material Design",
+      "As ferramentas de build do Android: Gradle, AAPT e D8/R8",
+      "APIs do Google Play Services para mapas, login e notificações push"
+    ],
+    "correctIndex": 0,
+    "explanation": "Architecture Components é o conjunto de bibliotecas do Jetpack — ViewModel, LiveData (hoje também Flow), Room, Lifecycle, entre outras — criado para lidar com ciclo de vida, persistência e estado de forma testável. Activity/Service/BroadcastReceiver/ContentProvider são os componentes fundamentais do sistema (conceito distinto), e as demais opções confundem com Material, toolchain de build e Play Services.",
+    "tags": [
+      "android",
+      "jetpack"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "onthecodepath_ios_7581b0fd",
+    "source": "onthecodepath_ios",
+    "topic": "ios",
+    "level": 2,
+    "question": "O que é um retain cycle no iOS e como evitá-lo?",
+    "options": [
+      "Dois objetos mantêm referências fortes entre si e nunca são desalocados; evita-se tornando uma das referências weak (ou unowned)",
+      "Um objeto é liberado duas vezes pelo ARC, causando crash; evita-se chamando retain manualmente",
+      "A main thread fica bloqueada por trabalho síncrono em loop; evita-se movendo o trabalho para uma fila de background",
+      "O sistema recolhe objetos ainda em uso por engano; evita-se desativando o garbage collector",
+      "Uma view é redesenhada em loop infinito; evita-se removendo setNeedsDisplay do draw(_:)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Retain cycle acontece quando dois (ou mais) objetos se referenciam fortemente, impedindo que a contagem de referências chegue a zero — nenhum é desalocado, gerando vazamento de memória. A solução é quebrar o ciclo com referência weak (ou unowned), como em delegates e closures que capturam self. iOS usa ARC (contagem de referências), não garbage collector, e os demais distratores descrevem problemas diferentes.",
+    "tags": [
+      "ios",
+      "memory",
+      "arc"
+    ],
+    "language": "pt-BR",
+    "generated_answer": false
+  },
+  {
+    "id": "onthecodepath_ios_75f4848b",
+    "source": "onthecodepath_ios",
+    "topic": "architecture",
+    "level": 2,
+    "question": "O que é o delegation pattern, muito usado no iOS (UIKit)?",
+    "options": [
+      "Um objeto delega parte de suas responsabilidades a outro que implementa um protocolo, permitindo customizar comportamento sem herança",
+      "Um objeto cria cópias de si mesmo para distribuir trabalho entre várias threads",
+      "Uma classe base abstrata obriga subclasses a sobrescrever todos os métodos",
+      "Um singleton central roteia todos os eventos do app para observadores registrados",
+      "A View envia comandos diretamente ao banco de dados sem passar por camadas intermediárias"
+    ],
+    "correctIndex": 0,
+    "explanation": "Na delegação, um objeto (ex.: UITableView) mantém uma referência — tipicamente weak — a um delegate que implementa um protocolo e responde por decisões/eventos em seu nome, favorecendo composição em vez de herança. Não envolve cópias para threads nem exige herança de classe base; o padrão de eventos centralizados descrito é mais próximo de NotificationCenter, outro mecanismo.",
+    "tags": [
+      "ios",
+      "patterns",
+      "delegate"
+    ],
+    "language": "pt-BR",
+    "generated_answer": false
+  },
+  {
+    "id": "onthecodepath_ios_9616da53",
+    "source": "onthecodepath_ios",
+    "topic": "architecture",
+    "level": 2,
+    "question": "No padrão MVVM aplicado a apps mobile, qual é a responsabilidade da ViewModel?",
+    "options": [
+      "Expor o estado da tela e os comandos de intenção, transformando dados do domínio em algo exibível, sem conhecer diretamente a View",
+      "Renderizar a interface e tratar eventos de toque, mantendo referência direta aos widgets/views",
+      "Persistir os dados no banco local e gerenciar as migrações de schema",
+      "Substituir a camada de domínio, concentrando regras de negócio e acesso a APIs numa única classe",
+      "Gerenciar a navegação entre telas, instanciando as próximas Views diretamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Na MVVM, a ViewModel expõe estado observável e métodos de intenção, convertendo dados do domínio para a apresentação; ela não referencia a View — a View é quem observa a ViewModel. Renderização é papel da View, persistência é da camada de dados, e concentrar tudo numa classe violaria a separação de responsabilidades que o padrão busca.",
+    "tags": [
+      "mvvm",
+      "architecture"
+    ],
+    "language": "pt-BR",
+    "generated_answer": false
+  },
+  {
+    "id": "onthecodepath_ios_c6bccd98",
+    "source": "onthecodepath_ios",
+    "topic": "concurrency",
+    "level": 2,
+    "question": "O que é o GCD (Grand Central Dispatch) no iOS e para que ele é usado?",
+    "options": [
+      "Uma API de concorrência baseada em filas (queues) para executar trabalho em background e retornar à main queue para atualizar a UI",
+      "Um framework de persistência que sincroniza o banco local com o iCloud",
+      "O compilador da Apple que otimiza o código Swift em tempo de execução",
+      "Um padrão de arquitetura da Apple para separar View, Controller e Model",
+      "Uma ferramenta de profiling do Xcode para detectar vazamentos de memória"
+    ],
+    "correctIndex": 0,
+    "explanation": "GCD é a API de concorrência do iOS baseada em dispatch queues: você envia blocos para filas seriais ou concorrentes, tipicamente processando em background e voltando à main queue para tocar a UI. Não tem relação com persistência/iCloud, não é compilador, arquitetura nem ferramenta de profiling (esse papel é do Instruments).",
+    "tags": [
+      "ios",
+      "gcd",
+      "concurrency"
+    ],
+    "language": "pt-BR",
+    "generated_answer": false
+  },
+  {
+    "id": "weeebox_system_design_637a5a4e",
+    "source": "weeebox_system_design",
+    "topic": "system_design",
+    "level": 2,
+    "question": "Em uma entrevista de system design mobile, por que começar com um diagrama de alto nível do sistema?",
+    "options": [
+      "Ele delimita rapidamente os componentes e pontos de discussão, favorece modularidade e espelha boas práticas de visualização de arquitetura (ex.: modelo C4)",
+      "Porque a implementação de cada classe deve ser escrita antes de qualquer conversa sobre requisitos",
+      "Para provar domínio de uma linguagem específica, já que o diagrama deve conter código real",
+      "Porque sem UML formal completo a entrevista é automaticamente reprovada",
+      "Para escolher logo os vendors (Room, CoreData, Realm), que são o foco da entrevista"
+    ],
+    "correctIndex": 0,
+    "explanation": "O diagrama de alto nível não é obrigatório, mas ajuda na gestão do tempo ao delinear o sistema e levantar pontos de discussão, permite tratar cada componente como módulo independente e segue práticas consolidadas de visualização de arquitetura, como o modelo C4. Entrevistas desse tipo evitam amarrar a discussão a classes ou vendors específicos, e não exigem UML formal nem código no diagrama.",
+    "tags": [
+      "system-design",
+      "interview"
     ],
     "language": "pt-BR",
     "generated_answer": false

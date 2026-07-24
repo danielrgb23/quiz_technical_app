@@ -31,3 +31,6 @@ export 'src/extensions/date_extensions.dart';
 // DI
 export 'src/di/core_module.dart';
 export 'src/di/core_module.module.dart';
+
+// Config
+export 'src/config/remote_config_service.dart';

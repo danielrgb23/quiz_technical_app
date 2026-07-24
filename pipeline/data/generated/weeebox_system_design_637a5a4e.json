@@ -1,0 +1,22 @@
+{
+  "id": "weeebox_system_design_637a5a4e",
+  "source": "weeebox_system_design",
+  "topic": "system_design",
+  "level": 2,
+  "question": "Em uma entrevista de system design mobile, por que começar com um diagrama de alto nível do sistema?",
+  "options": [
+    "Ele delimita rapidamente os componentes e pontos de discussão, favorece modularidade e espelha boas práticas de visualização de arquitetura (ex.: modelo C4)",
+    "Porque a implementação de cada classe deve ser escrita antes de qualquer conversa sobre requisitos",
+    "Para provar domínio de uma linguagem específica, já que o diagrama deve conter código real",
+    "Porque sem UML formal completo a entrevista é automaticamente reprovada",
+    "Para escolher logo os vendors (Room, CoreData, Realm), que são o foco da entrevista"
+  ],
+  "correctIndex": 0,
+  "explanation": "O diagrama de alto nível não é obrigatório, mas ajuda na gestão do tempo ao delinear o sistema e levantar pontos de discussão, permite tratar cada componente como módulo independente e segue práticas consolidadas de visualização de arquitetura, como o modelo C4. Entrevistas desse tipo evitam amarrar a discussão a classes ou vendors específicos, e não exigem UML formal nem código no diagrama.",
+  "tags": [
+    "system-design",
+    "interview"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

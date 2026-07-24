@@ -1,0 +1,23 @@
+{
+  "id": "mindorks_android_0744fc1c",
+  "source": "mindorks_android",
+  "topic": "architecture",
+  "level": 2,
+  "question": "O que é injeção de dependência (DI) e qual seu principal benefício em apps mobile?",
+  "options": [
+    "As dependências são fornecidas de fora (construtor/framework) em vez de criadas pela própria classe, facilitando testes e desacoplamento",
+    "Cada classe instancia suas dependências internamente com new, garantindo encapsulamento total",
+    "É o uso obrigatório de singletons globais acessados estaticamente em qualquer camada",
+    "É uma técnica de otimização que injeta bytecode no APK para reduzir o tamanho do binário",
+    "É a cópia automática de dados entre módulos do app em tempo de compilação"
+  ],
+  "correctIndex": 0,
+  "explanation": "DI inverte o controle da criação: a classe declara o que precisa e recebe as dependências prontas (via construtor ou frameworks como Hilt/Koin/get_it). Isso desacopla implementações de abstrações e permite substituir dependências por fakes/mocks nos testes. Instanciar internamente com new é justamente o anti-padrão que a DI evita, e singletons globais estáticos dificultam testes em vez de ajudar.",
+  "tags": [
+    "di",
+    "architecture",
+    "testing"
+  ],
+  "language": "pt-BR",
+  "generated_answer": true
+}

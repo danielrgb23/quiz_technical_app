@@ -1,0 +1,22 @@
+{
+  "id": "mindorks_android_ea1c8c41",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que são os Android Architecture Components (Jetpack)?",
+  "options": [
+    "Bibliotecas como ViewModel, LiveData/Flow, Room e Lifecycle que ajudam a construir apps robustos, testáveis e conscientes do ciclo de vida",
+    "Os componentes básicos do sistema: Activity, Service, BroadcastReceiver e ContentProvider",
+    "Um conjunto de layouts XML prontos fornecidos pelo Material Design",
+    "As ferramentas de build do Android: Gradle, AAPT e D8/R8",
+    "APIs do Google Play Services para mapas, login e notificações push"
+  ],
+  "correctIndex": 0,
+  "explanation": "Architecture Components é o conjunto de bibliotecas do Jetpack — ViewModel, LiveData (hoje também Flow), Room, Lifecycle, entre outras — criado para lidar com ciclo de vida, persistência e estado de forma testável. Activity/Service/BroadcastReceiver/ContentProvider são os componentes fundamentais do sistema (conceito distinto), e as demais opções confundem com Material, toolchain de build e Play Services.",
+  "tags": [
+    "android",
+    "jetpack"
+  ],
+  "language": "pt-BR",
+  "generated_answer": true
+}

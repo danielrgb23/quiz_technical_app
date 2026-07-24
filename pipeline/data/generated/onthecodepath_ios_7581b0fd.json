@@ -1,0 +1,23 @@
+{
+  "id": "onthecodepath_ios_7581b0fd",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "O que é um retain cycle no iOS e como evitá-lo?",
+  "options": [
+    "Dois objetos mantêm referências fortes entre si e nunca são desalocados; evita-se tornando uma das referências weak (ou unowned)",
+    "Um objeto é liberado duas vezes pelo ARC, causando crash; evita-se chamando retain manualmente",
+    "A main thread fica bloqueada por trabalho síncrono em loop; evita-se movendo o trabalho para uma fila de background",
+    "O sistema recolhe objetos ainda em uso por engano; evita-se desativando o garbage collector",
+    "Uma view é redesenhada em loop infinito; evita-se removendo setNeedsDisplay do draw(_:)"
+  ],
+  "correctIndex": 0,
+  "explanation": "Retain cycle acontece quando dois (ou mais) objetos se referenciam fortemente, impedindo que a contagem de referências chegue a zero — nenhum é desalocado, gerando vazamento de memória. A solução é quebrar o ciclo com referência weak (ou unowned), como em delegates e closures que capturam self. iOS usa ARC (contagem de referências), não garbage collector, e os demais distratores descrevem problemas diferentes.",
+  "tags": [
+    "ios",
+    "memory",
+    "arc"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}
