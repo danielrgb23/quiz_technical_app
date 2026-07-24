@@ -8,4 +8,4 @@
 
 ## 2. Verificação final
 
-- [ ] 2.1 Confirmar no histórico do GitHub Actions que um push subsequente não dispara o job `pipeline`
+- [x] 2.1 Confirmar no histórico do GitHub Actions que um push subsequente não dispara o job `pipeline` — run [30121805867](https://github.com/danielrgb23/quiz_technical_app/actions/runs/30121805867): job `Pipeline (Python)` com conclusion `skipped`, job `App Flutter (make ci)` rodando normalmente
