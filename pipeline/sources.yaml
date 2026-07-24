@@ -1,0 +1,30 @@
+sources:
+  - id: mindorks_android
+    repo: MindorksOpenSource/android-interview-questions
+    files: [README.md]
+    topic_default: android
+    license: Apache-2.0
+    parser: headings
+    list_questions: true
+    min_expected_pairs: 20
+  - id: codexhub_flutter
+    repo: thecodexhub/flutter-interview-questions
+    files: [README.md]
+    topic_default: flutter
+    license: MIT
+    parser: headings
+    min_expected_pairs: 20
+  - id: onthecodepath_ios
+    repo: onthecodepath/iOS-Interview-Questions
+    files: [README.md]
+    topic_default: ios
+    license: MIT
+    parser: headings
+    min_expected_pairs: 20
+  - id: weeebox_system_design
+    repo: weeeBox/mobile-system-design
+    files: [README.md]
+    topic_default: system_design
+    license: MIT
+    parser: headings
+    min_expected_pairs: 5
