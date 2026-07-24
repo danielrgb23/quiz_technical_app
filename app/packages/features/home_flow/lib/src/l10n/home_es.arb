@@ -4,5 +4,9 @@
   "noItems": "No hay elementos disponibles",
   "retry": "Reintentar",
   "featured": "Destacado",
-  "viewAll": "Ver todo"
+  "viewAll": "Ver todo",
+  "navOnboarding": "Onboarding",
+  "navLogin": "Acceder",
+  "navRegister": "Registrarse",
+  "navLogout": "Salir"
 }

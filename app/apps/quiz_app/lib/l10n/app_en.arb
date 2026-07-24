@@ -1,6 +1,6 @@
 {
   "@@locale": "en",
-  "appTitle": "Boilerplate App",
+  "appTitle": "Quiz Mobile",
   "@appTitle": { "description": "The app title" },
   "welcomeMessage": "Welcome to the app!",
   "@welcomeMessage": { "description": "Welcome message on home screen" },
@@ -27,5 +27,27 @@
     "placeholders": {
       "version": { "type": "String" }
     }
-  }
+  },
+  "quizTopicTitle": "Quiz: {topic}",
+  "@quizTopicTitle": {
+    "description": "Title of the topic quiz screen (deeplink)",
+    "placeholders": {
+      "topic": { "type": "String" }
+    }
+  },
+  "questionLevelLabel": "level {level}",
+  "@questionLevelLabel": {
+    "description": "Question difficulty level label",
+    "placeholders": {
+      "level": { "type": "int" }
+    }
+  },
+  "questionPageTitle": "Question",
+  "@questionPageTitle": { "description": "Title of the single-question deeplink screen" },
+  "dailyChallengeTitle": "Daily challenge",
+  "@dailyChallengeTitle": { "description": "Title of the daily challenge deeplink screen" },
+  "contentUnavailableMessage": "This content isn't available yet.",
+  "@contentUnavailableMessage": { "description": "Shown by the deeplink guard when content is missing locally" },
+  "goHomeButtonLabel": "Go to home",
+  "@goHomeButtonLabel": { "description": "CTA on the content-unavailable fallback screen" }
 }

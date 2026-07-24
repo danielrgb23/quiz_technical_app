@@ -39,6 +39,8 @@ l10n: ## Generate localization files for all packages
 
 analyze: ## Run dart analyze across the workspace
 	dart analyze
+	@echo "=> Checking for hardcoded UI strings..."
+	@./scripts/check_hardcoded_strings.sh
 
 test: ## Run tests in all packages
 	$(MELOS) run test --no-select

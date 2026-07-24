@@ -13,4 +13,11 @@ abstract final class AppRoutes {
   static const onboarding = '/onboarding';
   static const profile = '/profile';
   static const editProfile = '/edit-profile';
+
+  // Deeplinks do quiz (Spec 02): quizapp://... e https://<dominio>/...
+  static const quizTopic = '/quiz/:topic';
+  static String quizTopicPath(String topic) => '/quiz/$topic';
+  static const question = '/question/:id';
+  static String questionPath(String id) => '/question/$id';
+  static const daily = '/daily';
 }

@@ -9,5 +9,13 @@
   "featured": "Featured",
   "@featured": { "description": "Featured badge" },
   "viewAll": "View All",
-  "@viewAll": { "description": "View all link" }
+  "@viewAll": { "description": "View all link" },
+  "navOnboarding": "Onboarding",
+  "@navOnboarding": { "description": "Debug navigation menu item" },
+  "navLogin": "Login",
+  "@navLogin": { "description": "Debug navigation menu item" },
+  "navRegister": "Register",
+  "@navRegister": { "description": "Debug navigation menu item" },
+  "navLogout": "Logout",
+  "@navLogout": { "description": "Debug navigation menu item" }
 }

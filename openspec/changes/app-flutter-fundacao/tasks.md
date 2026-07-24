@@ -30,17 +30,17 @@
 
 ## 5. Deeplinks
 
-- [ ] 5.1 Declarar rotas `/quiz/{topic}`, `/question/{id}`, `/daily` no router auto_route com deep link handling
-- [ ] 5.2 Configurar scheme `quizapp://` + App Links (`autoVerify`) / Universal Links (Associated Domains); documentar hospedagem de `assetlinks.json`/AASA
-- [ ] 5.3 Implementar guard de conteúdo indisponível com tela de fallback + CTA
-- [ ] 5.4 Testar deeplinks com app fechado e aberto (adb/xcrun)
+- [x] 5.1 Declarar rotas `/quiz/{topic}`, `/question/{id}`, `/daily` no router auto_route com deep link handling
+- [x] 5.2 Configurar scheme `quizapp://` + App Links (`autoVerify`) / Universal Links (Associated Domains); documentar hospedagem de `assetlinks.json`/AASA
+- [x] 5.3 Implementar guard de conteúdo indisponível com tela de fallback + CTA
+- [x] 5.4 Testar deeplinks com app fechado e aberto (adb/xcrun)
 
 ## 6. i18n
 
-- [ ] 6.1 Garantir `app_pt.arb` padrão + `app_en.arb`; `localeResolutionCallback` com fallback pt
-- [ ] 6.2 Migrar strings hardcoded para `.arb` e habilitar lint contra novas ocorrências
+- [x] 6.1 Garantir `app_pt.arb` padrão + `app_en.arb`; `localeResolutionCallback` com fallback pt
+- [x] 6.2 Migrar strings hardcoded para `.arb` e habilitar lint contra novas ocorrências
 
 ## 7. CI/CD e verificação final
 
-- [ ] 7.1 GitHub Actions com `make ci` em PR; build Android/iOS em tag com semver + build_number
-- [ ] 7.2 Verificar critérios de aceite: dev roda sem backend; modo avião no primeiro launch funciona; deeplinks abrem as rotas; troca de idioma offline funciona; `make ci` verde
+- [x] 7.1 GitHub Actions com `make ci` em PR; build Android/iOS em tag com semver + build_number
+- [x] 7.2 Verificar critérios de aceite: dev roda sem backend; modo avião no primeiro launch funciona; deeplinks abrem as rotas; troca de idioma offline funciona; `make ci` verde

@@ -22,11 +22,13 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Boilerplate',
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.system,
-      routerConfig: _appRouter.config(),
+      routerConfig: _appRouter.config(
+        deepLinkTransformer: _resolveQuizAppScheme,
+      ),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         DsLocalizations.delegate,
@@ -39,6 +41,24 @@ class _AppState extends State<App> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
+      // Idioma do dispositivo quando suportado; fallback para pt (Spec 02).
+      localeResolutionCallback: (locale, supported) {
+        if (locale != null) {
+          for (final s in supported) {
+            if (s.languageCode == locale.languageCode) return s;
+          }
+        }
+        return const Locale('pt');
+      },
     );
   }
+}
+
+/// Para o custom scheme `quizapp://host/path`, o `host` é interpretado
+/// como authority (não como segmento de path) pelo parser padrão do
+/// auto_route, então `quizapp://quiz/flutter` chegaria só como `/flutter`.
+/// Reconstrói o path prefixando o host quando o scheme é `quizapp`.
+Future<Uri> _resolveQuizAppScheme(Uri uri) async {
+  if (uri.scheme != 'quizapp' || uri.host.isEmpty) return uri;
+  return uri.replace(host: '', path: '/${uri.host}${uri.path}');
 }

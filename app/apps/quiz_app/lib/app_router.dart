@@ -1,9 +1,13 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/foundation.dart';
+
 import 'package:auth_flow/auth_flow.dart';
 import 'package:core/core.dart';
 import 'package:home_flow/home_flow.dart';
 import 'package:onboarding/onboarding.dart';
 import 'package:profile_flow/profile_flow.dart';
+
+import 'pages/quiz_deeplink_pages.dart';
 
 part 'app_router.gr.dart';
 
@@ -18,5 +22,9 @@ class AppRouter extends RootStackRouter {
     AutoRoute(page: OnboardingRoute.page, path: AppRoutes.onboarding),
     AutoRoute(page: ProfileRoute.page, path: AppRoutes.profile),
     AutoRoute(page: EditProfileRoute.page, path: AppRoutes.editProfile),
+    // Deeplinks do quiz (quizapp:// e App/Universal Links)
+    AutoRoute(page: QuizTopicRoute.page, path: AppRoutes.quizTopic),
+    AutoRoute(page: QuestionDetailRoute.page, path: AppRoutes.question),
+    AutoRoute(page: DailyChallengeRoute.page, path: AppRoutes.daily),
   ];
 }

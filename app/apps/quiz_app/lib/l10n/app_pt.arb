@@ -1,6 +1,6 @@
 {
   "@@locale": "pt",
-  "appTitle": "App Boilerplate",
+  "appTitle": "Quiz Mobile",
   "welcomeMessage": "Bem-vindo ao app!",
   "welcomeBack": "Bem-vindo de volta, {name}!",
   "settings": "Configurações",
@@ -8,5 +8,11 @@
   "theme": "Tema",
   "darkMode": "Modo Escuro",
   "about": "Sobre",
-  "version": "Versão {version}"
+  "version": "Versão {version}",
+  "quizTopicTitle": "Quiz: {topic}",
+  "questionLevelLabel": "nível {level}",
+  "questionPageTitle": "Questão",
+  "dailyChallengeTitle": "Desafio diário",
+  "contentUnavailableMessage": "Este conteúdo ainda não está disponível.",
+  "goHomeButtonLabel": "Ir para o início"
 }

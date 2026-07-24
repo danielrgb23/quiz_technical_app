@@ -66,14 +66,14 @@ class _HomeContent extends StatelessWidget {
               }
             },
             itemBuilder: (_) => [
-              const PopupMenuItem(
+              PopupMenuItem(
                 value: 'onboarding',
-                child: Text('Onboarding'),
+                child: Text(l10n.navOnboarding),
               ),
-              const PopupMenuItem(value: 'login', child: Text('Login')),
-              const PopupMenuItem(value: 'register', child: Text('Register')),
+              PopupMenuItem(value: 'login', child: Text(l10n.navLogin)),
+              PopupMenuItem(value: 'register', child: Text(l10n.navRegister)),
               const PopupMenuDivider(),
-              const PopupMenuItem(value: 'logout', child: Text('Logout')),
+              PopupMenuItem(value: 'logout', child: Text(l10n.navLogout)),
             ],
           ),
         ],

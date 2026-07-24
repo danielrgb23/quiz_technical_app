@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:home_module/home_module.dart';
 
+import '../../l10n/generated/home_localizations.dart';
 import '../bloc/home_item_detail_cubit.dart';
 
 @RoutePage()
@@ -15,13 +16,14 @@ class HomeItemDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = HomeLocalizations.of(context)!;
     return BlocProvider(
       create: (_) => GetIt.I<HomeItemDetailCubit>()..loadItem(id),
       child: BlocBuilder<HomeItemDetailCubit, HomeItemDetailState>(
         builder: (context, state) => switch (state) {
           HomeItemDetailFailure(:final message) => DsError(
             message: message,
-            retryLabel: 'Retry',
+            retryLabel: l10n.retry,
             onRetry: () => context.read<HomeItemDetailCubit>().loadItem(id),
           ),
           _ => _DetailScaffold(state: state),
@@ -87,7 +89,7 @@ class _DetailBody extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Chip(
-                label: const Text('Featured'),
+                label: Text(HomeLocalizations.of(context)!.featured),
                 avatar: const Icon(Icons.star, size: 16),
                 backgroundColor: theme.colorScheme.primaryContainer,
                 labelStyle: TextStyle(
