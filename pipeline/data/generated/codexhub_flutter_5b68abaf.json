@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_5b68abaf",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "No Flutter, qual é a diferença entre um package e um plugin?",
+  "options": [
+    "Package contém apenas código Dart; plugin combina Dart com código nativo por plataforma (Java/Kotlin, Swift etc.), comunicando-se via platform channels",
+    "Package é pago e distribuído fora do pub.dev; plugin é sempre gratuito e oficial do Google",
+    "Plugin contém apenas código Dart; package embute código nativo de cada plataforma",
+    "Package roda somente em debug; plugin é a versão compilada para release",
+    "Não há diferença: os dois termos são sinônimos na documentação oficial"
+  ],
+  "correctIndex": 0,
+  "explanation": "Um package contém somente código Dart (podendo depender do framework Flutter). Já um plugin expõe uma API em Dart com implementações em código nativo de cada plataforma, usando platform channels para a comunicação. A definição dos distratores inverte os conceitos ou inventa distinções de preço/modo de build que não existem.",
+  "tags": [
+    "flutter",
+    "packages"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_d8275580",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "O que é software open-source e o Flutter se enquadra nessa categoria?",
+  "options": [
+    "É software cujo código-fonte pode ser inspecionado, modificado e aprimorado por qualquer pessoa; sim, o Flutter é open-source",
+    "É software gratuito, porém de código fechado; o Flutter é gratuito, logo é open-source",
+    "É software sem licença de uso definida; o Flutter usa licença comercial proprietária do Google",
+    "É software desenvolvido exclusivamente por comunidades sem empresas envolvidas; por ser do Google, o Flutter não pode ser open-source",
+    "É software que roda apenas em sistemas Linux; o Flutter não se enquadra por rodar em várias plataformas"
+  ],
+  "correctIndex": 0,
+  "explanation": "Software open-source é aquele cujo código-fonte está disponível para qualquer pessoa inspecionar, modificar e melhorar, geralmente com desenvolvimento colaborativo e revisão por pares. Gratuidade não implica código aberto, e empresas podem manter projetos open-source — o Flutter é mantido pelo Google sob licença open-source. A definição não tem relação com rodar apenas em Linux.",
+  "tags": [
+    "flutter",
+    "basics"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_95d713c0",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o papel do arquivo pubspec.yaml em um projeto Flutter?",
+  "options": [
+    "Declarar metadados do projeto e suas dependências (pacotes, fontes, imagens e restrições de versão do SDK)",
+    "Definir a árvore de widgets inicial que o app renderiza ao ser aberto",
+    "Configurar apenas os ícones e a splash screen do aplicativo",
+    "Armazenar as chaves de assinatura usadas para publicar o app nas lojas",
+    "Registrar as rotas de navegação e deeplinks do aplicativo"
+  ],
+  "correctIndex": 0,
+  "explanation": "O pubspec.yaml fica na raiz do projeto e contém os metadados que o tooling de Dart/Flutter precisa: dependências de pacotes com suas versões, assets como fontes e imagens, dependências de desenvolvimento e restrições de versão do SDK. A árvore de widgets é definida em código Dart, e rotas são configuradas no próprio app. Ícones/splash e assinatura envolvem outros arquivos e configurações por plataforma.",
+  "tags": [
+    "flutter",
+    "tooling"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

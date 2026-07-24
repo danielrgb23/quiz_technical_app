@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_5f5b6ccc",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Quais são os modos de build do Flutter e quando usar cada um?",
+  "options": [
+    "debug (desenvolvimento, com hot reload), profile (análise de performance com DevTools) e release (publicação do app)",
+    "dev, staging e production, definidos obrigatoriamente por flavors no Gradle e no Xcode",
+    "debug e release apenas; a análise de performance é feita sempre no modo debug",
+    "compile, link e deploy, executados nessa ordem pelo comando flutter build",
+    "hot, warm e cold, conforme o tempo de inicialização desejado para o app"
+  ],
+  "correctIndex": 0,
+  "explanation": "O tooling do Flutter oferece três modos de build: debug, voltado ao desenvolvimento e único com hot reload; profile, para analisar a performance com o DevTools; e release, para publicar o app. Flavors (dev/stg/prod) são um conceito separado, de configuração de ambiente, e não substituem os modos de build. Os demais distratores citam termos que não existem no tooling.",
+  "tags": [
+    "flutter",
+    "tooling"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

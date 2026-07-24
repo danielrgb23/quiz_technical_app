@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_628705bf",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "No Flutter, qual é a diferença entre as funções main() e runApp()?",
+  "options": [
+    "main() é o ponto de entrada do programa Dart; runApp() recebe o widget que será anexado à tela como raiz da árvore de widgets",
+    "main() só existe em modo debug, enquanto runApp() é usada nos builds de release",
+    "runApp() é o ponto de entrada do programa; main() apenas registra plugins nativos",
+    "main() cria a árvore de widgets e runApp() a converte em código nativo Kotlin/Swift",
+    "As duas são equivalentes: runApp() é somente um alias moderno para main()"
+  ],
+  "correctIndex": 0,
+  "explanation": "main() indica ao Dart onde o programa começa e, por convenção, fica em main.dart. Já runApp() recebe como parâmetro o widget que será a raiz da árvore renderizada na tela. O ponto de entrada é sempre main() (não runApp()), ambas existem em qualquer modo de build e nenhuma delas converte widgets em código nativo — a renderização é feita pela engine do Flutter.",
+  "tags": [
+    "flutter",
+    "basics"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_47960cf2",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é o BuildContext no Flutter e por que ele é necessário?",
+  "options": [
+    "É um localizador da posição de um widget na árvore, que serve de ponte com a camada de renderização e permite APIs como Theme.of e showDialog agirem em nome do widget",
+    "É o objeto que armazena o estado mutável de um StatefulWidget entre rebuilds",
+    "É uma referência direta ao RenderObject raiz, usada para desenhar na tela manualmente",
+    "É o contexto do isolate principal do Dart, necessário para agendar operações assíncronas",
+    "É um cache global de widgets que evita reconstruções desnecessárias da interface"
+  ],
+  "correctIndex": 0,
+  "explanation": "BuildContext localiza cada widget na árvore e é passado aos WidgetBuilders (e exposto em State.context). Funções estáticas como Theme.of e showDialog recebem um context para agir em nome do widget chamador ou obter dados daquele ponto da árvore, fazendo a ponte entre widgets e a camada de renderização. Ele não guarda estado (papel do State), não é um cache global nem o contexto de isolates.",
+  "tags": [
+    "flutter",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

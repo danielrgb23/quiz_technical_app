@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_08f779ee",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "O que é o Flutter?",
+  "options": [
+    "Um SDK open-source de UI criado pelo Google para construir apps multiplataforma (mobile, web e desktop) a partir de um único código-base",
+    "Um framework do Google exclusivo para desenvolvimento de apps Android nativos em Kotlin",
+    "Uma linguagem de programação criada pelo Google para substituir o JavaScript no navegador",
+    "Uma engine de renderização que converte código Java em aplicativos iOS e Android",
+    "Um serviço de nuvem do Google para hospedar e distribuir aplicativos móveis"
+  ],
+  "correctIndex": 0,
+  "explanation": "Flutter é um kit de desenvolvimento de UI open-source criado pelo Google, lançado em 2017, que permite construir aplicações para Android, iOS, web e desktop a partir de um único código-base. Ele não é uma linguagem (a linguagem usada é Dart) nem é restrito ao Android. Também não é um serviço de nuvem nem um transpilador de Java — os apps são compilados nativamente a partir de Dart.",
+  "tags": [
+    "flutter",
+    "basics"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

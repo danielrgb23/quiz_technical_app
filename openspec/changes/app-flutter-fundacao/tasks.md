@@ -8,9 +8,9 @@
 
 ## 2. Identidade do app
 
-- [ ] 2.1 Renomear `apps/app_boilerplate` → `apps/quiz_app`; applicationId/bundle `com.quizmobile.app` + sufixos `.dev`/`.stg`; minSdk 24 / iOS 13+
-- [ ] 2.2 Configurar ícone e splash (`flutter_launcher_icons`, `flutter_native_splash`) com placeholders
-- [ ] 2.3 Ajustar `env/dev|stg|prod.json`
+- [x] 2.1 Renomear `apps/app_boilerplate` → `apps/quiz_app`; applicationId/bundle `com.quizmobile.app` + sufixos `.dev`/`.stg`; minSdk 24 / iOS 13+
+- [x] 2.2 Configurar ícone e splash (`flutter_launcher_icons`, `flutter_native_splash`) com placeholders
+- [x] 2.3 Ajustar `env/dev|stg|prod.json`
 
 ## 3. Módulo question_bank (offline-first, roda sem Firebase)
 

@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_f7ff6411",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é a diferença entre Hot Reload e Hot Restart no Flutter?",
+  "options": [
+    "Hot Reload injeta o código atualizado na Dart VM e reconstrói a árvore de widgets preservando o estado; Hot Restart reinicia o app perdendo todo o estado",
+    "Hot Reload recompila o app inteiro para código nativo; Hot Restart apenas atualiza os assets",
+    "Hot Reload só funciona em builds de release; Hot Restart só em builds de debug",
+    "Hot Restart preserva o estado do app, enquanto Hot Reload sempre o descarta",
+    "Os dois fazem a mesma coisa, mas Hot Restart é executado automaticamente a cada salvamento"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Hot Reload injeta os arquivos-fonte atualizados na Dart VM em execução e reconstrói a árvore de widgets preservando o estado do app, o que dá feedback quase instantâneo. O Hot Restart também carrega o código atualizado, mas reinicia o app do zero, perdendo o estado. A relação com o estado é o inverso do que afirma o distrator, e o hot reload é um recurso do modo debug, não de release.",
+  "tags": [
+    "flutter",
+    "tooling"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

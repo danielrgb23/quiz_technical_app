@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_95e27c22",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "O que são widgets no Flutter?",
+  "options": [
+    "Descrições imutáveis de partes da interface, que formam a hierarquia central de classes do framework — no Flutter, tudo é widget",
+    "Objetos mutáveis que guardam o estado da tela e são atualizados diretamente pelo desenvolvedor",
+    "Componentes visuais exclusivos do Material Design, indisponíveis para apps com visual iOS",
+    "Views nativas de cada plataforma (Android/iOS) embutidas no app via platform channels",
+    "Arquivos XML que descrevem o layout e são inflados em tempo de execução"
+  ],
+  "correctIndex": 0,
+  "explanation": "Widgets são a hierarquia central de classes do Flutter: cada widget é uma descrição imutável de uma parte da interface, cujos campos devem ser finais. O estado mutável fica em objetos State, não no widget em si. Eles não são views nativas nem XML inflado, e cobrem tanto Material quanto Cupertino (estilo iOS).",
+  "tags": [
+    "flutter",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

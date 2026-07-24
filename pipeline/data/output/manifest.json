@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-24T17:20:35.268678+00:00",
+  "count": 10,
+  "sources": [
+    {
+      "id": "mindorks_android",
+      "repo": "MindorksOpenSource/android-interview-questions",
+      "license": "Apache-2.0"
+    },
+    {
+      "id": "codexhub_flutter",
+      "repo": "thecodexhub/flutter-interview-questions",
+      "license": "MIT"
+    },
+    {
+      "id": "onthecodepath_ios",
+      "repo": "onthecodepath/iOS-Interview-Questions",
+      "license": "MIT"
+    },
+    {
+      "id": "weeebox_system_design",
+      "repo": "weeeBox/mobile-system-design",
+      "license": "MIT"
+    }
+  ],
+  "checksum": "e6e955c79a0d29a37b0a4823b4c39dfb9c7f3653df125f943d48c38a9cddc056"
+}

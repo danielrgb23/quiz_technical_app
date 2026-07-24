@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_62ff3d0a",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 1,
+  "question": "O que é Dart e por que o Flutter o utiliza?",
+  "options": [
+    "É uma linguagem orientada a objetos do Google; seu layout declarativo dispensa linguagens separadas como XML/JSX e o JIT acelera o ciclo de desenvolvimento",
+    "É um superset de JavaScript; o Flutter o usa para rodar os apps diretamente em uma WebView",
+    "É uma linguagem funcional pura sem classes; o Flutter a usa por ser imutável por padrão",
+    "É a linguagem oficial do iOS; o Flutter a usa para obter acesso direto às APIs da Apple",
+    "É uma linguagem interpretada sem coletor de lixo, escolhida pelo controle manual de memória"
+  ],
+  "correctIndex": 0,
+  "explanation": "Dart é uma linguagem orientada a objetos, baseada em classes e com garbage collector, criada pelo Google para desenvolvimento client-side. O Flutter a adota porque o layout declarativo em Dart elimina a necessidade de uma linguagem de layout separada (como XML ou JSX) e a compilação JIT agiliza o desenvolvimento (hot reload). Dart não é superset de JavaScript, não roda em WebView no Flutter, não é funcional pura e tem coleta de lixo automática.",
+  "tags": [
+    "dart",
+    "language"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}
