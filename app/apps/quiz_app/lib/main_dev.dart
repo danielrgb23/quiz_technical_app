@@ -21,6 +21,7 @@ void main() {
       };
 
       await configureDependencies('dev');
+      await bootstrapQuestionBank();
       runApp(const App());
     },
     (error, stack) {

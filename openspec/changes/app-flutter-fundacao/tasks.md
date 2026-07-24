@@ -14,15 +14,15 @@
 
 ## 3. Módulo question_bank (offline-first, roda sem Firebase)
 
-- [ ] 3.1 Criar pacote `packages/modules/question_bank` com drift: tabelas `questions`, `progress`, `pending_sync`; interfaces `QuestionRepository`/`ProgressRepository`
-- [ ] 3.2 Embarcar `questions_v1.json` + `manifest.json` como assets e implementar import inicial em transação
-- [ ] 3.3 Implementar `BankSyncService` (comparação de versão via `RemoteConfigService`, download, validação de checksum SHA-256, import transacional) — com fontes fake em dev
-- [ ] 3.4 Implementar fila `pending_sync` de progresso com retry usando a abstração de connectivity
-- [ ] 3.5 Testes unitários do módulo: import de asset, checksum inválido aborta, fila offline drena ao voltar rede
+- [x] 3.1 Criar pacote `packages/modules/question_bank` com drift: tabelas `questions`, `progress`, `pending_sync`; interfaces `QuestionRepository`/`ProgressRepository`
+- [x] 3.2 Embarcar `questions_v1.json` + `manifest.json` como assets e implementar import inicial em transação
+- [x] 3.3 Implementar `BankSyncService` (comparação de versão via `RemoteConfigService`, download, validação de checksum SHA-256, import transacional) — com fontes fake em dev
+- [x] 3.4 Implementar fila `pending_sync` de progresso com retry usando a abstração de connectivity
+- [x] 3.5 Testes unitários do módulo: import de asset, checksum inválido aborta, fila offline drena ao voltar rede
 
 ## 4. Firebase (stg/prod)
 
-- [ ] 4.1 Definir interface `RemoteConfigService` em `packages/core` + fake em dev
+- [x] 4.1 Definir interface `RemoteConfigService` em `packages/core` + fake em dev
 - [ ] 4.2 Implementar `AnalyticsService`→Firebase Analytics e `CrashReporter`→Crashlytics em `packages/shared`, registradas via injectable só em stg/prod
 - [ ] 4.3 Integrar `firebase_auth` (login anônimo no primeiro launch, tolerante a offline)
 - [ ] 4.4 Implementar espelho Firestore do progresso (`users/{uid}/progress`) e leitura de `banks/{version}`; escrever regras de segurança

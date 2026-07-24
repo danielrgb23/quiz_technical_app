@@ -12,6 +12,7 @@ workspace:
   - packages/shared
   - packages/modules/auth
   - packages/modules/home
+  - packages/modules/question_bank
   - packages/modules/user_profile
   - packages/features/auth_flow
   - packages/features/home_flow

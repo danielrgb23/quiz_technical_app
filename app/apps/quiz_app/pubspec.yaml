@@ -37,6 +37,8 @@ dependencies:
     path: ../../packages/features/onboarding
   profile_flow:
     path: ../../packages/features/profile_flow
+  question_bank_module:
+    path: ../../packages/modules/question_bank
 
   # State & DI
   flutter_bloc: ^9.1.0
@@ -69,3 +71,5 @@ flutter_native_splash:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/question_bank/
