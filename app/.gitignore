@@ -32,8 +32,14 @@ migrate_working_dir/
 .pub/
 **/build/
 pubspec_overrides.yaml
-pubspec.lock
-!apps/*/pubspec.lock
+# Workspace único (melos/pub workspaces): só existe pubspec.lock na raiz do
+# app/, e ele é versionado (não ignorado) para o CI resolver exatamente as
+# mesmas versões testadas localmente — sem isso, `flutter pub get` pode
+# resolver uma versão mais nova de analyzer/injectable_generator e quebrar
+# o build_runner só no CI. Pacotes individuais não geram lockfile próprio
+# neste modo de workspace.
+apps/*/pubspec.lock
+packages/*/*/pubspec.lock
 
 # Generated files
 **/*.g.dart

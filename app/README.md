@@ -22,8 +22,7 @@ The `app_boilerplate` serves as the base for all development. Client apps are ge
 ```
 MonoApp/
 ├── apps/
-│   ├── app_boilerplate/        # Base app - all development happens here
-│   └── client_example/         # Example client app with custom theme
+│   └── quiz_app/                # The quiz app - all development happens here
 ├── packages/
 │   ├── core/                   # Foundation: networking, storage, env, base classes
 │   ├── design_system/          # Tokens, theme, widgets, i18n

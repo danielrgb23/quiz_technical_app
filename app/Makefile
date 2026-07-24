@@ -1,4 +1,4 @@
-.PHONY: setup bootstrap gen l10n analyze test format clean all run-quiz-dev run-quiz-stg run-client-dev run-client-stg ci help
+.PHONY: setup bootstrap gen l10n analyze test format clean all run-quiz-dev run-quiz-stg ci help
 
 MAKE := make
 
@@ -67,15 +67,6 @@ run-quiz-prod: ## Run quiz_app with prod flavor (Android)
 # iOS ainda não tem schemes por flavor (bundle id único com.quizmobile.app).
 run-quiz-dev-ios: ## Run quiz_app dev on iOS (sem flavor scheme)
 	@cd apps/quiz_app && flutter run --dart-define-from-file=env/dev.json
-
-run-client-dev: ## Run client_example with dev flavor
-	@cd apps/client_example && flutter run --dart-define-from-file=env/dev.json
-
-run-client-stg: ## Run client_example with stg flavor
-	@cd apps/client_example && flutter run --dart-define-from-file=env/stg.json
-
-run-client-prod: ## Run client_example with prod flavor
-	@cd apps/client_example && flutter run --dart-define-from-file=env/prod.json
 
 ## Build Apps ---------------------------------------------------------------
 

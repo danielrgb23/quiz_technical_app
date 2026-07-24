@@ -6,7 +6,6 @@ environment:
 
 workspace:
   - apps/quiz_app
-  - apps/client_example
   - packages/core
   - packages/design_system
   - packages/shared
