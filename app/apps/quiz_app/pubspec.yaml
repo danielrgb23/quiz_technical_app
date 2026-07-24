@@ -1,5 +1,5 @@
-name: app_boilerplate
-description: Boilerplate app - base for all client apps
+name: quiz_app
+description: Quiz Mobile - app de estudo para entrevistas tecnicas mobile
 publish_to: none
 version: 1.0.0+1
 

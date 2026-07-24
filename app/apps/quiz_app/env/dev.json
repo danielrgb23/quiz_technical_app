@@ -1,0 +1,5 @@
+{
+  "FLAVOR": "dev",
+  "APP_NAME": "Quiz Mobile Dev",
+  "BASE_URL": "https://dev-api.quizmobile.app/v1"
+}

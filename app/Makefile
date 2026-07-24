@@ -1,4 +1,4 @@
-.PHONY: setup bootstrap gen l10n analyze test format clean all run-boilerplate-dev run-boilerplate-stg run-client-dev run-client-stg ci help
+.PHONY: setup bootstrap gen l10n analyze test format clean all run-quiz-dev run-quiz-stg run-client-dev run-client-stg ci help
 
 MAKE := make
 
@@ -18,7 +18,7 @@ setup: ## First-time setup: bootstrap workspace dependencies
 	flutter pub get
 	@$(MAKE) gen
 	@$(MAKE) l10n
-	@echo "=> Done! Run 'make run-boilerplate-dev' to start the app."
+	@echo "=> Done! Run 'make run-quiz-dev' to start the app."
 
 bootstrap: ## Resolve all workspace dependencies
 	flutter pub get
@@ -53,14 +53,18 @@ ci: analyze format-check test ## Run full CI pipeline (analyze + format check + 
 
 ## Run Apps -----------------------------------------------------------------
 
-run-boilerplate-dev: ## Run app_boilerplate with dev flavor
-	@cd apps/app_boilerplate && flutter run --dart-define-from-file=env/dev.json
+run-quiz-dev: ## Run quiz_app with dev flavor (Android)
+	@cd apps/quiz_app && flutter run --flavor dev --dart-define-from-file=env/dev.json
 
-run-boilerplate-stg: ## Run app_boilerplate with stg flavor
-	@cd apps/app_boilerplate && flutter run --dart-define-from-file=env/stg.json
+run-quiz-stg: ## Run quiz_app with stg flavor (Android)
+	@cd apps/quiz_app && flutter run --flavor stg --dart-define-from-file=env/stg.json
 
-run-boilerplate-prod: ## Run app_boilerplate with prod flavor
-	@cd apps/app_boilerplate && flutter run --dart-define-from-file=env/prod.json
+run-quiz-prod: ## Run quiz_app with prod flavor (Android)
+	@cd apps/quiz_app && flutter run --flavor prod --dart-define-from-file=env/prod.json
+
+# iOS ainda não tem schemes por flavor (bundle id único com.quizmobile.app).
+run-quiz-dev-ios: ## Run quiz_app dev on iOS (sem flavor scheme)
+	@cd apps/quiz_app && flutter run --dart-define-from-file=env/dev.json
 
 run-client-dev: ## Run client_example with dev flavor
 	@cd apps/client_example && flutter run --dart-define-from-file=env/dev.json
@@ -73,17 +77,17 @@ run-client-prod: ## Run client_example with prod flavor
 
 ## Build Apps ---------------------------------------------------------------
 
-build-boilerplate-apk-dev: ## Build APK for app_boilerplate (dev)
-	@cd apps/app_boilerplate && flutter build apk --dart-define-from-file=env/dev.json
+build-quiz-apk-dev: ## Build APK for quiz_app (dev)
+	@cd apps/quiz_app && flutter build apk --flavor dev --dart-define-from-file=env/dev.json
 
-build-boilerplate-apk-prod: ## Build APK for app_boilerplate (prod)
-	@cd apps/app_boilerplate && flutter build apk --dart-define-from-file=env/prod.json
+build-quiz-apk-prod: ## Build APK for quiz_app (prod)
+	@cd apps/quiz_app && flutter build apk --flavor prod --dart-define-from-file=env/prod.json
 
-build-boilerplate-ios-dev: ## Build iOS for app_boilerplate (dev)
-	@cd apps/app_boilerplate && flutter build ios --dart-define-from-file=env/dev.json --no-codesign
+build-quiz-ios-dev: ## Build iOS for quiz_app (dev)
+	@cd apps/quiz_app && flutter build ios --dart-define-from-file=env/dev.json --no-codesign
 
-build-boilerplate-ios-prod: ## Build iOS for app_boilerplate (prod)
-	@cd apps/app_boilerplate && flutter build ios --dart-define-from-file=env/prod.json --no-codesign
+build-quiz-ios-prod: ## Build iOS for quiz_app (prod)
+	@cd apps/quiz_app && flutter build ios --dart-define-from-file=env/prod.json --no-codesign
 
 ## Client App Generation ----------------------------------------------------
 

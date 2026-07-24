@@ -5,7 +5,7 @@ environment:
   sdk: ^3.10.0
 
 workspace:
-  - apps/app_boilerplate
+  - apps/quiz_app
   - apps/client_example
   - packages/core
   - packages/design_system

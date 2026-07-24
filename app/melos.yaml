@@ -73,13 +73,13 @@ scripts:
   build:boilerplate:dev:
     run: flutter build apk --dart-define-from-file=env/dev.json
     packageFilters:
-      scope: app_boilerplate
+      scope: quiz_app
     description: Build boilerplate app with dev flavor
 
   run:boilerplate:dev:
     run: flutter run --dart-define-from-file=env/dev.json
     packageFilters:
-      scope: app_boilerplate
+      scope: quiz_app
     description: Run boilerplate app with dev flavor
 
   ci:

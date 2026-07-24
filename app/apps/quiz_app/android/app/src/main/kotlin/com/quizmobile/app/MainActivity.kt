@@ -1,4 +1,4 @@
-package com.monoapp.app_boilerplate
+package com.quizmobile.app
 
 import io.flutter.embedding.android.FlutterActivity
 

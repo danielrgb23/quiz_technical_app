@@ -1,0 +1,5 @@
+{
+  "FLAVOR": "stg",
+  "APP_NAME": "Quiz Mobile Stg",
+  "BASE_URL": "https://stg-api.quizmobile.app/v1"
+}

@@ -2,9 +2,9 @@
 
 ## 1. Importar e validar o boilerplate
 
-- [ ] 1.1 Vendorizar `prodevcom/flutter-mono-repo` em `app/` (sem fluxo white-label), fixando versões e registrando a origem no commit
-- [ ] 1.2 Rodar `make setup` e o flavor dev (fakes, sem backend); corrigir incompatibilidades com o Flutter instalado
-- [ ] 1.3 Rodar `make ci` (analyze + format + test) verde
+- [x] 1.1 Vendorizar `prodevcom/flutter-mono-repo` em `app/` (sem fluxo white-label), fixando versões e registrando a origem no commit
+- [x] 1.2 Rodar `make setup` e o flavor dev (fakes, sem backend); corrigir incompatibilidades com o Flutter instalado
+- [x] 1.3 Rodar `make ci` (analyze + format + test) verde
 
 ## 2. Identidade do app
 
