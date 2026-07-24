@@ -9,7 +9,11 @@ abstract class Failure {
 }
 
 class ServerFailure extends Failure {
-  const ServerFailure({required super.message, super.stackTrace, this.statusCode});
+  const ServerFailure({
+    required super.message,
+    super.stackTrace,
+    this.statusCode,
+  });
 
   final int? statusCode;
 }
@@ -19,9 +23,15 @@ class CacheFailure extends Failure {
 }
 
 class NetworkFailure extends Failure {
-  const NetworkFailure({super.message = 'No internet connection', super.stackTrace});
+  const NetworkFailure({
+    super.message = 'No internet connection',
+    super.stackTrace,
+  });
 }
 
 class UnexpectedFailure extends Failure {
-  const UnexpectedFailure({super.message = 'An unexpected error occurred', super.stackTrace});
+  const UnexpectedFailure({
+    super.message = 'An unexpected error occurred',
+    super.stackTrace,
+  });
 }

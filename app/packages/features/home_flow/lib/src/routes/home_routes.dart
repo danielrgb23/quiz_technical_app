@@ -10,7 +10,7 @@ part 'home_routes.gr.dart';
 class HomeFlowRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: HomeRoute.page),
-        AutoRoute(page: HomeItemDetailRoute.page),
-      ];
+    AutoRoute(page: HomeRoute.page),
+    AutoRoute(page: HomeItemDetailRoute.page),
+  ];
 }

@@ -6,8 +6,8 @@ extension StringExtensions on String {
       split(' ').map((word) => word.capitalize).join(' ');
 
   bool get isEmail => RegExp(
-        r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
-      ).hasMatch(this);
+    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+  ).hasMatch(this);
 
   bool get isNotBlank => trim().isNotEmpty;
 

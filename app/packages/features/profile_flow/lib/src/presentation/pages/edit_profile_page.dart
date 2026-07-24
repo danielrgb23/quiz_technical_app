@@ -20,7 +20,10 @@ class EditProfilePage extends StatelessWidget {
           children: [
             DsTextField(label: l10n.name),
             const SizedBox(height: AppSpacing.md),
-            DsTextField(label: l10n.email, keyboardType: TextInputType.emailAddress),
+            DsTextField(
+              label: l10n.email,
+              keyboardType: TextInputType.emailAddress,
+            ),
             const SizedBox(height: AppSpacing.md),
             DsTextField(label: l10n.phone, keyboardType: TextInputType.phone),
             const SizedBox(height: AppSpacing.md),

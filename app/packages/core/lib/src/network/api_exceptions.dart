@@ -1,11 +1,7 @@
 import 'package:dio/dio.dart';
 
 class ApiException implements Exception {
-  const ApiException({
-    required this.message,
-    this.statusCode,
-    this.data,
-  });
+  const ApiException({required this.message, this.statusCode, this.data});
 
   factory ApiException.fromDioException(DioException error) {
     switch (error.type) {

@@ -26,9 +26,9 @@ class LoginPage extends StatelessWidget {
             if (state is LoginSuccess) {
               context.router.pushPath(AppRoutes.home);
             } else if (state is LoginFailure) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(state.message)),
-              );
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(SnackBar(content: Text(state.message)));
             }
           },
           builder: (context, state) {

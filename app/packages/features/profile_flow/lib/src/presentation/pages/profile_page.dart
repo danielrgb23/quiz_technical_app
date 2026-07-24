@@ -24,46 +24,50 @@ class ProfilePage extends StatelessWidget {
           builder: (context, state) => switch (state) {
             ProfileInitial() || ProfileLoading() => const DsLoading(),
             ProfileLoaded(:final profile) => ListView(
-                padding: const EdgeInsets.all(AppSpacing.md),
-                children: [
-                  const CircleAvatar(radius: 50, child: Icon(Icons.person, size: 50)),
+              padding: const EdgeInsets.all(AppSpacing.md),
+              children: [
+                const CircleAvatar(
+                  radius: 50,
+                  child: Icon(Icons.person, size: 50),
+                ),
+                const SizedBox(height: AppSpacing.md),
+                Text(
+                  profile.name,
+                  style: Theme.of(context).textTheme.headlineSmall,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: AppSpacing.xs),
+                Text(
+                  profile.email,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  textAlign: TextAlign.center,
+                ),
+                if (profile.bio != null) ...[
                   const SizedBox(height: AppSpacing.md),
-                  Text(
-                    profile.name,
-                    style: Theme.of(context).textTheme.headlineSmall,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: AppSpacing.xs),
-                  Text(
-                    profile.email,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                  if (profile.bio != null) ...[
-                    const SizedBox(height: AppSpacing.md),
-                    Text(profile.bio!, textAlign: TextAlign.center),
-                  ],
-                  const SizedBox(height: AppSpacing.lg),
+                  Text(profile.bio!, textAlign: TextAlign.center),
+                ],
+                const SizedBox(height: AppSpacing.lg),
+                DsButton(
+                  label: l10n.editProfile,
+                  variant: DsButtonVariant.outlined,
+                  onPressed: () =>
+                      context.router.pushPath(AppRoutes.editProfile),
+                ),
+              ],
+            ),
+            ProfileFailure(:final message) => Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(message),
+                  const SizedBox(height: AppSpacing.md),
                   DsButton(
-                    label: l10n.editProfile,
-                    variant: DsButtonVariant.outlined,
-                    onPressed: () => context.router.pushPath(AppRoutes.editProfile),
+                    label: l10n.retry,
+                    onPressed: () => context.read<ProfileCubit>().loadProfile(),
                   ),
                 ],
               ),
-            ProfileFailure(:final message) => Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(message),
-                    const SizedBox(height: AppSpacing.md),
-                    DsButton(
-                      label: l10n.retry,
-                      onPressed: () => context.read<ProfileCubit>().loadProfile(),
-                    ),
-                  ],
-                ),
-              ),
+            ),
             _ => const SizedBox.shrink(),
           },
         ),

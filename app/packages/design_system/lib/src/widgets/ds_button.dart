@@ -27,33 +27,33 @@ class DsButton extends StatelessWidget {
             child: CircularProgressIndicator(strokeWidth: 2),
           )
         : icon != null
-            ? Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(icon, size: 18),
-                  const SizedBox(width: 8),
-                  Text(label),
-                ],
-              )
-            : Text(label);
+        ? Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(icon, size: 18),
+              const SizedBox(width: 8),
+              Text(label),
+            ],
+          )
+        : Text(label);
 
     return switch (variant) {
       DsButtonVariant.primary => ElevatedButton(
-          onPressed: isLoading ? null : onPressed,
-          child: child,
-        ),
+        onPressed: isLoading ? null : onPressed,
+        child: child,
+      ),
       DsButtonVariant.secondary => FilledButton.tonal(
-          onPressed: isLoading ? null : onPressed,
-          child: child,
-        ),
+        onPressed: isLoading ? null : onPressed,
+        child: child,
+      ),
       DsButtonVariant.outlined => OutlinedButton(
-          onPressed: isLoading ? null : onPressed,
-          child: child,
-        ),
+        onPressed: isLoading ? null : onPressed,
+        child: child,
+      ),
       DsButtonVariant.text => TextButton(
-          onPressed: isLoading ? null : onPressed,
-          child: child,
-        ),
+        onPressed: isLoading ? null : onPressed,
+        child: child,
+      ),
     };
   }
 }

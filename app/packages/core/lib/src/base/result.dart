@@ -34,8 +34,7 @@ final class Success<T> extends Result<T> {
   R when<R>({
     required R Function(T data) success,
     required R Function(Failure failure) failure,
-  }) =>
-      success(data);
+  }) => success(data);
 }
 
 final class Error<T> extends Result<T> {
@@ -47,6 +46,5 @@ final class Error<T> extends Result<T> {
   R when<R>({
     required R Function(T data) success,
     required R Function(Failure failure) failure,
-  }) =>
-      failure(this.failure);
+  }) => failure(this.failure);
 }

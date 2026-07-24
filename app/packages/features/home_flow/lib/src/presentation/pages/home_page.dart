@@ -20,10 +20,10 @@ class HomePage extends StatelessWidget {
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) => switch (state) {
           HomeFailure(:final message) => DsError(
-              message: message,
-              retryLabel: HomeLocalizations.of(context)!.retry,
-              onRetry: () => context.read<HomeCubit>().loadItems(),
-            ),
+            message: message,
+            retryLabel: HomeLocalizations.of(context)!.retry,
+            onRetry: () => context.read<HomeCubit>().loadItems(),
+          ),
           _ => _HomeContent(state: state),
         },
       ),
@@ -66,7 +66,10 @@ class _HomeContent extends StatelessWidget {
               }
             },
             itemBuilder: (_) => [
-              const PopupMenuItem(value: 'onboarding', child: Text('Onboarding')),
+              const PopupMenuItem(
+                value: 'onboarding',
+                child: Text('Onboarding'),
+              ),
               const PopupMenuItem(value: 'login', child: Text('Login')),
               const PopupMenuItem(value: 'register', child: Text('Register')),
               const PopupMenuDivider(),
@@ -77,16 +80,17 @@ class _HomeContent extends StatelessWidget {
       ),
       body: switch (state) {
         HomeInitial() || HomeLoading() => const DsLoading(),
-        HomeLoaded(:final items) => items.isEmpty
-            ? Center(child: Text(l10n.noItems))
-            : ListView.builder(
-                padding: const EdgeInsets.all(AppSpacing.md),
-                itemCount: items.length,
-                itemBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                  child: HomeItemCard(item: items[index]),
+        HomeLoaded(:final items) =>
+          items.isEmpty
+              ? Center(child: Text(l10n.noItems))
+              : ListView.builder(
+                  padding: const EdgeInsets.all(AppSpacing.md),
+                  itemCount: items.length,
+                  itemBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.only(bottom: AppSpacing.sm),
+                    child: HomeItemCard(item: items[index]),
+                  ),
                 ),
-              ),
         _ => const SizedBox.shrink(),
       },
     );

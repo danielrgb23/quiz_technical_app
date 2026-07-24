@@ -9,7 +9,7 @@ part 'auth_routes.gr.dart';
 class AuthFlowRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: LoginRoute.page),
-        AutoRoute(page: RegisterRoute.page),
-      ];
+    AutoRoute(page: LoginRoute.page),
+    AutoRoute(page: RegisterRoute.page),
+  ];
 }

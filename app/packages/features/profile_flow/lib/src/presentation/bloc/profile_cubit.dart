@@ -16,7 +16,7 @@ abstract class ProfileState with _$ProfileState {
 @injectable
 class ProfileCubit extends Cubit<ProfileState> {
   ProfileCubit(this._getProfileUseCase, this._updateProfileUseCase)
-      : super(const ProfileState.initial());
+    : super(const ProfileState.initial());
 
   final GetProfileUseCase _getProfileUseCase;
   final UpdateProfileUseCase _updateProfileUseCase;

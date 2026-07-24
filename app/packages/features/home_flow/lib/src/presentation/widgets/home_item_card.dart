@@ -16,15 +16,9 @@ class HomeItemCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            item.title,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
+          Text(item.title, style: Theme.of(context).textTheme.titleMedium),
           const SizedBox(height: AppSpacing.xs),
-          Text(
-            item.description,
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
+          Text(item.description, style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
     );

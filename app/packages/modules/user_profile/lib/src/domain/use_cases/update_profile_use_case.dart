@@ -11,5 +11,6 @@ class UpdateProfileUseCase implements UseCase<Profile, Profile> {
   final ProfileRepository _repository;
 
   @override
-  Future<Result<Profile>> call(Profile params) => _repository.updateProfile(params);
+  Future<Result<Profile>> call(Profile params) =>
+      _repository.updateProfile(params);
 }

@@ -21,9 +21,7 @@ class DsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: elevation,
-      shape: RoundedRectangleBorder(
-        borderRadius: AppRadius.borderRadiusMd,
-      ),
+      shape: RoundedRectangleBorder(borderRadius: AppRadius.borderRadiusMd),
       child: InkWell(
         onTap: onTap,
         borderRadius: AppRadius.borderRadiusMd,

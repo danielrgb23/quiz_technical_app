@@ -7,27 +7,29 @@ import 'app.dart';
 import 'di/injection.dart';
 
 void main() {
-  runZonedGuarded(() async {
-    WidgetsFlutterBinding.ensureInitialized();
+  runZonedGuarded(
+    () async {
+      WidgetsFlutterBinding.ensureInitialized();
 
-    FlutterError.onError = (details) {
+      FlutterError.onError = (details) {
+        AppLogger.error(
+          details.exceptionAsString(),
+          tag: 'FlutterError',
+          error: details.exception,
+          stackTrace: details.stack,
+        );
+      };
+
+      await configureDependencies('dev');
+      runApp(const App());
+    },
+    (error, stack) {
       AppLogger.error(
-        details.exceptionAsString(),
-        tag: 'FlutterError',
-        error: details.exception,
-        stackTrace: details.stack,
+        'Uncaught error',
+        tag: 'Zone',
+        error: error,
+        stackTrace: stack,
       );
-    };
-
-    await configureDependencies('dev');
-    runApp(const App());
-  }, (error, stack) {
-    AppLogger.error(
-      'Uncaught error',
-      tag: 'Zone',
-      error: error,
-      stackTrace: stack,
-    );
-  });
+    },
+  );
 }
-

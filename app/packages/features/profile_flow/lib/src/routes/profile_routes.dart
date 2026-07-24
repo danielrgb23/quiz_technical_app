@@ -9,7 +9,7 @@ part 'profile_routes.gr.dart';
 class ProfileFlowRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: ProfileRoute.page),
-        AutoRoute(page: EditProfileRoute.page),
-      ];
+    AutoRoute(page: ProfileRoute.page),
+    AutoRoute(page: EditProfileRoute.page),
+  ];
 }

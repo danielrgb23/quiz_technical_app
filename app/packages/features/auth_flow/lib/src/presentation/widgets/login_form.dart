@@ -69,7 +69,8 @@ class _LoginFormState extends State<LoginForm> {
           DsButton(
             label: l10n.register,
             variant: DsButtonVariant.text,
-            onPressed: () => AutoRouter.of(context).pushPath(AppRoutes.register),
+            onPressed: () =>
+                AutoRouter.of(context).pushPath(AppRoutes.register),
           ),
         ],
       ),
@@ -79,9 +80,9 @@ class _LoginFormState extends State<LoginForm> {
   void _onSubmit() {
     if (_formKey.currentState?.validate() ?? false) {
       context.read<LoginCubit>().login(
-            email: _emailController.text,
-            password: _passwordController.text,
-          );
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
     }
   }
 }

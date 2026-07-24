@@ -25,7 +25,11 @@ class OnboardingStep extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(data.icon, size: 120, color: Theme.of(context).colorScheme.primary),
+          Icon(
+            data.icon,
+            size: 120,
+            color: Theme.of(context).colorScheme.primary,
+          ),
           const SizedBox(height: AppSpacing.xl),
           Text(
             data.title,

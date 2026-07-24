@@ -18,7 +18,7 @@ abstract class HomeItemDetailState with _$HomeItemDetailState {
 @injectable
 class HomeItemDetailCubit extends Cubit<HomeItemDetailState> {
   HomeItemDetailCubit(this._getHomeItemByIdUseCase)
-      : super(const HomeItemDetailState.initial());
+    : super(const HomeItemDetailState.initial());
 
   final GetHomeItemByIdUseCase _getHomeItemByIdUseCase;
 

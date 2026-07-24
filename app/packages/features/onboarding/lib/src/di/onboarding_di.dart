@@ -1,5 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
 
-@InjectableInit.microPackage(ignoreUnregisteredTypesInPackages: ['package:core', 'package:shared'])
+@InjectableInit.microPackage(
+  ignoreUnregisteredTypesInPackages: ['package:core', 'package:shared'],
+)
 void initOnboardingPackageModule(GetIt getIt) {}

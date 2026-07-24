@@ -36,8 +36,7 @@ class LocalStorageImpl implements LocalStorage {
   Future<int?> getInt(String key) async => _prefs.getInt(key);
 
   @override
-  Future<void> setInt(String key, int value) async =>
-      _prefs.setInt(key, value);
+  Future<void> setInt(String key, int value) async => _prefs.setInt(key, value);
 
   @override
   Future<void> remove(String key) async => _prefs.remove(key);

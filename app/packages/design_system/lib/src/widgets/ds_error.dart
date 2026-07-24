@@ -37,10 +37,7 @@ class DsError extends StatelessWidget {
               ),
               if (onRetry != null) ...[
                 const SizedBox(height: AppSpacing.lg),
-                DsButton(
-                  label: retryLabel,
-                  onPressed: onRetry,
-                ),
+                DsButton(label: retryLabel, onPressed: onRetry),
               ],
             ],
           ),

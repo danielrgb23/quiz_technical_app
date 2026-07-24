@@ -4,7 +4,7 @@ import '../storage/secure_storage.dart';
 
 class AuthInterceptor extends Interceptor {
   AuthInterceptor({required SecureStorage secureStorage})
-      : _secureStorage = secureStorage;
+    : _secureStorage = secureStorage;
 
   final SecureStorage _secureStorage;
 

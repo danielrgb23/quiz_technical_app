@@ -9,10 +9,7 @@ import '../bloc/home_item_detail_cubit.dart';
 
 @RoutePage()
 class HomeItemDetailPage extends StatelessWidget {
-  const HomeItemDetailPage({
-    super.key,
-    @PathParam('id') required this.id,
-  });
+  const HomeItemDetailPage({super.key, @PathParam('id') required this.id});
 
   final String id;
 
@@ -23,11 +20,10 @@ class HomeItemDetailPage extends StatelessWidget {
       child: BlocBuilder<HomeItemDetailCubit, HomeItemDetailState>(
         builder: (context, state) => switch (state) {
           HomeItemDetailFailure(:final message) => DsError(
-              message: message,
-              retryLabel: 'Retry',
-              onRetry: () =>
-                  context.read<HomeItemDetailCubit>().loadItem(id),
-            ),
+            message: message,
+            retryLabel: 'Retry',
+            onRetry: () => context.read<HomeItemDetailCubit>().loadItem(id),
+          ),
           _ => _DetailScaffold(state: state),
         },
       ),
@@ -48,9 +44,7 @@ class _DetailScaffold extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(item?.title ?? '')),
-      body: item == null
-          ? const DsLoading()
-          : _DetailBody(item: item),
+      body: item == null ? const DsLoading() : _DetailBody(item: item),
     );
   }
 }
@@ -102,15 +96,9 @@ class _DetailBody extends StatelessWidget {
               ),
             ),
           ),
-        Text(
-          item.title,
-          style: theme.textTheme.headlineSmall,
-        ),
+        Text(item.title, style: theme.textTheme.headlineSmall),
         const SizedBox(height: AppSpacing.sm),
-        Text(
-          item.description,
-          style: theme.textTheme.bodyLarge,
-        ),
+        Text(item.description, style: theme.textTheme.bodyLarge),
       ],
     );
   }

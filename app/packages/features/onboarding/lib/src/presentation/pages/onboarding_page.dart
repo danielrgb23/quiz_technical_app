@@ -54,7 +54,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 controller: _pageController,
                 onPageChanged: (index) => setState(() => _currentPage = index),
                 itemCount: steps.length,
-                itemBuilder: (context, index) => OnboardingStep(data: steps[index]),
+                itemBuilder: (context, index) =>
+                    OnboardingStep(data: steps[index]),
               ),
             ),
             Padding(

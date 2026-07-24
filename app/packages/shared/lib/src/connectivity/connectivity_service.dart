@@ -15,10 +15,8 @@ class ConnectivityServiceImpl implements ConnectivityService {
   final Connectivity _connectivity;
 
   @override
-  Stream<bool> get onConnectivityChanged =>
-      _connectivity.onConnectivityChanged.map(
-        (result) => !result.contains(ConnectivityResult.none),
-      );
+  Stream<bool> get onConnectivityChanged => _connectivity.onConnectivityChanged
+      .map((result) => !result.contains(ConnectivityResult.none));
 
   @override
   Future<bool> get isConnected async {

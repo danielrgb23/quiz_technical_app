@@ -22,7 +22,9 @@ class LoginCubit extends Cubit<LoginState> {
   Future<void> login({required String email, required String password}) async {
     emit(const LoginState.loading());
 
-    final result = await _loginUseCase(LoginParams(email: email, password: password));
+    final result = await _loginUseCase(
+      LoginParams(email: email, password: password),
+    );
 
     result.when(
       success: (user) => emit(LoginState.success(user)),
