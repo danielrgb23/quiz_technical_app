@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import os
 from typing import Protocol
 
 from .schema import LLM_OUTPUT_SCHEMA
@@ -19,7 +18,9 @@ class AnthropicClient:
         import anthropic
 
         self.model = model
-        self._client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        # Resolução padrão de credenciais: ANTHROPIC_API_KEY (inclusive via .env),
+        # ANTHROPIC_AUTH_TOKEN ou perfil do `ant auth login`.
+        self._client = anthropic.Anthropic()
 
     def complete(self, prompt: str) -> str:
         response = self._client.messages.create(
