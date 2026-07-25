@@ -7,7 +7,6 @@ import 'package:question_bank_module/question_bank.dart';
 import 'package:quiz_module/quiz_module.dart';
 
 import '../../l10n/generated/quiz_localizations.dart';
-import '../../routes/quiz_flow_routes.dart';
 import '../cubit/quiz_session_cubit.dart';
 import '../cubit/quiz_session_state.dart';
 
@@ -106,9 +105,6 @@ class _QuizSessionPageState extends State<QuizSessionPage> {
               ),
               QuizSessionSummary(result: final result) => _SummaryView(
                 result: result,
-                mode: widget.mode,
-                topic: widget.topic,
-                size: widget.size,
               ),
               QuizSessionError(message: final message) => DsError(
                 message: message,
@@ -301,17 +297,9 @@ class _FeedbackView extends StatelessWidget {
 }
 
 class _SummaryView extends StatelessWidget {
-  const _SummaryView({
-    required this.result,
-    required this.mode,
-    required this.topic,
-    required this.size,
-  });
+  const _SummaryView({required this.result});
 
   final SessionResult result;
-  final SessionMode mode;
-  final String? topic;
-  final int size;
 
   @override
   Widget build(BuildContext context) {
@@ -360,9 +348,7 @@ class _SummaryView extends StatelessWidget {
               width: double.infinity,
               child: DsButton(
                 label: l10n.newSessionButtonLabel,
-                onPressed: () => context.router.replace(
-                  QuizSessionRoute(mode: mode, topic: topic, size: size),
-                ),
+                onPressed: () => context.router.popUntilRoot(),
               ),
             ),
           ],

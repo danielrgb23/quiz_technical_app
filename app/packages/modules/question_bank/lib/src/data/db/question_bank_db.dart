@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:drift/drift.dart';
 
@@ -92,7 +93,7 @@ class QuestionBankDb extends _$QuestionBankDb {
       await delete(questions).go();
       await batch((b) {
         b.insertAll(questions, [
-          for (final q in items)
+          for (final q in items.map(_shuffleOptions))
             QuestionsCompanion.insert(
               id: q.id,
               source: q.source,
@@ -113,6 +114,30 @@ class QuestionBankDb extends _$QuestionBankDb {
       );
     });
   }
+}
+
+/// O banco de questões é gerado com a resposta correta sempre no índice 0
+/// (o modelo escreve a certa primeiro, depois os distratores). Embaralha as
+/// opções aqui, no boundary de import, com seed determinístico por [Question.id]
+/// para que reimportar a mesma questão (ex: novo bank_version sem mudança nela)
+/// produza sempre a mesma ordem — evitando que a posição da resposta mude
+/// entre uma sessão e outra para a mesma questão.
+Question _shuffleOptions(Question q) {
+  final order = List<int>.generate(q.options.length, (i) => i)
+    ..shuffle(Random(q.id.hashCode));
+  return Question(
+    id: q.id,
+    source: q.source,
+    topic: q.topic,
+    level: q.level,
+    question: q.question,
+    options: [for (final i in order) q.options[i]],
+    correctIndex: order.indexOf(q.correctIndex),
+    explanation: q.explanation,
+    tags: q.tags,
+    language: q.language,
+    generatedAnswer: q.generatedAnswer,
+  );
 }
 
 Question questionFromRow(QuestionRow row) => Question(
