@@ -18,33 +18,33 @@ dependencies:
 
   # Workspace packages
   core:
-    path: ../../packages/core
+    path: ../packages/core
   design_system:
-    path: ../../packages/design_system
+    path: ../packages/design_system
   shared:
-    path: ../../packages/shared
+    path: ../packages/shared
   auth_module:
-    path: ../../packages/modules/auth
+    path: ../packages/modules/auth
   home_module:
-    path: ../../packages/modules/home
+    path: ../packages/modules/home
   user_profile_module:
-    path: ../../packages/modules/user_profile
+    path: ../packages/modules/user_profile
   auth_flow:
-    path: ../../packages/features/auth_flow
+    path: ../packages/features/auth_flow
   home_flow:
-    path: ../../packages/features/home_flow
+    path: ../packages/features/home_flow
   onboarding:
-    path: ../../packages/features/onboarding
+    path: ../packages/features/onboarding
   profile_flow:
-    path: ../../packages/features/profile_flow
+    path: ../packages/features/profile_flow
   question_bank_module:
-    path: ../../packages/modules/question_bank
+    path: ../packages/modules/question_bank
   quiz_module:
-    path: ../../packages/modules/quiz
+    path: ../packages/modules/quiz
   quiz_flow:
-    path: ../../packages/features/quiz_flow
+    path: ../packages/features/quiz_flow
   stats_flow:
-    path: ../../packages/features/stats_flow
+    path: ../packages/features/stats_flow
 
   # State & DI
   flutter_bloc: ^9.1.0

@@ -56,31 +56,31 @@ ci: analyze format-check test ## Run full CI pipeline (analyze + format check + 
 ## Run Apps -----------------------------------------------------------------
 
 run-quiz-dev: ## Run quiz_app with dev flavor (Android)
-	@cd apps/quiz_app && flutter run --flavor dev --dart-define-from-file=env/dev.json
+	@cd quiz_app && flutter run --flavor dev --dart-define-from-file=env/dev.json
 
 run-quiz-stg: ## Run quiz_app with stg flavor (Android)
-	@cd apps/quiz_app && flutter run --flavor stg --dart-define-from-file=env/stg.json
+	@cd quiz_app && flutter run --flavor stg --dart-define-from-file=env/stg.json
 
 run-quiz-prod: ## Run quiz_app with prod flavor (Android)
-	@cd apps/quiz_app && flutter run --flavor prod --dart-define-from-file=env/prod.json
+	@cd quiz_app && flutter run --flavor prod --dart-define-from-file=env/prod.json
 
 # iOS ainda não tem schemes por flavor (bundle id único com.quizmobile.app).
 run-quiz-dev-ios: ## Run quiz_app dev on iOS (sem flavor scheme)
-	@cd apps/quiz_app && flutter run --dart-define-from-file=env/dev.json
+	@cd quiz_app && flutter run --dart-define-from-file=env/dev.json
 
 ## Build Apps ---------------------------------------------------------------
 
 build-quiz-apk-dev: ## Build APK for quiz_app (dev)
-	@cd apps/quiz_app && flutter build apk --flavor dev --dart-define-from-file=env/dev.json
+	@cd quiz_app && flutter build apk --flavor dev --dart-define-from-file=env/dev.json
 
 build-quiz-apk-prod: ## Build APK for quiz_app (prod)
-	@cd apps/quiz_app && flutter build apk --flavor prod --dart-define-from-file=env/prod.json
+	@cd quiz_app && flutter build apk --flavor prod --dart-define-from-file=env/prod.json
 
 build-quiz-ios-dev: ## Build iOS for quiz_app (dev)
-	@cd apps/quiz_app && flutter build ios --dart-define-from-file=env/dev.json --no-codesign
+	@cd quiz_app && flutter build ios --dart-define-from-file=env/dev.json --no-codesign
 
 build-quiz-ios-prod: ## Build iOS for quiz_app (prod)
-	@cd apps/quiz_app && flutter build ios --dart-define-from-file=env/prod.json --no-codesign
+	@cd quiz_app && flutter build ios --dart-define-from-file=env/prod.json --no-codesign
 
 ## Client App Generation ----------------------------------------------------
 

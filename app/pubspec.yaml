@@ -5,7 +5,7 @@ environment:
   sdk: ^3.10.0
 
 workspace:
-  - apps/quiz_app
+  - quiz_app
   - packages/core
   - packages/design_system
   - packages/shared

@@ -189,7 +189,7 @@ ENV_EOF
 # Step 7: Add to root pubspec.yaml workspace
 log_info "7/8 Adding to workspace..."
 if ! grep -q "apps/$NAME" "$ROOT_DIR/pubspec.yaml"; then
-  sed -i '' "/  - apps\/quiz_app/a\\
+  sed -i '' "/  - quiz_app/a\\
 \\  - apps/$NAME" "$ROOT_DIR/pubspec.yaml"
 fi
 

@@ -1,7 +1,7 @@
 name: mono_app
 
 packages:
-  - apps/*
+  - quiz_app
   - packages/*
   - packages/modules/*
   - packages/features/*
