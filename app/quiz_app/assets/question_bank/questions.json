@@ -444,5 +444,687 @@
     ],
     "language": "pt-BR",
     "generated_answer": false
+  },
+  {
+    "id": "generated_dart_01",
+    "source": "generated",
+    "topic": "dart",
+    "level": 1,
+    "question": "O que é null safety no Dart e o que muda no tipo de uma variável?",
+    "options": [
+      "É o sistema que distingue em tempo de compilação tipos que podem ser nulos (`String?`) dos que não podem (`String`), evitando NullPointerException em produção",
+      "É um recurso de runtime que converte automaticamente valores nulos em strings vazias antes de exibi-los na UI",
+      "É a obrigação de inicializar toda variável com `late`, já que o Dart não permite mais variáveis não inicializadas",
+      "É um linter opcional que apenas sugere, em warnings, onde valores nulos podem aparecer, sem afetar a compilação",
+      "É um recurso exclusivo do modo debug, desabilitado automaticamente nos builds de release"
+    ],
+    "correctIndex": 0,
+    "explanation": "Com null safety, o próprio tipo declara se aceita nulo: `String` nunca é nulo, `String?` pode ser. O compilador exige tratamento (`!`, `?.`, `??`) antes de usar um valor potencialmente nulo, eliminando a maior parte dos erros de referência nula em tempo de compilação. Não é conversão automática de valores, não obriga uso de `late` em toda variável e vale tanto em debug quanto em release.",
+    "tags": [
+      "dart",
+      "null-safety"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_dart_02",
+    "source": "generated",
+    "topic": "dart",
+    "level": 2,
+    "question": "Qual é a diferença entre Future e Stream no Dart?",
+    "options": [
+      "Future representa um único valor (ou erro) disponível no futuro; Stream representa uma sequência de valores assíncronos emitidos ao longo do tempo",
+      "Future é usado para operações síncronas; Stream é usado exclusivamente para chamadas de rede",
+      "Stream é uma versão mais antiga e obsoleta de Future, mantida apenas por retrocompatibilidade",
+      "Future só pode ser usado dentro de widgets; Stream só pode ser usado em camadas de dados",
+      "Não há diferença prática: StreamController e Completer produzem exatamente o mesmo comportamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Um Future resolve uma única vez, com um valor ou um erro (ex.: uma chamada HTTP). Uma Stream pode emitir zero, um ou múltiplos valores ao longo do tempo (ex.: eventos de um WebSocket ou um Cubit). Ambos são assíncronos, nenhum é exclusivo de widgets ou de rede, e Stream não é uma versão antiga de Future — são abstrações complementares.",
+    "tags": [
+      "dart",
+      "async",
+      "streams"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_dart_03",
+    "source": "generated",
+    "topic": "dart",
+    "level": 1,
+    "question": "Para que servem as extension methods no Dart?",
+    "options": [
+      "Permitem adicionar novos métodos a um tipo já existente (inclusive de outra biblioteca) sem herdar dele ou modificar seu código-fonte",
+      "Servem para criar subclasses privadas que só podem ser usadas dentro do mesmo arquivo",
+      "São a única forma de declarar métodos estáticos em uma classe no Dart",
+      "Substituem mixins, sendo a forma recomendada de compartilhar implementação entre classes não relacionadas",
+      "Permitem sobrescrever operadores nativos da linguagem, como `+` para o tipo `int`"
+    ],
+    "correctIndex": 0,
+    "explanation": "Extension methods (`extension NomeDaExtensao on Tipo { ... }`) acrescentam funcionalidade a um tipo existente — mesmo tipos de outros pacotes ou do próprio SDK — sem precisar herdar ou alterar o código original. Não têm relação com visibilidade de arquivo, não são a única forma de método estático e não substituem mixins, que resolvem um problema diferente (composição de implementação).",
+    "tags": [
+      "dart",
+      "extensions"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_dart_04",
+    "source": "generated",
+    "topic": "dart",
+    "level": 2,
+    "question": "No Dart, qual é a diferença prática entre `const` e `final`?",
+    "options": [
+      "`const` exige que o valor seja conhecido em tempo de compilação; `final` permite que o valor seja definido em tempo de execução, mas ambos impedem reatribuição depois",
+      "`final` só pode ser usado em variáveis locais; `const` só pode ser usado em variáveis de classe",
+      "`const` permite reatribuir o valor depois; `final` não permite",
+      "Não há diferença: são apenas sinônimos mantidos por compatibilidade histórica",
+      "`final` é exclusivo de tipos primitivos; `const` é exclusivo de objetos e coleções"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ambos criam uma referência que não pode ser reatribuída, mas `const` vai além: o valor precisa ser calculável em tempo de compilação (ex.: `const Duration(seconds: 1)`), enquanto `final` aceita um valor calculado em runtime (ex.: `final now = DateTime.now();`). Não há restrição de uso em variável local vs. de classe, e nenhum dos dois permite reatribuição.",
+    "tags": [
+      "dart",
+      "basics"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_dart_05",
+    "source": "generated",
+    "topic": "dart",
+    "level": 2,
+    "question": "O que é um mixin no Dart e como ele difere de herança simples?",
+    "options": [
+      "É uma forma de reutilizar implementação de método em várias classes não relacionadas via `with`, sem criar uma relação de herança única entre elas",
+      "É um tipo especial de interface que não pode conter nenhuma implementação de método",
+      "É a forma do Dart de simular herança múltipla criando uma nova subclasse concreta para cada combinação",
+      "É um recurso exclusivo de classes abstratas, que não pode ser aplicado a classes concretas",
+      "É sinônimo de extension method, apenas com uma palavra-chave diferente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Um mixin (`mixin M { ... }`, aplicado com `class A extends B with M`) injeta implementação de método em uma classe sem exigir uma cadeia de herança única, contornando a limitação de herança simples do Dart. Diferente de interfaces, mixins podem conter implementação; e diferente de extension methods, eles fazem parte da hierarquia de tipos da classe.",
+    "tags": [
+      "dart",
+      "mixins",
+      "oop"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_dart_06",
+    "source": "generated",
+    "topic": "dart",
+    "level": 1,
+    "question": "Por que `await` só pode ser usado dentro de uma função marcada como `async`?",
+    "options": [
+      "Porque `async` transforma a função para que ela retorne um Future e permita suspender sua execução em `await` até o valor esperado estar disponível, sem bloquear a thread",
+      "Porque `async` cria automaticamente uma nova thread para a função rodar em paralelo",
+      "Porque o Dart proíbe qualquer chamada de rede fora de funções `async`, por motivos de segurança",
+      "Porque `await` é apenas um alias de `.then()`, então funciona em qualquer função, inclusive sem `async`",
+      "Porque `async` é obrigatório para qualquer função que use variáveis do tipo `late`"
+    ],
+    "correctIndex": 0,
+    "explanation": "`async` faz a função retornar um Future e habilita `await`, que pausa a execução daquele Future até o valor resolver, devolvendo o controle ao event loop nesse meio-tempo — sem bloquear a thread principal, já que o Dart é single-threaded por isolate. Não cria threads novas, não é exigido por chamadas de rede em si e não tem relação com `late`.",
+    "tags": [
+      "dart",
+      "async"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_flutter_01",
+    "source": "generated",
+    "topic": "flutter",
+    "level": 1,
+    "question": "Qual é a diferença fundamental entre StatelessWidget e StatefulWidget?",
+    "options": [
+      "StatelessWidget não guarda estado mutável entre rebuilds; StatefulWidget é acoplado a um objeto State que pode mudar e disparar `setState` para reconstruir a UI",
+      "StatelessWidget é mais rápido porque não pode conter nenhum widget filho",
+      "StatefulWidget só pode ser usado na tela raiz do app (a passada para `runApp`)",
+      "StatelessWidget não pode receber parâmetros no construtor, apenas StatefulWidget pode",
+      "A diferença é apenas de nome; ambos têm exatamente o mesmo ciclo de vida internamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Um StatelessWidget é reconstruído a partir apenas dos parâmetros recebidos, sem estado interno mutável. Um StatefulWidget cria um objeto State associado, que pode guardar dados que mudam ao longo do tempo e chamar `setState` para agendar um novo build. Ambos podem ter filhos e receber parâmetros; a diferença está em ter ou não estado mutável interno.",
+    "tags": [
+      "flutter",
+      "widgets",
+      "basics"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_flutter_02",
+    "source": "generated",
+    "topic": "flutter",
+    "level": 2,
+    "question": "Por que usar uma `Key` (como `ValueKey` ou `GlobalKey`) em itens de uma lista dinâmica no Flutter?",
+    "options": [
+      "Para ajudar o Flutter a identificar cada widget de forma estável entre rebuilds, preservando estado e evitando reconciliação incorreta quando a lista é reordenada, filtrada ou tem itens removidos",
+      "Porque sem Key o Flutter não renderiza nenhum item da lista",
+      "Porque Key é obrigatória em todo widget, mesmo em telas estáticas sem listas",
+      "Para melhorar a performance de rede ao buscar os itens do backend",
+      "Para definir a ordem alfabética em que os itens aparecem na tela"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando a lista de widgets muda de ordem ou tem itens inseridos/removidos, o Flutter usa a Key para casar o widget antigo com o novo na árvore de elementos e decidir se reaproveita o State existente ou cria um novo. Sem Key adequada, itens podem perder ou trocar de estado indevidamente. Key não é obrigatória fora desse cenário, não afeta rede e não define ordenação visual.",
+    "tags": [
+      "flutter",
+      "widgets",
+      "performance"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_flutter_03",
+    "source": "generated",
+    "topic": "flutter",
+    "level": 2,
+    "question": "Como um InheritedWidget (base de Provider e outros) permite compartilhar dados com widgets descendentes?",
+    "options": [
+      "Ele guarda dados na árvore de widgets e permite que descendentes o acessem via `context`, sendo notificados para rebuild apenas quando o `InheritedWidget` realmente muda",
+      "Ele injeta uma cópia estática dos dados em variáveis globais lidas por qualquer widget do app",
+      "Ele grava os dados em disco e cada widget lê o arquivo a cada rebuild",
+      "Ele funciona como um singleton que sobrescreve o `BuildContext` de toda a árvore",
+      "Ele exige que cada widget filho declare explicitamente um construtor recebendo os dados como parâmetro"
+    ],
+    "correctIndex": 0,
+    "explanation": "Um InheritedWidget fica na árvore acima dos descendentes que o consultam via `context.dependOnInheritedWidgetOfExactType` (o que Provider e afins encapsulam). Ele notifica e reconstrói apenas os widgets que efetivamente dependem dele quando os dados mudam, evitando rebuilds desnecessários — sem envolver variáveis globais, arquivos em disco ou passagem manual por construtor.",
+    "tags": [
+      "flutter",
+      "state-management",
+      "widgets"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_flutter_04",
+    "source": "generated",
+    "topic": "state_management",
+    "level": 2,
+    "question": "Ao escolher entre BLoC/Cubit, Provider e Riverpod para gerenciar estado em um app Flutter, qual critério é mais relevante?",
+    "options": [
+      "O quanto a equipe valoriza separação explícita entre eventos/estado (BLoC), simplicidade sobre InheritedWidget (Provider) ou verificação em tempo de compilação sem depender de BuildContext (Riverpod) — todas resolvem o mesmo problema com trade-offs diferentes",
+      "Apenas o BLoC é aceito pelo Google para apps publicados na Play Store",
+      "Provider é a única opção compatível com testes automatizados",
+      "Riverpod só funciona em apps que não usam Navigator",
+      "Não há diferença real de trade-off; a escolha é puramente estética de sintaxe"
+    ],
+    "correctIndex": 0,
+    "explanation": "As três soluções resolvem gerenciamento de estado, mas com filosofias distintas: BLoC separa estados e eventos explicitamente (mais boilerplate, mais previsibilidade); Provider é uma camada simples sobre InheritedWidget; Riverpod remove a dependência de BuildContext e adiciona checagem em tempo de compilação. Nenhuma é exigida pela Play Store, todas são testáveis e a diferença vai além de sintaxe.",
+    "tags": [
+      "flutter",
+      "state-management",
+      "architecture"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_flutter_05",
+    "source": "generated",
+    "topic": "flutter",
+    "level": 2,
+    "question": "Qual é o benefício de performance de declarar um widget como `const` (ex.: `const SizedBox(height: 8)`)?",
+    "options": [
+      "O Flutter pode reaproveitar a mesma instância entre rebuilds em vez de recriar o widget, pulando parte do trabalho de reconciliação para aquela subárvore",
+      "O widget passa a ser renderizado em uma thread separada da UI thread",
+      "`const` faz o widget ignorar completamente o ciclo de vida de build",
+      "`const` converte o widget em uma imagem estática (bitmap) pré-renderizada",
+      "Sem `const` o app não compila; o benefício é apenas evitar erro de build"
+    ],
+    "correctIndex": 0,
+    "explanation": "Um widget `const` é uma instância imutável conhecida em tempo de compilação; o Flutter identifica que ela é idêntica entre builds e pode pular a reconstrução daquele nó da árvore, reduzindo trabalho de diffing. Não envolve threads separadas, não ignora o ciclo de vida do widget pai e não gera uma imagem — é puramente uma otimização de reconciliação.",
+    "tags": [
+      "flutter",
+      "performance"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_flutter_06",
+    "source": "generated",
+    "topic": "flutter",
+    "level": 1,
+    "question": "Por que preferir `ListView.builder` a um `ListView` comum com uma lista fixa de children para exibir muitos itens?",
+    "options": [
+      "`ListView.builder` constrói os itens de forma lazy (sob demanda, conforme entram na área visível), evitando montar toda a lista de uma vez na memória",
+      "`ListView.builder` não permite scroll, apenas paginação por botões",
+      "`ListView` comum é mais rápido para qualquer tamanho de lista, mas exige mais código",
+      "`ListView.builder` só funciona dentro de um `Scaffold`",
+      "Não há diferença de comportamento, apenas de nome do construtor"
+    ],
+    "correctIndex": 0,
+    "explanation": "`ListView.builder` chama o `itemBuilder` apenas para os itens próximos da área visível, o que é essencial para listas grandes ou infinitas — evita alocar todos os widgets de uma vez, como aconteceria com um `ListView(children: [...])` fixo. Ele suporta scroll normalmente, não exige `Scaffold` e a diferença de comportamento é real, não só de nome.",
+    "tags": [
+      "flutter",
+      "performance",
+      "widgets"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_flutter_07",
+    "source": "generated",
+    "topic": "flutter",
+    "level": 2,
+    "question": "Qual é a vantagem de um sistema de rotas declarativo (como o usado por auto_route ou Navigator 2.0) em relação ao `Navigator.push` imperativo puro?",
+    "options": [
+      "A pilha de navegação é derivada do estado do app, permitindo tratar deeplinks, restaurar a pilha e sincronizar a URL do navegador (web) de forma consistente",
+      "É a única forma de usar `PopScope` em uma tela",
+      "É obrigatório para qualquer app que use mais de duas telas",
+      "Elimina completamente a necessidade de qualquer tipo de contexto de navegação",
+      "Torna as transições de tela automaticamente mais rápidas em termos de FPS"
+    ],
+    "correctIndex": 0,
+    "explanation": "No modelo declarativo, a pilha de rotas é uma função do estado da aplicação (ex.: usuário logado ou não, deeplink recebido), o que facilita lidar com deeplinks, restauração de estado e navegação na web via URL — algo mais difícil de manter consistente com pushes/pops imperativos espalhados pelo código. Não é exigido para apps simples, não elimina o conceito de navegação e não afeta FPS diretamente.",
+    "tags": [
+      "flutter",
+      "navigation",
+      "architecture"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_flutter_08",
+    "source": "generated",
+    "topic": "testing",
+    "level": 2,
+    "question": "Qual é a diferença entre um widget test e um golden test no Flutter?",
+    "options": [
+      "Widget test verifica comportamento e estrutura da árvore de widgets (ex.: se um texto aparece após um tap); golden test compara a renderização visual pixel a pixel com uma imagem de referência salva",
+      "Golden test roda no dispositivo físico; widget test só roda em CI",
+      "Widget test não pode simular toques ou gestos, apenas golden test pode",
+      "São dois nomes para exatamente o mesmo tipo de teste no pacote flutter_test",
+      "Golden test verifica apenas performance (FPS), nunca aparência"
+    ],
+    "correctIndex": 0,
+    "explanation": "Um widget test monta widgets em um ambiente de teste e faz asserções sobre a árvore e interações (`tester.tap`, `find.text`, etc.). Um golden test vai além: captura a renderização e compara byte a byte com uma imagem 'golden' salva, detectando regressões visuais. Ambos podem rodar em CI ou local, widget tests simulam gestos normalmente, e não são o mesmo tipo de teste.",
+    "tags": [
+      "flutter",
+      "testing"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_android_01",
+    "source": "generated",
+    "topic": "android",
+    "level": 2,
+    "question": "Por que uma ViewModel (Android Jetpack) sobrevive a uma mudança de configuração, como a rotação de tela?",
+    "options": [
+      "Porque o `ViewModelStore` é retido pelo framework independentemente da Activity ser destruída e recriada, então a mesma instância de ViewModel é devolvida na recriação",
+      "Porque a ViewModel é salva automaticamente em disco e recarregada a cada rotação",
+      "Porque a rotação de tela não destrói mais a Activity desde as versões recentes do Android",
+      "Porque a ViewModel roda em um processo separado da Activity, imune a qualquer mudança de configuração",
+      "Porque o desenvolvedor precisa chamar manualmente `retainInstance(true)` na ViewModel"
+    ],
+    "correctIndex": 0,
+    "explanation": "O `ViewModelStore` associado à Activity/Fragment é mantido pelo framework através de mudanças de configuração, mesmo com a Activity sendo destruída e recriada; ao pedir a ViewModel de novo via `ViewModelProvider`, a mesma instância é retornada em vez de uma nova. Não há persistência em disco automática, a rotação ainda pode recriar a Activity, e não roda em processo separado nem exige uma API `retainInstance` na ViewModel.",
+    "tags": [
+      "android",
+      "jetpack",
+      "viewmodel"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_android_02",
+    "source": "generated",
+    "topic": "android",
+    "level": 2,
+    "question": "Para que serve o WorkManager no Android?",
+    "options": [
+      "Para agendar trabalho em background garantido, mesmo que o app seja fechado ou o dispositivo reinicie, respeitando restrições do sistema como Doze e economia de bateria",
+      "Para desenhar layouts complexos de forma declarativa, como alternativa ao XML",
+      "Para gerenciar exclusivamente chamadas de rede síncronas na main thread",
+      "Para substituir o Room como biblioteca de persistência de banco de dados",
+      "Para controlar permissões de runtime solicitadas ao usuário"
+    ],
+    "correctIndex": 0,
+    "explanation": "WorkManager agenda tarefas diferíveis e garantidas (ex.: sincronizar dados, subir logs) que precisam sobreviver a reinícios do app ou do dispositivo, adaptando a execução às restrições do sistema (Doze, economia de bateria, conectividade). Não tem relação com layouts declarativos, não é sobre chamadas síncronas na main thread, não substitui o Room e não trata de permissões de runtime.",
+    "tags": [
+      "android",
+      "background-work"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_android_03",
+    "source": "generated",
+    "topic": "android",
+    "level": 1,
+    "question": "O que é o Room no ecossistema Android e qual problema ele resolve?",
+    "options": [
+      "É uma biblioteca de persistência que oferece uma camada de abstração sobre SQLite, com verificação de queries SQL em tempo de compilação e integração com Flow/LiveData",
+      "É o novo motor de renderização de UI que substituiu as Views tradicionais",
+      "É um serviço do Google Play para sincronizar arquivos entre dispositivos do mesmo usuário",
+      "É a ferramenta de build oficial que substituiu o Gradle no Android Studio",
+      "É a API de câmera introduzida para simplificar CameraX"
+    ],
+    "correctIndex": 0,
+    "explanation": "Room é parte dos Architecture Components e fica sobre o SQLite, gerando o código boilerplate de acesso a dados a partir de entidades e DAOs anotados, validando as queries SQL já em tempo de compilação e expondo resultados como Flow/LiveData. Não é um motor de UI, serviço de sincronização de arquivos, ferramenta de build nem API de câmera.",
+    "tags": [
+      "android",
+      "room",
+      "persistence"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_android_04",
+    "source": "generated",
+    "topic": "performance",
+    "level": 2,
+    "question": "O que é um ANR (Application Not Responding) no Android e o que geralmente o causa?",
+    "options": [
+      "É um diálogo do sistema exibido quando a main thread fica bloqueada por tempo demais (ex.: I/O síncrono ou cálculo pesado nela), impedindo o app de responder a eventos",
+      "É um erro exclusivo de apps escritos em Java, que não ocorre em apps Kotlin",
+      "É um crash causado por uma exceção não tratada em qualquer thread do app",
+      "É o aviso exibido quando o app excede o limite de tamanho do APK",
+      "É gerado automaticamente sempre que o app usa mais de uma Activity"
+    ],
+    "correctIndex": 0,
+    "explanation": "Um ANR ocorre quando a main (UI) thread não processa eventos de input ou broadcasts dentro do tempo esperado pelo sistema, normalmente por trabalho pesado ou I/O bloqueante feito diretamente nela em vez de em background. Não depende da linguagem (Java ou Kotlin sofrem igualmente), é diferente de um crash por exceção, não tem relação com tamanho do APK e não é causado apenas por ter múltiplas Activities.",
+    "tags": [
+      "android",
+      "performance",
+      "anr"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_android_05",
+    "source": "generated",
+    "topic": "android",
+    "level": 2,
+    "question": "Qual é a diferença prática entre usar o Context da Application e o Context de uma Activity no Android?",
+    "options": [
+      "O Context da Application vive durante todo o ciclo de vida do processo e não deve ser usado para operações ligadas à UI (como exibir um Dialog); o da Activity é vinculado ao ciclo de vida dela e é o correto para isso, evitando leaks",
+      "Não há diferença: os dois Context são intercambiáveis em qualquer situação",
+      "O Context da Application só existe em apps com múltiplos processos",
+      "O Context da Activity nunca pode ser usado para acessar recursos (strings, drawables)",
+      "Usar o Context da Application sempre causa crash imediato do app"
+    ],
+    "correctIndex": 0,
+    "explanation": "O Application Context tem escopo de todo o processo e sobrevive além de qualquer Activity — ótimo para singletons e bibliotecas, mas guardar uma referência longa a um Activity Context (ou usar Application Context para inflar UI vinculada a uma tela) pode causar memory leak ou comportamento incorreto de Dialogs/Toasts. Ambos dão acesso a recursos, e usar o Application Context incorretamente não causa crash imediato, apenas problemas sutis.",
+    "tags": [
+      "android",
+      "context",
+      "memory"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_android_06",
+    "source": "generated",
+    "topic": "android",
+    "level": 2,
+    "question": "Quando um Service comum (não foreground) é apropriado no Android, e por que ele não deve ser usado para tarefas longas e visíveis ao usuário?",
+    "options": [
+      "É apropriado para trabalho em background de curta duração enquanto o app está em foreground; para tarefas longas visíveis ao usuário, um foreground Service com notificação é exigido para evitar que o sistema o mate para liberar recursos",
+      "Service comum roda com prioridade máxima do sistema, então é sempre a melhor opção para qualquer tarefa em background",
+      "Service comum e foreground Service são exatamente a mesma API, apenas com nomes diferentes",
+      "Service comum é a única forma de tocar áudio em background no Android",
+      "Foreground Service é proibido pelo Google Play desde as versões recentes do Android"
+    ],
+    "correctIndex": 0,
+    "explanation": "Um Service comum roda com prioridade baixa e pode ser encerrado pelo sistema quando precisa liberar memória, o que o torna inadequado para trabalho longo e importante. Um foreground Service exige uma notificação visível e recebe prioridade maior, sinalizando ao usuário e ao sistema que aquele trabalho está ativo. As duas APIs são distintas, nenhuma tem prioridade máxima garantida, e foreground Service continua permitido (com regras de uso, não proibido).",
+    "tags": [
+      "android",
+      "service",
+      "background-work"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_ios_01",
+    "source": "generated",
+    "topic": "ios",
+    "level": 2,
+    "question": "Qual é a principal diferença de paradigma entre SwiftUI e UIKit?",
+    "options": [
+      "SwiftUI é declarativo — a view é descrita como função do estado e se atualiza automaticamente quando o estado muda; UIKit é imperativo — o desenvolvedor manipula views existentes diretamente para refletir mudanças",
+      "UIKit só funciona em iPad; SwiftUI só funciona em iPhone",
+      "SwiftUI não suporta animações, apenas UIKit suporta",
+      "UIKit foi descontinuado pela Apple e não pode mais ser usado em novos apps",
+      "Não há diferença de paradigma; SwiftUI é apenas um conjunto novo de ícones para os mesmos componentes do UIKit"
+    ],
+    "correctIndex": 0,
+    "explanation": "Em SwiftUI, a UI é declarada como uma função do estado atual (parecido com o Flutter), e o framework recalcula a view quando o estado observado muda. No UIKit, o desenvolvedor atualiza views concretas manualmente (ex.: `label.text = novoValor`). Ambos suportam iPhone e iPad, ambos suportam animação, e UIKit continua sendo mantido e amplamente usado, não foi descontinuado.",
+    "tags": [
+      "ios",
+      "swiftui",
+      "uikit"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_ios_02",
+    "source": "generated",
+    "topic": "ios",
+    "level": 2,
+    "question": "O que é o framework Combine no ecossistema Apple e para que é usado?",
+    "options": [
+      "É um framework de programação reativa da Apple para processar eventos assíncronos ao longo do tempo através de Publishers e Subscribers, de forma similar a Streams",
+      "É a ferramenta oficial de build e distribuição de apps na App Store",
+      "É um framework exclusivo para renderização de gráficos 3D em jogos",
+      "É a biblioteca de persistência que substituiu totalmente o Core Data",
+      "É um serviço de push notifications hospedado pela Apple"
+    ],
+    "correctIndex": 0,
+    "explanation": "Combine oferece um modelo reativo declarativo: `Publisher`s emitem valores ao longo do tempo e `Subscriber`s reagem a eles, com operadores para transformar, filtrar e combinar esses fluxos — conceito próximo ao de Streams do Dart ou Rx em outras plataformas. Não é ferramenta de build/distribuição, não é para gráficos 3D, não substituiu o Core Data (podem coexistir) e não é um serviço de notificações.",
+    "tags": [
+      "ios",
+      "combine",
+      "reactive"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_ios_03",
+    "source": "generated",
+    "topic": "ios",
+    "level": 2,
+    "question": "O que é o Core Data no iOS?",
+    "options": [
+      "Um framework de persistência e modelagem de objetos da Apple, que gerencia um grafo de objetos e pode usar SQLite como armazenamento por trás, poupando o desenvolvedor de escrever SQL manualmente",
+      "Uma API para acessar sensores do dispositivo, como acelerômetro e giroscópio",
+      "O nome do banco de dados remoto oficial usado por todo app publicado na App Store",
+      "Um framework de UI para tabelas (equivalente exclusivo ao UITableView)",
+      "Uma ferramenta de analytics de crash reporting da Apple"
+    ],
+    "correctIndex": 0,
+    "explanation": "Core Data modela um grafo de objetos com relacionamentos, validações e change tracking, persistindo-os (tipicamente sobre SQLite, embora isso seja um detalhe de implementação) sem exigir SQL manual do desenvolvedor. Não é API de sensores, não é um banco remoto obrigatório da App Store, não é sinônimo de UITableView e não é uma ferramenta de crash analytics.",
+    "tags": [
+      "ios",
+      "core-data",
+      "persistence"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_ios_04",
+    "source": "generated",
+    "topic": "ios",
+    "level": 2,
+    "question": "No ciclo de vida de um app iOS, o que diferencia os estados 'inactive' e 'background'?",
+    "options": [
+      "'inactive' é uma transição breve em que o app ainda está na tela mas não recebe eventos (ex.: durante uma ligação chegando); 'background' é quando o app não está visível, mas ainda pode executar código por um tempo limitado",
+      "'inactive' significa que o app foi encerrado pelo sistema; 'background' significa que ele está em primeiro plano",
+      "Os dois estados são sinônimos usados em versões diferentes do Xcode",
+      "'background' só existe em iPad, nunca em iPhone",
+      "Um app em 'inactive' não pode voltar a ficar ativo; precisa ser reaberto do zero"
+    ],
+    "correctIndex": 0,
+    "explanation": "'Inactive' é um estado transitório e curto (o app está visível mas não interativo, como ao receber uma notificação de chamada). 'Background' ocorre quando o usuário saiu do app, que continua rodando por tempo limitado (ou tarefas específicas) antes de ser suspenso. Nenhum dos dois significa que o app foi encerrado, ambos existem em iPhone e iPad, e o app pode voltar de 'inactive' para 'active' normalmente.",
+    "tags": [
+      "ios",
+      "lifecycle"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_ios_05",
+    "source": "generated",
+    "topic": "ios",
+    "level": 1,
+    "question": "Qual é o papel do Auto Layout no desenvolvimento iOS com UIKit?",
+    "options": [
+      "Definir a interface através de restrições (constraints) relativas entre views, permitindo que o layout se adapte a diferentes tamanhos de tela e orientações",
+      "Compilar o código Swift para código nativo ARM antes do upload à App Store",
+      "Gerenciar exclusivamente animações de transição entre telas",
+      "Substituir o Storyboard, sendo proibido usar os dois ao mesmo tempo",
+      "Controlar permissões de acesso a localização e câmera"
+    ],
+    "correctIndex": 0,
+    "explanation": "Auto Layout descreve a UI através de constraints (ex.: 'esta view fica a 16pt da borda esquerda') em vez de posições e tamanhos fixos, permitindo adaptação a diferentes tamanhos de tela, orientações e configurações de acessibilidade. Não tem relação com compilação para ARM, não é só sobre animações, pode coexistir com Storyboards (não é proibido) e não trata de permissões do sistema.",
+    "tags": [
+      "ios",
+      "auto-layout",
+      "uikit"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_system_design_01",
+    "source": "generated",
+    "topic": "system_design",
+    "level": 2,
+    "question": "O que caracteriza uma arquitetura mobile 'offline-first'?",
+    "options": [
+      "O app trata o armazenamento local como fonte primária de verdade para leitura e escrita, sincronizando com o backend em segundo plano quando há conectividade, em vez de depender da rede para cada operação",
+      "O app se recusa a fazer qualquer chamada de rede, mesmo quando o dispositivo está online",
+      "É uma arquitetura só viável para apps sem necessidade de dados atualizados, como calculadoras",
+      "Significa que o app armazena os dados apenas em memória RAM, nunca em disco",
+      "É obrigatório usar GraphQL para qualquer app ser considerado offline-first"
+    ],
+    "correctIndex": 0,
+    "explanation": "Offline-first prioriza ler e escrever no armazenamento local (ex.: SQLite/Drift) imediatamente, mantendo o app funcional sem rede, e sincroniza com o servidor de forma assíncrona/em fila quando a conectividade volta — exatamente o padrão usado por este app com a fila de progresso pendente. Não significa recusar toda chamada de rede, não se limita a apps sem necessidade de dados atuais, não implica apenas RAM e não depende de GraphQL especificamente.",
+    "tags": [
+      "system-design",
+      "offline",
+      "architecture"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_system_design_02",
+    "source": "generated",
+    "topic": "system_design",
+    "level": 2,
+    "question": "Ao paginar uma lista grande vinda de uma API, qual é a vantagem de paginação por cursor sobre paginação por offset/página?",
+    "options": [
+      "Paginação por cursor evita itens duplicados ou pulados quando novos registros são inseridos entre as páginas, já que o cursor referencia uma posição estável (ex.: um id ou timestamp) em vez de um índice numérico que desloca com inserções",
+      "Paginação por cursor é sempre mais rápida de implementar no cliente, independente do backend",
+      "Offset é exclusivo de bancos NoSQL; cursor é exclusivo de bancos relacionais",
+      "Paginação por cursor não permite voltar para uma página anterior, apenas avançar",
+      "Não há diferença prática entre as duas abordagens em nenhum cenário"
+    ],
+    "correctIndex": 0,
+    "explanation": "Com offset (`LIMIT 20 OFFSET 40`), inserções entre as consultas deslocam quais itens caem em cada página, causando duplicatas ou itens pulados. Cursor-based pagination ancora a próxima busca em um ponto estável (ex.: 'itens após o id X'), imune a esse deslocamento. A escolha não depende do tipo de banco (SQL ou NoSQL podem usar qualquer uma), cursor bidirecional é possível, e a implementação não é sempre mais simples — depende do backend expor o cursor.",
+    "tags": [
+      "system-design",
+      "pagination",
+      "api"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_system_design_03",
+    "source": "generated",
+    "topic": "system_design",
+    "level": 2,
+    "question": "O que é a estratégia de cache 'cache-aside' (lazy loading)?",
+    "options": [
+      "A aplicação verifica o cache primeiro; se não encontrar (cache miss), busca na fonte de dados original e então grava o resultado no cache para as próximas leituras",
+      "É uma estratégia em que o cache é sempre atualizado antes da fonte de dados original, nunca depois",
+      "É exclusiva de bancos de dados relacionais, incompatível com APIs REST",
+      "Significa desabilitar completamente qualquer cache para garantir dados sempre atualizados",
+      "É a técnica de armazenar todo o banco de dados inteiro na memória do cliente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Em cache-aside, a aplicação consulta o cache; se o dado não estiver lá, busca na fonte (ex.: banco ou API) e popula o cache antes de retornar, para que a próxima leitura seja servida direto do cache. É diferente de write-through (que atualiza o cache junto com a escrita), não é exclusiva de bancos relacionais nem incompatível com REST, não significa desabilitar cache e não envolve replicar todo o banco no cliente.",
+    "tags": [
+      "system-design",
+      "caching"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_system_design_04",
+    "source": "generated",
+    "topic": "system_design",
+    "level": 2,
+    "question": "Qual é a principal diferença entre uma API REST tradicional e uma API GraphQL do ponto de vista do cliente mobile?",
+    "options": [
+      "Em GraphQL o cliente especifica exatamente quais campos quer em uma única query, reduzindo over-fetching/under-fetching; em REST o formato da resposta é fixo por endpoint, podendo exigir múltiplas chamadas para montar uma tela",
+      "GraphQL só funciona sobre WebSockets, nunca sobre HTTP",
+      "REST não suporta autenticação, apenas GraphQL suporta",
+      "GraphQL é obrigatoriamente mais rápido em qualquer cenário, sem exceções",
+      "REST e GraphQL são a mesma especificação, apenas com sintaxes de URL diferentes"
+    ],
+    "correctIndex": 0,
+    "explanation": "GraphQL permite ao cliente descrever exatamente os campos e relações desejados numa única requisição, útil quando telas diferentes precisam de subconjuntos diferentes de dados. REST expõe recursos com formato fixo por endpoint, o que pode levar a buscar dados demais (over-fetching) ou precisar de várias chamadas (under-fetching). GraphQL tipicamente roda sobre HTTP (não exige WebSocket), REST suporta autenticação normalmente, e nenhuma das duas é universalmente mais rápida — depende do caso de uso.",
+    "tags": [
+      "system-design",
+      "api",
+      "graphql",
+      "rest"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
+  },
+  {
+    "id": "generated_system_design_05",
+    "source": "generated",
+    "topic": "architecture",
+    "level": 2,
+    "question": "Na Clean Architecture, qual é a responsabilidade da camada de domínio (use cases/entities) e por que ela não deve depender de Flutter ou de bibliotecas de UI?",
+    "options": [
+      "Ela concentra as regras de negócio puras da aplicação; mantê-la independente de frameworks permite testá-la isoladamente e trocar a camada de apresentação ou de dados sem reescrever a lógica de negócio",
+      "A camada de domínio deve conter os widgets principais da tela, já que é ali que o usuário interage com o app",
+      "Ela é responsável por fazer as chamadas HTTP diretamente, sem passar por repositórios",
+      "Ela deve depender do Flutter para acessar `BuildContext` e mostrar diálogos de erro diretamente",
+      "É uma camada opcional, útil apenas em apps que não têm testes automatizados"
+    ],
+    "correctIndex": 0,
+    "explanation": "A camada de domínio (entities, use cases) encapsula regras de negócio independentes de detalhes técnicos; não depender de Flutter/UI permite testar essa lógica sem um ambiente de widgets e trocar a camada de dados (ex.: outra fonte remota) ou de apresentação sem afetar as regras. Ela não contém widgets, não faz chamadas HTTP diretamente (isso é papel de data sources/repositórios) e não deve depender de `BuildContext` — e seu valor não se restringe a apps sem testes, pelo contrário, ela existe para viabilizá-los.",
+    "tags": [
+      "architecture",
+      "clean-architecture",
+      "testing"
+    ],
+    "language": "pt-BR",
+    "generated_answer": true
   }
 ]

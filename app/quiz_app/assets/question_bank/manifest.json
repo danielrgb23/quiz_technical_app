@@ -1,7 +1,7 @@
 {
-  "version": 1,
-  "generatedAt": "2026-07-24T17:26:17.436139+00:00",
-  "count": 20,
+  "version": 2,
+  "generatedAt": "2026-07-27T14:16:39.812066+00:00",
+  "count": 50,
   "sources": [
     {
       "id": "mindorks_android",
@@ -22,7 +22,12 @@
       "id": "weeebox_system_design",
       "repo": "weeeBox/mobile-system-design",
       "license": "MIT"
+    },
+    {
+      "id": "generated",
+      "repo": "gerado internamente (revisão manual) para cobrir android/ios/system-design/dart além dos repos externos acima",
+      "license": "N/A"
     }
   ],
-  "checksum": "e733827918eed776842e7512b2031fc946420d77271707cc480afc1126743f2a"
+  "checksum": "fea9d0327deabbb689a83363b3d34116f0b08446f3cde3fc6f1c51dcb311035f"
 }

@@ -21,9 +21,9 @@ class BankSyncServiceImpl implements BankSyncService {
 
   @override
   Future<void> ensureSeeded() async {
-    final localVersion = await _db.bankVersion();
-    if (localVersion > 0) return;
     final manifest = await _asset.loadManifest();
+    final localVersion = await _db.bankVersion();
+    if (localVersion >= manifest.version) return;
     final questions = await _asset.loadQuestions();
     await _db.importBank(questions, manifest.version);
     AppLogger.info(
