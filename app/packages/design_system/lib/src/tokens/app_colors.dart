@@ -21,6 +21,13 @@ abstract class AppColors {
   static const Color error = Color(0xFFB00020);
   static const Color onError = Color(0xFFFFFFFF);
 
+  // Gamificação (streak, XP, progresso)
+  static const Color streak = Color(0xFFFF7A1A);
+  static const Color streakDark = Color(0xFFE55F00);
+  static const Color xp = Color(0xFFFFC107);
+  static const Color xpDark = Color(0xFFE5A800);
+  static const Color success = Color(0xFF2ECC71);
+
   // Neutral
   static const Color grey100 = Color(0xFFF5F5F5);
   static const Color grey200 = Color(0xFFEEEEEE);

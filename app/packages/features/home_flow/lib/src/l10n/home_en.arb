@@ -10,18 +10,25 @@
   "@featured": { "description": "Featured badge" },
   "viewAll": "View All",
   "@viewAll": { "description": "View all link" },
-  "navOnboarding": "Onboarding",
-  "@navOnboarding": { "description": "Debug navigation menu item" },
-  "navLogin": "Login",
-  "@navLogin": { "description": "Debug navigation menu item" },
-  "navRegister": "Register",
-  "@navRegister": { "description": "Debug navigation menu item" },
-  "navLogout": "Logout",
-  "@navLogout": { "description": "Debug navigation menu item" },
-  "streakLabel": "{days} day streak",
+  "streakLabel": "{days} days",
   "@streakLabel": {
     "description": "Current streak on the dashboard",
     "placeholders": { "days": { "type": "int" } }
+  },
+  "xpTotalLabel": "{xp} XP",
+  "@xpTotalLabel": {
+    "description": "Total XP earned so far",
+    "placeholders": { "xp": { "type": "int" } }
+  },
+  "levelLabel": "Level {level}",
+  "@levelLabel": {
+    "description": "Current level, derived from total XP",
+    "placeholders": { "level": { "type": "int" } }
+  },
+  "xpToNextLevelLabel": "{xp} XP to go",
+  "@xpToNextLevelLabel": {
+    "description": "XP remaining to reach the next level",
+    "placeholders": { "xp": { "type": "int" } }
   },
   "dailyChallengeCta": "Daily challenge",
   "@dailyChallengeCta": { "description": "CTA to start the daily quiz challenge" },

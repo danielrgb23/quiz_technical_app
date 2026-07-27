@@ -1,3 +1,4 @@
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -62,7 +63,12 @@ void main() {
     await tester.tap(find.text(l10n.confirmButtonLabel));
     await tester.pumpAndSettle();
 
-    // Feedback: explicação visível.
+    // Feedback: card mostra a questão na frente; toca para virar e ver a
+    // explicação no verso.
+    expect(find.byType(DsFlipCard), findsOneWidget);
+    await tester.tap(find.byType(DsFlipCard));
+    await tester.pumpAndSettle();
+
     expect(find.text(l10n.explanationLabel), findsOneWidget);
     expect(
       find.text('A alternativa certa está correta porque sim.'),

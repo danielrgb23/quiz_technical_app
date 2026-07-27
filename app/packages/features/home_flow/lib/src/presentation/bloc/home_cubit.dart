@@ -13,6 +13,7 @@ abstract class HomeState with _$HomeState {
   const factory HomeState.loaded({
     required List<String> topics,
     required int streakDays,
+    required int xpTotal,
   }) = HomeLoaded;
   const factory HomeState.failure(String message) = HomeFailure;
 }
@@ -41,6 +42,7 @@ class HomeCubit extends Cubit<HomeState> {
       HomeState.loaded(
         topics: topicsResult.dataOrNull!,
         streakDays: statsResult.dataOrNull?.streakDays ?? 0,
+        xpTotal: statsResult.dataOrNull?.xpTotal ?? 0,
       ),
     );
   }

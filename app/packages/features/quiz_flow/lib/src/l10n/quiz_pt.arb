@@ -22,5 +22,7 @@
   "emptyReviewMessage": "Nenhuma questão para revisar agora.",
   "questionNotFoundMessage": "Questão não encontrada.",
   "dailyChallengeTitle": "Desafio diário",
-  "questionProgressLabel": "{index}/{total}"
+  "questionProgressLabel": "{index}/{total}",
+  "flipToExplanationHint": "Toque no card para ver a explicação",
+  "flipToQuestionHint": "Toque no card para voltar"
 }

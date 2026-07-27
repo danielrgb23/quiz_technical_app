@@ -12,6 +12,7 @@ export 'src/theme/app_theme_data.dart';
 export 'src/widgets/ds_button.dart';
 export 'src/widgets/ds_text_field.dart';
 export 'src/widgets/ds_card.dart';
+export 'src/widgets/ds_flip_card.dart';
 export 'src/widgets/ds_loading.dart';
 export 'src/widgets/ds_error.dart';
 

@@ -43,5 +43,7 @@
       "index": { "type": "int" },
       "total": { "type": "int" }
     }
-  }
+  },
+  "flipToExplanationHint": "Tap the card to see the explanation",
+  "flipToQuestionHint": "Tap the card to go back"
 }

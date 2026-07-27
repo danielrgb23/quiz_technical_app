@@ -207,15 +207,24 @@ class _QuestionView extends StatelessWidget {
   }
 }
 
-class _FeedbackView extends StatelessWidget {
+class _FeedbackView extends StatefulWidget {
   const _FeedbackView({required this.state, required this.cubit});
 
   final QuizSessionFeedback state;
   final QuizSessionCubit cubit;
 
   @override
+  State<_FeedbackView> createState() => _FeedbackViewState();
+}
+
+class _FeedbackViewState extends State<_FeedbackView> {
+  bool _showBack = false;
+
+  @override
   Widget build(BuildContext context) {
     final l10n = QuizLocalizations.of(context)!;
+    final state = widget.state;
+    final cubit = widget.cubit;
     final isCorrect = state.answer.isCorrect;
     return SafeArea(
       child: Padding(
@@ -228,24 +237,45 @@ class _FeedbackView extends StatelessWidget {
               style: Theme.of(context).textTheme.labelMedium,
             ),
             const SizedBox(height: AppSpacing.sm),
-            _QuestionBody(question: state.current),
-            const SizedBox(height: AppSpacing.lg),
             Expanded(
-              child: ListView(
-                children: [
-                  for (var i = 0; i < state.current.options.length; i++)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: AppSpacing.sm),
-                      child: _AlternativeCard(
-                        text: state.current.options[i],
-                        selected: i == state.answer.selectedIndex,
-                        correct: i == state.current.correctIndex,
-                        revealed: true,
-                        onTap: null,
-                      ),
+              child: DsFlipCard(
+                key: ValueKey(state.current.id),
+                showBack: _showBack,
+                onFlip: (showBack) => setState(() => _showBack = showBack),
+                front: _FlashCardFace(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        _QuestionBody(question: state.current),
+                        const SizedBox(height: AppSpacing.lg),
+                        for (var i = 0; i < state.current.options.length; i++)
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              bottom: AppSpacing.sm,
+                            ),
+                            child: _AlternativeCard(
+                              text: state.current.options[i],
+                              selected: i == state.answer.selectedIndex,
+                              correct: i == state.current.correctIndex,
+                              revealed: true,
+                              onTap: null,
+                            ),
+                          ),
+                        const SizedBox(height: AppSpacing.sm),
+                        _FlipHint(
+                          icon: Icons.flip,
+                          label: l10n.flipToExplanationHint,
+                        ),
+                      ],
                     ),
-                  const SizedBox(height: AppSpacing.md),
-                  DsCard(
+                  ),
+                ),
+                back: _FlashCardFace(
+                  color: isCorrect
+                      ? AppColors.success.withValues(alpha: 0.08)
+                      : AppColors.error.withValues(alpha: 0.06),
+                  child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -253,35 +283,47 @@ class _FeedbackView extends StatelessWidget {
                           children: [
                             Icon(
                               isCorrect ? Icons.check_circle : Icons.cancel,
-                              color: isCorrect ? Colors.green : Colors.red,
+                              color: isCorrect
+                                  ? AppColors.success
+                                  : AppColors.error,
                             ),
                             const SizedBox(width: AppSpacing.sm),
                             Text(
                               l10n.explanationLabel,
-                              style: Theme.of(context).textTheme.titleSmall,
+                              style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ],
                         ),
-                        const SizedBox(height: AppSpacing.sm),
-                        Text(state.current.explanation),
+                        const SizedBox(height: AppSpacing.md),
+                        Text(
+                          state.current.explanation,
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        const SizedBox(height: AppSpacing.lg),
+                        _FlipHint(
+                          icon: Icons.flip_camera_android_outlined,
+                          label: l10n.flipToQuestionHint,
+                        ),
                       ],
                     ),
                   ),
-                  TextButton.icon(
-                    onPressed: () async {
-                      await cubit.reportCurrentQuestion();
-                      if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(content: Text(l10n.reportSuccessMessage)),
-                        );
-                      }
-                    },
-                    icon: const Icon(Icons.flag_outlined, size: 16),
-                    label: Text(l10n.reportButtonLabel),
-                  ),
-                ],
+                ),
               ),
             ),
+            const SizedBox(height: AppSpacing.sm),
+            TextButton.icon(
+              onPressed: () async {
+                await cubit.reportCurrentQuestion();
+                if (context.mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l10n.reportSuccessMessage)),
+                  );
+                }
+              },
+              icon: const Icon(Icons.flag_outlined, size: 16),
+              label: Text(l10n.reportButtonLabel),
+            ),
+            const SizedBox(height: AppSpacing.sm),
             SizedBox(
               width: double.infinity,
               child: DsButton(
@@ -292,6 +334,53 @@ class _FeedbackView extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _FlashCardFace extends StatelessWidget {
+  const _FlashCardFace({required this.child, this.color});
+
+  final Widget child;
+  final Color? color;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: double.infinity,
+      child: Card(
+        color: color,
+        shape: RoundedRectangleBorder(borderRadius: AppRadius.borderRadiusLg),
+        elevation: 2,
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.lg),
+          child: child,
+        ),
+      ),
+    );
+  }
+}
+
+class _FlipHint extends StatelessWidget {
+  const _FlipHint({required this.icon, required this.label});
+
+  final IconData icon;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(icon, size: 16, color: Theme.of(context).colorScheme.outline),
+        const SizedBox(width: AppSpacing.xs),
+        Text(
+          label,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            color: Theme.of(context).colorScheme.outline,
+          ),
+        ),
+      ],
     );
   }
 }
