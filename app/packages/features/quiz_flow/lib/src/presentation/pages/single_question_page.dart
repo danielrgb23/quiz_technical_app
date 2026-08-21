@@ -93,18 +93,19 @@ class _LoadedViewState extends State<_LoadedView> {
               const SizedBox(height: AppSpacing.lg),
               Expanded(
                 child: ListView.separated(
-                  itemCount: state.question.options.length,
+                  itemCount: state.optionOrder.length,
                   separatorBuilder: (_, _) =>
                       const SizedBox(height: AppSpacing.sm),
-                  itemBuilder: (context, index) {
-                    final color = state.selectedIndex == index
+                  itemBuilder: (context, position) {
+                    final optionIndex = state.optionOrder[position];
+                    final color = state.selectedIndex == optionIndex
                         ? Theme.of(context).colorScheme.primaryContainer
                         : null;
                     return DsCard(
-                      onTap: () => cubit.selectOption(index),
+                      onTap: () => cubit.selectOption(optionIndex),
                       child: Container(
                         color: color,
-                        child: Text(state.question.options[index]),
+                        child: Text(state.question.options[optionIndex]),
                       ),
                     );
                   },
@@ -144,11 +145,7 @@ class _LoadedViewState extends State<_LoadedView> {
                           style: Theme.of(context).textTheme.titleLarge,
                         ),
                         const SizedBox(height: AppSpacing.lg),
-                        for (
-                          var i = 0;
-                          i < state.question.options.length;
-                          i++
-                        )
+                        for (final i in state.optionOrder)
                           Padding(
                             padding: const EdgeInsets.only(
                               bottom: AppSpacing.sm,

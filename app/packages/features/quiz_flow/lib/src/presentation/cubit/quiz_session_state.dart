@@ -17,6 +17,7 @@ sealed class QuizSessionState with _$QuizSessionState {
     required int index,
     required int total,
     required int streakDays,
+    required List<int> optionOrder,
     int? selectedIndex,
   }) = QuizSessionQuestion;
 
@@ -25,6 +26,7 @@ sealed class QuizSessionState with _$QuizSessionState {
     required Answer answer,
     required int index,
     required int total,
+    required List<int> optionOrder,
   }) = QuizSessionFeedback;
 
   const factory QuizSessionState.summary(SessionResult result) =

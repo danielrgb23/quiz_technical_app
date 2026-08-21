@@ -6,6 +6,7 @@ import 'package:question_bank_module/question_bank.dart';
 import 'package:quiz_module/quiz_module.dart';
 import 'package:shared/shared.dart';
 
+import 'option_order.dart';
 import 'quiz_session_state.dart';
 
 /// ViewModel da sessão de quiz (MVVM: estado imutável + métodos de intenção;
@@ -119,6 +120,7 @@ class QuizSessionCubit extends Cubit<QuizSessionState> {
         answer: answer,
         index: current.index,
         total: current.total,
+        optionOrder: current.optionOrder,
       ),
     );
   }
@@ -181,12 +183,14 @@ class QuizSessionCubit extends Cubit<QuizSessionState> {
   void _emitCurrentQuestion() {
     final session = _session!;
     _questionStartedAt = DateTime.now();
+    final current = session.currentQuestion!;
     emit(
       QuizSessionState.question(
-        current: session.currentQuestion!,
+        current: current,
         index: session.currentIndex,
         total: session.questions.length,
         streakDays: _streakDays,
+        optionOrder: shuffledOptionOrder(current.options.length),
       ),
     );
   }

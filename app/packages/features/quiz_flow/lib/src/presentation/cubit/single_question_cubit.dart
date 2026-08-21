@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:question_bank_module/question_bank.dart';
 import 'package:quiz_module/quiz_module.dart';
 
+import 'option_order.dart';
 import 'single_question_state.dart';
 
 /// ViewModel do modo questão única (deeplink `/question/{id}`): a explicação
@@ -22,7 +23,13 @@ class SingleQuestionCubit extends Cubit<SingleQuestionState> {
       emit(const SingleQuestionState.notFound());
       return;
     }
-    emit(SingleQuestionState.loaded(question: result.dataOrNull!));
+    final question = result.dataOrNull!;
+    emit(
+      SingleQuestionState.loaded(
+        question: question,
+        optionOrder: shuffledOptionOrder(question.options.length),
+      ),
+    );
   }
 
   void selectOption(int index) {

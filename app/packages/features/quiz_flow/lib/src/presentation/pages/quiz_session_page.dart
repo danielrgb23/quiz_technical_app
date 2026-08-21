@@ -183,14 +183,17 @@ class _QuestionView extends StatelessWidget {
             const SizedBox(height: AppSpacing.lg),
             Expanded(
               child: ListView.separated(
-                itemCount: state.current.options.length,
+                itemCount: state.optionOrder.length,
                 separatorBuilder: (_, _) =>
                     const SizedBox(height: AppSpacing.sm),
-                itemBuilder: (context, index) => _AlternativeCard(
-                  text: state.current.options[index],
-                  selected: state.selectedIndex == index,
-                  onTap: () => cubit.selectOption(index),
-                ),
+                itemBuilder: (context, position) {
+                  final optionIndex = state.optionOrder[position];
+                  return _AlternativeCard(
+                    text: state.current.options[optionIndex],
+                    selected: state.selectedIndex == optionIndex,
+                    onTap: () => cubit.selectOption(optionIndex),
+                  );
+                },
               ),
             ),
             SizedBox(
@@ -249,7 +252,7 @@ class _FeedbackViewState extends State<_FeedbackView> {
                       children: [
                         _QuestionBody(question: state.current),
                         const SizedBox(height: AppSpacing.lg),
-                        for (var i = 0; i < state.current.options.length; i++)
+                        for (final i in state.optionOrder)
                           Padding(
                             padding: const EdgeInsets.only(
                               bottom: AppSpacing.sm,

@@ -11,6 +11,7 @@ sealed class SingleQuestionState with _$SingleQuestionState {
 
   const factory SingleQuestionState.loaded({
     required Question question,
+    required List<int> optionOrder,
     int? selectedIndex,
     Answer? answer,
   }) = SingleQuestionLoaded;
