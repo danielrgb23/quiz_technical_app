@@ -39,7 +39,7 @@ void main() {
 
 class _StubGetUserStatsUseCase implements GetUserStatsUseCase {
   @override
-  Future<Result<UserStats>> call() async => Result.success(
+  Future<Result<UserStats>> call({DateTime? now}) async => Result.success(
     const UserStats(
       streakDays: 5,
       xpTotal: 120,

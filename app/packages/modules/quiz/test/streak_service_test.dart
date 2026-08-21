@@ -60,4 +60,42 @@ void main() {
     );
     expect(streak, 3);
   });
+
+  group('currentStreak (exibição sem sessão completada hoje)', () {
+    test('nunca completou sessão -> 0', () {
+      final streak = service.currentStreak(
+        storedStreak: 5,
+        lastCompletedAt: null,
+        now: DateTime(2026, 1, 11),
+      );
+      expect(streak, 0);
+    });
+
+    test('última sessão hoje -> mantém o streak guardado', () {
+      final streak = service.currentStreak(
+        storedStreak: 5,
+        lastCompletedAt: DateTime(2026, 1, 11, 8),
+        now: DateTime(2026, 1, 11, 20),
+      );
+      expect(streak, 5);
+    });
+
+    test('última sessão ontem -> mantém (ainda dá tempo de jogar hoje)', () {
+      final streak = service.currentStreak(
+        storedStreak: 5,
+        lastCompletedAt: DateTime(2026, 1, 10),
+        now: DateTime(2026, 1, 11),
+      );
+      expect(streak, 5);
+    });
+
+    test('última sessão antes de ontem -> streak quebrado, exibe 0', () {
+      final streak = service.currentStreak(
+        storedStreak: 5,
+        lastCompletedAt: DateTime(2026, 1, 8),
+        now: DateTime(2026, 1, 11),
+      );
+      expect(streak, 0);
+    });
+  });
 }

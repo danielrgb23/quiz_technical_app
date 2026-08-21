@@ -28,4 +28,23 @@ class StreakService {
 
     return 1;
   }
+
+  /// Streak para exibição (ex.: dashboard) sem que o usuário tenha
+  /// completado uma sessão hoje: [computeStreakOnSessionCompleted] só
+  /// reavalia o streak quando uma sessão é concluída, então sem isso a UI
+  /// continuaria mostrando o streak antigo mesmo depois de dias sem
+  /// atividade. Streak quebrado (última sessão antes de ontem) exibe 0.
+  int currentStreak({
+    required int storedStreak,
+    required DateTime? lastCompletedAt,
+    required DateTime now,
+  }) {
+    if (lastCompletedAt == null) return 0;
+    if (_isSameLocalDay(lastCompletedAt, now)) return storedStreak;
+
+    final yesterday = now.subtract(const Duration(days: 1));
+    if (_isSameLocalDay(lastCompletedAt, yesterday)) return storedStreak;
+
+    return 0;
+  }
 }

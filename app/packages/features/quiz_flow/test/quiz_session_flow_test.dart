@@ -21,7 +21,12 @@ void main() {
         StartSessionUseCase(questionRepo, progressRepo),
         AnswerQuestionUseCase(progressRepo, SpacedRepetitionScheduler()),
         CompleteSessionUseCase(localStorage, StreakService()),
-        GetUserStatsUseCase(localStorage, questionRepo, progressRepo),
+        GetUserStatsUseCase(
+          localStorage,
+          questionRepo,
+          progressRepo,
+          StreakService(),
+        ),
         FakeQuestionReportRepository(),
         FakeAnalyticsService(),
       ),

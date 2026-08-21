@@ -3,9 +3,11 @@ import 'package:injectable/injectable.dart';
 import 'package:question_bank_module/question_bank.dart';
 
 import '../entities/user_stats.dart';
+import '../services/streak_service.dart';
 
 const _kXpTotalKey = 'quiz_xp_total';
 const _kStreakDaysKey = 'quiz_streak_days';
+const _kStreakLastCompletedAtKey = 'quiz_streak_last_completed_at';
 
 /// Monta o [UserStats] agregado para a tela de estatísticas (stats_flow):
 /// streak/XP vêm do [LocalStorage] (persistidos por [CompleteSessionUseCase]);
@@ -17,15 +19,28 @@ class GetUserStatsUseCase {
     this._localStorage,
     this._questionRepository,
     this._progressRepository,
+    this._streakService,
   );
 
   final LocalStorage _localStorage;
   final QuestionRepository _questionRepository;
   final ProgressRepository _progressRepository;
+  final StreakService _streakService;
 
-  Future<Result<UserStats>> call() async {
+  Future<Result<UserStats>> call({DateTime? now}) async {
     final xpTotal = await _localStorage.getInt(_kXpTotalKey) ?? 0;
-    final streakDays = await _localStorage.getInt(_kStreakDaysKey) ?? 0;
+    final storedStreak = await _localStorage.getInt(_kStreakDaysKey) ?? 0;
+    final lastCompletedRaw = await _localStorage.getString(
+      _kStreakLastCompletedAtKey,
+    );
+    final lastCompletedAt = lastCompletedRaw != null
+        ? DateTime.parse(lastCompletedRaw)
+        : null;
+    final streakDays = _streakService.currentStreak(
+      storedStreak: storedStreak,
+      lastCompletedAt: lastCompletedAt,
+      now: now ?? DateTime.now(),
+    );
 
     final questionsResult = await _questionRepository.getAll();
     if (questionsResult.isFailure) {

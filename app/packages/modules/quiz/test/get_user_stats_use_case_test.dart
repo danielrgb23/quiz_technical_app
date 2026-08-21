@@ -11,6 +11,10 @@ void main() {
       final storage = FakeLocalStorage();
       await storage.setInt('quiz_xp_total', 150);
       await storage.setInt('quiz_streak_days', 4);
+      await storage.setString(
+        'quiz_streak_last_completed_at',
+        DateTime(2026, 1, 11).toIso8601String(),
+      );
 
       final questionRepo = FakeQuestionRepository([
         makeQuestion('f1'),
@@ -28,8 +32,13 @@ void main() {
         const QuestionProgress(questionId: 'a1', correctCount: 1),
       );
 
-      final useCase = GetUserStatsUseCase(storage, questionRepo, progressRepo);
-      final result = await useCase.call();
+      final useCase = GetUserStatsUseCase(
+        storage,
+        questionRepo,
+        progressRepo,
+        StreakService(),
+      );
+      final result = await useCase.call(now: DateTime(2026, 1, 11, 20));
 
       expect(result.isSuccess, true);
       final stats = result.dataOrNull!;
@@ -44,4 +53,24 @@ void main() {
       expect(flutterStats.wrong, 1);
     },
   );
+
+  test('streak exibido zera se a última sessão foi antes de ontem, mesmo sem '
+      'completar uma nova sessão para recalcular', () async {
+    final storage = FakeLocalStorage();
+    await storage.setInt('quiz_streak_days', 7);
+    await storage.setString(
+      'quiz_streak_last_completed_at',
+      DateTime(2026, 1, 8).toIso8601String(),
+    );
+
+    final useCase = GetUserStatsUseCase(
+      storage,
+      FakeQuestionRepository(const []),
+      FakeProgressRepository(),
+      StreakService(),
+    );
+    final result = await useCase.call(now: DateTime(2026, 1, 11));
+
+    expect(result.dataOrNull!.streakDays, 0);
+  });
 }
