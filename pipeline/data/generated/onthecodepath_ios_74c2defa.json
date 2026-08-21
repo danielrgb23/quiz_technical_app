@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_74c2defa",
+  "source": "onthecodepath_ios",
+  "topic": "storage",
+  "level": 2,
+  "question": "O que é um managed object context no Core Data?",
+  "options": [
+    "Um managed object context (`NSManagedObjectContext`) é o objeto central da pilha do Core Data, responsável por criar, buscar (fetch) e rastrear mudanças em managed objects, além de gerenciar operações de undo/redo; embora seja possível ter múltiplos contextos, normalmente existe no máximo um managed object representando um dado registro do armazenamento persistente por contexto.",
+    "É a classe responsável por definir o esquema visual (UI) que exibirá os dados do Core Data na tela.",
+    "É um cache temporário em memória que armazena apenas os resultados de uma única `NSFetchRequest`, sendo descartado logo após a consulta.",
+    "É o arquivo de configuração `.xcdatamodeld` que define as entidades e atributos do Core Data.",
+    "É o componente responsável exclusivamente por migrar o esquema do banco de dados entre versões do modelo."
+  ],
+  "correctIndex": 0,
+  "explanation": "O `NSManagedObjectContext` é o 'espaço de trabalho' em memória onde os objetos gerenciados vivem, permitindo criar, buscar, modificar e desfazer alterações antes de persisti-las. Ele não é o arquivo de modelo de dados (`.xcdatamodeld`), nem um componente de UI, nem se limita a migrações de esquema.",
+  "tags": ["ios", "storage", "core-data"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

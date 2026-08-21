@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_647d5dd0",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Como evitar que chaves de API sejam commitadas em um sistema de controle de versão (VCS)?",
+  "options": [
+    "Armazenando as chaves fora do código versionado — por exemplo, em arquivos como `local.properties` ou `.env` adicionados ao `.gitignore`, injetando-as via variáveis de ambiente no build (ex.: `buildConfigField` no Gradle) ou usando um serviço de secrets management, garantindo que os arquivos sensíveis nunca sejam adicionados ao repositório.",
+    "Renomeando o arquivo que contém as chaves para uma extensão diferente de `.java` ou `.kt`, o que impede o Git de rastreá-lo automaticamente.",
+    "Ofuscando o código com ProGuard/R8 antes do commit, o que remove automaticamente qualquer string sensível do repositório.",
+    "Comitando as chaves normalmente, mas marcando o commit como privado no GitHub para restringir a visibilidade.",
+    "Armazenando as chaves diretamente como comentários no código-fonte, já que comentários não são incluídos no processo de build final."
+  ],
+  "correctIndex": 0,
+  "explanation": "A prática recomendada é manter segredos fora do repositório, usando `.gitignore` para arquivos locais e injetando valores em tempo de build ou via serviços de secrets. Renomear extensões não impede o rastreamento pelo Git, ofuscação com ProGuard atua no bytecode compilado (não no repositório) e comentários no código-fonte continuam sendo versionados normalmente.",
+  "tags": ["android", "security", "secrets"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

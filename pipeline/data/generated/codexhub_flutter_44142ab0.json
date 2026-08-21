@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_44142ab0",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Como passar dados entre telas no Flutter?",
+  "options": [
+    "Usando parâmetros de construtor ao navegar com `Navigator.push()`, usando rotas nomeadas com o parâmetro `arguments`, ou usando uma biblioteca de gerenciamento de estado (Provider, Riverpod, Bloc etc.) para dados compartilhados mais complexos",
+    "Somente através de variáveis globais estáticas, já que o Flutter não permite passar dados via construtor entre telas",
+    "Apenas usando `SharedPreferences` para persistir os dados no disco antes de abrir a nova tela",
+    "Exclusivamente via `Navigator.pop()` com um valor de retorno, sendo impossível enviar dados ao abrir (`push`) uma nova tela",
+    "Usando query parameters de URL, já que toda navegação no Flutter é baseada em rotas web mesmo em apps mobile"
+  ],
+  "correctIndex": 0,
+  "explanation": "É possível passar dados via parâmetros de construtor do widget de destino, via `arguments` em rotas nomeadas (`Navigator.pushNamed`), ou usando bibliotecas de gerenciamento de estado quando os dados precisam ser compartilhados entre várias telas. Variáveis globais estáticas e `SharedPreferences` são soluções indiretas e não a forma padrão/recomendada. `Navigator.pop()` com valor de retorno serve para devolver dados à tela anterior, mas isso não impede enviar dados ao empurrar (`push`) uma nova tela. Apps mobile Flutter não dependem de query parameters de URL para navegação básica.",
+  "tags": [
+    "flutter",
+    "navigation",
+    "data-passing"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

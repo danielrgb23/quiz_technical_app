@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_a72f9e5a",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Como criar uma lista com cabeçalhos persistentes (persistent headers) no Flutter?\n\n```dart\nCustomScrollView(\n  slivers: <Widget>[\n    SliverPersistentHeader(\n      delegate: _MyPersistentHeaderDelegate(),\n      pinned: true, // Makes the header sticky\n    ),\n    SliverList(\n      delegate: SliverChildBuilderDelegate(\n        (BuildContext context, int index) {\n          return ListTile(title: Text('Item $index'));\n        },\n        childCount: 100,\n      ),\n    ),\n  ],\n)\n```",
+  "options": [
+    "Usar CustomScrollView com um SliverPersistentHeader (definindo minExtent, maxExtent e build no delegate, com pinned: true para fixar) combinado com um SliverList para o conteúdo da lista",
+    "Usar um ListView normal com um Container fixo no topo usando position: fixed, propriedade que existe em Flutter assim como em CSS",
+    "Envolver o cabeçalho em um widget Positioned dentro de um ListView, que automaticamente o mantém fixo durante o scroll",
+    "Usar AppBar com pinned: true diretamente dentro de um ListView, sem necessidade de CustomScrollView ou slivers",
+    "SliverPersistentHeader não existe no Flutter; cabeçalhos fixos exigem pacotes de terceiros como sticky_headers obrigatoriamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "A abordagem correta é usar CustomScrollView com slivers: um SliverPersistentHeader (implementando um SliverPersistentHeaderDelegate com minExtent, maxExtent e build, usando pinned: true para fixá-lo) seguido de um SliverList para o restante do conteúdo. 'position: fixed' não existe no Flutter, Positioned dentro de ListView não fixa nada automaticamente, AppBar sozinho fora de um CustomScrollView não funciona como sliver, e SliverPersistentHeader é uma API nativa do Flutter, não exige pacotes de terceiros.",
+  "tags": ["flutter", "scrolling", "sliver"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

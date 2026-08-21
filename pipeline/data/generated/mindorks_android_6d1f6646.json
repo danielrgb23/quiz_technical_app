@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_6d1f6646",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que são `ViewGroups` e como eles diferem das `Views`?",
+  "options": [
+    "`ViewGroup` é uma subclasse especial de `View` que funciona como um container invisível capaz de conter e organizar outras Views (ou outros ViewGroups) em uma hierarquia, definindo como elas são posicionadas e dimensionadas (ex.: `LinearLayout`, `ConstraintLayout`), enquanto uma `View` simples representa um único elemento visual",
+    "`ViewGroup` é usado apenas para exibir imagens, enquanto `View` é usado apenas para exibir texto",
+    "`ViewGroup` e `View` são interfaces independentes sem relação de herança entre elas",
+    "`ViewGroup` só pode ser usado dentro de um `RecyclerView`, enquanto `View` pode ser usada em qualquer lugar",
+    "`ViewGroup` é uma classe abstrata que não pode conter nenhum elemento filho, servindo apenas de marcador de posição no layout"
+  ],
+  "correctIndex": 0,
+  "explanation": "`ViewGroup` estende `View` e atua como container que organiza e posiciona Views filhas (ou outros ViewGroups aninhados), formando a hierarquia de layout, como em `LinearLayout` ou `ConstraintLayout`. Uma `View` isolada representa um único elemento gráfico da UI. As demais alternativas descrevem restrições ou relações que não existem entre as duas classes.",
+  "tags": ["android", "ui", "layout"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

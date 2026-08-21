@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_4c6cb0fe",
+  "source": "onthecodepath_ios",
+  "topic": "networking",
+  "level": 1,
+  "question": "O que é JSON e quais são seus prós e contras?",
+  "options": [
+    "JSON (JavaScript Object Notation) é um formato de texto legível por humanos para transmitir dados estruturados como pares atributo-valor e arrays; entre seus prós estão ser mais leve que XML (menos bytes, transmissões e leitura/escrita mais rápidas) e não exigir transformações caras como XSLT por ser nativo do JavaScript; entre os contras estão ser menos difundido que XML em certos contextos legados, não ser facilmente 'streamável' (precisa ser quebrado em objetos individuais) e não suportar comentários.",
+    "JSON é um formato binário compacto, incompatível com texto legível por humanos, criado especificamente para superar as limitações de tamanho do XML.",
+    "Uma das principais vantagens do JSON é o suporte nativo a comentários dentro dos dados, o que o torna mais documentável que XML.",
+    "JSON é mais pesado que XML para representar a mesma estrutura de dados, exigindo mais bytes na transmissão pela rede.",
+    "JSON exige obrigatoriamente transformações XSLT para ser interpretado por aplicações JavaScript, assim como o XML."
+  ],
+  "correctIndex": 0,
+  "explanation": "JSON é um formato textual (não binário) e, por ser mais compacto que XML e nativo do JavaScript, dispensa transformações como XSLT, tornando a leitura/escrita mais rápida — porém não suporta comentários e não é ideal para streaming de grandes volumes de dados. As opções que afirmam ser binário, suportar comentários, ser mais pesado que XML ou exigir XSLT descrevem exatamente o oposto das características reais do JSON.",
+  "tags": ["networking", "json", "data-format"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

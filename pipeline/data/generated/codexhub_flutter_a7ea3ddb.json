@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_a7ea3ddb",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "O que é o `TextEditingController` no Flutter?",
+  "options": [
+    "É uma classe que dá controle sobre o texto de um campo de entrada, permitindo ler, modificar, definir seleção e ouvir mudanças, normalmente associada a um `TextField` via a propriedade `controller`",
+    "É um widget que renderiza um campo de texto diretamente na tela, substituindo o `TextField`",
+    "É uma classe usada apenas para validar formatos de e-mail e senha em formulários",
+    "É um serviço do sistema operacional que gerencia o teclado virtual do dispositivo",
+    "É uma classe usada exclusivamente para armazenar texto de forma persistente no banco de dados local"
+  ],
+  "correctIndex": 0,
+  "explanation": "`TextEditingController` permite ler e modificar o texto de um campo de entrada, controlar a seleção e escutar mudanças, sendo associado à propriedade `controller` de um `TextField` para criar um campo editável controlado. Ele não é um widget em si, não valida formatos automaticamente, não é um serviço do SO e não persiste dados em banco.",
+  "tags": [
+    "flutter",
+    "forms",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

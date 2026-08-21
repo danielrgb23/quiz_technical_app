@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_ab96fe7b",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como observar Flows e estados de LiveData na UI do Jetpack Compose?",
+  "options": [
+    "Usando as funções de extensão collectAsState() (ou collectAsStateWithLifecycle() para respeitar o ciclo de vida) para Flow/StateFlow, e observeAsState() para LiveData, que convertem esses fluxos observáveis em objetos State que o Compose pode ler e recompor automaticamente",
+    "Chamando diretamente o método .value dentro do corpo do Composable sem nenhuma função de conversão, pois o Compose entende Flow e LiveData nativamente sem adaptação",
+    "É necessário converter manualmente Flow e LiveData em XML antes de poder exibi-los em uma tela Compose",
+    "Flow e LiveData não podem ser observados em Compose; é obrigatório migrar todo o código para usar apenas mutableStateOf antes de adotar Compose",
+    "Usando a função remember() sozinha, que automaticamente se inscreve em qualquer Flow ou LiveData passado como argumento"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para consumir um Flow/StateFlow em Compose, usa-se collectAsState() (ou preferencialmente collectAsStateWithLifecycle(), que respeita o ciclo de vida do LifecycleOwner e evita coletar quando a UI está em background); para LiveData, usa-se observeAsState() da biblioteca androidx.compose.runtime:runtime-livedata. Ambas convertem o fluxo em um State<T> que o Compose observa e usa para recompor a UI. Não é possível observá-los sem essas funções de conversão, não há necessidade de XML, e remember() sozinho não se inscreve automaticamente em Flow/LiveData.",
+  "tags": ["android", "jetpack-compose", "flow", "livedata"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

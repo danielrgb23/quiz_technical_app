@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_111a5e69",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Qual é a diferença entre `viewDidLoad` e `viewDidAppear`? Qual deles deve ser usado para carregar dados de um servidor remoto e exibi-los na view?",
+  "options": [
+    "`viewDidLoad` é chamado apenas uma vez, quando a view é carregada; `viewDidAppear` é chamado toda vez que a view aparece na tela. Para dados estáticos que podem ser cacheados, usa-se `viewDidLoad`; para dados dinâmicos que mudam com frequência, `viewDidAppear` é preferível — em ambos os casos, o carregamento deve ser assíncrono para não bloquear a UI",
+    "`viewDidAppear` é chamado apenas uma vez na vida do view controller, enquanto `viewDidLoad` é chamado toda vez que a tela reaparece",
+    "Ambos os métodos são chamados exatamente o mesmo número de vezes e podem ser usados de forma intercambiável",
+    "Dados remotos devem sempre ser carregados de forma síncrona dentro de `viewDidLoad`, bloqueando a UI até a resposta do servidor",
+    "`viewDidLoad` é chamado antes de `loadView`, servindo para configurar a hierarquia de views antes dela existir"
+  ],
+  "correctIndex": 0,
+  "explanation": "`viewDidLoad` é chamado apenas uma vez, logo após a view ser carregada (depois de `loadView`), sendo adequado para dados estáticos que podem ser cacheados. `viewDidAppear` é chamado toda vez que a view aparece na tela, sendo mais adequado para dados dinâmicos que podem mudar. Em ambos os casos, o carregamento de dados remotos deve ocorrer de forma assíncrona em background para não bloquear a UI. As demais alternativas invertem a ordem/frequência de chamada ou sugerem bloquear a thread principal, o que prejudica a experiência do usuário.",
+  "tags": ["ios", "uikit", "lifecycle"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

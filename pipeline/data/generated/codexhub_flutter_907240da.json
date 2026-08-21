@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_907240da",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "O que é um modal bottom sheet no Flutter?\n\n```dart\nshowModalBottomSheet(\n  context: context,\n  builder: (BuildContext context) {\n    return Container(\n      // conteúdo do bottom sheet\n    );\n  },\n);\n```",
+  "options": [
+    "Um popup exibido na parte inferior da tela, sobre o conteúdo atual, criado com `showModalBottomSheet()`, usado para mostrar opções ou informações adicionais que exigem interação do usuário",
+    "Um widget fixo na parte inferior da tela usado exclusivamente para navegação, sendo um sinônimo de `BottomNavigationBar`",
+    "Uma notificação do sistema operacional exibida na parte inferior da tela, controlada fora do widget tree do Flutter",
+    "Um `SnackBar` estilizado que desaparece automaticamente após alguns segundos sem interação do usuário",
+    "Um widget que só pode ser fechado programaticamente, sem permitir que o usuário o feche arrastando ou tocando fora dele"
+  ],
+  "correctIndex": 0,
+  "explanation": "Um modal bottom sheet é um popup exibido na parte inferior da tela, criado com `showModalBottomSheet()`, usado para exibir opções ou conteúdo adicional relacionado ao contexto atual, geralmente exigindo interação do usuário antes de continuar. Ele não é o mesmo que `BottomNavigationBar` (que é fixo e usado para navegação entre seções) nem uma notificação do sistema operacional. Diferente do `SnackBar`, ele não desaparece automaticamente, e por padrão pode ser fechado pelo usuário tocando fora dele ou arrastando para baixo.",
+  "tags": [
+    "flutter",
+    "bottom-sheet",
+    "material-design"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

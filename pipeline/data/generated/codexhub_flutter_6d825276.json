@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_6d825276",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do widget `SafeArea` no Flutter?",
+  "options": [
+    "Adiciona padding suficiente ao filho para evitar intrusões do sistema operacional, como a barra de status, o notch ou outras áreas físicas do display",
+    "Impede que o app seja fechado acidentalmente pelo usuário ao proteger a árvore de widgets contra exceções",
+    "Criptografa os dados exibidos na tela para evitar capturas de tela não autorizadas",
+    "Garante que o widget filho seja renderizado apenas quando a conexão de rede estiver disponível",
+    "Restringe o acesso ao widget para usuários autenticados dentro do fluxo de login"
+  ],
+  "correctIndex": 0,
+  "explanation": "`SafeArea` insere padding automático no filho para evitar que o conteúdo seja sobreposto por elementos do sistema operacional, como a barra de status, notch ou barra de navegação do dispositivo. Ele não trata de segurança, criptografia, autenticação nem conectividade de rede, que são conceitos completamente distintos.",
+  "tags": [
+    "flutter",
+    "layout",
+    "ui"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

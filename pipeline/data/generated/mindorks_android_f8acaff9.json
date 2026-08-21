@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_f8acaff9",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que é Multidex no Android?",
+  "options": [
+    "É a técnica/suporte que permite que um app Android tenha mais de um arquivo .dex, contornando o limite de 65.536 métodos referenciáveis por um único arquivo DEX imposto pelo formato DEX da JVM/ART",
+    "É um recurso que permite instalar o mesmo app múltiplas vezes no mesmo dispositivo com dados isolados",
+    "É a técnica usada para rodar múltiplas Activities simultaneamente na mesma tela, como em modo split-screen",
+    "É um mecanismo de cache que armazena múltiplas versões de um mesmo recurso (drawable) para diferentes densidades de tela",
+    "É o nome do processo que compila o código Kotlin para múltiplos arquivos .apk, um por arquitetura de CPU"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Multidex permite que um aplicativo Android ultrapasse o limite de 65.536 métodos referenciados em um único arquivo .dex, dividindo o código em múltiplos arquivos DEX, algo comum em apps grandes com muitas dependências. Não tem relação com múltiplas instalações do mesmo app, com split-screen entre Activities, com cache de recursos por densidade, nem é sinônimo de builds por arquitetura de CPU (isso seria ABI splits).",
+  "tags": ["android", "dex", "build"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

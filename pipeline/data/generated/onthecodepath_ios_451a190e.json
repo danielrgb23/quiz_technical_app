@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_451a190e",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "O que é um memory leak (vazamento de memória)?",
+  "options": [
+    "Ocorre quando um objeto que não é mais necessário nunca é liberado da memória, geralmente por causa de um ciclo de referências fortes (retain cycle) entre objetos",
+    "Ocorre quando um objeto é desalocado antes do esperado, causando um crash por acesso a memória inválida",
+    "Ocorre sempre que o app usa mais de um determinado limite de memória definido pelo sistema operacional",
+    "Ocorre quando duas variáveis diferentes apontam para o mesmo endereço de memória ao mesmo tempo",
+    "Ocorre apenas em código Objective-C, sendo impossível em Swift devido ao ARC"
+  ],
+  "correctIndex": 0,
+  "explanation": "Um memory leak acontece quando um objeto que não está mais em uso continua alocado porque ainda existem referências fortes apontando para ele, tipicamente formando um ciclo de retenção (por exemplo, dois objetos que se referenciam fortemente um ao outro). Para evitar isso, usa-se `weak` ou `unowned` em uma das pontas da relação. Vazamentos podem ocorrer tanto em Swift quanto em Objective-C, já que o ARC não resolve ciclos de referência automaticamente.",
+  "tags": ["ios", "memory-management", "retain-cycle"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

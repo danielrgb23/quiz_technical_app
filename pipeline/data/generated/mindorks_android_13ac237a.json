@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_13ac237a",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como implementar o modo escuro (Dark mode) em um aplicativo?",
+  "options": [
+    "Definindo recursos alternativos em pastas qualificadas por `-night` (ex.: `values-night/colors.xml`) ou usando `DayNight` themes do AppCompat/Material, referenciando cores por atributos semânticos (como `?attr/colorSurface`) em vez de valores fixos, e opcionalmente controlando o modo via `AppCompatDelegate.setDefaultNightMode()`",
+    "Aplicando um filtro de inversão de cores em tempo de execução sobre toda a tela usando `Canvas.drawColor()`",
+    "Trocando manualmente a cor de fundo de cada View individualmente dentro de `onResume()` toda vez que a Activity é exibida",
+    "O Android não suporta modo escuro nativamente; é necessário implementar a lógica inteiramente do zero com bibliotecas de terceiros",
+    "Definindo `android:theme=\"dark\"` diretamente no `AndroidManifest.xml`, sem necessidade de recursos separados"
+  ],
+  "correctIndex": 0,
+  "explanation": "O suporte nativo ao Dark mode usa qualificadores de recursos `-night` (ou temas `DayNight` do Material Components/AppCompat), permitindo definir cores e estilos alternativos que o sistema aplica automaticamente conforme o tema do dispositivo, sendo possível também forçar o modo via `AppCompatDelegate.setDefaultNightMode()`. Inversão de cor via Canvas, troca manual de cor por View e a afirmação de que não há suporte nativo são abordagens erradas ou desnecessárias.",
+  "tags": ["android", "theming", "ui"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

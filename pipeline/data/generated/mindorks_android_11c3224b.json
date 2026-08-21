@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_11c3224b",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é o Android Jetpack e por que usá-lo?",
+  "options": [
+    "É um conjunto de bibliotecas, ferramentas e guias mantidos pelo Google (ex.: Room, ViewModel, LiveData, Navigation, WorkManager) que ajudam desenvolvedores a seguir boas práticas de arquitetura, reduzir código boilerplate e manter compatibilidade entre versões do Android, sem estarem atrelados a uma única versão do sistema operacional",
+    "É um novo sistema operacional que substitui o Android tradicional a partir da versão 12",
+    "É a IDE oficial do Google para desenvolvimento Android, substituindo o Android Studio",
+    "É uma linguagem de programação criada pelo Google como alternativa ao Kotlin para desenvolvimento Android",
+    "É um serviço de nuvem pago da Google exclusivo para hospedar bancos de dados de apps Android"
+  ],
+  "correctIndex": 0,
+  "explanation": "Jetpack é um conjunto de bibliotecas (Room, ViewModel, LiveData, Navigation, WorkManager, entre outras) e ferramentas mantidas pelo Google para facilitar boas práticas de arquitetura, reduzir boilerplate e garantir compatibilidade retroativa, sem ser um sistema operacional, IDE, linguagem ou serviço de nuvem — descrições incorretas apresentadas nas demais alternativas.",
+  "tags": ["android", "jetpack", "architecture"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

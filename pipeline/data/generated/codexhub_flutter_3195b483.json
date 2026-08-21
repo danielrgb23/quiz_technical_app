@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_3195b483",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 2,
+  "question": "Quais são os tipos de Streams presentes no Flutter/Dart?",
+  "options": [
+    "Single Subscription Stream, que permite apenas um listener por vez e é usada para processamento sequencial (ex.: requisições de rede), e Broadcast Stream, que permite múltiplos listeners simultâneos, ideal para eventos compartilhados como notificações globais",
+    "Synchronous Stream e Asynchronous Stream, sendo a primeira usada apenas em Isolates e a segunda apenas na UI thread",
+    "Hot Stream e Cold Stream, termos oficiais do Dart equivalentes a StreamController e Future respectivamente",
+    "Buffered Stream e Unbuffered Stream, sendo o buffering configurado obrigatoriamente no construtor de qualquer Stream do Dart",
+    "Stream não possui variações no Dart; existe apenas um único tipo genérico sem diferenças de comportamento entre listeners"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Dart define dois tipos principais de Stream: single-subscription, que aceita apenas um listener e é comum em requisições e eventos sequenciais, e broadcast, que permite múltiplos listeners simultâneos, útil para eventos compartilhados. 'Hot/Cold Stream' e 'Synchronous/Asynchronous Stream' não são a nomenclatura oficial do Dart para essa distinção, e Streams não têm buffering obrigatório configurado no construtor nem são todas idênticas em comportamento de assinatura.",
+  "tags": ["dart", "streams", "async"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

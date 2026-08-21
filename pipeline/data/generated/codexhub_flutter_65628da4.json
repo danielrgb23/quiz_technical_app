@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_65628da4",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 3,
+  "question": "O que é o pipeline de renderização do Flutter e como ele funciona?",
+  "options": [
+    "É o processo que converte widgets em pixels, passando por widget tree, element tree, render tree, layout, pintura, composição (layer tree) e rasterização, que converte tudo em pixels usando o backend gráfico (Skia ou Impeller) até chegar à GPU",
+    "É o processo de compilação Dart para código nativo, ocorrendo inteiramente durante o `flutter build`, sem relação com telas ou pixels em tempo de execução",
+    "É o mecanismo de hot reload do Flutter, que reconstrói apenas os arquivos alterados sem envolver renderização gráfica",
+    "É a sequência de chamadas de rede feitas por um app Flutter para buscar dados remotos antes de exibir a UI",
+    "É o sistema de gerenciamento de estado padrão do Flutter, responsável por reconstruir widgets quando o estado muda"
+  ],
+  "correctIndex": 0,
+  "explanation": "O pipeline de renderização do Flutter transforma a árvore de widgets (imutável) em uma element tree (com estado e ciclo de vida), depois em uma render tree, passa pelas fases de layout, pintura, composição em camadas (layer tree) e por fim rasterização via Skia ou Impeller até a GPU exibir o frame. Não é o processo de compilação AOT, não é o hot reload, não envolve chamadas de rede e não é o sistema de gerenciamento de estado.",
+  "tags": ["flutter", "rendering", "engine", "performance"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

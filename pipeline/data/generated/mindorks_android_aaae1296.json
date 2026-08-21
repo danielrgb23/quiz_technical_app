@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_aaae1296",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Como implementar o Dark Theme (tema escuro) em um aplicativo Android?",
+  "options": [
+    "Definindo um `values-night` com recursos (cores, estilos) alternativos, herdando o tema de `Theme.MaterialComponents.DayNight` (ou equivalente), usando atributos de tema (`?attr/colorSurface`, `?attr/colorOnSurface`) em vez de cores fixas no XML, e opcionalmente respeitando a configuração do sistema com `AppCompatDelegate.setDefaultNightMode()` para permitir alternância manual.",
+    "Criando duas Activities completamente separadas, uma para o tema claro e outra para o tema escuro, e alternando entre elas via Intent.",
+    "Aplicando um filtro de cor (`ColorMatrix`) sobre toda a tela em tempo de execução para inverter as cores da interface.",
+    "Definindo `android:theme=\"@style/DarkTheme\"` apenas na tag `<application>` do Manifest, sem necessidade de recursos alternativos ou atributos de tema.",
+    "Usando exclusivamente Jetpack Compose, já que temas XML tradicionais no Android não suportam Dark Theme."
+  ],
+  "correctIndex": 0,
+  "explanation": "A abordagem recomendada usa qualificadores de recurso `values-night`, temas `DayNight` e atributos de tema em vez de cores hardcoded, permitindo que o sistema alterne automaticamente conforme a configuração do usuário. Duplicar Activities ou aplicar filtros de cor são soluções ineficientes e propensas a bugs; e Dark Theme é totalmente suportado tanto em XML/Views quanto em Compose.",
+  "tags": ["android", "ui", "theming"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

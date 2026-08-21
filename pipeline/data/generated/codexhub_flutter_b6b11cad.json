@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_b6b11cad",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é a diferença entre os widgets `Container` e `SizedBox`?",
+  "options": [
+    "`SizedBox` serve apenas para dar um espaço fixo de altura/largura sem propriedades decorativas, enquanto `Container` é mais pesado e altamente customizável (cor, forma, borda etc.)",
+    "`Container` é mais leve em termos de performance que `SizedBox`, por isso é sempre a opção recomendada para espaçamento",
+    "`SizedBox` permite definir cor de fundo e bordas, enquanto `Container` só permite definir largura e altura",
+    "Não há diferença de performance ou funcionalidade entre eles; a escolha é puramente estética",
+    "`Container` só pode ser usado dentro de um `Row` ou `Column`, enquanto `SizedBox` pode ser usado em qualquer lugar"
+  ],
+  "correctIndex": 0,
+  "explanation": "`SizedBox` é um widget leve e específico para reservar espaço fixo, sem propriedades decorativas, possuindo até construtor `const`. `Container` é mais pesado e altamente customizável, suportando cor, decoração, bordas e mais, mas por isso o linter recomenda `SizedBox` quando só se precisa de espaçamento. As demais alternativas invertem essa relação de performance/funcionalidade ou inventam restrições de uso que não existem.",
+  "tags": [
+    "flutter",
+    "widgets",
+    "performance"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

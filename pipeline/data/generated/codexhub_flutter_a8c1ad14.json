@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_a8c1ad14",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "O que é um `Theme` no Flutter?\n\n```dart\nMaterialApp(\n  theme: ThemeData(\n    primaryColor: Colors.blue,\n    textTheme: TextTheme(\n      headline1: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),\n      bodyText1: TextStyle(fontSize: 18),\n    ),\n  ),\n),\n```",
+  "options": [
+    "Um widget que define e propaga cores, fontes e outras propriedades visuais para toda a subárvore de widgets abaixo dele, garantindo consistência visual sem duplicar estilos manualmente",
+    "Uma classe usada apenas para definir o ícone do aplicativo exibido na tela inicial do dispositivo",
+    "Um mecanismo do Flutter que altera automaticamente o idioma do app conforme a localidade do dispositivo",
+    "Um widget exclusivo para configurar o `AppBar`, sem afetar o estilo dos demais widgets do app",
+    "Uma API usada apenas em testes para simular diferentes aparências de tela durante a execução de testes automatizados"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Theme` (geralmente configurado via `ThemeData` no `MaterialApp`) define cores, tipografia, formas e outras propriedades visuais que se propagam para todos os widgets descendentes, promovendo consistência e reduzindo duplicação de estilos. Ele não define o ícone do app (isso é configurado nativamente por plataforma), não trata de internacionalização/idioma (isso é papel de `Localizations`) e não se limita ao `AppBar` — afeta a subárvore inteira. Também não é uma ferramenta específica de testes.",
+  "tags": [
+    "flutter",
+    "theme",
+    "material-design"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

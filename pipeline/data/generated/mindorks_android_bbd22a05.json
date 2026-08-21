@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_bbd22a05",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "É possível identificar quais usuários desinstalaram o aplicativo Android?",
+  "options": [
+    "Sim, de forma indireta: usando notificações push silenciosas (ex.: Firebase Cloud Messaging) enviadas periodicamente — se o dispositivo não confirma o recebimento e o token de push se torna inválido, isso é um forte indício de que o app foi desinstalado; ferramentas como o Firebase Analytics também reportam métricas agregadas de desinstalação.",
+    "Sim, o Google Play Store notifica automaticamente o desenvolvedor por e-mail com o ID de cada usuário que desinstalou o app.",
+    "Não é possível de forma alguma detectar desinstalações, pois o sistema Android bloqueia completamente qualquer sinal relacionado a isso.",
+    "Sim, basta consultar diretamente a API do Google Play Console, que retorna a lista individual de usuários que desinstalaram o app.",
+    "Sim, o próprio app envia automaticamente uma notificação ao servidor no momento em que é desinstalado, antes de ser removido do dispositivo."
+  ],
+  "correctIndex": 0,
+  "explanation": "Como o Android não notifica diretamente o app sobre uma desinstalação (o app já foi removido), a técnica comum é enviar push notifications silenciosas e monitorar falhas de entrega ou invalidação de tokens, o que indica indiretamente a desinstalação. O Play Console fornece apenas métricas agregadas, não a identidade de usuários individuais, e não há um mecanismo de callback automático no momento da remoção.",
+  "tags": ["android", "analytics", "push-notifications"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

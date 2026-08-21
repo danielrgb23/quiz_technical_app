@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_42b7d9aa",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é a diferença entre `NetworkImage` e `Image.network` no Flutter?",
+  "options": [
+    "`NetworkImage` é um provedor de imagem que carrega os bytes a partir de uma URL mas não é um widget e não desenha nada na tela; `Image.network` é um widget (construtor nomeado de `Image`) que efetivamente exibe a imagem usando `NetworkImage` internamente",
+    "`NetworkImage` é um widget que exibe a imagem na tela, enquanto `Image.network` é apenas a classe que representa os bytes da imagem",
+    "Não há diferença: são dois nomes para exatamente a mesma classe no Flutter",
+    "`NetworkImage` só funciona offline com cache local, enquanto `Image.network` sempre requer conexão ativa",
+    "`Image.network` é usado apenas para carregar arquivos SVG, enquanto `NetworkImage` carrega apenas PNG e JPG"
+  ],
+  "correctIndex": 0,
+  "explanation": "`NetworkImage` é um `ImageProvider` que busca a imagem a partir de uma URL, mas por si só não é um widget e não renderiza nada. `Image.network` é um construtor nomeado da classe `Image` (que é um widget) e usa `NetworkImage` internamente para de fato exibir a imagem na tela. As demais alternativas invertem os papéis das classes ou inventam restrições de formato/conectividade que não existem.",
+  "tags": [
+    "flutter",
+    "images",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

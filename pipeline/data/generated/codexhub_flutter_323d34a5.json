@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_323d34a5",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é `AppLifecycleState` no Flutter e quais são seus estados?",
+  "options": [
+    "Define os estados pelos quais um app pode passar: `detached`, `inactive`, `paused` e `resumed`, refletindo se o app está anexado a uma view, ativo, em background ou visível e respondendo a interações",
+    "É uma classe usada exclusivamente para gerenciar o ciclo de vida de animações dentro de um `AnimationController`",
+    "Define apenas dois estados possíveis: `online` e `offline`, refletindo a conectividade de rede do dispositivo",
+    "É um enum usado para controlar permissões de acesso à câmera e à galeria do dispositivo",
+    "Representa o estado do banco de dados local (`aberto` ou `fechado`) durante operações de persistência"
+  ],
+  "correctIndex": 0,
+  "explanation": "`AppLifecycleState` descreve os estados do ciclo de vida do aplicativo: `detached` (hospedado no engine mas sem view associada), `inactive` (em primeiro plano mas sem receber input), `paused` (em background, não visível) e `resumed` (visível e respondendo a interações). Não tem relação com animações, conectividade de rede, permissões de câmera ou estado de banco de dados.",
+  "tags": [
+    "flutter",
+    "lifecycle",
+    "app-state"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

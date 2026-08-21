@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_ac4e6311",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Com que tecnologias o Flutter é construído?",
+  "options": [
+    "Framework em Dart (widgets e lógica de alto nível), Engine em C++ (renderização, com Impeller como padrão desde o Flutter 3.27) e um Embedder específico de cada plataforma para integrar com o SO nativo",
+    "Inteiramente em Java, usando a JVM tanto para Android quanto para iOS via uma camada de compatibilidade",
+    "Framework em JavaScript com uma engine baseada em WebView para renderizar a interface em todas as plataformas",
+    "Apenas em Dart, sem nenhuma camada nativa em C++ ou C, o que torna toda a renderização feita via interpretação em tempo real",
+    "Kotlin para o framework de widgets e Swift para a engine de renderização, unificados por um bridge de interoperabilidade"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Flutter é composto por três camadas: o Framework escrito em Dart (widgets, Material/Cupertino), a Engine escrita majoritariamente em C++ (responsável pela renderização, com Impeller substituindo o Skia como padrão a partir do Flutter 3.27) e o Embedder, específico de cada plataforma, que integra a engine ao sistema operacional. Não há uso de JVM, WebView ou Kotlin/Swift como base da arquitetura central — essas tecnologias nativas só entram via plugins ou no embedder específico.",
+  "tags": [
+    "flutter",
+    "architecture",
+    "engine"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

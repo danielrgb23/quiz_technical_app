@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_4278c8d7",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Quais são os 8 tipos primitivos da linguagem Java?",
+  "options": [
+    "byte, short, int, long, float, double, boolean e char",
+    "byte, short, int, long, float, double, boolean e String",
+    "int, long, float, double, boolean, char, Object e void",
+    "byte, short, int, long, double, boolean, char e Integer",
+    "int, float, double, boolean, char, String, byte e Array"
+  ],
+  "correctIndex": 0,
+  "explanation": "Java define exatamente 8 tipos primitivos: 4 inteiros (byte, short, int, long), 2 de ponto flutuante (float, double), boolean e char. `String`, `Integer`, `Object` e `Array` são tipos referência (objetos), não primitivos, e `void` não é um tipo de dado utilizável em variáveis.",
+  "tags": ["java", "primitive-types", "fundamentals"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

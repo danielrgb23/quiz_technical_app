@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_a2047f08",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Qual é a diferença entre uma `Checked Exception` e uma `Unchecked Exception` em Java?",
+  "options": [
+    "Checked Exceptions (que estendem `Exception`, exceto `RuntimeException`) são verificadas em tempo de compilação e precisam ser declaradas com `throws` ou tratadas com `try/catch`; Unchecked Exceptions (que estendem `RuntimeException`) não exigem tratamento obrigatório e geralmente indicam erros de programação",
+    "Checked Exceptions são detectadas apenas em tempo de execução, enquanto Unchecked Exceptions são detectadas pelo compilador",
+    "Não há diferença prática entre elas; a nomenclatura é apenas estilística e ambas exigem `try/catch` obrigatório",
+    "Unchecked Exceptions só podem ser lançadas manualmente com `throw`, nunca pela própria JVM",
+    "Checked Exceptions sempre finalizam o programa imediatamente, enquanto Unchecked Exceptions podem ser ignoradas sem nenhuma consequência"
+  ],
+  "correctIndex": 0,
+  "explanation": "O compilador exige que Checked Exceptions sejam declaradas ou tratadas (ex.: `IOException`), pois representam condições que o código deveria antecipar; Unchecked Exceptions (subclasses de `RuntimeException`, como `NullPointerException`) não passam por essa verificação e normalmente sinalizam bugs. As demais alternativas invertem a regra do compilador ou fazem afirmações incorretas sobre quem pode lançar cada tipo.",
+  "tags": ["java", "exceptions", "checked-unchecked"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

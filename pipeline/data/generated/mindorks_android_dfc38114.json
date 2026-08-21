@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_dfc38114",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "É possível criar uma View customizada no Android? Como fazer isso?",
+  "options": [
+    "Sim, estendendo `View` (ou uma subclasse existente, como `ViewGroup`), sobrescrevendo métodos como `onDraw()`, `onMeasure()` e `onLayout()` para controlar desenho e dimensionamento, e opcionalmente expondo atributos customizados via `attrs.xml`",
+    "Sim, mas apenas criando um novo arquivo XML de layout, sem necessidade de escrever nenhum código Kotlin/Java",
+    "Não, o Android só permite usar os componentes de UI nativos fornecidos pelo SDK",
+    "Sim, mas apenas duplicando o código-fonte de uma View existente do AOSP e recompilando o próprio SDK",
+    "Sim, estendendo a classe `Activity` e sobrescrevendo `setContentView()` para desenhar diretamente na tela"
+  ],
+  "correctIndex": 0,
+  "explanation": "Views customizadas são criadas estendendo `View` ou `ViewGroup` e sobrescrevendo métodos do ciclo de desenho/medição, como `onDraw()`, `onMeasure()` e `onLayout()`, podendo também declarar atributos customizados em `attrs.xml` para uso no layout XML. Não é possível criar uma View customizada apenas com XML, nem é necessário recompilar o SDK, e estender `Activity` não é a forma de criar um componente de UI reutilizável.",
+  "tags": ["android", "custom-view", "ui"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

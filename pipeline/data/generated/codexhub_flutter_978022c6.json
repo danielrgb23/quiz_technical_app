@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_978022c6",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é Tree Shaking no Flutter?",
+  "options": [
+    "É uma técnica de compilação que analisa as dependências do código e remove widgets, bibliotecas e código não utilizados do build final, reduzindo o tamanho do app e melhorando a performance",
+    "É uma técnica de teste que embaralha (shake) a ordem dos testes unitários para detectar dependências ocultas entre eles",
+    "É uma otimização de renderização que reduz o FPS de animações quando o dispositivo está com pouca bateria",
+    "É um processo manual em que o desenvolvedor precisa remover código morto linha por linha antes de cada build",
+    "É uma técnica usada apenas durante o hot reload para acelerar a recompilação incremental"
+  ],
+  "correctIndex": 0,
+  "explanation": "Tree shaking é uma técnica de compiladores modernos que analisa as dependências de cada widget/código e remove do build final tudo que não é efetivamente usado, reduzindo o tamanho do app e melhorando a performance. Não tem relação com embaralhar testes, reduzir FPS por bateria, remoção manual de código ou hot reload — esses são processos distintos.",
+  "tags": [
+    "flutter",
+    "build",
+    "performance"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

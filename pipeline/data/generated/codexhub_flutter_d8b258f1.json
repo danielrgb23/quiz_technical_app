@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_d8b258f1",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Como lidar com exceções no Flutter e quais estratégias podem ser usadas?",
+  "options": [
+    "Usando blocos `try-catch` (opcionalmente com múltiplos `on` para tipos específicos), combinados com estratégias como logging, exibir mensagem de erro ao usuário, retentar a operação e tratar exceções específicas de forma diferenciada",
+    "Usando apenas `assert`, já que ele é o único mecanismo do Dart capaz de capturar exceções em tempo de execução",
+    "Ignorando exceções propositalmente, pois o Flutter as trata automaticamente sem necessidade de código adicional",
+    "Envolvendo todo o `main()` em um único `try-catch` genérico, sem diferenciar tipos de exceção, sendo essa a única prática recomendada",
+    "Usando exclusivamente `FutureBuilder` para capturar qualquer exceção lançada em qualquer parte do app, síncrona ou assíncrona"
+  ],
+  "correctIndex": 0,
+  "explanation": "Exceções em Dart/Flutter são tratadas com `try-catch`, podendo usar múltiplos blocos `on TipoDeExcecao catch (e)` para tratar diferentes exceções de formas distintas. Estratégias comuns incluem logging para debug, exibir mensagens ao usuário (ex. `SnackBar`), retentar operações que falharam por erro temporário, e tratamento específico por tipo de exceção. `assert` não captura exceções em runtime de produção, o Flutter não trata exceções automaticamente sem código, e `FutureBuilder` só cobre erros dentro da `Future` que ele observa, não o app inteiro.",
+  "tags": [
+    "flutter",
+    "error-handling",
+    "dart"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

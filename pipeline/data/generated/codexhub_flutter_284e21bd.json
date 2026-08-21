@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_284e21bd",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que são platform channels no Flutter e quando você os usaria?\n\n```dart\n// Dart (Flutter)\nconst platform = MethodChannel('samples.flutter.dev/battery');\nfinal batteryLevel = await platform.invokeMethod('getBatteryLevel');\n```",
+  "options": [
+    "São o mecanismo de comunicação entre o código Dart e o código nativo da plataforma (Java/Kotlin no Android, Swift/Objective-C no iOS), usados para acessar hardware, SDKs específicos da plataforma ou funcionalidades nativas como notificações",
+    "São canais de comunicação exclusivos entre diferentes widgets Flutter na mesma tela, sem envolver código nativo",
+    "São um recurso do Dart para comunicação entre isolates, equivalente a SendPort e ReceivePort",
+    "São usados apenas para consumir APIs REST, substituindo pacotes como http ou dio",
+    "São arquivos de configuração usados para definir o tema visual do app em diferentes plataformas"
+  ],
+  "correctIndex": 0,
+  "explanation": "Platform channels (MethodChannel, EventChannel, BasicMessageChannel) permitem que o código Dart invoque e receba dados do código nativo, sendo essenciais para acessar hardware, SDKs nativos ou funcionalidades como notificações que não estão disponíveis diretamente no Flutter. Não são comunicação entre widgets, não são o mecanismo de isolates (que usa SendPort/ReceivePort), não substituem pacotes HTTP e não têm relação com definição de tema visual.",
+  "tags": ["flutter", "platform-channels", "native"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

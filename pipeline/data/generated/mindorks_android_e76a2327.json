@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_e76a2327",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como funciona o sistema de notificações push no Android?",
+  "options": [
+    "O app se registra no Firebase Cloud Messaging (FCM) para obter um token de dispositivo; o backend envia a mensagem para os servidores do FCM com esse token; o FCM entrega a mensagem ao dispositivo (mesmo com o app em background), que a recebe via um serviço que estende FirebaseMessagingService e pode exibir uma notificação ao usuário",
+    "O dispositivo consulta periodicamente o servidor do app (polling) a cada poucos segundos para verificar se há novas mensagens, sem nenhum serviço de push dedicado",
+    "As notificações são armazenadas exclusivamente no dispositivo e geradas localmente, sem qualquer comunicação com um servidor remoto",
+    "O Android exige que o app esteja sempre em primeiro plano para poder receber e exibir notificações push",
+    "As notificações push no Android dependem exclusivamente de uma conexão Bluetooth com um dispositivo pareado"
+  ],
+  "correctIndex": 0,
+  "explanation": "O fluxo padrão usa o Firebase Cloud Messaging: o app obtém um token único, o backend envia a mensagem ao FCM com esse token, e o FCM entrega ao dispositivo via uma conexão persistente mantida pelo sistema, acionando um FirebaseMessagingService mesmo com o app em background. Não é feito por polling constante, não é gerado apenas localmente sem servidor, não exige o app em primeiro plano e não depende de Bluetooth.",
+  "tags": ["android", "notifications", "fcm"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

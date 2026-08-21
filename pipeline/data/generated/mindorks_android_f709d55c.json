@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_f709d55c",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 2,
+  "question": "Como usar o Memory Profiler do Android Studio?",
+  "options": [
+    "Abrindo a aba Profiler no Android Studio com o app rodando em um dispositivo/emulador, selecionando a linha de Memory para visualizar em tempo real o uso de heap Java/Kotlin, nativo e gráfico, forçando um Garbage Collection e capturando um heap dump para inspecionar instâncias vivas e identificar vazamentos de memória",
+    "Adicionando a dependência memoryProfiler no build.gradle, que injeta automaticamente logs de uso de memória no Logcat sem necessidade de interação com o Android Studio",
+    "Executando o comando adb shell profile-memory, que gera um relatório em PDF enviado por e-mail ao desenvolvedor",
+    "O Memory Profiler só funciona em dispositivos físicos com root, sendo impossível de usar em emuladores ou dispositivos não rooteados",
+    "Habilitando o modo StrictMode no AndroidManifest.xml, que substitui completamente a necessidade do Memory Profiler"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Memory Profiler, parte da suíte de Profiler do Android Studio, mostra em tempo real o consumo de memória do app (Java, nativo, gráfico, etc.) enquanto ele roda em um dispositivo ou emulador; é possível forçar uma coleta de lixo, capturar heap dumps e analisar instâncias de classes retidas para encontrar vazamentos de memória. Não requer dependência no Gradle, não é um comando adb que gera PDF, não exige root, e o StrictMode é uma ferramenta complementar diferente, focada em detectar operações na thread principal e vazamentos de recursos, não substituindo o Profiler.",
+  "tags": ["android", "performance", "profiling", "memory"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

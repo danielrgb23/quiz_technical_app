@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_3111d0f3",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "É possível forçar a Garbage Collection no Android?",
+  "options": [
+    "É possível chamar System.gc() ou Runtime.getRuntime().gc() como uma sugestão para a JVM/ART executar a coleta de lixo, mas isso não é uma garantia, pois o sistema decide quando realmente coletar; por isso, essa prática é geralmente desaconselhada em produção",
+    "Sim, System.gc() força imediatamente e de forma garantida a liberação de toda a memória não utilizada pelo app",
+    "Não, o Android não expõe nenhuma API relacionada a garbage collection para o desenvolvedor",
+    "Sim, mas apenas reiniciando o aplicativo completamente, já que não existe API para isso em tempo de execução",
+    "A Garbage Collection no Android é feita manualmente pelo desenvolvedor por meio de free(), como em C"
+  ],
+  "correctIndex": 0,
+  "explanation": "Chamar System.gc() apenas sugere ao runtime (ART/JVM) que execute a coleta de lixo, mas não há garantia de que isso ocorrerá imediatamente ou de forma completa, e o uso excessivo pode até prejudicar a performance, por isso não é recomendado em produção. Não é uma garantia imediata como afirma um dos distratores, existe sim uma API para isso, não é necessário reiniciar o app, e o Android usa coleta automática (não free() manual como em C).",
+  "tags": ["android", "garbage-collection", "memory"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

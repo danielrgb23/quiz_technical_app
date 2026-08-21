@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_1ccaeecb",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Como garantir acessibilidade ao desenvolver apps Flutter? É algo que deve ser considerado?",
+  "options": [
+    "Sim; usando o widget Semantics para descrever elementos para leitores de tela, garantindo contraste de cores adequado, gerenciando foco com FocusNode/FocusScope e testando com TalkBack (Android) e VoiceOver (iOS)",
+    "Não é necessário, pois o Flutter já aplica acessibilidade completa automaticamente em todos os widgets sem nenhuma configuração",
+    "Acessibilidade no Flutter só pode ser implementada escrevendo código nativo separado para Android e iOS, sem suporte no Dart",
+    "Basta aumentar o tamanho da fonte padrão do MaterialApp para que o app seja considerado acessível",
+    "Acessibilidade é responsabilidade exclusiva do sistema operacional e não pode ser influenciada pelo código do app"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Flutter oferece ferramentas como o widget Semantics para anotar elementos para leitores de tela, suporte a FocusNode/FocusScope para navegação por teclado/foco, e a recomendação de testar com TalkBack e VoiceOver. Não é algo totalmente automático sem intervenção do desenvolvedor, não exige código nativo separado, aumentar apenas o tamanho da fonte não cobre acessibilidade completa, e o app tem sim responsabilidade direta sobre isso, não apenas o sistema operacional.",
+  "tags": ["flutter", "accessibility", "ux"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

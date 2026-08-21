@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_62084afc",
+  "source": "mindorks_android",
+  "topic": "storage",
+  "level": 1,
+  "question": "O que é o modificador `transient` em Java?",
+  "options": [
+    "Marca um campo de instância para ser excluído do processo padrão de serialização, fazendo com que ele não seja incluído no fluxo de bytes gerado e receba seu valor padrão ao ser deserializado",
+    "Marca uma variável para ser armazenada temporariamente em cache de disco e removida automaticamente após 24 horas",
+    "Indica que um método só pode ser chamado uma única vez durante todo o ciclo de vida da aplicação",
+    "Faz com que o campo seja compartilhado entre todas as instâncias da classe, como se fosse `static`",
+    "Impede que o campo seja lido por qualquer thread diferente da que o criou"
+  ],
+  "correctIndex": 0,
+  "explanation": "`transient` sinaliza ao mecanismo padrão de serialização (`ObjectOutputStream`) para ignorar aquele campo, útil para dados sensíveis (senhas) ou não serializáveis (streams, threads); ao deserializar, o campo recebe o valor padrão do tipo (ex.: `null`, `0`). Não tem relação com cache em disco, chamadas únicas de método, comportamento `static` ou restrição de thread.",
+  "tags": ["java", "serialization", "transient"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_5d27ac76",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é Polimorfismo e o que é Herança em programação orientada a objetos?",
+  "options": [
+    "Polimorfismo é a capacidade de um objeto assumir múltiplas formas, permitindo que um mesmo método se comporte de maneira diferente (sobrecarga ou sobrescrita); Herança é o mecanismo pelo qual uma classe adquire atributos e comportamentos de outra classe",
+    "Polimorfismo é o processo de converter um objeto em bytes para transmiti-lo pela rede; Herança é a criação de múltiplas instâncias da mesma classe",
+    "Polimorfismo é a capacidade de uma classe ter múltiplos construtores privados; Herança é a proibição de sobrescrever métodos de uma superclasse",
+    "Polimorfismo e Herança são sinônimos em Java e podem ser usados de forma intercambiável",
+    "Polimorfismo é uma restrição de acesso que impede uma subclasse de usar métodos da superclasse; Herança é a duplicação manual de código entre classes não relacionadas"
+  ],
+  "correctIndex": 0,
+  "explanation": "Polimorfismo permite que objetos de diferentes classes sejam tratados através de uma interface comum, com comportamento específico definido em tempo de compilação (sobrecarga) ou execução (sobrescrita/override). Herança permite reaproveitar e estender comportamento de uma superclasse. As demais alternativas confundem esses conceitos com serialização, restrições de acesso ou duplicação de código, que não é o que herança representa.",
+  "tags": ["java", "oop", "polymorphism"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_d7df73ae",
+  "source": "mindorks_android",
+  "topic": "kotlin",
+  "level": 2,
+  "question": "O que é uma função inline no Kotlin?",
+  "options": [
+    "É uma função marcada com o modificador inline cujo corpo é copiado para o local de chamada em tempo de compilação, evitando a sobrecarga de criação de objetos para lambdas e permitindo recursos como acesso não local a return e parâmetros reified em funções genéricas",
+    "É uma função que só pode ser declarada dentro de uma classe, nunca no nível do arquivo",
+    "É uma função que é executada de forma assíncrona automaticamente em uma coroutine separada",
+    "É uma função que substitui construtores em Kotlin, eliminando a necessidade da palavra-chave constructor",
+    "É uma função que armazena em cache o resultado da primeira chamada e retorna o mesmo valor em chamadas subsequentes"
+  ],
+  "correctIndex": 0,
+  "explanation": "Funções inline em Kotlin têm seu corpo copiado diretamente no ponto de chamada pelo compilador, evitando a criação de objetos Function para os lambdas passados como parâmetro e habilitando recursos como return não local e tipos reified. Elas não são exclusivas de classes, não rodam automaticamente em coroutines, não substituem construtores e não fazem cache de resultados (isso seria memoização, um conceito diferente).",
+  "tags": ["kotlin", "functions", "performance"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_417dfa73",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como lidar com operações assíncronas no Jetpack Compose?",
+  "options": [
+    "Usando efeitos como LaunchedEffect ou rememberCoroutineScope para lançar coroutines de forma segura em relação ao ciclo de vida da composição, tipicamente delegando a lógica assíncrona (chamadas de rede, banco de dados) para um ViewModel com viewModelScope e expondo o resultado como State/StateFlow que a UI observa",
+    "Chamando funções suspend diretamente no corpo de qualquer função Composable, já que o compilador do Compose transforma automaticamente qualquer Composable em uma coroutine",
+    "Operações assíncronas não são suportadas em Compose; é obrigatório usar apenas chamadas de rede síncronas bloqueantes na thread principal",
+    "Usando exclusivamente Thread.sleep() dentro do Composable para simular espera até que os dados assíncronos estejam prontos",
+    "Criando uma nova Activity para cada operação assíncrona, já que Composables não podem lidar com lógica fora da renderização da UI"
+  ],
+  "correctIndex": 0,
+  "explanation": "A abordagem recomendada é manter a lógica assíncrona (chamadas de rede, banco de dados, etc.) em um ViewModel usando viewModelScope, expondo o resultado como State ou StateFlow que a UI Compose observa via collectAsStateWithLifecycle(); quando é necessário lançar uma coroutine diretamente a partir da UI, usa-se LaunchedEffect (atrelado à composição) ou rememberCoroutineScope (para callbacks de eventos). Funções Composable não podem ser suspend diretamente, bloquear a thread principal com chamadas síncronas ou Thread.sleep() trava a UI, e não há necessidade de criar uma Activity por operação assíncrona.",
+  "tags": ["android", "jetpack-compose", "coroutines", "concurrency"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

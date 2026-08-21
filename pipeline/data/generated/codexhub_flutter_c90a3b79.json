@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_c90a3b79",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "O que é o `MediaQuery` no Flutter?",
+  "options": [
+    "Um widget que fornece um `MediaQueryData` com informações sobre o dispositivo, como tamanho da tela, orientação, densidade de pixels e fator de escala de texto, usado para criar UIs responsivas",
+    "Uma classe usada exclusivamente para fazer requisições HTTP e buscar dados de mídia (imagens, vídeos) de um servidor",
+    "Um mecanismo de query de banco de dados local usado para filtrar registros armazenados via `sqflite`",
+    "Um widget que só funciona no Flutter Web, sem efeito em apps mobile compilados para Android ou iOS",
+    "Uma API que permite reproduzir arquivos de áudio e vídeo dentro do app, similar ao pacote `video_player`"
+  ],
+  "correctIndex": 0,
+  "explanation": "`MediaQuery` expõe um `MediaQueryData` com informações como tamanho da tela, orientação, `devicePixelRatio` e `textScaleFactor`, permitindo construir interfaces responsivas que se adaptam ao dispositivo. Ele não faz requisições HTTP, não é uma API de query de banco de dados local e não reproduz áudio/vídeo. Também não é exclusivo do Flutter Web — funciona igualmente em Android e iOS.",
+  "tags": [
+    "flutter",
+    "mediaquery",
+    "responsive-ui"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

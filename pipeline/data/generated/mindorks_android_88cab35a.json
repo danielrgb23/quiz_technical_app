@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_88cab35a",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "É possível sobrescrever (`override`) um método `static` em Java?",
+  "options": [
+    "Não. Métodos `static` são vinculados à classe em tempo de compilação (static binding) e não participam de polimorfismo em tempo de execução; declarar um método `static` de mesma assinatura em uma subclasse apenas o oculta (`hiding`), não o sobrescreve.",
+    "Sim, métodos `static` podem ser sobrescritos normalmente, assim como métodos de instância, desde que a assinatura seja idêntica.",
+    "Sim, mas apenas se o método for declarado como `final static` na superclasse.",
+    "Não, porque métodos `static` não podem ser herdados por subclasses.",
+    "Depende: métodos `static` públicos podem ser sobrescritos, mas os privados não."
+  ],
+  "correctIndex": 0,
+  "explanation": "Como métodos `static` usam static binding (resolvido em tempo de compilação com base no tipo da referência), redefinir o mesmo método em uma subclasse não gera polimorfismo — isso é chamado de 'method hiding', não overriding. A afirmação de que static methods não podem ser herdados está errada: eles são herdados, mas isso não muda o fato de que não há override real em tempo de execução.",
+  "tags": ["java", "oop", "polymorphism"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

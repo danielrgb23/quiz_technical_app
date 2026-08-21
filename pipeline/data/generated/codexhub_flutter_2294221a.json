@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_2294221a",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do widget `Stack` no Flutter?\n\n```dart\nStack(\n  children: [\n    Image.network('https://picsum.photos/250?image=9'),\n    Center(child: Text('Hello, World!')),\n  ],\n),\n```",
+  "options": [
+    "Sobrepor widgets uns sobre os outros em uma ordem específica, permitindo posicioná-los livremente usando offsets ou alinhamento, útil por exemplo para exibir texto sobre uma imagem",
+    "Organizar widgets em uma lista vertical rolável, semelhante a um `ListView`, mas otimizada para poucos itens",
+    "Distribuir widgets uniformemente lado a lado, dividindo o espaço horizontal igualmente entre eles, como uma `Row` com `MainAxisAlignment.spaceEvenly`",
+    "Empilhar telas de navegação, sendo uma alternativa ao `Navigator` para gerenciar rotas",
+    "Armazenar temporariamente widgets fora da árvore visível, para serem exibidos depois via animação"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Stack` posiciona seus filhos em camadas sobrepostas, na ordem em que aparecem na lista `children`, permitindo controlar a posição de cada um via `Positioned`, offsets ou alinhamento — como sobrepor um texto a uma imagem. Ele não é uma lista rolável nem distribui widgets lado a lado (isso é papel de `ListView` ou `Row`). `Stack` também não gerencia navegação de rotas nem armazena widgets fora da árvore visível para exibição futura.",
+  "tags": [
+    "flutter",
+    "stack",
+    "layout"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

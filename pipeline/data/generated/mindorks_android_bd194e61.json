@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_bd194e61",
+  "source": "mindorks_android",
+  "topic": "storage",
+  "level": 1,
+  "question": "O que é a biblioteca Room no Android e para que ela é usada?",
+  "options": [
+    "Room é uma biblioteca de persistência do Android Jetpack que fornece uma camada de abstração sobre o SQLite, oferecendo verificação de queries em tempo de compilação, integração com LiveData/Flow e mapeamento objeto-relacional via anotações (`@Entity`, `@Dao`, `@Database`).",
+    "Room é um framework de injeção de dependência do Android, semelhante ao Dagger/Hilt, usado para gerenciar o ciclo de vida de objetos.",
+    "Room é uma API de rede do Android usada para simplificar chamadas HTTP e parsing de JSON, substituindo o Retrofit.",
+    "Room é um banco de dados NoSQL baseado em documentos, embutido no Android, que não requer definição de esquema.",
+    "Room é um componente de UI do Jetpack Compose usado para criar layouts responsivos entre diferentes tamanhos de tela."
+  ],
+  "correctIndex": 0,
+  "explanation": "Room abstrai o SQLite oferecendo segurança de tipos e verificação de SQL em tempo de compilação, além de integração reativa com LiveData e Flow. Não é uma ferramenta de injeção de dependência (esse é o papel do Dagger/Hilt), nem uma biblioteca de rede (Retrofit) ou de UI (Compose).",
+  "tags": ["android", "storage", "room"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

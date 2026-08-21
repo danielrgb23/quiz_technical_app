@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_5cea1907",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Para que serve `@dynamic` em Objective-C?",
+  "options": [
+    "Informa ao compilador que os métodos acessores (getter/setter) de uma propriedade serão fornecidos em tempo de execução, sendo comumente usado em subclasses de `NSManagedObject`",
+    "Faz com que o compilador gere automaticamente getter e setter, exatamente como `@synthesize`",
+    "Torna a propriedade thread-safe, adicionando locks automáticos aos acessores",
+    "Impede que a propriedade seja sobrescrita por subclasses",
+    "Converte a propriedade em um tipo opcional automaticamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "`@dynamic` avisa ao compilador que a implementação dos acessores da propriedade será fornecida dinamicamente em tempo de execução (por exemplo, via Core Data em subclasses de `NSManagedObject`, que resolve os métodos dinamicamente), delegando essa responsabilidade em vez de gerá-la em tempo de compilação como `@synthesize` faz. Não tem relação com thread-safety, restrição de override ou opcionalidade.",
+  "tags": ["ios", "objective-c", "core-data"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

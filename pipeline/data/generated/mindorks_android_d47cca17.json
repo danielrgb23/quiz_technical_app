@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_d47cca17",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como lidar com eventos de ciclo de vida (lifecycle) dentro de funções Composable?",
+  "options": [
+    "Observando o Lifecycle do LocalLifecycleOwner atual (por exemplo, com um DisposableEffect que adiciona/remove um LifecycleEventObserver), o que permite reagir a eventos como ON_START, ON_STOP ou ON_RESUME e limpar recursos adequadamente quando o Composable sai de composição",
+    "Sobrescrevendo diretamente os métodos onCreate(), onStart() e onResume() dentro do corpo da função Composable, da mesma forma que se faz em uma Activity",
+    "O Compose não possui nenhuma forma de reagir a eventos de ciclo de vida; é necessário voltar a usar Views e XML para esse tipo de lógica",
+    "Usando exclusivamente a anotação @Lifecycle em cima da função Composable, que a vincula automaticamente aos eventos da Activity hospedeira",
+    "Chamando Thread.currentThread().getLifecycleState() dentro do Composable para verificar manualmente o estado atual a cada frame"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para reagir a eventos de ciclo de vida em Compose, obtém-se o LifecycleOwner atual via LocalLifecycleOwner.current e usa-se um DisposableEffect para registrar um LifecycleEventObserver, que recebe callbacks como ON_START, ON_STOP e ON_RESUME; o DisposableEffect garante que o observer seja removido (onDispose) quando o Composable sai de composição, evitando vazamentos. Não se sobrescrevem métodos de Activity dentro de um Composable, não existe anotação @Lifecycle para isso, e verificar o estado manualmente a cada frame via Thread não é a abordagem correta nem eficiente.",
+  "tags": ["android", "jetpack-compose", "lifecycle"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_e9f9d5bd",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "É possível usar Jetpack Compose e Android View (o sistema de Views tradicional) em um mesmo app?",
+  "options": [
+    "Sim, através das APIs de interoperabilidade: ComposeView permite inserir Compose em uma hierarquia de Views, e AndroidView permite inserir Views tradicionais dentro do Compose",
+    "Não, o Android exige que o app escolha um único sistema de UI antes da compilação e não é possível misturá-los em tempo de execução",
+    "Sim, mas apenas se o app for compilado com duas Activities separadas, uma para cada sistema de UI",
+    "Não, o Jetpack Compose substitui totalmente o sistema de Views e qualquer View existente precisa ser reescrita antes de habilitar o Compose",
+    "Sim, mas isso só funciona em bibliotecas internas do Google e não é suportado para apps de terceiros"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Jetpack Compose foi projetado para coexistir com o sistema de Views, permitindo migração incremental. O composable ComposeView embute árvores de Compose dentro de layouts XML/View, enquanto o composable AndroidView faz o caminho inverso, embutindo Views tradicionais dentro de uma árvore Compose. As demais alternativas descrevem restrições que não existem: não é necessário reescrever tudo de uma vez, nem usar Activities separadas, e a interoperabilidade é um recurso público e documentado para qualquer app.",
+  "tags": ["jetpack-compose", "android-views", "interop"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

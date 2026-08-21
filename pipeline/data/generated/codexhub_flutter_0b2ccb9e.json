@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_0b2ccb9e",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que são `Slivers` no Flutter?",
+  "options": [
+    "São porções de uma área rolável que podem ser customizadas para criar efeitos de scroll avançados, servindo de base para widgets como `ListView` e `GridView`",
+    "São widgets usados exclusivamente para exibir imagens em alta resolução com carregamento progressivo",
+    "São classes de baixo nível usadas apenas para gerenciar animações de transição entre rotas",
+    "São um tipo de armazenamento local persistente similar ao `SharedPreferences`",
+    "São plugins nativos que conectam o Flutter a APIs específicas do Android e iOS"
+  ],
+  "correctIndex": 0,
+  "explanation": "Slivers são partes de uma área rolável que podem ter comportamento de scroll customizado, servindo como a interface de baixo nível sobre a qual `ListView`, `GridView` e cabeçalhos colapsáveis são construídos, permitindo renderização preguiçosa e eficiente. Eles não lidam com imagens, animações de rota, armazenamento persistente ou integração nativa — esses são conceitos distintos no Flutter.",
+  "tags": [
+    "flutter",
+    "scrolling",
+    "performance"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

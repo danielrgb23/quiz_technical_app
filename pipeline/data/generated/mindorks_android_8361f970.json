@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_8361f970",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que significa dizer que uma `String` é imutável em Java?",
+  "options": [
+    "Que, uma vez criada, o conteúdo do objeto `String` não pode ser alterado; qualquer operação que pareça modificá-la (como concatenação) na verdade cria e retorna uma nova instância",
+    "Que a String não pode ser passada como argumento para métodos, apenas retornada por eles",
+    "Que apenas uma única instância de `String` pode existir por vez em toda a aplicação",
+    "Que o valor pode ser alterado livremente, mas apenas dentro do mesmo método onde a variável foi declarada",
+    "Que a String não pode ser armazenada em coleções como `List` ou `Map`"
+  ],
+  "correctIndex": 0,
+  "explanation": "Imutabilidade significa que o estado interno do objeto não muda após a construção: métodos como `concat`, `substring` ou `replace` sempre retornam uma nova `String`, deixando a original intacta. As demais alternativas descrevem restrições que não existem — Strings podem ser passadas como argumento, múltiplas instâncias coexistem normalmente, e são amplamente usadas em coleções.",
+  "tags": ["java", "string", "immutability"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

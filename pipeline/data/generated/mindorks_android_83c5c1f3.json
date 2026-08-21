@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_83c5c1f3",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é State Hoisting no Jetpack Compose?",
+  "options": [
+    "Um padrão em que o estado é movido para fora de um composable, tornando-o stateless: o composable pai guarda o estado e o passa para baixo como parâmetro junto de um callback (ex.: onValueChange) para modificá-lo",
+    "Uma técnica para armazenar estado permanentemente no disco usando DataStore, evitando o uso de ViewModel",
+    "O processo de elevar a prioridade de recomposição de um composable para que ele seja redesenhado antes dos outros",
+    "Um mecanismo do sistema operacional que move o estado de uma Activity para o processo do sistema quando o app vai para segundo plano",
+    "A conversão automática de variáveis `var` em `remember` feita pelo compilador do Compose"
+  ],
+  "correctIndex": 0,
+  "explanation": "State hoisting é o padrão recomendado no Compose para criar composables stateless e reutilizáveis: o estado (value) e a função que o altera (onValueChange) sobem para o chamador, que decide onde e como o estado é mantido. Isso facilita testes, reutilização e single source of truth. As demais opções descrevem conceitos inexistentes ou não relacionados, como persistência em disco ou prioridade de recomposição.",
+  "tags": ["jetpack-compose", "state-management", "state-hoisting"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

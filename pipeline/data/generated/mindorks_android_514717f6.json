@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_514717f6",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como converter um estado que não é do Compose (non-compose state) em um estado do Compose?",
+  "options": [
+    "Usando as APIs de conversão apropriadas para cada fonte — collectAsState()/collectAsStateWithLifecycle() para Flow/StateFlow, observeAsState() para LiveData, ou produceState() para transformar qualquer fonte assíncrona genérica (como um callback ou listener) em um objeto State observável pelo Compose",
+    "É impossível converter estados externos para Compose; todo o código legado precisa ser reescrito do zero usando apenas mutableStateOf",
+    "Basta declarar a variável externa como 'var' em vez de 'val', o que automaticamente a torna observável pelo Compose",
+    "Usando o operador '!!' do Kotlin, que converte qualquer tipo em um State observável de forma implícita",
+    "Criando uma nova Activity que envolve a fonte de dados externa, já que apenas Activities podem se comunicar com Composables"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Compose oferece funções específicas para adaptar fontes de estado externas: collectAsState()/collectAsStateWithLifecycle() para Flow/StateFlow, observeAsState() para LiveData, e produceState() como ferramenta genérica para transformar qualquer fonte assíncrona (callbacks, listeners de bibliotecas de terceiros, etc.) em um State que dispara recomposição. Simplesmente usar 'var' não torna algo observável pelo Compose (é preciso mutableStateOf), o operador '!!' não tem relação com isso, e não é necessário reescrever tudo do zero nem criar Activities intermediárias.",
+  "tags": ["android", "jetpack-compose", "state", "flow"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_726a0844",
+  "source": "mindorks_android",
+  "topic": "concurrency",
+  "level": 2,
+  "question": "O que significa a palavra-chave `synchronized` em Java?",
+  "options": [
+    "Marca um método ou bloco de código para que apenas uma thread por vez possa executá-lo sobre um determinado objeto (monitor lock), evitando condições de corrida no acesso a dados compartilhados",
+    "Indica ao compilador que uma variável deve ser inicializada de forma assíncrona em uma thread separada antes do uso",
+    "Garante que um método seja executado automaticamente em uma coroutine, sem bloquear a thread principal",
+    "Marca uma classe como imutável, impedindo qualquer alteração em seus campos após a construção",
+    "Faz com que duas threads executem o mesmo bloco de código simultaneamente, sincronizando os resultados no final"
+  ],
+  "correctIndex": 0,
+  "explanation": "`synchronized` adquire um lock (monitor) associado a um objeto, garantindo exclusão mútua: apenas uma thread executa o bloco/método sincronizado sobre aquele monitor por vez, prevenindo condições de corrida. Não tem relação com coroutines (conceito do Kotlin), não torna classes imutáveis, e certamente não faz duas threads rodarem o mesmo código ao mesmo tempo — é justamente o oposto.",
+  "tags": ["java", "concurrency", "synchronized"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

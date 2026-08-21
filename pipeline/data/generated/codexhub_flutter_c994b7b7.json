@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_c994b7b7",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "O que são as DevTools no Flutter?",
+  "options": [
+    "É um conjunto de ferramentas baseadas em navegador web para depurar e analisar apps Flutter, incluindo inspetor de widgets, timeline de performance, debugger e visualização de logs",
+    "É um plugin exclusivo do Android Studio que só funciona com projetos Kotlin nativos",
+    "É uma biblioteca de terceiros que precisa ser adicionada ao `pubspec.yaml` para habilitar o hot reload",
+    "É um serviço de nuvem do Google usado para publicar automaticamente apps Flutter nas lojas",
+    "É um conjunto de widgets prontos para criar interfaces de configurações do app"
+  ],
+  "correctIndex": 0,
+  "explanation": "As DevTools são um conjunto de ferramentas web para debugging e profiling de apps Flutter, oferecendo o Flutter Inspector (árvore de widgets), timeline de performance (CPU/memória/GPU), debugger com breakpoints e visualização de logs. Elas não são exclusivas do Android Studio, não precisam ser adicionadas via `pubspec.yaml` (o hot reload é nativo do Flutter), não publicam apps nas lojas e não são um conjunto de widgets de UI.",
+  "tags": [
+    "flutter",
+    "devtools",
+    "debugging"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

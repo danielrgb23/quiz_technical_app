@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_541353ad",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 1,
+  "question": "O que é a notação de seta gorda (`=>`, fat arrow) em Dart?",
+  "options": [
+    "É uma forma abreviada de escrever uma função que contém uma única expressão, retornando o valor dessa expressão",
+    "É um operador usado para comparar dois valores numéricos e retornar o maior deles",
+    "É a sintaxe usada para declarar funções assíncronas em substituição à palavra-chave `async`",
+    "É um operador de cast que converte um tipo genérico em outro tipo específico",
+    "É a sintaxe usada exclusivamente para definir getters e setters em classes abstratas"
+  ],
+  "correctIndex": 0,
+  "explanation": "A notação `=>` (fat arrow) permite escrever de forma concisa uma função cujo corpo é uma única expressão, equivalente a um `return` implícito. Ela não compara valores, não substitui `async` para funções assíncronas, não faz cast de tipos e não é exclusiva de getters/setters, embora possa ser usada neles.",
+  "tags": [
+    "dart",
+    "syntax",
+    "functions"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

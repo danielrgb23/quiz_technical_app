@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_0751778f",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 3,
+  "question": "Como o Dagger funciona internamente?",
+  "options": [
+    "Dagger é um framework de injeção de dependências que usa processamento de anotações em tempo de compilação para gerar código Java/Kotlin que cria e conecta as dependências declaradas em Modules e Components, evitando reflexão em runtime",
+    "Dagger usa reflexão em tempo de execução para escanear todas as classes anotadas e instanciá-las dinamicamente sempre que são solicitadas",
+    "Dagger é um contêiner de IoC que carrega um arquivo XML de configuração no runtime para resolver as dependências do grafo de objetos",
+    "Dagger funciona interceptando chamadas de rede para injetar automaticamente tokens de autenticação nas requisições Retrofit",
+    "Dagger cria uma única instância global de cada classe automaticamente, sem necessidade de anotações ou configuração explícita"
+  ],
+  "correctIndex": 0,
+  "explanation": "Dagger é um framework de injeção de dependências compile-time: um annotation processor lê anotações como @Module, @Provides, @Inject e @Component e gera classes Java concretas (ex.: DaggerAppComponent) que constroem o grafo de dependências. Por não usar reflexão em runtime, o Dagger tem melhor performance e detecta erros de configuração em tempo de compilação. Não usa XML, não intercepta rede e não cria singletons automaticamente sem escopo declarado.",
+  "tags": ["android", "dagger", "dependency-injection", "architecture"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

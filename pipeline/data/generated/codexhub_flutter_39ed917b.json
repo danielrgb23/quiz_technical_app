@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_39ed917b",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do método `initState()` em um `StatefulWidget`?",
+  "options": [
+    "Realizar inicializações únicas quando o State é inserido na árvore de widgets pela primeira vez, como definir valores padrão ou inicializar controllers",
+    "Ser chamado toda vez que o widget é reconstruído, permitindo atualizar variáveis de estado a cada rebuild",
+    "Liberar recursos como controllers e streams antes do widget ser removido da árvore",
+    "Reconstruir a UI sempre que `setState()` for chamado, funcionando como o método principal de renderização",
+    "Comparar o widget antigo com o novo widget quando suas propriedades mudam de valor"
+  ],
+  "correctIndex": 0,
+  "explanation": "`initState()` é chamado uma única vez, logo após o State ser criado e inserido na árvore, sendo o lugar ideal para inicializar controllers e valores padrão. Ele não é chamado a cada rebuild (isso descreveria `build()`), não libera recursos (essa é a função do `dispose()`) e não é o método responsável por renderizar a UI. Comparar o widget antigo com o novo é responsabilidade do `didUpdateWidget()`, não do `initState()`.",
+  "tags": [
+    "flutter",
+    "lifecycle",
+    "statefulwidget"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

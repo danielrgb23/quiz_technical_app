@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_0ba90f4e",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como você faria a comunicação entre dois Fragments?",
+  "options": [
+    "Através de um ViewModel compartilhado no escopo da Activity hospedeira (padrão recomendado), ou definindo uma interface implementada pela Activity que repassa dados entre os Fragments, evitando referência direta entre eles",
+    "Fazendo um Fragment chamar métodos públicos diretamente na instância do outro Fragment, obtida via `new Fragment()`",
+    "Usando exclusivamente `SharedPreferences` para qualquer troca de dados entre Fragments, mesmo que temporária",
+    "Fragments não podem se comunicar entre si sob nenhuma circunstância, apenas com a Activity",
+    "Através de variáveis estáticas (`static`) na classe do Fragment, que são a forma oficialmente recomendada pelo Android"
+  ],
+  "correctIndex": 0,
+  "explanation": "A abordagem recomendada é usar um `ViewModel` compartilhado com escopo na Activity (`by activityViewModels()`), que ambos os Fragments observam, ou definir um contrato de interface implementado pela Activity que atua como mediadora. Instanciar Fragments diretamente com `new Fragment()` quebra o ciclo de vida gerenciado pelo `FragmentManager`, e usar `SharedPreferences` ou variáveis estáticas para comunicação transitória é uma prática frágil e não recomendada.",
+  "tags": ["android", "fragment", "architecture"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_1a56fce3",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Qual é o propósito do widget `FittedBox` no Flutter?",
+  "options": [
+    "Escalar e posicionar automaticamente seu widget filho para caber dentro dos limites do próprio `FittedBox`, controlado pelas propriedades `fit` (como se ajusta) e `alignment` (onde é posicionado)",
+    "Adicionar rolagem automática a um filho que excede o tamanho disponível, em vez de escalá-lo",
+    "Forçar o filho a manter sempre seu tamanho original, ignorando as restrições do widget pai",
+    "Ser usado exclusivamente para redimensionar imagens de rede, não funcionando com texto ou outros widgets",
+    "Cortar (clip) o conteúdo do filho que ultrapassa os limites do widget, sem realizar nenhum tipo de escala"
+  ],
+  "correctIndex": 0,
+  "explanation": "`FittedBox` escala e posiciona automaticamente seu filho para caber dentro dos seus próprios limites, controlado pela propriedade `fit` (que define como a escala é aplicada, como `BoxFit.contain` ou `BoxFit.cover`) e `alignment` (que define o posicionamento). Ele não adiciona rolagem (isso é `SingleChildScrollView`) nem força o filho a manter tamanho original — pelo contrário, ele redimensiona o filho. Não é exclusivo para imagens, funcionando com texto e outros widgets, e seu comportamento padrão é escalar, não simplesmente cortar (clip) o conteúdo.",
+  "tags": [
+    "flutter",
+    "fittedbox",
+    "layout"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

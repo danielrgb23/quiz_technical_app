@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_81fce0e5",
+  "source": "onthecodepath_ios",
+  "topic": "storage",
+  "level": 1,
+  "question": "O que é o Core Data no iOS?",
+  "options": [
+    "Core Data é um framework da Apple para gerenciar o grafo de objetos da camada de modelo, permitindo persistir dados em um armazenamento persistente (como SQLite) e organizando os dados em um modelo relacional de entidades e atributos, além de oferecer recursos como controle de mudanças, undo/redo e fetch otimizado.",
+    "Core Data é uma biblioteca de rede usada para simplificar chamadas HTTP e parsing de JSON no iOS, similar ao Alamofire.",
+    "Core Data é um framework de UI declarativa para construir interfaces no iOS, similar ao SwiftUI.",
+    "Core Data é apenas um wrapper simples sobre `UserDefaults`, sem recursos adicionais de relacionamento entre entidades.",
+    "Core Data é um serviço de sincronização em nuvem da Apple, equivalente ao CloudKit, sem armazenamento local."
+  ],
+  "correctIndex": 0,
+  "explanation": "Core Data gerencia objetos de modelo e sua persistência via um armazenamento local, oferecendo modelagem relacional de entidades e atributos. Não é uma lib de rede nem de UI, e vai muito além de `UserDefaults`, suportando relacionamentos complexos, fetch requests e controle de mudanças.",
+  "tags": ["ios", "storage", "core-data"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

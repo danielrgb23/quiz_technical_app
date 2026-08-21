@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_aa8ce954",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o processo geral para criar widgets customizados no Flutter?",
+  "options": [
+    "Estender `StatelessWidget` ou `StatefulWidget`, sobrescrever o método `build` para definir a aparência, definir o construtor para receber dados, usar o widget na árvore e, se for stateful, gerenciar o estado com `setState`",
+    "Criar uma classe que implementa `Widget` diretamente e sobrescrever o método `paint` para desenhar pixel a pixel na tela",
+    "Registrar o widget em um arquivo de configuração XML e referenciá-lo pelo nome dentro do `MaterialApp`",
+    "Usar exclusivamente o `InheritedWidget` como base, já que ele é a única forma de criar componentes reutilizáveis no Flutter",
+    "Criar uma função top-level que retorna um `Container`, pois widgets customizados no Flutter não podem ser classes"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para criar um widget customizado, estende-se `StatelessWidget` ou `StatefulWidget`, sobrescreve-se o método `build` para descrever a UI usando outros widgets, define-se um construtor para receber dados necessários e, se stateful, gerencia-se o estado com `setState`. Não se usa `paint` diretamente, XML de configuração, `InheritedWidget` como base obrigatória, nem apenas funções (embora funções que retornam widgets sejam possíveis, classes são o padrão recomendado).",
+  "tags": [
+    "flutter",
+    "widgets",
+    "custom-widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

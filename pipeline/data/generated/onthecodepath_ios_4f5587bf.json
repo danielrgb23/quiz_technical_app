@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_4f5587bf",
+  "source": "onthecodepath_ios",
+  "topic": "swift",
+  "level": 1,
+  "question": "Qual é a diferença entre `var` e `let` em Swift?",
+  "options": [
+    "`var` declara uma variável cujo valor pode ser alterado depois; `let` declara uma constante cujo valor não pode ser alterado após ser definido",
+    "`let` declara uma variável cujo valor pode ser alterado; `var` declara uma constante imutável",
+    "`var` e `let` são sinônimos em Swift, apenas com sintaxe diferente",
+    "`let` só pode ser usado para tipos primitivos (Int, Double, Bool), enquanto `var` é obrigatório para objetos",
+    "`var` cria uma referência fraca (weak) por padrão, enquanto `let` cria uma referência forte"
+  ],
+  "correctIndex": 0,
+  "explanation": "`var` declara uma variável mutável, cujo valor pode ser reatribuído depois de definido. `let` declara uma constante: uma vez atribuído um valor, ele não pode ser alterado. Essa distinção não tem relação com tipos primitivos versus objetos, nem com strong/weak referencing, que são conceitos independentes de ARC.",
+  "tags": ["swift", "fundamentals", "variables"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

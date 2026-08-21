@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_48ce7e34",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do widget `Visibility` no Flutter?\n\n```dart\nVisibility(\n  visible: true, // currently visible, set to `false` to disappear\n  child: Text(\n    'Hello, World!',\n    style: TextStyle(fontSize: 24),\n  ),\n),\n```",
+  "options": [
+    "Controlar se um widget filho é exibido ou ocultado com base em uma propriedade `visible`, podendo, dependendo da configuração, remover ou apenas esconder o filho do layout",
+    "Aplicar uma animação de fade automática sempre que qualquer widget aparece ou desaparece da tela, sem necessidade de configuração adicional",
+    "Verificar se o usuário concedeu permissão de câmera ou galeria, ocultando o widget caso a permissão seja negada",
+    "Ser um substituto direto do `Opacity`, alterando apenas a transparência do widget sem afetar seu espaço no layout",
+    "Detectar se o widget está atualmente visível na viewport durante a rolagem de uma lista, como um `VisibilityDetector`"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Visibility` controla se o filho é exibido com base na propriedade `visible`, podendo (conforme parâmetros como `maintainState`) remover completamente o widget da árvore renderizada ou apenas escondê-lo mantendo seu espaço. Ele não aplica animação de fade automaticamente (isso exigiria widgets como `AnimatedOpacity`) nem trata de permissões do dispositivo. Também não é equivalente a `Opacity`, pois por padrão remove o espaço ocupado pelo widget, e não é o mesmo que um `VisibilityDetector`, que mede visibilidade real na viewport durante scroll.",
+  "tags": [
+    "flutter",
+    "visibility",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_842234d4",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que são Semantics (semântica) no Jetpack Compose?",
+  "options": [
+    "Uma árvore paralela à árvore de UI que descreve o significado e a estrutura do conteúdo, usada por leitores de tela, testes automatizados e autofill para entender a interface",
+    "Um conjunto de regras de nomenclatura que o compilador do Kotlin usa para validar nomes de composables",
+    "Um sistema de cache que armazena o resultado da última recomposição para evitar redesenhos desnecessários",
+    "A camada de rede responsável por serializar dados JSON antes de exibi-los em composables",
+    "Um tipo de teste de unidade que verifica exclusivamente a performance de renderização"
+  ],
+  "correctIndex": 0,
+  "explanation": "A árvore de semântica (semantics tree) é gerada a partir da árvore de composição e expõe informações sobre o propósito e conteúdo da UI, permitindo que serviços de acessibilidade (TalkBack), testes de UI (Compose Testing) e autofill interajam com a interface sem depender apenas da aparência visual. As outras opções descrevem mecanismos não relacionados, como cache de recomposição ou serialização de rede.",
+  "tags": ["jetpack-compose", "accessibility", "testing"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

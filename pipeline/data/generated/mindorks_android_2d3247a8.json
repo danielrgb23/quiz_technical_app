@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_2d3247a8",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 3,
+  "question": "Como encontrar vazamentos de memória (memory leaks) em aplicações Android?",
+  "options": [
+    "Usando bibliotecas como LeakCanary (que detecta e reporta automaticamente objetos retidos indevidamente) ou capturando e analisando heap dumps manualmente com o Android Studio Memory Profiler, procurando por referências de longa vida (estáticas, singletons) que apontam para Activities/Fragments/Views destruídos",
+    "Monitorando apenas o uso de CPU do app, já que vazamentos de memória sempre aumentam o consumo de CPU proporcionalmente",
+    "Executando o app em um emulador com pouca RAM, o que automaticamente revela e corrige todos os vazamentos",
+    "Verificando o tamanho do APK gerado, pois um APK grande é sempre indicativo de vazamento de memória em tempo de execução",
+    "Vazamentos de memória não podem ser detectados durante o desenvolvimento, apenas relatados por usuários em produção"
+  ],
+  "correctIndex": 0,
+  "explanation": "LeakCanary automatiza a detecção de vazamentos ao monitorar objetos que deveriam ser coletados pelo garbage collector, enquanto o Memory Profiler do Android Studio permite capturar e inspecionar heap dumps manualmente, revelando referências indevidas (geralmente estáticas ou de longa duração) a Activities/Fragments/Views já destruídos. Uso de CPU não é um indicador direto de vazamento, tamanho de APK é uma métrica não relacionada a memória em runtime, e emuladores com pouca RAM apenas tornam sintomas mais visíveis, não corrigem nada automaticamente; vazamentos são perfeitamente detectáveis durante o desenvolvimento.",
+  "tags": ["android", "performance", "memory-leak"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

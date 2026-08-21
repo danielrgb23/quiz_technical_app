@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_c1a6be71",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Como funcionam os blocos `try{}`, `catch{}` e `finally{}` em Java?",
+  "options": [
+    "O bloco `try` executa código que pode lançar uma exceção; se uma exceção ocorrer e for compatível com o tipo declarado, o `catch` correspondente a trata; o `finally` é executado sempre, tenha ocorrido exceção ou não, sendo usado tipicamente para liberar recursos",
+    "O `finally` só é executado se nenhuma exceção ocorrer dentro do `try`, servindo como um caminho alternativo ao `catch`",
+    "O `catch` é executado antes do `try`, para validar previamente se uma exceção pode ocorrer",
+    "É obrigatório declarar um bloco `catch` para cada tipo de `Exception` existente na JVM, mesmo que não seja lançada",
+    "O `finally` é executado apenas quando uma exceção é lançada e não capturada por nenhum `catch`"
+  ],
+  "correctIndex": 0,
+  "explanation": "O fluxo padrão é: código potencialmente problemático roda em `try`; se uma exceção do tipo esperado ocorre, o `catch` correspondente trata; o `finally` roda sempre — com ou sem exceção, capturada ou não — sendo ideal para fechar recursos (arquivos, conexões). Não é verdade que `finally` só rode em um dos cenários, nem que `catch` execute antes do `try`, nem que seja obrigatório capturar todo tipo de exceção existente.",
+  "tags": ["java", "exceptions", "error-handling"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

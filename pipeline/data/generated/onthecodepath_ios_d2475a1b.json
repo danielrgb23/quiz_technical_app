@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_d2475a1b",
+  "source": "onthecodepath_ios",
+  "topic": "swift",
+  "level": 1,
+  "question": "Qual é a diferença entre declaração de tipo implícita e explícita em Swift? Considere o exemplo:\n\n```swift\nvar name: String = \"onthecodepath\" // explicit\nvar name = \"onthecodepath\" // implicit\n```",
+  "options": [
+    "Na declaração explícita, o tipo é escrito diretamente após o nome da variável (`: String`); na implícita, o tipo não é escrito, mas o Swift infere o tipo automaticamente a partir do valor atribuído",
+    "Na declaração implícita, o tipo deve obrigatoriamente ser escrito antes do nome da variável, e na explícita ele é inferido pelo compilador",
+    "Declaração implícita só funciona com tipos numéricos, nunca com `String`",
+    "Declaração explícita impede completamente a inferência de tipos, tornando a variável de tipo `Any`",
+    "Não há diferença de comportamento entre as duas formas; a distinção é apenas estilística e nunca afeta a inferência de tipos"
+  ],
+  "correctIndex": 0,
+  "explanation": "Na declaração explícita, o tipo da variável é escrito diretamente logo após o nome (por exemplo, `: String`). Na declaração implícita, o tipo não aparece no código, mas o compilador do Swift consegue inferi-lo a partir do valor atribuído — no exemplo, como `\"onthecodepath\"` é uma string literal, o Swift infere que `name` é do tipo `String`. As demais alternativas descrevem comportamentos que não correspondem ao sistema de inferência de tipos do Swift.",
+  "tags": ["swift", "type-inference", "fundamentals"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

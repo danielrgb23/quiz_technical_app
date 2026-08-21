@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_c5cff33e",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que é um `PendingIntent`?",
+  "options": [
+    "É um envoltório (wrapper) de referência a um `Intent` que concede a outro app ou componente do sistema (ex.: `NotificationManager`, `AlarmManager`) permissão para executá-lo posteriormente com os privilégios do app que o criou, mesmo depois que o processo original não existir mais",
+    "É um `Intent` que ainda não pôde ser entregue por falta de rede e permanece em uma fila de retry automática",
+    "É a versão assíncrona de `startActivity()`, usada apenas para abrir Activities em segundo plano",
+    "É um tipo de `BroadcastReceiver` que é registrado dinamicamente e removido automaticamente após 5 minutos",
+    "É um Intent usado exclusivamente para comunicação entre processos (IPC) via `Binder`, sem relação com notificações ou alarmes"
+  ],
+  "correctIndex": 0,
+  "explanation": "`PendingIntent` encapsula um `Intent` e uma ação a ser executada (start activity, service ou broadcast), concedendo a outro componente/app a permissão de disparar essa ação futuramente com a identidade e privilégios do app que criou o PendingIntent — muito usado com notificações e alarmes. Ele não é sobre retry de rede, não é apenas assíncrono para Activities, não é um tipo de BroadcastReceiver, e não é restrito a IPC via Binder.",
+  "tags": ["android", "intent", "notifications"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

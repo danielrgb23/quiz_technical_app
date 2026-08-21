@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_d7060bf9",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "Qual é a diferença entre stack e heap na memória?",
+  "options": [
+    "A stack é uma região de memória usada como espaço de trabalho de uma thread, com alocação/desalocação em ordem LIFO; a heap é memória para alocação dinâmica, onde blocos podem ser alocados e liberados a qualquer momento",
+    "A heap é organizada em ordem LIFO por thread, enquanto a stack permite alocação dinâmica em qualquer ordem",
+    "Stack e heap são a mesma região de memória, apenas com nomes diferentes usados em Swift e Objective-C",
+    "A stack é usada exclusivamente para armazenar objetos alocados dinamicamente com `alloc`, enquanto a heap armazena apenas variáveis locais de funções",
+    "A heap é liberada automaticamente ao final de cada chamada de função, assim como a stack"
+  ],
+  "correctIndex": 0,
+  "explanation": "A stack é uma memória de escopo por thread, onde dados são adicionados e removidos em ordem LIFO (last-in-first-out), sendo tipicamente usada para variáveis locais e chamadas de função. A heap é uma área de alocação dinâmica, onde blocos de memória podem ser alocados e liberados a qualquer momento, sendo usada para objetos (que em Objective-C sempre são tratados como alocados na heap). As demais opções invertem ou descrevem incorretamente esse comportamento.",
+  "tags": ["ios", "memory-management", "fundamentals"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

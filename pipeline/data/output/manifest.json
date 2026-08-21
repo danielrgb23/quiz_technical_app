@@ -1,7 +1,7 @@
 {
-  "version": 1,
-  "generatedAt": "2026-07-24T17:26:17.436139+00:00",
-  "count": 20,
+  "version": 2,
+  "generatedAt": "2026-08-21T02:35:37.281265+00:00",
+  "count": 237,
   "sources": [
     {
       "id": "mindorks_android",
@@ -24,5 +24,5 @@
       "license": "MIT"
     }
   ],
-  "checksum": "e733827918eed776842e7512b2031fc946420d77271707cc480afc1126743f2a"
+  "checksum": "e90693ea60a27b49547c3f945c6520e18e6df8ec86b4fd067ac026a1c6951708"
 }

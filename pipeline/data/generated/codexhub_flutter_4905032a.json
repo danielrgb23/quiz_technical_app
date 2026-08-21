@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_4905032a",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do método `dispose()` em um `StatefulWidget`?",
+  "options": [
+    "Liberar recursos e realizar limpeza quando o State é removido permanentemente da árvore de widgets, como fechar streams, cancelar requisições e descartar controllers",
+    "Inicializar variáveis de estado e controllers quando o widget é criado pela primeira vez",
+    "Ser executado automaticamente a cada hot reload, reiniciando o estado do widget do zero",
+    "Reconstruir a interface do usuário sempre que o estado interno do widget é alterado",
+    "Notificar o widget pai sobre mudanças de estado, disparando um rebuild em cascata na árvore"
+  ],
+  "correctIndex": 0,
+  "explanation": "`dispose()` é chamado quando o State é removido definitivamente da árvore, sendo o local correto para cancelar streams, listeners e descartar controllers, evitando vazamentos de memória. A inicialização é responsabilidade do `initState()`, não do `dispose()`. Ele não é executado durante hot reload (que preserva o estado) e não é o método responsável por reconstruir a UI, que é papel do `build()`. `dispose()` também não notifica widgets pais sobre mudanças de estado.",
+  "tags": [
+    "flutter",
+    "lifecycle",
+    "memory-leak"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

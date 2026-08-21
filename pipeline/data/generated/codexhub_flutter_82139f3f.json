@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_82139f3f",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 2,
+  "question": "O que são mixins em Dart e como usá-los?",
+  "options": [
+    "São classes cujos métodos e propriedades podem ser reutilizados por outras classes sem herança direta, aplicados com a palavra-chave `with` e opcionalmente restritos com `on`",
+    "São interfaces que obrigam a classe que as implementa a sobrescrever todos os métodos abstratos declarados",
+    "São funções anônimas usadas para encapsular lógica de callback em widgets assíncronos",
+    "São um tipo de generics usados para restringir o tipo de retorno de uma função",
+    "São classes abstratas que só podem ser instanciadas através de um construtor `factory`"
+  ],
+  "correctIndex": 0,
+  "explanation": "Mixins permitem reutilizar métodos e propriedades em várias classes sem usar herança tradicional, sendo aplicados com a palavra-chave `with`; a cláusula `on` pode restringir quais classes podem usar o mixin. Eles não são interfaces obrigatórias, funções anônimas, generics ou classes abstratas com construtor `factory` — esses são conceitos diferentes do Dart.",
+  "tags": [
+    "dart",
+    "mixins",
+    "oop"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

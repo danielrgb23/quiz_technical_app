@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_1621ea5a",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que são classes anônimas (anonymous classes) em Java?",
+  "options": [
+    "São classes sem nome declaradas e instanciadas em uma única expressão, geralmente usadas para fornecer uma implementação pontual de uma interface ou classe abstrata, como um listener de clique",
+    "São classes declaradas fora de qualquer pacote, tornando-as acessíveis de forma global em toda a aplicação",
+    "São classes que não podem ter nenhum método, apenas atributos públicos",
+    "São classes geradas automaticamente pelo compilador para cada arquivo `.java`, substituindo o nome do arquivo",
+    "São classes que só podem ser usadas dentro de testes unitários, nunca em código de produção"
+  ],
+  "correctIndex": 0,
+  "explanation": "Uma classe anônima é definida e instanciada ao mesmo tempo, sem um nome explícito, sendo útil quando se precisa de uma implementação única e local de uma interface/classe abstrata (por exemplo, `new OnClickListener() { ... }`). Ela não tem relação com pacotes globais, não é restrita a testes, e pode conter tanto métodos quanto atributos.",
+  "tags": ["java", "anonymous-classes", "oop"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

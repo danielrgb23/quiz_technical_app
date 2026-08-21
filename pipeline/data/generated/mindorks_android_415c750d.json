@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_415c750d",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 3,
+  "question": "Como identificar e corrigir problemas de `OutOfMemoryError` em um app Android?",
+  "options": [
+    "Usando ferramentas de profiling como o Android Studio Memory Profiler (ou LeakCanary) para capturar heap dumps e identificar objetos retidos indevidamente, e então corrigindo causas comuns como vazamentos de memória (referências estáticas a Context/Activity, listeners não removidos), bitmaps grandes não otimizados e caches sem limite de tamanho",
+    "Aumentando o valor de `android:largeHeap` no Manifest para `true` em todos os apps, o que resolve definitivamente qualquer OutOfMemoryError",
+    "Reiniciando o processo do app periodicamente via código para liberar toda a memória automaticamente",
+    "Chamando `System.gc()` manualmente em loop dentro de `onCreate()` para forçar a liberação contínua de memória",
+    "Removendo todas as imagens do app e substituindo-as por texto, já que imagens são a única causa possível de OutOfMemoryError"
+  ],
+  "correctIndex": 0,
+  "explanation": "A abordagem correta é usar ferramentas de profiling (Android Studio Memory Profiler, LeakCanary) para localizar vazamentos e picos de alocação, e então corrigir as causas raiz: vazamentos de memória (referências estáticas indevidas, listeners/callbacks não removidos), bitmaps grandes carregados sem redimensionamento, e caches ilimitados. `largeHeap` apenas adia o problema e não é solução definitiva, reiniciar o processo é uma solução paliativa e ruim para UX, `System.gc()` não garante liberação de memória e pode até prejudicar performance, e eliminar todas as imagens é uma medida desproporcional que ignora outras causas.",
+  "tags": ["android", "performance", "memory"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

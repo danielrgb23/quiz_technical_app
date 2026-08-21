@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_251193ff",
+  "source": "onthecodepath_ios",
+  "topic": "performance",
+  "level": 2,
+  "question": "É mais rápido buscar um item em um `NSArray` ou em um `NSSet`?",
+  "options": [
+    "Depende, mas em geral `NSSet` é mais rápido para buscar um item, pois usa valores de hash para localizar elementos (busca em tempo aproximadamente O(1)); `NSArray` é mais lento para busca, pois precisa iterar por todo o conteúdo (O(n)), embora, ao contrário do `NSSet`, permita múltiplas cópias do mesmo objeto e preserve a ordem de inserção.",
+    "`NSArray` é sempre mais rápido para buscas, pois utiliza hashing internamente, enquanto `NSSet` sempre itera item por item.",
+    "Não há diferença de desempenho entre `NSArray` e `NSSet` para operações de busca, pois ambos usam exatamente o mesmo algoritmo internamente.",
+    "`NSSet` é mais lento porque precisa verificar duplicatas a cada busca, enquanto `NSArray` acessa qualquer elemento em tempo constante O(1).",
+    "A velocidade de busca depende exclusivamente do tamanho em bytes de cada elemento armazenado, sendo irrelevante qual estrutura de dados é usada."
+  ],
+  "correctIndex": 0,
+  "explanation": "`NSSet` usa uma tabela hash internamente, o que torna a verificação de pertencimento tipicamente O(1), enquanto `NSArray` precisa varrer sequencialmente seus elementos (O(n)) para encontrar um item específico — em compensação, `NSArray` mantém ordem e permite duplicatas. As opções que invertem essa relação, afirmam desempenho idêntico, ou atribuem a diferença apenas ao tamanho dos elementos, estão incorretas.",
+  "tags": ["ios", "data-structures", "performance"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_1bc36f52",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 2,
+  "question": "O que é `typedef` em Dart?",
+  "options": [
+    "É uma forma de definir um apelido (alias) para um tipo, comumente usado para dar nome a um tipo de função complexo e reduzir duplicação no código",
+    "É uma palavra-chave usada para declarar variáveis cujo tipo só é conhecido em tempo de execução",
+    "É um comando usado para converter tipos primitivos em objetos encapsulados (boxing)",
+    "É uma anotação usada para marcar métodos como obsoletos (`deprecated`)",
+    "É uma diretiva de importação que renomeia uma biblioteca inteira ao ser importada"
+  ],
+  "correctIndex": 0,
+  "explanation": "`typedef` cria um alias para um tipo, sendo muito usado para nomear tipos de função complexos (como `typedef IntCallback = void Function(int value);`), tornando o código mais legível e reduzindo repetição ao declarar parâmetros, variáveis ou retornos desse tipo. Não é usado para tipagem dinâmica em runtime, boxing de primitivos, marcar deprecação ou renomear importações de bibliotecas.",
+  "tags": [
+    "dart",
+    "typedef",
+    "functions"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

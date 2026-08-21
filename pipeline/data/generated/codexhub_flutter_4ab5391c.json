@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_4ab5391c",
+  "source": "codexhub_flutter",
+  "topic": "state_management",
+  "level": 2,
+  "question": "Qual é a diferença entre `Provider` e `InheritedWidget` no Flutter?",
+  "options": [
+    "`InheritedWidget` é o mecanismo nativo do Flutter para propagar dados pela árvore de widgets; `Provider` é um pacote construído sobre ele que oferece uma API mais declarativa, com rebuild automático e melhor ergonomia para gerenciamento de estado em apps maiores",
+    "`Provider` é nativo do Flutter SDK e `InheritedWidget` é um pacote de terceiros criado para facilitar o uso do `Provider`",
+    "Não há diferença real entre eles: `Provider` é apenas um apelido (alias) para `InheritedWidget` introduzido nas versões recentes do Flutter",
+    "`InheritedWidget` só pode ser usado em widgets stateless, enquanto `Provider` funciona exclusivamente com StatefulWidget",
+    "`Provider` substitui completamente a árvore de widgets, eliminando a necessidade de BuildContext para acessar dados compartilhados"
+  ],
+  "correctIndex": 0,
+  "explanation": "`InheritedWidget` é a primitiva nativa do Flutter para compartilhar dados descendo pela árvore de widgets, mas seu uso direto é verboso. O pacote `Provider` é construído sobre `InheritedWidget` e adiciona uma API mais declarativa e escalável, cuidando de listeners e rebuilds automaticamente. É o oposto de nativo/terceiro: `InheritedWidget` é do SDK e `Provider` é o pacote. Ambos funcionam com qualquer tipo de widget e o `Provider` ainda depende do `BuildContext` para localizar os dados na árvore.",
+  "tags": [
+    "flutter",
+    "provider",
+    "state-management"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_49adefd3",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "Quais são algumas formas de fazer debugging em iOS?",
+  "options": [
+    "Usar `print`/`NSLog` para saída no console, breakpoints combinados com a Debug bar e a view de variáveis do Xcode para inspecionar o estado em tempo de execução, e, para investigações mais avançadas, ferramentas como Instruments (análise de desempenho e memória) e os Crash Logs do dispositivo.",
+    "A única forma confiável de debugar um app iOS é reinstalar o app repetidamente até que o bug pare de ocorrer.",
+    "O Xcode não oferece suporte a breakpoints; toda depuração deve ser feita exclusivamente com instruções `print`.",
+    "Debugging em iOS só é possível remotamente, conectando o dispositivo a um servidor de logs externo, sem uso do Xcode.",
+    "Instruments serve apenas para editar interfaces visuais (Storyboards) e não tem relação com depuração ou desempenho."
+  ],
+  "correctIndex": 0,
+  "explanation": "O Xcode oferece um conjunto rico de ferramentas de debugging: prints/logs, breakpoints interativos com inspeção de variáveis, e o Instruments para profiling de CPU, memória e outros recursos, além dos crash logs para investigar falhas em produção. As demais opções descrevem incorretamente as capacidades do Xcode, que suporta breakpoints nativamente e não depende de servidores externos.",
+  "tags": ["ios", "debugging", "tooling"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

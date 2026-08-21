@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_0230ec7d",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 2,
+  "question": "Como usar dados de Memory Heap Dumps para investigar problemas de memória em um app Android?",
+  "options": [
+    "Um heap dump captura um snapshot de todos os objetos alocados na memória em um instante; ferramentas como o Android Studio Profiler ou o Eclipse MAT permitem analisá-lo para identificar vazamentos de memória, encontrando objetos que deveriam ter sido coletados pelo garbage collector mas continuam referenciados (ex.: Activities/Contexts retidas indevidamente), analisando o caminho de referências até um GC root.",
+    "O heap dump mostra apenas o uso de CPU do aplicativo ao longo do tempo, sendo útil exclusivamente para detectar travamentos de UI (jank).",
+    "Heap dumps são gerados automaticamente pelo sistema a cada crash e enviados ao Google Play Console, sem necessidade de análise manual.",
+    "Um heap dump é um arquivo de log textual com as chamadas de rede feitas pelo app, usado para depurar problemas de latência.",
+    "O heap dump serve apenas para medir o tamanho do APK final, ajudando a reduzir o tamanho de instalação do app."
+  ],
+  "correctIndex": 0,
+  "explanation": "Heap dumps são usados especificamente para diagnosticar uso e vazamentos de memória, mostrando todos os objetos vivos e suas referências no momento da captura; ferramentas como Android Studio Profiler ou LeakCanary ajudam a rastrear cadeias de referência até um GC root para encontrar vazamentos. As demais opções confundem o heap dump com perfil de CPU, logs de rede ou métricas de tamanho de APK, que são coisas distintas.",
+  "tags": ["android", "performance", "memory"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_f6f0c480",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Como você faria o deploy de um app Flutter para a Google Play Store e para a App Store?",
+  "options": [
+    "Para o Google Play: criar conta de desenvolvedor, gerar chave de assinatura, ajustar o build.gradle, gerar o APK/AAB com `flutter build apk`/`flutter build appbundle` e enviar pelo Play Console; para a App Store: criar conta Apple Developer, configurar certificado e provisioning profile, gerar o arquivo com `flutter build ios`, arquivar no Xcode e enviar via Xcode/Transporter para revisão",
+    "Basta rodar `flutter build web` e fazer upload do resultado tanto na Google Play Store quanto na App Store",
+    "É necessário reescrever o app em Kotlin para a Play Store e em Swift para a App Store antes de publicar",
+    "O Flutter publica automaticamente nas duas lojas assim que o comando `flutter deploy` é executado, sem necessidade de contas de desenvolvedor",
+    "Basta compactar o código-fonte Dart em um ZIP e enviar diretamente para as lojas, sem processo de build nativo"
+  ],
+  "correctIndex": 0,
+  "explanation": "O deploy real exige contas de desenvolvedor em cada loja, assinatura/certificados específicos da plataforma, geração de binários nativos (AAB/APK para Android, arquivo IPA para iOS) e envio pelos respectivos consoles (Play Console, Xcode/Transporter), seguido de revisão. Não existe comando único `flutter deploy`, o build web não serve para lojas mobile, e não é preciso reescrever o app em linguagens nativas.",
+  "tags": ["flutter", "deployment", "android", "ios"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

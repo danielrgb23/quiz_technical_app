@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_2daa7be9",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Qual é a diferença entre LiveData e ObservableField?",
+  "options": [
+    "LiveData é lifecycle-aware (só notifica observers ativos e evita vazamentos), enquanto ObservableField do Data Binding notifica observers independentemente do estado do ciclo de vida e não tem esse controle nativo",
+    "LiveData e ObservableField são exatamente a mesma API, apenas com nomes diferentes em versões distintas do Android",
+    "ObservableField é lifecycle-aware, enquanto LiveData exige registro manual e remoção manual de observers para evitar vazamentos",
+    "LiveData só pode ser usado dentro de Activities, enquanto ObservableField funciona em qualquer classe Java pura sem dependências do Android",
+    "ObservableField armazena histórico de todos os valores emitidos, enquanto LiveData mantém apenas o valor mais recente"
+  ],
+  "correctIndex": 0,
+  "explanation": "LiveData é uma classe observável e lifecycle-aware do Android Architecture Components: ela só entrega atualizações a observers em estado ativo (STARTED/RESUMED) e remove observers automaticamente quando o LifecycleOwner é destruído, evitando vazamentos de memória e crashes. ObservableField, parte do Data Binding, é um wrapper observável simples que notifica todos os listeners registrados sem considerar o ciclo de vida, exigindo cuidado manual para não notificar Views destruídas. Por isso LiveData é preferido em arquiteturas MVVM modernas.",
+  "tags": ["android", "livedata", "databinding", "architecture"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

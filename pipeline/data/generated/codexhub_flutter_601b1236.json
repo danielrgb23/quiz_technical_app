@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_601b1236",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Como implementar um widget arrastável (draggable) no Flutter?\n\n```dart\nDraggable<int>(\n  data: 1,\n  feedback: Material(\n    color: Colors.transparent,\n    child: Icon(Icons.access_alarm, size: 50),\n  ),\n  childWhenDragging: Container(),\n  child: Icon(Icons.access_alarm),\n)\n```",
+  "options": [
+    "Usar o widget Draggable envolvendo o elemento desejado, passando os dados a serem arrastados na propriedade data, o widget exibido durante o arraste em feedback e o widget que substitui o original durante o arraste em childWhenDragging",
+    "Envolver o widget com GestureDetector e usar apenas onTap para simular o arraste manualmente",
+    "Usar o widget Positioned dentro de um Stack, que já move automaticamente qualquer widget filho quando tocado",
+    "Draggable é exclusivo para uso com DragTarget dentro de listas, não podendo ser usado com Icon ou outros widgets simples",
+    "Usar AnimatedPositioned combinado com um Timer que recalcula a posição do widget a cada frame"
+  ],
+  "correctIndex": 0,
+  "explanation": "O widget Draggable é o mecanismo nativo do Flutter para tornar um elemento arrastável: data carrega o payload, feedback define a aparência durante o arraste e childWhenDragging define o que aparece no lugar original enquanto o item é arrastado. GestureDetector com onTap não captura arraste, Positioned/Stack não move nada automaticamente, Draggable funciona com qualquer widget filho (não só listas), e usar Timer com AnimatedPositioned é uma abordagem manual desnecessária e propensa a erros.",
+  "tags": ["flutter", "gestures", "drag-and-drop"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

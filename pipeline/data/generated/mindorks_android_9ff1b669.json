@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_9ff1b669",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Quais são os diferentes níveis de proteção (protection levels) de uma permissão no Android?",
+  "options": [
+    "`normal` (concedida automaticamente por não representar risco relevante), `dangerous` (exige consentimento explícito do usuário em tempo de execução, pois acessa dados/recursos sensíveis) e `signature` (concedida automaticamente apenas a apps assinados com o mesmo certificado do app que declarou a permissão)",
+    "`public`, `private` e `protected`, os mesmos modificadores de visibilidade usados em Java/Kotlin",
+    "`low`, `medium` e `high`, definidos pelo desenvolvedor livremente no Manifest sem relação com o sistema",
+    "`runtime` e `compile-time`, sendo o único critério que diferencia as permissões no Android",
+    "`user` e `system`, onde `system` está disponível apenas para apps pré-instalados de fábrica"
+  ],
+  "correctIndex": 0,
+  "explanation": "O sistema Android classifica permissões principalmente em `normal` (baixo risco, concedida automaticamente na instalação), `dangerous` (acesso a dados sensíveis, exigindo solicitação explícita ao usuário em runtime a partir da API 23) e `signature` (concedida automaticamente somente a apps assinados com o mesmo certificado do declarante). As demais opções confundem esses níveis com modificadores de visibilidade de linguagem, categorias inventadas ou classificações que não correspondem à documentação oficial.",
+  "tags": ["android", "permissions", "security"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_d023991e",
+  "source": "onthecodepath_ios",
+  "topic": "concurrency",
+  "level": 1,
+  "question": "Qual é a diferença entre uma tarefa síncrona e uma tarefa assíncrona?",
+  "options": [
+    "Uma tarefa síncrona bloqueia a execução até ser concluída; uma tarefa assíncrona pode rodar em segundo plano, permitindo continuar outras execuções e notificando quando termina",
+    "Tarefas assíncronas sempre bloqueiam a thread principal até serem concluídas, enquanto tarefas síncronas rodam em segundo plano",
+    "Não há diferença prática entre tarefas síncronas e assíncronas em iOS, pois o sistema operacional trata ambas da mesma forma",
+    "Tarefas síncronas só podem ser executadas em background threads, nunca na main thread",
+    "Tarefas assíncronas sempre executam mais rápido que tarefas síncronas, independentemente do tipo de operação"
+  ],
+  "correctIndex": 0,
+  "explanation": "Uma tarefa síncrona bloqueia a thread até a conclusão da operação antes de seguir para o próximo passo. Uma tarefa assíncrona pode ser despachada para rodar em segundo plano (por exemplo, via `DispatchQueue.global()`), liberando a thread atual para continuar outras execuções, e notifica (via closure/callback) quando o trabalho termina. As demais alternativas invertem esse conceito ou fazem afirmações genéricas incorretas sobre desempenho.",
+  "tags": ["concurrency", "ios", "async"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

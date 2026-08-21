@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_c924d7d6",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que são funções Composable no Jetpack Compose?",
+  "options": [
+    "São funções Kotlin anotadas com @Composable que descrevem declarativamente parte da UI, podendo ser chamadas apenas dentro de outras funções Composable e recompostas automaticamente quando o estado do qual dependem muda",
+    "São classes Java que estendem View e substituem o XML de layout, mas seguem o mesmo paradigma imperativo do sistema de Views tradicional",
+    "São arquivos de configuração XML que descrevem a estrutura hierárquica de uma tela, similar ao layout tradicional do Android",
+    "São funções que só podem ser executadas em background threads para não bloquear a renderização da UI principal",
+    "São anotações usadas exclusivamente para marcar ViewModels que expõem estado observável para a UI"
+  ],
+  "correctIndex": 0,
+  "explanation": "Funções Composable são funções Kotlin marcadas com a anotação @Composable, que descrevem a UI de forma declarativa (o que mostrar dado um estado, em vez de como manipular views imperativamente). Elas só podem ser chamadas de dentro de outras funções Composable (ou de um ponto de entrada como setContent) e o Compose as reexecuta (recompõe) automaticamente quando o estado observado muda. Não são arquivos XML, não substituem Views diretamente mantendo o paradigma imperativo, não rodam obrigatoriamente em background e não são exclusivas de ViewModels.",
+  "tags": ["android", "jetpack-compose", "ui"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

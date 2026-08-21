@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_df83ca2f",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é State no Jetpack Compose?",
+  "options": [
+    "É um objeto observável (tipicamente criado com mutableStateOf) que armazena um valor e notifica o sistema de Compose quando esse valor muda, disparando a recomposição das funções Composable que o leem",
+    "É uma classe usada exclusivamente para persistir dados no banco de dados Room de forma automática",
+    "É um arquivo XML separado onde se declaram os valores iniciais dos componentes de UI antes da compilação",
+    "É o nome dado ao ciclo de vida completo de uma Activity, do onCreate até o onDestroy",
+    "É uma anotação usada para marcar funções Composable como thread-safe automaticamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "State (via mutableStateOf, remember, etc.) é o conceito central para armazenar dados observáveis no Compose: quando o valor de um State muda, o sistema de Compose sabe exatamente quais Composables leem aquele valor e agenda a recomposição apenas deles. Não é uma classe de persistência do Room, não é um arquivo XML, não representa o ciclo de vida de uma Activity, e não é uma anotação de thread-safety.",
+  "tags": ["android", "jetpack-compose", "state"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

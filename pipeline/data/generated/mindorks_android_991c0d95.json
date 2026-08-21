@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_991c0d95",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Qual é o papel do Modifier no Jetpack Compose?",
+  "options": [
+    "É um elemento usado para decorar ou configurar um composable, como definir tamanho, padding, clique, background e outros comportamentos, podendo ser encadeado em uma cadeia de chamadas",
+    "É a classe base que todo composable precisa estender para poder ser desenhado na tela",
+    "É o mecanismo responsável por gerenciar o ciclo de vida das Activities que hospedam composables",
+    "É um tipo de ViewModel especializado usado apenas para armazenar estados de formulários no Compose",
+    "É a API usada exclusivamente para definir animações de transição entre telas no Navigation Compose"
+  ],
+  "correctIndex": 0,
+  "explanation": "Modifier é um objeto imutável e encadeável usado para alterar aparência, comportamento e semântica de um composable (tamanho, padding, clique, scroll, background, etc.), sendo passado como parâmetro em vez de herança. Composables não estendem uma classe base — são funções anotadas com @Composable — e Modifier não tem relação direta com ciclo de vida de Activity, ViewModel ou animações de navegação especificamente.",
+  "tags": ["jetpack-compose", "modifier", "ui"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

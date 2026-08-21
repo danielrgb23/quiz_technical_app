@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_9c52e067",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Para que serve o `reuseIdentifier` em uma `UITableView` (ou `UICollectionView`)?",
+  "options": [
+    "Indica que células com aquele identificador podem ser reutilizadas: a `UITableView` mantém um cache interno de células e as reaproveita ao chamar `dequeueReusableCell(withIdentifier:)`, evitando criar uma nova view para cada célula e melhorando a performance",
+    "Serve apenas para identificar visualmente qual célula está selecionada na tabela",
+    "Define a ordem em que as células serão exibidas na `UITableView`",
+    "Garante que cada célula tenha um identificador globalmente único no app inteiro, impedindo qualquer reutilização de instâncias",
+    "É usado apenas em `UICollectionView`, não tendo efeito algum em `UITableView`"
+  ],
+  "correctIndex": 0,
+  "explanation": "O `reuseIdentifier` permite que a `UITableView`/`UICollectionView` mantenha um pool interno de células com aquele identificador e as reutilize quando chamadas via `dequeueReusableCell(withIdentifier:)`, evitando o custo de instanciar uma nova view para cada célula exibida e melhorando significativamente a performance de rolagem. Não tem relação com seleção, ordenação de itens, ou exclusividade global — na verdade, o objetivo é justamente permitir reutilização, não impedi-la.",
+  "tags": ["ios", "uikit", "performance"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

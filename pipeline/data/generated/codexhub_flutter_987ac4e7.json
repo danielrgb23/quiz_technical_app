@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_987ac4e7",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é um `GlobalKey` no Flutter?",
+  "options": [
+    "Um identificador único que permite acessar o State, o BuildContext ou o RenderObject de um widget a partir de qualquer lugar da árvore, útil para validação de formulários ou controle de animações, mas que deve ser usado com moderação",
+    "Uma chave usada exclusivamente para armazenar dados persistentes do usuário em `SharedPreferences`",
+    "Um mecanismo de segurança do Flutter que criptografa o estado de widgets sensíveis, como campos de senha",
+    "Um identificador que só pode ser usado dentro de `ListView.builder` para otimizar a reconstrução de itens da lista",
+    "Uma variável global do Dart, declarada fora de qualquer classe, usada para compartilhar estado entre todos os widgets do app"
+  ],
+  "correctIndex": 0,
+  "explanation": "`GlobalKey` identifica unicamente um widget na árvore, permitindo acessar seu State, BuildContext ou RenderObject de fora da hierarquia local, sendo útil em casos como validação de `Form` ou controle de `AnimatedList`. Não tem relação com `SharedPreferences` nem funciona como criptografia. Também não é restrito a `ListView.builder` — nesse contexto, `GlobalKey` mal usado até prejudica performance. E não é uma simples variável global do Dart; é uma classe específica do framework Flutter com semântica própria na árvore de elementos.",
+  "tags": [
+    "flutter",
+    "globalkey",
+    "widget-tree"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

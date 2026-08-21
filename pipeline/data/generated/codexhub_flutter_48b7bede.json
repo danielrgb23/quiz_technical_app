@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_48b7bede",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Como implementar uma curva de animação customizada no Flutter?\n\n```dart\nclass CustomCurve extends Curve {\n  @override\n  double transform(double t) {\n    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;\n  }\n}\n\nfinal animation = CurvedAnimation(\n  parent: controller,\n  curve: CustomCurve(),\n);\n```",
+  "options": [
+    "Criar uma classe que estende Curve e sobrescreve o método transform para definir o comportamento da curva, aplicando-a em um Animation por meio de CurvedAnimation",
+    "Usar apenas Curves.linear e ajustar a duration do AnimationController para simular curvas diferentes",
+    "Definir a curva diretamente como uma String, como 'easeInCustom', e passá-la para o AnimationController",
+    "Estender AnimationController e sobrescrever o método tick para alterar a velocidade da animação",
+    "Curvas customizadas não são suportadas no Flutter; é preciso usar pacotes de terceiros para qualquer curva além das predefinidas em Curves"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Flutter permite criar curvas customizadas estendendo a classe Curve e sobrescrevendo transform(t), que mapeia o progresso linear (0 a 1) para o progresso da curva desejada; essa curva é aplicada via CurvedAnimation. Usar apenas Curves.linear com duration ajustada não reproduz curvas não lineares reais, curvas não são definidas por strings, e não é necessário estender AnimationController nem usar pacotes externos, já que Curve é extensível nativamente.",
+  "tags": ["flutter", "animation", "curve"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

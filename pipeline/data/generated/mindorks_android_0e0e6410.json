@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_0e0e6410",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como o Jetpack Compose lida com mudanças de orientação da tela?",
+  "options": [
+    "O composable recompõe automaticamente para o novo layout, e o estado é preservado usando `rememberSaveable` (que sobrevive a mudanças de configuração) ou mantendo o estado em um ViewModel, que não é destruído nesse cenário",
+    "É necessário sobrescrever `onConfigurationChanged` manualmente em cada composable para evitar que o app seja finalizado",
+    "O Compose ignora mudanças de orientação por padrão; o desenvolvedor deve travar a orientação da Activity no Manifest",
+    "Toda a árvore de composição é descartada e o estado é sempre perdido, sendo impossível preservá-lo entre rotações",
+    "O Android recria automaticamente a JVM inteira a cada rotação, tornando desnecessário qualquer tratamento de estado"
+  ],
+  "correctIndex": 0,
+  "explanation": "Assim como no sistema de Views, uma mudança de orientação recria a Activity por padrão, mas `rememberSaveable` salva e restaura o estado através do Bundle, e um ViewModel sobrevive a esse ciclo (é destruído apenas quando a Activity realmente termina). Não é necessário sobrescrever `onConfigurationChanged` manualmente nem travar a orientação, e o estado não é obrigatoriamente perdido se as ferramentas certas forem usadas.",
+  "tags": ["jetpack-compose", "configuration-changes", "state-management"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

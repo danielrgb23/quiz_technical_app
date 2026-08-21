@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_126e18e4",
+  "source": "onthecodepath_ios",
+  "topic": "storage",
+  "level": 1,
+  "question": "O que é `NSFetchRequest` no Core Data?",
+  "options": [
+    "`NSFetchRequest` é a classe responsável por realizar buscas no Core Data; pode ser usada para buscar objetos que atendam a determinados critérios (usando `NSPredicate`), buscar valores individuais, contar registros ou configurar ordenação e limites de resultado.",
+    "`NSFetchRequest` é a classe usada exclusivamente para inserir novos registros no armazenamento persistente do Core Data.",
+    "`NSFetchRequest` representa o esquema de uma entidade do Core Data, definindo seus atributos e relacionamentos.",
+    "`NSFetchRequest` é usada para configurar a conexão com o servidor remoto de sincronização do CloudKit.",
+    "`NSFetchRequest` é responsável por excluir permanentemente o armazenamento persistente inteiro do Core Data."
+  ],
+  "correctIndex": 0,
+  "explanation": "`NSFetchRequest` é a API de consulta do Core Data, usada para especificar critérios de busca (via `NSPredicate`), ordenação e o tipo de resultado desejado. Ela não é usada para inserir dados (isso é feito criando um `NSManagedObject` no contexto), não representa o esquema de uma entidade (isso é `NSEntityDescription`) e não lida com sincronização remota nem exclusão do armazenamento inteiro.",
+  "tags": ["ios", "storage", "core-data"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

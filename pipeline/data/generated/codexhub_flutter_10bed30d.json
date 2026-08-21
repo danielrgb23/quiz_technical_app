@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_10bed30d",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 1,
+  "question": "Para que serve o `assert` em Dart e Flutter?",
+  "options": [
+    "É uma instrução usada para verificar se uma condição booleana é verdadeira, lançando um `AssertionError` se for falsa; é usada apenas em desenvolvimento e é ignorada em produção",
+    "É uma instrução usada para forçar a recompilação do código durante o hot reload",
+    "É uma função usada para converter valores `String` em tipos numéricos de forma segura",
+    "É uma instrução que sempre lança uma exceção, independentemente da condição avaliada, usada para interromper o app propositalmente",
+    "É um comando usado para registrar (logar) mensagens de debug no console em builds de produção"
+  ],
+  "correctIndex": 0,
+  "explanation": "`assert(condition)` avalia uma expressão booleana: se verdadeira, não faz nada; se falsa, lança um `AssertionError`. É voltado para debugging e validação durante o desenvolvimento, sendo ignorado (removido) em builds de produção por padrão. Não tem relação com hot reload, conversão de tipos, exceções incondicionais ou logging em produção.",
+  "tags": [
+    "dart",
+    "debugging",
+    "flutter"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

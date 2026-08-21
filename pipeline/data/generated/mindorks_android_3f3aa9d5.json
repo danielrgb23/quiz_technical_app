@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_3f3aa9d5",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 3,
+  "question": "Quais são as melhores práticas para otimização de performance no Jetpack Compose?",
+  "options": [
+    "Evitar recomposições desnecessárias usando classes estáveis/imutáveis (@Stable, @Immutable), aplicar remember para cachear cálculos e objetos, elevar o estado (state hoisting) apenas até onde é necessário, usar chaves em listas com LazyColumn/LazyRow (key = ...) e evitar lambdas recriadas a cada composição que quebrem a checagem de estabilidade",
+    "Sempre envolver toda a árvore de Composables em um único remember global no topo da Activity, independente do que está sendo armazenado",
+    "Evitar completamente o uso de LazyColumn e LazyRow, substituindo-os sempre por Column/Row simples para reduzir a complexidade do código",
+    "Forçar a recomposição manual de toda a árvore de UI a cada segundo usando um Timer, para garantir que a interface esteja sempre atualizada",
+    "Declarar todos os parâmetros de Composables como 'var' mutável em vez de 'val', o que melhora a performance ao evitar a criação de novos objetos"
+  ],
+  "correctIndex": 0,
+  "explanation": "Boas práticas de performance em Compose incluem: usar tipos estáveis/imutáveis (anotados com @Stable/@Immutable quando necessário) para que o Compose consiga pular (skip) recomposições desnecessárias; usar remember para evitar recalcular valores ou recriar objetos a cada recomposição; manter o state hoisting no nível certo para não recompor mais do que o necessário; fornecer key em itens de LazyColumn/LazyRow para otimizar reordenação e reciclagem; e evitar lambdas instáveis. Usar LazyColumn é justamente uma otimização para listas grandes (não deve ser evitado), forçar recomposição via Timer é ineficiente e contraproducente, e parâmetros de Composable devem ser 'val' imutáveis para permitir a checagem de estabilidade do compilador.",
+  "tags": ["android", "jetpack-compose", "performance", "recomposition"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

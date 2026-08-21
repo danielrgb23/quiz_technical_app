@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_56cb6caf",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "O que é KVO (Key-Value Observing) no iOS?",
+  "options": [
+    "KVO é um mecanismo que permite que um controller ou objeto observe mudanças no valor de uma propriedade de outro objeto, sendo notificado automaticamente sempre que essa propriedade é alterada, sem a necessidade de polling manual.",
+    "KVO é um mecanismo de persistência de dados que salva automaticamente qualquer propriedade observada em disco a cada alteração.",
+    "KVO é a sigla para Key-View Orientation, um padrão usado para alinhar elementos de interface em um `UIStackView`.",
+    "KVO exige que o desenvolvedor consulte manualmente o valor da propriedade em um loop (`polling`) para detectar alterações.",
+    "KVO é usado exclusivamente para observar eventos de toque na tela, como taps e gestos, e não está relacionado a propriedades de objetos."
+  ],
+  "correctIndex": 0,
+  "explanation": "KVO permite observação reativa de mudanças de valor em propriedades, notificando os observadores automaticamente, sem necessidade de polling manual. Não tem relação com persistência em disco, com layout de interface, nem se limita a eventos de toque — sua função é especificamente sobre observar valores de propriedades (key-value).",
+  "tags": ["ios", "kvo", "observers"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

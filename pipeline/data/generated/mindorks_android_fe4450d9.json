@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_fe4450d9",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como exibir uma notificação local no Android em um horário exato?",
+  "options": [
+    "Usando o `AlarmManager` com `setExactAndAllowWhileIdle()` (ou `setExact()`), agendando um `PendingIntent` que dispara um `BroadcastReceiver` no horário desejado, o qual então constrói e exibe a `Notification` via `NotificationManager`; para versões modernas do Android é necessário lidar com a permissão `SCHEDULE_EXACT_ALARM` e o modo Doze.",
+    "Usando exclusivamente `WorkManager` com `setInitialDelay()`, que garante execução no segundo exato configurado, mesmo em modo Doze.",
+    "Criando uma `Thread` que fica em `sleep()` pelo tempo calculado até o horário desejado e então dispara a notificação diretamente.",
+    "Agendando a notificação usando `Handler.postDelayed()` a partir da Activity principal, o que garante a entrega mesmo com o app fechado.",
+    "O Android não permite notificações agendadas para um horário exato; apenas notificações imediatas, disparadas enquanto o app está em primeiro plano, são suportadas."
+  ],
+  "correctIndex": 0,
+  "explanation": "O `AlarmManager` é a API projetada para agendamentos sensíveis a horário exato, inclusive contornando o modo Doze com `setExactAndAllowWhileIdle()`. `WorkManager` é ótimo para tarefas adiáveis, mas não garante precisão exata de horário; `Thread.sleep()` e `Handler.postDelayed()` dependem do processo do app estar vivo, o que não é garantido a longo prazo.",
+  "tags": ["android", "notifications", "alarmmanager"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

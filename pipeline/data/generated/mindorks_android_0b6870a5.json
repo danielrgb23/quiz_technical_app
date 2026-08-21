@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_0b6870a5",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é um `LayoutManager` no `RecyclerView`?",
+  "options": [
+    "É o componente responsável por posicionar os itens dentro do `RecyclerView` e decidir quando reciclar Views que saíram da área visível, permitindo layouts como lista linear (`LinearLayoutManager`), grade (`GridLayoutManager`) ou disposição escalonada (`StaggeredGridLayoutManager`)",
+    "É a classe responsável por buscar os dados de uma API remota e alimentar o `Adapter`",
+    "É o componente que define o tema visual (cores e tipografia) aplicado aos itens do RecyclerView",
+    "É uma interface obrigatória que substitui totalmente o `Adapter` desde o Android 10",
+    "É o mecanismo responsável por animar as transições de entrada e saída dos itens da lista"
+  ],
+  "correctIndex": 0,
+  "explanation": "O `LayoutManager` controla como os itens do `RecyclerView` são posicionados na tela e gerencia a reciclagem de Views que saem da área visível, oferecendo implementações como `LinearLayoutManager`, `GridLayoutManager` e `StaggeredGridLayoutManager`. Ele não busca dados remotos, não define tema visual, não substitui o Adapter e não é o responsável principal por animações (essas são tratadas por `ItemAnimator`).",
+  "tags": ["android", "recyclerview", "layout"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_97bdecea",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Quais são os componentes principais de um `RecyclerView`?",
+  "options": [
+    "`Adapter` (fornece os dados e cria/vincula os ViewHolders), `ViewHolder` (mantém as referências das Views de cada item para evitar `findViewById` repetido), e `LayoutManager` (define como os itens são posicionados: linear, grade, etc.)",
+    "`Adapter`, `Fragment` e `ContentProvider`",
+    "`ListView`, `ArrayAdapter` e `Cursor`",
+    "`ViewModel`, `LiveData` e `Repository`",
+    "`LayoutManager`, `Intent` e `Bundle`"
+  ],
+  "correctIndex": 0,
+  "explanation": "O `RecyclerView` é composto principalmente por um `Adapter` (que fornece dados e cria/vincula os itens), um `ViewHolder` (que cacheia as referências de View de cada item, evitando `findViewById` repetido) e um `LayoutManager` (que controla a disposição espacial dos itens, como lista linear ou grade). As demais alternativas misturam componentes de outras APIs (ListView, MVVM, Intents) que não são partes constitutivas do RecyclerView.",
+  "tags": ["android", "recyclerview", "ui"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

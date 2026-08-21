@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_3f434a85",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Qual é o propósito do método `didUpdateWidget` em um `StatefulWidget`?\n\n```dart\n@override\nvoid didUpdateWidget(covariant MyWidget oldWidget) {\n  super.didUpdateWidget(oldWidget);\n  if (widget.data != oldWidget.data) {\n    setState(() {\n      _data = widget.data;\n    });\n  }\n}\n```",
+  "options": [
+    "Permitir que o State reaja a mudanças na configuração (propriedades) do widget quando o framework substitui a instância antiga por uma nova durante um rebuild, comparando os valores antigos e novos",
+    "Ser chamado uma única vez, na primeira inserção do widget na árvore, antes mesmo do `initState()`",
+    "Executar limpeza de recursos como controllers e streams antes do widget ser removido da árvore",
+    "Ser chamado automaticamente sempre que o app é reiniciado via hot restart, reconstruindo todo o estado do zero",
+    "Substituir a necessidade de `build()`, sendo o único método responsável por renderizar a UI do widget"
+  ],
+  "correctIndex": 0,
+  "explanation": "`didUpdateWidget` é chamado quando o framework substitui o widget antigo por uma nova instância com propriedades diferentes durante um rebuild, permitindo comparar `oldWidget` com `widget` e reagir a mudanças de configuração. Ele não é chamado antes do `initState()` — na verdade só é chamado em rebuilds subsequentes, não na criação inicial. Limpeza de recursos é papel do `dispose()`, hot restart reinicia o estado do zero e não invoca esse método de comparação, e `build()` continua sendo o responsável pela renderização, não sendo substituído por `didUpdateWidget`.",
+  "tags": [
+    "flutter",
+    "lifecycle",
+    "statefulwidget"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

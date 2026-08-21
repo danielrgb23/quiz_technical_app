@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_76a2e2cf",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Explique o que são Generics (Genéricos) em Java.",
+  "options": [
+    "É um recurso que permite parametrizar tipos em classes, interfaces e métodos (ex.: `List<String>`), fornecendo verificação de tipo em tempo de compilação e eliminando a necessidade de casts explícitos",
+    "É a capacidade de um método aceitar um número variável de argumentos usando `varargs`, sem nenhuma relação com tipos parametrizados",
+    "É um mecanismo que converte automaticamente qualquer tipo primitivo em `Object` durante a compilação, sem apagamento de tipo",
+    "É o nome dado à sobrecarga de operadores em Java, permitindo redefinir `+`, `-` e outros operadores para tipos customizados",
+    "É a técnica de declarar múltiplas classes com o mesmo nome em pacotes diferentes"
+  ],
+  "correctIndex": 0,
+  "explanation": "Generics permitem escrever código reutilizável e type-safe usando parâmetros de tipo (`<T>`), detectando erros de tipo em tempo de compilação em vez de runtime, e evitando casts manuais como os feitos com `Object` antes do Java 5. Java usa 'type erasure' (os tipos genéricos são apagados em runtime), o que já invalida a alternativa que fala em ausência de apagamento de tipo; varargs, sobrecarga de operadores (que Java nem suporta) e classes duplicadas não têm relação com generics.",
+  "tags": ["java", "generics", "type-safety"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

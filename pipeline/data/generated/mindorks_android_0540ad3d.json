@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_0540ad3d",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como tratar erros em RxJava?",
+  "options": [
+    "Usando operadores como onErrorReturn, onErrorResumeNext e o parâmetro onError do método subscribe(), que interceptam exceções emitidas no stream e permitem fornecer um valor padrão, trocar de Observable ou tratar o erro sem quebrar o app",
+    "Envolvendo toda a cadeia de operadores RxJava em blocos try/catch tradicionais do Kotlin, já que RxJava não possui mecanismo próprio de tratamento de erros",
+    "RxJava trata todos os erros automaticamente e encerra o app de forma silenciosa sem necessidade de código adicional",
+    "Erros em RxJava só podem ser tratados sobrescrevendo o método onNext() do Observer para verificar manualmente se o valor recebido é nulo",
+    "Usando exclusivamente o operador debounce(), que também é responsável por capturar e suprimir exceções emitidas no stream"
+  ],
+  "correctIndex": 0,
+  "explanation": "RxJava trata erros como eventos de primeira classe no stream reativo: quando uma exceção ocorre, ela é emitida via onError() e propagada pela cadeia. Operadores como onErrorReturn (retorna um valor de fallback) e onErrorResumeNext (troca para outro Observable) permitem recuperação elegante, além de se poder passar um lambda onError no subscribe(). Try/catch tradicional não captura erros assíncronos emitidos dentro do stream, e RxJava não trata erros silenciosamente nem usa debounce ou onNext para isso.",
+  "tags": ["android", "rxjava", "concurrency", "error-handling"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

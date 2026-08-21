@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_b2280cb7",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que é um Component no Dagger?",
+  "options": [
+    "Uma interface anotada com @Component que atua como ponte entre os Modules (que fornecem dependências) e as classes que as consomem, gerando em tempo de compilação o código concreto que constrói e injeta o grafo de objetos",
+    "Uma classe concreta anotada com @Provides responsável por instanciar diretamente os objetos que serão injetados nas Activities",
+    "Um arquivo de configuração XML onde se declaram todas as dependências do projeto, similar ao AndroidManifest.xml",
+    "Uma anotação usada exclusivamente para marcar campos que devem ser serializados em Parcelable",
+    "Uma classe base que todas as Activities devem estender para ter acesso à injeção de dependências"
+  ],
+  "correctIndex": 0,
+  "explanation": "Um Component no Dagger é uma interface (ou classe abstrata) anotada com @Component que define o grafo de dependências: ela conecta os Modules, que sabem como fornecer objetos, com os pontos de injeção (Activities, Fragments, etc.). O Dagger gera em tempo de compilação uma implementação concreta (ex.: DaggerAppComponent) a partir dessa interface. Não é um arquivo XML, nem uma anotação de serialização, nem uma classe base obrigatória para Activities.",
+  "tags": ["android", "dagger", "dependency-injection"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

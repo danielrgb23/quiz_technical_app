@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_02ab4ced",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Como navegar entre telas no Flutter?\n\n```dart\nNavigator.push(\n  context,\n  MaterialPageRoute(builder: (context) => SecondScreen()),\n);\n```\n\n```dart\nNavigator.pop(context);\n```",
+  "options": [
+    "Usando a classe `Navigator`, que gerencia uma pilha de rotas: `Navigator.push()` empilha uma nova tela e `Navigator.pop()` remove a tela atual, sendo possível também usar rotas nomeadas com `Navigator.pushNamed()`",
+    "Trocando o widget raiz do `MaterialApp` manualmente a cada nova tela, sem usar nenhuma classe de navegação",
+    "Usando apenas o widget `IndexedStack`, que alterna entre telas trocando o índice visível sem empilhar rotas",
+    "A navegação é feita exclusivamente por URLs no navegador, já que o Flutter depende do roteamento nativo da web mesmo em apps mobile",
+    "Usando `setState()` para trocar diretamente o `body` do `Scaffold` pela nova tela, sem qualquer gerenciamento de pilha"
+  ],
+  "correctIndex": 0,
+  "explanation": "A classe `Navigator` gerencia uma pilha (stack) de rotas: `push()` adiciona uma nova rota ao topo da pilha, e `pop()` remove a rota atual, retornando à anterior; também é possível usar rotas nomeadas via `pushNamed()`. Trocar o widget raiz manualmente ou usar `setState()` para substituir o `body` não gerencia histórico de navegação nem transições. `IndexedStack` alterna widgets visíveis sem empilhar rotas reais, e o roteamento por URL do navegador só se aplica ao Flutter Web, não sendo o mecanismo padrão em mobile.",
+  "tags": [
+    "flutter",
+    "navigation",
+    "navigator"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

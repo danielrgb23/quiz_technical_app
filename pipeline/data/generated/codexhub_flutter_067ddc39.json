@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_067ddc39",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é a propriedade `mounted` de um `State` no Flutter? Como ela é importante e quando usá-la?",
+  "options": [
+    "Indica se o objeto `State` está atualmente associado a um `BuildContext` na árvore de widgets; deve ser verificada antes de chamar `setState` após operações assíncronas",
+    "Indica se o widget já foi renderizado na tela ao menos uma vez, independentemente de ainda estar na árvore",
+    "É uma flag que controla se o widget deve ser reconstruído automaticamente a cada frame",
+    "Indica se o dispositivo está fisicamente conectado a uma fonte de energia, usada para otimizar animações",
+    "É um booleano que indica se o `State` já chamou `dispose()` ao menos uma vez"
+  ],
+  "correctIndex": 0,
+  "explanation": "`mounted` indica se o `State` ainda está associado a um `BuildContext` na árvore, ficando `true` entre `initState` e `dispose`. É essencial checá-la (`if (mounted) {...}`) antes de chamar `setState` após operações assíncronas, pois o widget pode já ter sido removido da árvore quando a operação termina, o que geraria erro. As demais opções descrevem conceitos que não correspondem ao comportamento real dessa propriedade.",
+  "tags": [
+    "flutter",
+    "state",
+    "lifecycle"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

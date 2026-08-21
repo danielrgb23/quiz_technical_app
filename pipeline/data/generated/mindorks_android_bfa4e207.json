@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_bfa4e207",
+  "source": "mindorks_android",
+  "topic": "storage",
+  "level": 1,
+  "question": "Qual é a diferença entre `commit()` e `apply()` em `SharedPreferences`?",
+  "options": [
+    "`commit()` grava os dados de forma síncrona e retorna um `boolean` indicando sucesso, bloqueando a thread chamadora até terminar; `apply()` grava de forma assíncrona (em background) e não retorna resultado, sendo geralmente preferível por não bloquear a thread principal",
+    "`commit()` e `apply()` fazem exatamente a mesma coisa; `apply()` é apenas um alias mais novo de `commit()`",
+    "`apply()` grava os dados de forma síncrona, enquanto `commit()` é assíncrono e mais rápido",
+    "`commit()` salva os dados em memória apenas, enquanto `apply()` é o único método que realmente persiste os dados em disco",
+    "`apply()` é usado apenas para números (int, long, float), enquanto `commit()` é usado apenas para Strings e Booleans"
+  ],
+  "correctIndex": 0,
+  "explanation": "`commit()` grava as alterações de forma síncrona no disco e retorna um boolean indicando sucesso ou falha, bloqueando a thread chamadora até a operação terminar. `apply()` faz a gravação de forma assíncrona em segundo plano, sem retornar valor, sendo geralmente preferido para não travar a UI. As demais alternativas invertem o comportamento ou inventam restrições por tipo de dado que não existem na API.",
+  "tags": ["android", "sharedpreferences", "storage"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

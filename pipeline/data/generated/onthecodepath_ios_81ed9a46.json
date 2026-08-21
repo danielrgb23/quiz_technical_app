@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_81ed9a46",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "O que é um protocolo em Swift/Objective-C e como você define um próprio?\n\nExemplo em Objective-C:\n```objective-c\n@protocol MyCustomDataSource\n- (NSUInteger)numberOfRecords;\n- (NSDictionary *)recordAtIndex:(NSUInteger)index;\n@optional\n- (NSString *)titleForRecordAtIndex:(NSUInteger)index;\n@end\n```",
+  "options": [
+    "Um protocolo define uma lista de métodos (e propriedades) obrigatórios e opcionais que uma classe adotante deve implementar; qualquer classe pode adotar um protocolo, permitindo que outras classes enviem mensagens a ela com base nos métodos do protocolo, sem precisar conhecer o tipo concreto — um uso comum é fornecer um data source para `UITableView` ou `UICollectionView`.",
+    "Um protocolo é uma classe abstrata que já fornece implementação padrão obrigatória para todos os seus métodos, não podendo ser adotado sem herança direta.",
+    "Protocolos servem exclusivamente para definir constantes globais compartilhadas entre múltiplas classes do projeto.",
+    "Um protocolo restringe uma classe a ter apenas uma única subclasse, funcionando de forma semelhante a `final class`.",
+    "Protocolos em Swift só podem ser adotados por classes, nunca por structs ou enums."
+  ],
+  "correctIndex": 0,
+  "explanation": "Um protocolo declara um contrato de métodos/propriedades (obrigatórios ou opcionais) que qualquer tipo adotante deve cumprir, permitindo polimorfismo sem herança de classe — por exemplo, os data sources de `UITableView`/`UICollectionView`. Diferente de uma classe abstrata, o protocolo em si não fornece implementação (a menos que se use extensions com implementação padrão), não define constantes globais, não limita subclasses e, em Swift, pode ser adotado por classes, structs e enums.",
+  "tags": ["ios", "swift", "protocols"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

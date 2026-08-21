@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_bf52ee0f",
+  "source": "mindorks_android",
+  "topic": "concurrency",
+  "level": 2,
+  "question": "O que é o modificador `volatile` em Java?",
+  "options": [
+    "Garante que leituras e escritas em uma variável sejam sempre feitas diretamente na memória principal (não em cache de thread/registrador), tornando as alterações visíveis imediatamente a outras threads, mas sem garantir atomicidade em operações compostas como incremento",
+    "Garante atomicidade completa de qualquer operação feita sobre a variável, incluindo incrementos como `i++`, tornando `synchronized` desnecessário",
+    "Impede que a variável seja lida por mais de uma thread ao mesmo tempo, funcionando como um lock implícito",
+    "Faz com que o valor da variável seja descartado automaticamente quando o app vai para segundo plano",
+    "É usado apenas em variáveis `final` para permitir que sejam reatribuídas dentro de classes anônimas"
+  ],
+  "correctIndex": 0,
+  "explanation": "`volatile` resolve o problema de visibilidade entre threads, forçando leitura/escrita na memória principal em vez de caches locais, mas não garante atomicidade — operações como `i++` (leitura + incremento + escrita) ainda podem sofrer condição de corrida mesmo com `volatile`. Ele não funciona como lock, não descarta valores em background e não tem relação com variáveis `final` em classes anônimas.",
+  "tags": ["java", "concurrency", "volatile"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

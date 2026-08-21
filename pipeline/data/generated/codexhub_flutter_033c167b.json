@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_033c167b",
+  "source": "codexhub_flutter",
+  "topic": "concurrency",
+  "level": 2,
+  "question": "É possível comunicar-se entre isolates em Dart? Descreva o que é um Isolate.\n\n```dart\nimport 'dart:isolate';\n\nvoid main() async {\n  final receivePort = ReceivePort();\n  await Isolate.spawn(isolateFunction, receivePort.sendPort);\n\n  receivePort.listen((message) {\n    print('Received message: $message');\n    receivePort.close();\n  });\n}\n\nvoid isolateFunction(SendPort sendPort) {\n  sendPort.send('Hello from the isolate!');\n}\n```",
+  "options": [
+    "Sim, via passagem de mensagens usando SendPort e ReceivePort; um Isolate é uma unidade de execução independente com sua própria memória e event loop, usada para tarefas concorrentes sem bloquear a UI",
+    "Sim, mas apenas compartilhando variáveis globais diretamente, já que isolates compartilham a mesma memória do isolate principal",
+    "Não, isolates em Dart são completamente isolados e não podem trocar dados de forma alguma depois de criados",
+    "Isolates são threads leves do sistema operacional que compartilham o mesmo heap de memória do isolate principal, semelhante a threads em Java",
+    "Um Isolate é apenas um sinônimo para Future em Dart, usado para representar operações assíncronas"
+  ],
+  "correctIndex": 0,
+  "explanation": "Isolates em Dart não compartilham memória; a comunicação ocorre por passagem de mensagens via SendPort/ReceivePort, e cada isolate tem seu próprio heap e event loop, o que os torna adequados para processamento pesado sem travar a UI. Eles não compartilham variáveis globais como threads tradicionais, não são incomunicáveis (é possível trocar mensagens), e não são o mesmo conceito que Future, que representa apenas um valor assíncrono dentro do mesmo isolate.",
+  "tags": ["dart", "isolates", "concurrency"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

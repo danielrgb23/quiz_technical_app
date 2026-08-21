@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_c337f664",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Qual é a diferença entre as palavras-chave `throw` e `throws` em Java?",
+  "options": [
+    "`throw` é usada para lançar explicitamente uma exceção em tempo de execução, enquanto `throws` é usada na assinatura do método para declarar quais exceções verificadas (checked) o método pode lançar.",
+    "`throw` é usada apenas para exceções não verificadas (unchecked), enquanto `throws` é usada apenas para exceções verificadas (checked).",
+    "`throw` declara exceções na assinatura do método, enquanto `throws` lança a exceção efetivamente dentro do corpo do método.",
+    "`throw` e `throws` são sinônimos e podem ser usados de forma intercambiável em qualquer contexto.",
+    "`throw` é usada apenas dentro de blocos `catch`, enquanto `throws` é usada apenas dentro de blocos `try`."
+  ],
+  "correctIndex": 0,
+  "explanation": "`throw` lança uma instância de exceção em um ponto específico do código (`throw new IOException()`), interrompendo o fluxo normal. `throws`, por outro lado, aparece na assinatura do método (`void foo() throws IOException`) para avisar o compilador e quem chama o método que aquela exceção verificada pode ocorrer. A opção que troca os papéis das duas palavras está incorreta, assim como a que restringe `throw` a exceções não verificadas — `throw` pode lançar qualquer tipo de exceção, verificada ou não.",
+  "tags": ["java", "exceptions"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

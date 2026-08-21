@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_b79ca6d0",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 1,
+  "question": "O que é a segurança nula sólida (`sound null safety`) em Dart?",
+  "options": [
+    "É um recurso que torna os tipos não anuláveis por padrão e usa verificações estáticas e otimizações do compilador para garantir, em tempo de compilação, que erros de referência nula não ocorram em tempo de execução",
+    "É um mecanismo que substitui exceções por valores `null` sempre que um erro ocorre em tempo de execução",
+    "É uma biblioteca externa que precisa ser instalada manualmente para validar formulários com campos obrigatórios",
+    "É um recurso que impede a compilação de qualquer código que declare variáveis do tipo `dynamic`",
+    "É um recurso disponível apenas em testes unitários para simular valores nulos de forma segura"
+  ],
+  "correctIndex": 0,
+  "explanation": "Sound null safety torna os tipos não anuláveis por padrão em Dart, exigindo que a nulabilidade seja declarada explicitamente (`String?`), e o compilador garante estaticamente que não haverá erros de referência nula em tempo de execução. Não é sobre substituir exceções por `null`, não é uma biblioteca externa, não proíbe `dynamic` e não é restrito a testes.",
+  "tags": [
+    "dart",
+    "null-safety",
+    "language-features"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

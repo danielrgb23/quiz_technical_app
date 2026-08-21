@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_3a422d70",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 2,
+  "question": "Como reduzir o consumo de bateria em um aplicativo Android?",
+  "options": [
+    "Agrupando trabalho em background com `WorkManager`/`JobScheduler` (respeitando janelas de manutenção do sistema), evitando `wake locks` desnecessários, reduzindo a frequência de atualizações de GPS/rede quando não essenciais, e usando `JobScheduler`/Doze-aware APIs em vez de polling constante em segundo plano",
+    "Mantendo o app sempre em primeiro plano com uma notificação persistente, mesmo quando o usuário não está utilizando nenhum recurso ativo",
+    "Desabilitando completamente o Doze mode e o App Standby do sistema para o próprio app via código",
+    "Fazendo polling de rede a cada 1 segundo em vez de usar `WorkManager`, pois isso reduz o overhead de agendamento",
+    "Aumentando a prioridade da thread principal do app para `THREAD_PRIORITY_URGENT_AUDIO` em todas as operações"
+  ],
+  "correctIndex": 0,
+  "explanation": "Reduzir consumo de bateria envolve usar APIs que respeitam as otimizações do sistema, como `WorkManager`, agrupando e adiando trabalho não urgente, evitar `wake locks` que impedem o dispositivo de dormir, e reduzir a frequência de operações caras como GPS e polling de rede. Manter uma notificação persistente desnecessária, tentar desabilitar Doze/App Standby, fazer polling agressivo, ou usar prioridades de thread inadequadas são práticas que aumentam o consumo de bateria, não o reduzem.",
+  "tags": ["android", "performance", "battery"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

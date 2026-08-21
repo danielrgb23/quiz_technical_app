@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_8685adab",
+  "source": "mindorks_android",
+  "topic": "kotlin",
+  "level": 1,
+  "question": "Qual é a vantagem de usar const no Kotlin?",
+  "options": [
+    "const define uma constante em tempo de compilação, cujo valor é conhecido e substituído diretamente no bytecode, resultando em melhor performance por evitar leitura em runtime, mas só pode ser usada com tipos primitivos/String e em nível de top-level ou dentro de um companion object",
+    "const é apenas um sinônimo de val, sem nenhuma diferença de comportamento ou restrição de uso",
+    "const permite que a variável tenha seu valor alterado depois da inicialização, ao contrário de val",
+    "const é usada exclusivamente para declarar funções que não retornam valor",
+    "const força a variável a ser inicializada apenas em tempo de execução, nunca em tempo de compilação"
+  ],
+  "correctIndex": 0,
+  "explanation": "const cria uma constante avaliada em tempo de compilação, o que traz ganho de performance por não exigir leitura em runtime, mas é restrita a tipos primitivos e String, além de só poder ser declarada no top-level ou em um companion object. Diferente de val, que pode ser atribuída em runtime, const não pode ser reatribuída, não é sinônimo de val, não se aplica a funções e é justamente o oposto de exigir inicialização apenas em runtime.",
+  "tags": ["kotlin", "const", "compile-time"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

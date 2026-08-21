@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_5708397e",
+  "source": "codexhub_flutter",
+  "topic": "concurrency",
+  "level": 2,
+  "question": "O que é o event loop no contexto do Dart/Flutter?",
+  "options": [
+    "Um mecanismo de thread única que processa uma fila de eventos e callbacks (como input do usuário e I/O), executando-os em ordem sem bloquear a UI",
+    "Um conjunto de threads paralelas que o Flutter cria automaticamente para processar cada evento de UI simultaneamente",
+    "Um timer interno que redesenha a tela a cada 16ms, independentemente de haver eventos pendentes",
+    "Uma API exclusiva do Android usada pelo Flutter para sincronizar o ciclo de vida das Activities",
+    "Um mecanismo de garbage collection que limpa objetos não utilizados entre um frame e outro"
+  ],
+  "correctIndex": 0,
+  "explanation": "O event loop do Dart roda em uma única thread e processa eventos (input, I/O, timers) e callbacks (incluindo microtasks e a event queue) de forma sequencial, permitindo comportamento assíncrono sem bloquear a UI. Dart não usa múltiplas threads para processar eventos em paralelo — a concorrência real exige Isolates. O event loop não é um timer de redesenho de frame nem está ligado ao ciclo de vida de Activities do Android, e também não é um mecanismo de garbage collection.",
+  "tags": [
+    "dart",
+    "event-loop",
+    "concurrency"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

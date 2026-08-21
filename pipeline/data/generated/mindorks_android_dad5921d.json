@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_dad5921d",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Qual é a diferença entre `FragmentPagerAdapter` e `FragmentStatePagerAdapter`?",
+  "options": [
+    "`FragmentPagerAdapter` mantém na memória todos os Fragments já criados (apenas destruindo a View deles quando ficam fora da tela), sendo ideal para um número pequeno e fixo de páginas; já `FragmentStatePagerAdapter` destrói completamente os Fragments distantes da posição atual e salva apenas seu estado, sendo mais adequado para listas grandes ou dinâmicas de páginas",
+    "`FragmentPagerAdapter` é usado exclusivamente com `RecyclerView`, enquanto `FragmentStatePagerAdapter` é usado apenas com `ViewPager2`",
+    "Não há diferença funcional entre eles, apenas o nome da classe muda entre versões do Android",
+    "`FragmentStatePagerAdapter` mantém todos os Fragments sempre em memória, enquanto `FragmentPagerAdapter` recria todos os Fragments a cada troca de página",
+    "`FragmentPagerAdapter` funciona apenas com Fragments que não possuem estado salvo em `Bundle`"
+  ],
+  "correctIndex": 0,
+  "explanation": "`FragmentPagerAdapter` retém a instância do Fragment na memória (destruindo só a View) e é indicado para poucas páginas estáticas, como abas fixas. `FragmentStatePagerAdapter` destrói o Fragment inteiro quando ele não está mais próximo da página visível, salvando seu estado para recriá-lo depois, sendo mais econômico em memória para muitas páginas. As demais opções invertem os comportamentos ou inventam associações com `RecyclerView`/`ViewPager2` que não correspondem à API original.",
+  "tags": ["android", "viewpager", "fragment"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

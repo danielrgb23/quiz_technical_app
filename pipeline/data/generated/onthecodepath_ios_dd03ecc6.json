@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_dd03ecc6",
+  "source": "onthecodepath_ios",
+  "topic": "storage",
+  "level": 1,
+  "question": "Quando você usaria Core Data em vez de `NSUserDefaults`?",
+  "options": [
+    "`NSUserDefaults` é indicado para armazenar pequenas quantidades de dados simples, como configurações e preferências do usuário; Core Data é indicado quando é preciso armazenar e consultar grandes conjuntos de dados estruturados e relacionados, com necessidade de queries eficientes, relacionamentos entre entidades e melhor desempenho para grandes volumes.",
+    "`NSUserDefaults` deve ser usado para grandes volumes de dados relacionais, enquanto Core Data é indicado apenas para armazenar poucos valores simples como booleanos e strings.",
+    "Não há diferença prática de uso entre os dois; ambos armazenam dados da mesma forma e podem ser usados de forma intercambiável em qualquer cenário.",
+    "Core Data deve ser usado exclusivamente para armazenar credenciais sensíveis, como senhas e tokens, papel que `NSUserDefaults` nunca deveria cumprir.",
+    "`NSUserDefaults` é mais adequado para persistência de longo prazo de grandes listas de objetos, enquanto Core Data é voltado apenas para cache temporário em memória."
+  ],
+  "correctIndex": 0,
+  "explanation": "`NSUserDefaults` é um armazenamento de chave-valor leve, ideal para preferências simples, enquanto Core Data foi projetado para grandes conjuntos de dados relacionais com necessidade de queries eficientes. Inverter esses papéis, como sugerem alguns distratores, é um erro comum entre iniciantes. Para dados sensíveis como credenciais, o recomendado é o Keychain, não Core Data nem `NSUserDefaults`.",
+  "tags": ["ios", "storage", "core-data"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

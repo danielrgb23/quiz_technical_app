@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_297026ce",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que é ofuscação e para que ela é usada? E o que é minificação?",
+  "options": [
+    "Ofuscação renomeia classes, métodos e campos para nomes curtos e sem significado (ex.: a, b, c) para dificultar engenharia reversa e proteger a lógica do app; minificação remove código e recursos não utilizados (dead code) para reduzir o tamanho final do APK/AAB. Ambas são feitas pelo ProGuard/R8",
+    "Ofuscação e minificação são sinônimos exatos, referindo-se apenas à compressão de imagens dentro do APK",
+    "Ofuscação criptografa todo o tráfego de rede do app, enquanto minificação reduz a resolução dos ícones para economizar espaço",
+    "Ofuscação é um processo que acontece apenas em tempo de execução no dispositivo do usuário, nunca durante o build",
+    "Minificação é uma técnica de compressão de vídeo usada em apps de streaming, sem relação com o código-fonte do aplicativo"
+  ],
+  "correctIndex": 0,
+  "explanation": "Ofuscação transforma nomes legíveis de classes, métodos e campos em identificadores curtos e sem sentido, tornando mais difícil a engenharia reversa e a leitura do código decompilado, sem alterar o comportamento do app. Minificação (shrinking) remove código, classes e recursos não utilizados, reduzindo o tamanho do APK/AAB final. Ambas são realizadas em tempo de build pelo ProGuard/R8, não estão relacionadas a criptografia de rede, compressão de imagem/vídeo, resolução de ícones ou processos em runtime.",
+  "tags": ["android", "proguard", "r8", "build"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

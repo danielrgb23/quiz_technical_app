@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_fd5f5dff",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Uma interface pode implementar outra interface em Java?",
+  "options": [
+    "Não diretamente: uma interface pode `extends` (estender) uma ou várias outras interfaces, mas usa a palavra-chave `extends`, e não `implements`, que é reservada para classes",
+    "Sim, usando `implements`, exatamente da mesma forma que uma classe implementa uma interface",
+    "Não, em Java uma interface não pode herdar nenhum membro de outra interface sob nenhuma circunstância",
+    "Sim, mas apenas uma interface pode ser estendida por vez, nunca múltiplas ao mesmo tempo",
+    "Não, esse recurso só foi adicionado no Kotlin e nunca existiu em Java"
+  ],
+  "correctIndex": 0,
+  "explanation": "Interfaces usam `extends` para herdar de outra(s) interface(s), inclusive suportando herança múltipla de interfaces (algo que classes não podem fazer entre si). A palavra `implements` é usada apenas quando uma classe implementa uma interface. As demais opções trocam as palavras-chave ou negam um recurso que existe desde as primeiras versões do Java.",
+  "tags": ["java", "interfaces", "oop"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

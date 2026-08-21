@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_b9fb3c72",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "Qual é a diferença entre `frame` e `bounds` de uma `UIView`?",
+  "options": [
+    "`frame` representa a região da view relativa ao sistema de coordenadas da sua superview; `bounds` representa a região da view relativa ao seu próprio sistema de coordenadas interno",
+    "`bounds` representa a posição da view na tela do dispositivo, enquanto `frame` representa apenas o tamanho, sem posição",
+    "`frame` e `bounds` são exatamente o mesmo valor para qualquer view, mudando apenas o nome da propriedade",
+    "`bounds` é usado apenas para views com `clipsToBounds` ativado; para as demais views, apenas `frame` é válido",
+    "`frame` representa o sistema de coordenadas interno da view, enquanto `bounds` representa a posição relativa à superview"
+  ],
+  "correctIndex": 0,
+  "explanation": "`frame` descreve a posição e o tamanho da view em relação ao sistema de coordenadas da sua superview, enquanto `bounds` descreve a posição (geralmente com origem 0,0) e o tamanho da view em relação ao seu próprio sistema de coordenadas interno, usado por exemplo para desenhar o conteúdo da própria view. Os dois valores podem divergir quando há transformações (rotação, escala) aplicadas à view. As demais alternativas invertem essa relação ou inventam restrições inexistentes.",
+  "tags": ["ios", "uikit", "layout"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_c2abc075",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como lidar com múltiplos tipos de View em um único `RecyclerView`?",
+  "options": [
+    "Sobrescrevendo `getItemViewType(position)` no `Adapter` para retornar um identificador de tipo por posição, e usando esse valor em `onCreateViewHolder()` para inflar o layout correto e criar o `ViewHolder` apropriado a cada tipo",
+    "Criando um `RecyclerView` separado para cada tipo de item e sobrepondo-os na tela com `FrameLayout`",
+    "Usando apenas um único `ViewHolder` genérico e alterando sua visibilidade com `View.GONE` para simular tipos diferentes",
+    "Não é possível ter múltiplos tipos de View em um mesmo RecyclerView; é necessário usar um `ListView` nesse caso",
+    "Definindo múltiplos `Adapter`s e alternando qual deles está ativo via `notifyDataSetChanged()`"
+  ],
+  "correctIndex": 0,
+  "explanation": "A abordagem padrão é sobrescrever `getItemViewType()` para identificar o tipo de cada posição e usar esse valor dentro de `onCreateViewHolder()` para inflar o layout e criar o `ViewHolder` correspondente ao tipo. As alternativas de múltiplos RecyclerViews sobrepostos, ViewHolder genérico com visibilidade oculta, ou múltiplos Adapters são soluções inadequadas e mais complexas/ineficientes do que o mecanismo nativo oferecido pelo próprio Adapter.",
+  "tags": ["android", "recyclerview", "adapter"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

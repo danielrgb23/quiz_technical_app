@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_c9f4640d",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Qual é a diferença entre acessar uma propriedade com `_variavel` e com `self.variavel` em Objective-C?",
+  "options": [
+    "`_variavel` acessa diretamente a variável de instância, ignorando getter/setter; `self.variavel` passa pelo acessor gerado (ou customizado), garantindo que qualquer lógica adicional no getter/setter seja executada",
+    "`_variavel` e `self.variavel` são exatamente equivalentes e sempre chamam o mesmo setter",
+    "`self.variavel` acessa diretamente a variável de instância sem passar pelo setter, enquanto `_variavel` sempre invoca o setter customizado",
+    "`_variavel` só pode ser usada dentro de métodos de classe (`+`), nunca em métodos de instância",
+    "`self.variavel` é usada apenas para propriedades `readonly`, enquanto `_variavel` é usada para propriedades mutáveis"
+  ],
+  "correctIndex": 0,
+  "explanation": "Usar `_variavel` acessa a variável de instância diretamente, sem passar pelos métodos acessores, o que é desaconselhado pois ignora qualquer lógica adicional implementada no setter (como validações ou observadores de mudança). `self.variavel` passa pelo getter/setter gerado por `@synthesize` ou implementado manualmente, garantindo esse comportamento seja honrado. As demais alternativas invertem essa relação ou inventam restrições inexistentes.",
+  "tags": ["ios", "objective-c", "properties"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

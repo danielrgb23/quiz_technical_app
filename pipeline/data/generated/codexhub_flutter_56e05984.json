@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_56e05984",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Quais são as vantagens do Flutter Inspector?",
+  "options": [
+    "Permite selecionar widgets diretamente na tela para inspecionar propriedades, atualizar a árvore após hot reload, desacelerar animações, mostrar guias de layout e baselines de texto, e destacar repaints e imagens superdimensionadas para ajudar na performance",
+    "Ele apenas mostra o consumo de bateria do dispositivo durante os testes",
+    "Serve exclusivamente para compilar o app em modo release com otimizações automáticas",
+    "É uma ferramenta de terceiros que substitui o DevTools e não tem integração com o Flutter",
+    "Permite editar o código Dart diretamente na interface gráfica sem precisar do editor"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Flutter Inspector, parte do DevTools, oferece recursos como Select Widget Mode, Refresh Tree, Slow Animations, Show Guidelines, Show Baselines, Highlight Repaints e Highlight Oversized Images, todos voltados a depuração visual e performance. Ele não mede bateria, não compila em release, não é uma ferramenta externa desvinculada do Flutter e não substitui a edição de código no editor.",
+  "tags": ["flutter", "debugging", "devtools", "performance"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

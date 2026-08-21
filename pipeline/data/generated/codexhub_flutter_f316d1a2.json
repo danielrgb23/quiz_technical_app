@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_f316d1a2",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 1,
+  "question": "Como Object, dynamic e var diferem em Dart?\n\n```dart\nObject obj = \"Hello\";\ndynamic obj2 = \"Hello\"; // obj2.length; (sem verificação de tipo em tempo de compilação)\nvar obj3 = \"Hello\"; // tipo inferido como String\n```",
+  "options": [
+    "Object é a classe base de todos os tipos e exige cast explícito para acessar membros específicos; dynamic aceita qualquer tipo e ignora checagem de tipos em tempo de compilação; var infere o tipo na atribuição e o fixa a partir daí",
+    "Object, dynamic e var são exatamente equivalentes em Dart, sem nenhuma diferença de comportamento em tempo de compilação",
+    "var permite trocar o tipo do valor armazenado livremente durante a execução, assim como dynamic",
+    "dynamic exige cast explícito para acessar métodos específicos do tipo, da mesma forma que Object",
+    "Object é usado apenas para tipos numéricos, enquanto dynamic e var são usados apenas para Strings"
+  ],
+  "correctIndex": 0,
+  "explanation": "Object é a superclasse de todos os tipos em Dart e exige cast para usar membros específicos do tipo real; dynamic também aceita qualquer valor mas contorna a checagem estática de tipos, permitindo chamadas sem cast (com risco em runtime); var tem o tipo inferido no momento da atribuição e esse tipo fica fixo depois. Eles não são equivalentes, var não permite trocar de tipo livremente como dynamic, dynamic não exige cast como Object, e nenhum deles é restrito a números ou Strings.",
+  "tags": ["dart", "types"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

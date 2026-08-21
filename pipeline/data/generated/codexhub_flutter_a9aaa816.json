@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_a9aaa816",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Qual é o propósito do widget `AnimatedBuilder` no Flutter?",
+  "options": [
+    "Separar a lógica de animação da árvore de widgets, reconstruindo apenas a subárvore necessária a cada tick de uma `Animation`, através de um `builder` que recebe o valor atual da animação",
+    "Criar animações implícitas automaticamente sem a necessidade de um `AnimationController`, apenas alterando o valor de uma variável de estado",
+    "Ser um widget exclusivo para animar transições entre rotas ao usar `Navigator.push()`",
+    "Substituir completamente o uso de `AnimationController`, gerenciando o tempo da animação internamente sem configuração",
+    "Aplicar automaticamente uma curva de animação padrão (`Curves.linear`) a qualquer widget filho, sem possibilidade de customização"
+  ],
+  "correctIndex": 0,
+  "explanation": "`AnimatedBuilder` separa a lógica de animação da árvore visual, reconstruindo eficientemente apenas a parte necessária através de um `builder` que recebe o valor atual de uma `Animation`, geralmente controlada por um `AnimationController`. Ele não cria animações implícitas sozinho (isso é papel de widgets como `AnimatedContainer`) e não é exclusivo para transições de rota. Ele também não substitui o `AnimationController` — na verdade depende de um para funcionar — e permite total customização da curva de animação, não impondo `Curves.linear`.",
+  "tags": [
+    "flutter",
+    "animation",
+    "animatedbuilder"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

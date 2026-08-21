@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_864b4042",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 2,
+  "question": "Como acelerar o build do Gradle?",
+  "options": [
+    "Habilitando o Gradle Daemon, cache de build e execução paralela/configuration on demand, usando compilação incremental, evitando módulos desnecessariamente acoplados, atualizando o Gradle/AGP e usando a JVM com heap adequado (org.gradle.jvmargs) no gradle.properties",
+    "Removendo completamente o arquivo gradle.properties do projeto, pois ele sempre desacelera o build ao adicionar configurações desnecessárias",
+    "Convertendo todo o projeto de múltiplos módulos para um único módulo monolítico, o que sempre resulta em builds mais rápidos independente do tamanho do projeto",
+    "Desativando o cache do Gradle, já que o cache introduz overhead de leitura em disco e deixa o build mais lento em qualquer cenário",
+    "Aumentando o número de dependências externas no build.gradle, pois isso permite ao Gradle paralelizar melhor a compilação"
+  ],
+  "correctIndex": 0,
+  "explanation": "Práticas comuns para acelerar builds Gradle incluem ativar o Daemon (mantém a JVM aquecida entre builds), o build cache (reaproveita saídas de compilações anteriores), execução em paralelo de módulos independentes, modularização bem estruturada (para aproveitar compilação incremental), manter o Gradle/Android Gradle Plugin atualizados e configurar memória adequada da JVM via org.gradle.jvmargs. Remover gradle.properties, desativar cache, monolitizar o projeto ou adicionar mais dependências têm o efeito oposto, piorando o tempo de build.",
+  "tags": ["android", "gradle", "build", "performance"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

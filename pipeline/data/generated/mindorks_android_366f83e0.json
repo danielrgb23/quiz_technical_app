@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_366f83e0",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Em quais situações apenas `onDestroy()` é chamado para uma Activity, sem que `onPause()` e `onStop()` sejam chamados antes?",
+  "options": [
+    "Quando `finish()` é chamado dentro do método `onCreate()` da Activity, o sistema pode pular diretamente para `onDestroy()` sem passar por `onPause()`/`onStop()`, pois a Activity nunca chegou a ficar visível/em primeiro plano",
+    "Sempre que o usuário pressiona o botão 'Home', pois o sistema otimiza o ciclo de vida pulando `onPause()` e `onStop()`",
+    "Quando a Activity é recriada por causa de uma mudança de orientação de tela",
+    "Quando o app é atualizado pela Play Store enquanto a Activity está em primeiro plano",
+    "Sempre que uma nova Activity é iniciada por cima da atual usando `startActivity()`"
+  ],
+  "correctIndex": 0,
+  "explanation": "Se `finish()` for chamado ainda dentro de `onCreate()` (ou `onStart()`, antes de a Activity se tornar visível), o sistema pode ir direto para `onDestroy()`, pulando `onPause()` e `onStop()`, já que esses callbacks existem para tratar transições de visibilidade que nunca chegaram a ocorrer. As outras alternativas descrevem cenários normais em que `onPause()`/`onStop()` são chamados antes de `onDestroy()`.",
+  "tags": ["android", "activity", "lifecycle"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

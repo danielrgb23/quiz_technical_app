@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_a88be0fe",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do widget `SingleChildScrollView` no Flutter?\n\n```dart\nSingleChildScrollView(\n  child: Column(\n    children: <Widget>[\n      ListTile(title: Text('Item 1')),\n      ListTile(title: Text('Item 2')),\n      ListTile(title: Text('Item 3')),\n    ],\n  ),\n);\n```",
+  "options": [
+    "Tornar um único widget filho rolável quando seu conteúdo excede o espaço disponível, sendo útil para conteúdo de tamanho fixo mas grande, como um formulário curto com muitos campos",
+    "Renderizar apenas os itens visíveis na tela, criando e destruindo widgets dinamicamente conforme a rolagem, assim como o `ListView.builder`",
+    "Adicionar automaticamente um `RefreshIndicator` para permitir o usuário atualizar o conteúdo com um gesto de puxar para baixo",
+    "Limitar a altura de um widget filho ao tamanho da tela, cortando o conteúdo que ultrapassar esse limite em vez de permitir rolagem",
+    "Funcionar exclusivamente com `ListView`, não podendo envolver widgets como `Column` ou `Row`"
+  ],
+  "correctIndex": 0,
+  "explanation": "`SingleChildScrollView` torna um único filho rolável quando o conteúdo excede o espaço da tela, sendo indicado para conteúdo relativamente pequeno e fixo (como formulários), já que renderiza todo o conteúdo de uma vez. Diferente do `ListView.builder`, ele não recicla widgets sob demanda, o que o torna inadequado para listas muito longas. Ele não adiciona `RefreshIndicator` automaticamente, não corta conteúdo (o comportamento é rolar, não truncar) e pode envolver qualquer widget, incluindo `Column` ou `Row`, não apenas `ListView`.",
+  "tags": [
+    "flutter",
+    "scrolling",
+    "layout"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

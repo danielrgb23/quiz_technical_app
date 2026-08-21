@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_006e0dca",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito da classe `Navigator` no Flutter?",
+  "options": [
+    "Gerenciar uma pilha de rotas do app, permitindo empilhar (`push`) e desempilhar (`pop`) telas, passar dados entre elas via argumentos e customizar animações de transição",
+    "Ser um widget visual que exibe uma barra de navegação inferior fixa, equivalente ao `BottomNavigationBar`",
+    "Gerenciar exclusivamente o estado de autenticação do usuário, redirecionando para login quando necessário",
+    "Ser responsável apenas por gerenciar deep links vindos de fora do app, sem lidar com navegação interna entre telas",
+    "Funcionar como um cache de páginas já visitadas, sem controle de ordem ou pilha de navegação"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Navigator` gerencia uma pilha de rotas: `push()` adiciona uma nova rota ao topo, `pop()` remove a rota atual, é possível passar dados via argumentos e customizar as animações de transição entre rotas. Ele não é um widget visual como `BottomNavigationBar`, não trata especificamente de autenticação (embora possa ser usado nesse fluxo) e não se limita a deep links — ele controla toda a navegação interna do app, empilhada e ordenada, não sendo apenas um cache sem controle de ordem.",
+  "tags": [
+    "flutter",
+    "navigator",
+    "navigation"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

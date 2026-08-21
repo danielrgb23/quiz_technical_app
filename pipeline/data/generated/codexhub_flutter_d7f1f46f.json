@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_d7f1f46f",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Qual é o papel do FlutterEngine no framework Flutter?",
+  "options": [
+    "É o runtime portátil que executa código Dart em um isolate separado, gerencia o pipeline de renderização, viabiliza a comunicação com código nativo via platform channels e cuida da integração de plugins e do ciclo de vida do app",
+    "É apenas a IDE usada para escrever código Flutter, equivalente ao Android Studio configurado com o plugin Flutter",
+    "É o serviço de nuvem da Google responsável por compilar remotamente os apps Flutter antes da publicação",
+    "É o gerenciador de estado padrão do Flutter, similar ao Provider ou Bloc, usado para propagar mudanças de estado",
+    "É o compilador exclusivo usado apenas em modo debug, sendo descartado em builds de release"
+  ],
+  "correctIndex": 0,
+  "explanation": "O FlutterEngine é o runtime que hospeda a execução do Dart, gerencia a renderização (historicamente via Skia), viabiliza platform channels para comunicação com código nativo e cuida de plugins e eventos de ciclo de vida do app. Ele não é uma IDE, não é um serviço de compilação em nuvem, não é um framework de gerenciamento de estado e é usado tanto em debug quanto em release, não sendo descartado no build final.",
+  "tags": ["flutter", "engine", "architecture"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

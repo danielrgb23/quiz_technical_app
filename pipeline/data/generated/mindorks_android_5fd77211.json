@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_5fd77211",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 3,
+  "question": "Como funciona o escopo customizado (custom scope) no Dagger?",
+  "options": [
+    "Um escopo customizado é uma anotação criada pelo desenvolvedor (ex.: @UserScope) que, aplicada a um Component filho e às classes fornecidas por ele, garante que uma única instância do objeto seja reutilizada enquanto aquele Component específico viver, controlando o ciclo de vida das dependências além do @Singleton global",
+    "Escopos customizados no Dagger só podem ser criados usando XML e são resolvidos automaticamente pelo sistema operacional Android",
+    "Um escopo customizado força o Dagger a criar uma nova instância do objeto a cada injeção, ignorando qualquer cache interno",
+    "Escopos customizados substituem completamente a necessidade de Components e Modules no grafo de dependências",
+    "Um escopo customizado é equivalente a marcar uma classe como 'public' em vez de 'private', afetando apenas a visibilidade do código"
+  ],
+  "correctIndex": 0,
+  "explanation": "No Dagger, escopos customizados são anotações definidas pelo próprio desenvolvedor (anotadas com @Scope), como @UserScope ou @ActivityScope, aplicadas a Subcomponents. Enquanto o Subcomponent daquele escopo existir (por exemplo, durante o ciclo de vida de uma Activity), as dependências marcadas com esse escopo são reutilizadas como singletons locais; quando o Subcomponent é descartado, essas instâncias são liberadas. Isso permite ciclos de vida intermediários entre 'sempre nova instância' e '@Singleton global'. Não tem relação com XML, visibilidade de código nem substitui Components/Modules.",
+  "tags": ["android", "dagger", "dependency-injection", "architecture"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

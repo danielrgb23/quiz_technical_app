@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_8dc1bc4a",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que são as palavras-chave/métodos `final`, `finally` e `finalize` em Java?",
+  "options": [
+    "`final` é um modificador que impede reatribuição de variáveis, sobrescrita de métodos ou extensão de classes; `finally` é o bloco que sempre executa após um `try/catch`, tenha havido exceção ou não; `finalize()` é um método (hoje obsoleto/deprecated) que o garbage collector podia chamar antes de destruir um objeto",
+    "São sinônimos e podem ser usados de forma intercambiável em qualquer contexto do código",
+    "`final` é um bloco de tratamento de exceções, `finally` é um modificador de variáveis, e `finalize` é usado para declarar classes abstratas",
+    "`finalize()` é chamado automaticamente antes de todo método público, e `final` só se aplica a classes internas (inner classes)",
+    "`finally` é executado apenas quando nenhuma exceção é lançada, sendo o oposto do bloco `catch`"
+  ],
+  "correctIndex": 0,
+  "explanation": "Os três termos são frequentemente confundidos por soarem parecidos, mas têm papéis distintos: `final` restringe reatribuição/sobrescrita/herança, `finally` garante execução de código de limpeza após um `try`, e `finalize()` era um hook do garbage collector (removido/deprecated a partir do Java 9+ por ser não confiável). As demais alternativas trocam as definições entre si de forma incorreta.",
+  "tags": ["java", "final", "finally"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

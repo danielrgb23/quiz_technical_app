@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_705a9fd5",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que são `Keys` no Flutter e por que precisamos deles?",
+  "options": [
+    "São identificadores usados para preservar o estado de widgets e distingui-los na árvore de widgets, especialmente úteis em coleções de widgets do mesmo tipo",
+    "São variáveis de ambiente usadas para armazenar credenciais de API dentro do app Flutter",
+    "São identificadores exigidos em todo widget do Flutter, sem os quais o app não compila",
+    "São usadas exclusivamente para navegação entre rotas, substituindo o `Navigator`",
+    "São um mecanismo de cache que armazena os dados retornados por chamadas de rede"
+  ],
+  "correctIndex": 0,
+  "explanation": "Keys ajudam o Flutter a identificar unicamente widgets na árvore, preservando o estado de `StatefulWidget`s quando eles são movidos ou reordenados, principalmente em listas de widgets do mesmo tipo. Sem elas, o framework pode confundir qual estado pertence a qual widget. Keys não são obrigatórias em todo widget, não lidam com credenciais, não substituem o `Navigator` e não fazem cache de rede.",
+  "tags": [
+    "flutter",
+    "widgets",
+    "state"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

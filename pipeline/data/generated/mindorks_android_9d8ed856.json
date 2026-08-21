@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_9d8ed856",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Qual é a diferença entre usar `==` e `.equals()` em um objeto?",
+  "options": [
+    "`==` compara referências, verificando se ambas as variáveis apontam para o mesmo objeto na memória; `.equals()` compara igualdade lógica/de conteúdo, podendo ser sobrescrito pela classe para definir o que significa 'igual'",
+    "`==` e `.equals()` sempre produzem o mesmo resultado em Java, independentemente da classe",
+    "`.equals()` compara apenas referências de memória, enquanto `==` compara o conteúdo dos objetos",
+    "`==` só pode ser usado com tipos primitivos e gera erro de compilação quando aplicado a objetos",
+    "`.equals()` é usado exclusivamente para comparar `String`s, não podendo ser sobrescrito em outras classes"
+  ],
+  "correctIndex": 0,
+  "explanation": "Para objetos, `==` verifica se as duas referências apontam para a mesma instância, enquanto `.equals()` (herdado de `Object` e frequentemente sobrescrito, como em `String` ou classes com `equals`/`hashCode` customizados) compara o conteúdo lógico. As alternativas erradas invertem os papéis dos operadores ou afirmam restrições que não existem, como `==` gerar erro de compilação em objetos (é válido, só compara referência).",
+  "tags": ["java", "equals", "object-comparison"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

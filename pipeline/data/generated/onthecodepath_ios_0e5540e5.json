@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_0e5540e5",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "Qual é a diferença entre uma classe e um objeto?",
+  "options": [
+    "Uma classe é o projeto (blueprint) que descreve as propriedades e comportamentos comuns a um determinado tipo, enquanto um objeto é uma instância concreta dessa classe, com seus próprios valores de estado em memória.",
+    "Uma classe é uma instância de um objeto, criada em tempo de execução a partir de um template pré-compilado.",
+    "Classe e objeto são sinônimos em linguagens orientadas a objetos e podem ser usados de forma intercambiável sem distinção técnica.",
+    "Um objeto define o comportamento genérico compartilhado por múltiplas classes, enquanto a classe representa um único dado em memória.",
+    "Uma classe só pode gerar exatamente um objeto durante todo o ciclo de vida do programa, nunca múltiplas instâncias."
+  ],
+  "correctIndex": 0,
+  "explanation": "A classe define a estrutura e o comportamento (métodos, propriedades) de um tipo, enquanto o objeto é uma instância concreta alocada em memória a partir dessa definição, podendo existir múltiplos objetos de uma mesma classe simultaneamente. Inverter os papéis, tratá-los como sinônimos, ou limitar uma classe a gerar apenas um objeto contraria os fundamentos da orientação a objetos.",
+  "tags": ["oop", "fundamentals", "ios"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

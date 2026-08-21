@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_f1fbe478",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Quais cuidados devemos ter ao usar o ProGuard?",
+  "options": [
+    "É preciso manter regras -keep para classes acessadas via reflexão (ex.: modelos serializados com Gson/Moshi, classes usadas por bibliotecas de injeção de dependência), testar exaustivamente o build ofuscado antes de publicar e guardar o arquivo mapping.txt de cada release para poder desofuscar stack traces de crashes",
+    "O ProGuard nunca quebra o app, então não é necessário testar builds de release, apenas os de debug, que já refletem fielmente o comportamento em produção",
+    "É necessário desativar completamente o R8/ProGuard sempre que o app usa qualquer biblioteca de terceiros, pois ele é incompatível com bibliotecas externas",
+    "O ProGuard só afeta o tamanho do ícone do app, sem nenhum impacto sobre o código Java/Kotlin compilado",
+    "As regras do ProGuard só precisam ser configuradas uma vez no início do projeto e nunca precisam ser revisadas novamente, mesmo com novas dependências"
+  ],
+  "correctIndex": 0,
+  "explanation": "O ProGuard/R8 minimiza e ofusca o código, o que pode remover ou renomear classes/membros acessados apenas via reflexão (comum em serialização JSON, injeção de dependências e bibliotecas de terceiros), causando crashes em runtime se não houver regras -keep apropriadas. É essencial testar builds de release (não apenas debug) e preservar o mapping.txt de cada versão publicada para conseguir traduzir stack traces ofuscados de relatórios de crash. Ele não afeta apenas ícones, é amplamente usado com bibliotecas de terceiros (com as regras certas) e frequentemente precisa de ajustes ao longo do projeto.",
+  "tags": ["android", "proguard", "r8", "build"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

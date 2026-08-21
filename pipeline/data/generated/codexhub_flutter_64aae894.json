@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_64aae894",
+  "source": "codexhub_flutter",
+  "topic": "state_management",
+  "level": 2,
+  "question": "Como usar a classe `ValueNotifier` no Flutter?\n\n```dart\nfinal ValueNotifier<String> _myValue = ValueNotifier<String>('Initial Value');\n\nValueListenableBuilder<String>(\n  valueListenable: _myValue,\n  builder: (BuildContext context, String value, Widget? child) {\n    return Text(value);\n  },\n),\n\n_myValue.value = 'New Value';\n```",
+  "options": [
+    "Criando uma instância com um valor inicial, ouvindo mudanças via `ValueListenableBuilder` (que reconstrói o widget quando o valor muda) e atualizando o estado simplesmente atribuindo um novo valor à propriedade `.value`",
+    "Chamando `_myValue.notifyListeners()` manualmente após cada mudança, pois `ValueNotifier` não notifica automaticamente ao alterar `.value`",
+    "Registrando a instância no `MaterialApp` como um provedor global antes de poder utilizá-la em qualquer widget da árvore",
+    "Usando-a apenas dentro de widgets stateless, já que `ValueNotifier` não pode ser referenciada dentro de um `State`",
+    "Envolvendo-a obrigatoriamente com `StreamBuilder`, pois `ValueListenableBuilder` não é compatível com `ValueNotifier`"
+  ],
+  "correctIndex": 0,
+  "explanation": "`ValueNotifier` guarda um valor e notifica automaticamente seus ouvintes quando esse valor muda; basta atribuir um novo valor à propriedade `.value` para disparar a notificação, e `ValueListenableBuilder` reconstrói a UI reagindo a essa mudança. Não é necessário chamar `notifyListeners()` manualmente (isso é próprio do `ChangeNotifier` genérico, mas `ValueNotifier` já faz isso internamente ao setar `.value`). Não há necessidade de registro em um provedor global, pode ser usado dentro de um `State`, e `ValueListenableBuilder` é justamente o widget correto e nativo para consumi-lo, não `StreamBuilder`.",
+  "tags": [
+    "flutter",
+    "valuenotifier",
+    "state-management"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

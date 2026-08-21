@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_52454792",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Qual é a diferença entre `copy` e `retain` (Objective-C)?",
+  "options": [
+    "`retain` incrementa a contagem de referências e compartilha a mesma instância do objeto original; `copy` cria uma duplicata independente do objeto, com seus próprios valores",
+    "`copy` incrementa a contagem de referências e compartilha a mesma instância; `retain` sempre cria uma cópia independente do objeto",
+    "`retain` e `copy` são idênticos em Objective-C, apenas nomes alternativos do mesmo atributo de propriedade",
+    "`retain` cria uma cópia rasa (shallow copy) do objeto, enquanto `copy` apenas aumenta a contagem de referências sem duplicar nada",
+    "`copy` só existe em Swift; em Objective-C, `retain` é a única opção disponível"
+  ],
+  "correctIndex": 0,
+  "explanation": "`retain` incrementa a contagem de referências do objeto e faz com que a propriedade compartilhe exatamente a mesma instância que foi passada; quando a contagem chega a zero, o objeto é desalocado. `copy`, por sua vez, cria uma nova instância duplicada com os mesmos valores, de forma que alterações no objeto original não afetam a cópia. As demais alternativas invertem ou inventam esse comportamento.",
+  "tags": ["ios", "objective-c", "memory-management"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

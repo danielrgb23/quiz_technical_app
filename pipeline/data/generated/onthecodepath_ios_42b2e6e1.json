@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_42b2e6e1",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Por que geralmente se cria uma referência `weak` para `self` ao usar `self` dentro de um bloco (closure/block)?\n\nExemplo em Objective-C:\n```objective-c\nSomeBlock* __weak weakSelf = self;\n```",
+  "options": [
+    "Blocos mantêm referências fortes (`strong`) a qualquer objeto capturado, incluindo `self`; se o bloco for armazenado como propriedade de `self` (como um callback), isso cria um ciclo de referência forte (retain cycle), impedindo que o objeto seja desalocado e causando vazamento de memória — capturar `self` como `weak` evita esse ciclo.",
+    "Capturar `self` como `weak` melhora o desempenho de execução do bloco, tornando-o mais rápido em tempo de execução, sem qualquer relação com gerenciamento de memória.",
+    "Blocos nunca retêm referências aos objetos que capturam, então usar `weak` serve apenas para seguir uma convenção estética de estilo de código.",
+    "Usar `weak self` é obrigatório em todo e qualquer bloco, mesmo quando o bloco não é armazenado como propriedade e é executado e descartado imediatamente.",
+    "`weak self` é usado para forçar o bloco a ser executado de forma síncrona na thread principal, evitando problemas de concorrência."
+  ],
+  "correctIndex": 0,
+  "explanation": "O problema real é o retain cycle: quando um bloco capturado fortemente por `self` também captura `self` fortemente, nenhum dos dois pode ser desalocado, causando vazamento de memória — por isso se usa `weak self` nesses casos, tipicamente em callbacks armazenados como propriedades. Blocos de fato retêm fortemente objetos capturados por padrão (contrariando uma das opções), `weak self` não afeta desempenho nem sincroniza threads, e não é necessário em blocos executados e descartados imediatamente sem serem retidos.",
+  "tags": ["ios", "memory-management", "closures"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

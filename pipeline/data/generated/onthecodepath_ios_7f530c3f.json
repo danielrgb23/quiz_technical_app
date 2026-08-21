@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_7f530c3f",
+  "source": "onthecodepath_ios",
+  "topic": "swift",
+  "level": 3,
+  "question": "Qual é a diferença entre os níveis de acesso `public` e `open` em Swift? Por que é importante ter os dois?",
+  "options": [
+    "`open` permite que a classe (e seus membros) seja subclassificada/sobrescrita tanto dentro do módulo quanto por módulos que a importam; `public` permite acesso de fora do módulo, mas só permite subclasse/override dentro do próprio módulo onde foi definida — isso é importante para frameworks que querem expor uma classe sem permitir que ela seja livremente estendida por consumidores externos",
+    "`public` permite subclasse por qualquer módulo externo, enquanto `open` restringe a subclasse apenas ao módulo de definição",
+    "`open` e `public` são idênticos em Swift, sendo `open` apenas uma palavra-chave legada mantida por compatibilidade",
+    "`public` só pode ser usado em structs e enums, enquanto `open` só pode ser usado em classes finais",
+    "`open` impede completamente que a classe seja acessada fora do módulo, funcionando como `internal`"
+  ],
+  "correctIndex": 0,
+  "explanation": "`open` é o nível de acesso mais permissivo: permite que uma classe e seus membros sejam subclassificados/sobrescritos tanto dentro do módulo de definição quanto por módulos externos que o importam. `public` permite o acesso de fora do módulo, mas restringe subclasse e override apenas ao próprio módulo onde a classe foi definida. Essa distinção é importante para frameworks: métodos que não devem ser sobrescritos (como alguns de `NSManagedObject` no Core Data) são declarados `public` em vez de `open`, evitando comportamento inesperado em subclasses externas.",
+  "tags": ["swift", "access-control", "frameworks"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

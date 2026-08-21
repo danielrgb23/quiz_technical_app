@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_44e26018",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é a diferença entre os widgets `Expanded` e `Flexible`?",
+  "options": [
+    "`Flexible` ocupa apenas o espaço necessário pelo filho, enquanto `Expanded` força o filho a ocupar todo o espaço disponível (é um `Flexible` com `FlexFit.tight`)",
+    "`Expanded` só pode ser usado dentro de um `Column`, enquanto `Flexible` só pode ser usado dentro de um `Row`",
+    "`Flexible` força o filho a ocupar todo o espaço disponível, enquanto `Expanded` ocupa apenas o espaço necessário",
+    "Não há diferença prática entre eles; são nomes alternativos para o mesmo widget",
+    "`Expanded` é usado apenas para imagens e `Flexible` apenas para texto"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Flexible` permite que o filho ocupe apenas o espaço de que precisa (fit loose), enquanto `Expanded` é um atalho para `Flexible` com `FlexFit.tight`, forçando o filho a preencher todo o espaço disponível no eixo principal. A alternativa que inverte os comportamentos está errada, assim como as que inventam restrições de `Row`/`Column` ou tipo de conteúdo.",
+  "tags": [
+    "flutter",
+    "layout",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

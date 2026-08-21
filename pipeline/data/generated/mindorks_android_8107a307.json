@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_8107a307",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Qual é o propósito de `addToBackStack()` ao cometer (commit) uma transação de Fragment?",
+  "options": [
+    "Adiciona a transação à pilha de retrocesso (back stack) gerenciada pelo `FragmentManager`, permitindo que o usuário volte ao estado anterior da UI ao pressionar o botão 'voltar', em vez de sair da Activity ou app imediatamente",
+    "Salva permanentemente o estado do Fragment em disco, mesmo após o processo do app ser encerrado",
+    "Impede que o Fragment seja destruído durante mudanças de configuração, como rotação de tela",
+    "Faz com que a transação seja executada de forma síncrona, bloqueando a thread principal até concluir",
+    "Registra o Fragment no `AndroidManifest.xml` automaticamente para que ele possa ser usado por outros apps"
+  ],
+  "correctIndex": 0,
+  "explanation": "`addToBackStack()` registra a transação na pilha de retrocesso do `FragmentManager`, de modo que pressionar 'voltar' desfaz a transação (por exemplo, retornando ao Fragment anterior) em vez de finalizar a Activity. Ela não persiste dados em disco, não protege contra recriação por mudança de configuração e não tem relação com o Manifest ou execução síncrona.",
+  "tags": ["android", "fragment", "navigation"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

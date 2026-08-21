@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_a0b80e5d",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Quais são as boas práticas para o uso de texto em um aplicativo Android?",
+  "options": [
+    "Extrair todos os textos para `strings.xml` (evitando hardcode) para facilitar internacionalização e manutenção, usar unidades `sp` para tamanhos de fonte (respeitando preferências de acessibilidade do usuário), suportar pluralização com `plurals` e considerar RTL (`start`/`end` em vez de `left`/`right`)",
+    "Sempre usar `dp` para o tamanho da fonte, pois `sp` foi descontinuado a partir da API 26",
+    "Fixar (hardcode) os textos diretamente no layout XML para melhorar a performance de renderização",
+    "Evitar o arquivo `strings.xml` sempre que possível, definindo textos diretamente no código Kotlin para reduzir o tamanho do APK",
+    "Usar apenas `left`/`right` no lugar de `start`/`end`, já que o suporte a RTL foi removido nas versões recentes do Android"
+  ],
+  "correctIndex": 0,
+  "explanation": "Boas práticas incluem centralizar textos em `strings.xml` para facilitar tradução e manutenção, usar `sp` (scale-independent pixels) para respeitar as configurações de acessibilidade de tamanho de fonte do usuário, suportar pluralização com `<plurals>` e usar `start`/`end` em vez de `left`/`right` para suportar layouts RTL. As demais alternativas contêm afirmações falsas, como a depreciação de `sp` ou a remoção do suporte a RTL, que não correspondem à realidade da plataforma.",
+  "tags": ["android", "ui", "accessibility"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

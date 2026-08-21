@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_5412ce48",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do pacote Material Design Icons no Flutter?",
+  "options": [
+    "Fornecer um conjunto extenso de ícones (milhares) seguindo as diretrizes de iconografia do Material Design, que podem ser usados via a classe MdiIcons após adicionar a dependência ao projeto",
+    "Fornecer apenas ícones exclusivos para o sistema operacional iOS",
+    "Gerar automaticamente ícones personalizados a partir de imagens PNG do app durante o build",
+    "Substituir o pacote flutter/material.dart, sendo incompatível com widgets Material padrão",
+    "Compactar o tamanho do APK removendo ícones não utilizados do SDK do Flutter"
+  ],
+  "correctIndex": 0,
+  "explanation": "O pacote material_design_icons_flutter oferece milhares de ícones prontos que seguem o padrão Material, acessados via MdiIcons.nome após adicionar a dependência no pubspec.yaml. Ele não é exclusivo do iOS, não gera ícones a partir de imagens automaticamente, não substitui o pacote material.dart e não tem relação com otimização de tamanho de APK.",
+  "tags": ["flutter", "ui", "icons", "material"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_3f6a7b12",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Por que é recomendado usar apenas o construtor padrão (sem argumentos) ao criar um `Fragment`?",
+  "options": [
+    "Porque o sistema Android recria a instância do Fragment automaticamente (ex.: após mudança de configuração ou recuperação de estado) usando reflexão e o construtor padrão, então argumentos passados em um construtor customizado seriam perdidos; para dados iniciais deve-se usar `setArguments(Bundle)` e recuperá-los com `getArguments()`",
+    "Porque construtores customizados não são suportados pela JVM e causam erro de compilação em qualquer classe que estenda `Fragment`",
+    "Porque o Android Studio não gera XML de layout corretamente quando o Fragment possui um construtor com parâmetros",
+    "Porque construtores customizados tornam o Fragment incompatível com o `FragmentManager`, impedindo que ele seja adicionado à back stack",
+    "Porque apenas o construtor padrão permite que o Fragment seja usado dentro de um `ViewPager`"
+  ],
+  "correctIndex": 0,
+  "explanation": "O framework Android pode destruir e recriar Fragments (por exemplo, em mudanças de configuração ou quando o processo é recriado pelo sistema) instanciando-os via reflexão com o construtor sem argumentos. Se o Fragment só tiver um construtor customizado, essa recriação falha com `InstantiationException`. Por isso a prática recomendada é manter um construtor vazio e passar dados via `setArguments(Bundle)`. As demais alternativas descrevem restrições técnicas inexistentes.",
+  "tags": ["android", "fragment", "lifecycle"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

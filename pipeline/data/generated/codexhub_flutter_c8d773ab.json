@@ -1,0 +1,22 @@
+{
+  "id": "codexhub_flutter_c8d773ab",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que são `Animation` e `AnimationController` no Flutter?",
+  "options": [
+    "`Animation` representa um valor que muda ao longo do tempo (usado para animar propriedades de widgets), e `AnimationController` é a classe central que controla duração, direção e progresso dessa animação, geralmente combinada com `Tween` e `Curve`",
+    "`Animation` é a classe que controla início, fim e duração, enquanto `AnimationController` apenas representa o valor atual sem poder ser manipulado",
+    "São a mesma classe, sendo `AnimationController` apenas um apelido legado de `Animation` mantido por compatibilidade",
+    "`Animation` é exclusiva para animações de transição de rotas, enquanto `AnimationController` é usada somente para efeitos sonoros",
+    "`AnimationController` é um widget visual que precisa ser adicionado diretamente à árvore de widgets para funcionar"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Animation` descreve um valor que muda ao longo do tempo, podendo ser usado para animar propriedades como tamanho, cor ou posição. `AnimationController` gerencia essa animação, definindo duração, direção e fornecendo métodos como start/stop, e é tipicamente combinado com `Tween` (valores) e `Curve` (progressão). As demais alternativas invertem os papéis das classes ou atribuem funções que não existem (som, ser widget visual, transição exclusiva de rotas).",
+  "tags": [
+    "flutter",
+    "animation"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

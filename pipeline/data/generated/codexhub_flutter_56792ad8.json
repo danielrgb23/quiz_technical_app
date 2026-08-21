@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_56792ad8",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 2,
+  "question": "O que é um construtor `factory` em Dart?",
+  "options": [
+    "É um tipo especial de construtor, declarado com a palavra-chave `factory`, que não necessariamente cria uma nova instância a cada chamada — podendo retornar uma instância em cache, uma subclasse ou um objeto de outro tipo",
+    "É um construtor que sempre cria uma nova instância e não pode retornar valores em cache ou subtipos, sendo idêntico a um construtor comum",
+    "É uma anotação usada para marcar uma classe como abstrata e impedir sua instanciação direta",
+    "É um construtor usado exclusivamente para inicializar campos `final` de forma assíncrona",
+    "É um padrão de projeto disponível apenas em pacotes de terceiros, não sendo um recurso nativo da linguagem Dart"
+  ],
+  "correctIndex": 0,
+  "explanation": "Um construtor `factory` permite controlar a criação de instâncias sem expor os detalhes de implementação, podendo retornar uma instância existente (cache), uma subclasse ou até um tipo diferente, sem corpo obrigatório de criação direta como um construtor normal. Ele não é idêntico a um construtor comum (que sempre cria uma nova instância), não marca a classe como abstrata, não é restrito a inicialização assíncrona e é um recurso nativo da linguagem Dart, não de pacotes externos.",
+  "tags": [
+    "dart",
+    "constructors",
+    "oop"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

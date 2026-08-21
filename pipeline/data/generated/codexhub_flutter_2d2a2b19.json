@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_2d2a2b19",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é um `CustomPainter` no Flutter?\n\n```dart\nclass RectanglePainter extends CustomPainter {\n  @override\n  void paint(Canvas canvas, Size size) {\n    final paint = Paint()\n      ..color = Colors.blue\n      ..style = PaintingStyle.fill;\n    final rect = Rect.fromLTWH(0, 0, size.width, size.height);\n    canvas.drawRect(rect, paint);\n  }\n\n  @override\n  bool shouldRepaint(RectanglePainter oldDelegate) => false;\n}\n```",
+  "options": [
+    "Uma classe usada com o widget `CustomPaint` para desenhar gráficos e animações customizadas diretamente em um `Canvas`, implementando os métodos `paint()` (o que desenhar) e `shouldRepaint()` (quando redesenhar)",
+    "Um widget pronto do Material Design usado para desenhar botões e ícones customizados sem precisar de código de baixo nível",
+    "Uma classe que substitui o `AnimationController`, sendo usada para orquestrar animações baseadas em tempo",
+    "Uma API usada exclusivamente para renderizar texto com fontes customizadas carregadas de arquivos `.ttf`",
+    "Um mecanismo que converte automaticamente arquivos SVG em widgets Flutter sem necessidade de pacotes externos"
+  ],
+  "correctIndex": 0,
+  "explanation": "`CustomPainter` é usado junto ao widget `CustomPaint` para desenhar gráficos customizados em um `Canvas`, implementando `paint()` para definir o que desenhar e `shouldRepaint()` para controlar quando repintar. Não é um widget pronto do Material Design nem substitui o `AnimationController` (que gerencia o timing de animações, podendo ser combinado com `CustomPainter`). Também não é uma API específica para fontes customizadas nem converte SVGs automaticamente — isso normalmente exige pacotes como `flutter_svg`.",
+  "tags": [
+    "flutter",
+    "custompainter",
+    "canvas"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

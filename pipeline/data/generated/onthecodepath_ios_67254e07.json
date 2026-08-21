@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_67254e07",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "O que são blocks em Objective-C? Dê um exemplo de sintaxe.\n\n```objective-c\n^{\n  NSLog(@\"This is an example of a block\")\n}\n```",
+  "options": [
+    "São objetos que encapsulam um trecho de código, podendo ser passados como valores para métodos/funções, armazenados em coleções como `NSArray`, e podem receber argumentos e retornar valores, sendo declarados com o símbolo `^`",
+    "São uma forma alternativa de declarar classes, substituindo `@interface`/`@implementation` com sintaxe mais curta",
+    "São exclusivamente usados para declarar constantes globais em tempo de compilação",
+    "São ponteiros para funções em C que não podem capturar variáveis do escopo ao redor",
+    "São um mecanismo de herança múltipla disponível apenas em Objective-C, não presente em Swift"
+  ],
+  "correctIndex": 0,
+  "explanation": "Blocks são um recurso de linguagem (também presente em C e C++) que permite criar trechos de código encapsulados como objetos, podendo ser passados como argumentos para métodos/funções, armazenados em coleções (`NSArray`, `NSDictionary`) e podem receber parâmetros e retornar valores, de forma semelhante a métodos. Sua sintaxe usa o símbolo `^`. Diferente de ponteiros de função em C puro, blocks conseguem capturar variáveis do escopo em que foram definidos.",
+  "tags": ["ios", "objective-c", "closures"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

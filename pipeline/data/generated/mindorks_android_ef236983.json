@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_ef236983",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Por que precisamos chamar `setContentView()` dentro de `onCreate()` de uma `Activity`?",
+  "options": [
+    "Porque é nesse método que a `Activity` infla e associa a hierarquia de Views (layout) à janela da tela, tornando a interface visível; sem essa chamada a Activity não teria conteúdo para renderizar",
+    "Porque `setContentView()` inicializa o `ViewModel` da Activity e conecta o ciclo de vida ao `LiveData`",
+    "Porque é a única forma de registrar o `Intent` que iniciou a Activity",
+    "Porque `setContentView()` é responsável por solicitar as permissões de runtime necessárias para a tela",
+    "Porque sem essa chamada o sistema não conseguiria destruir a Activity corretamente ao sair da tela"
+  ],
+  "correctIndex": 0,
+  "explanation": "`onCreate()` é onde a Activity é inicializada pela primeira vez, e `setContentView()` infla o layout XML (ou define a árvore de Views programaticamente) e o anexa à janela da Activity, definindo o que será exibido na tela. As demais alternativas atribuem responsabilidades erradas ao método, como permissões, Intents ou ViewModel, que não têm relação com `setContentView()`.",
+  "tags": ["android", "activity", "lifecycle"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_e4ca579f",
+  "source": "onthecodepath_ios",
+  "topic": "architecture",
+  "level": 1,
+  "question": "O que são as metodologias Waterfall e Agile, e quais são as principais diferenças entre elas?",
+  "options": [
+    "Waterfall é um modelo sequencial que divide o desenvolvimento em fases pré-definidas (viabilidade, planejamento, design, build, teste, produção, suporte), exigindo requisitos bem definidos desde o início; Agile organiza o desenvolvimento em sprints iterativos, permitindo mudanças de requisitos ao longo do projeto, com testes ocorrendo em paralelo ao desenvolvimento e maior envolvimento do usuário/cliente para melhorar a satisfação.",
+    "Waterfall e Agile são termos equivalentes para o mesmo processo, diferindo apenas na nomenclatura usada por diferentes empresas.",
+    "Agile é um modelo rígido de fases sequenciais sem possibilidade de mudança de requisitos, enquanto Waterfall permite ajustes contínuos a cada sprint.",
+    "No Waterfall, o teste ocorre em paralelo ao desenvolvimento desde o início; no Agile, o teste só acontece após a entrega final do produto completo.",
+    "Agile é aplicável apenas a projetos pequenos com um único desenvolvedor, enquanto Waterfall é a única metodologia viável para equipes grandes."
+  ],
+  "correctIndex": 0,
+  "explanation": "Waterfall segue fases lineares e rígidas, adequado quando os requisitos são bem conhecidos antecipadamente; Agile divide o trabalho em sprints iterativos, favorecendo flexibilidade e feedback contínuo. As opções que invertem as características (por exemplo, dizer que Agile é rígido e Waterfall flexível, ou que testes ocorrem em paralelo no Waterfall) descrevem exatamente o oposto do que ocorre na prática.",
+  "tags": ["methodology", "agile", "project-management"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

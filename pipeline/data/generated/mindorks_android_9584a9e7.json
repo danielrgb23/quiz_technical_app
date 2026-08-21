@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_9584a9e7",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Quando um bloco `static` é executado em Java?",
+  "options": [
+    "Um bloco `static` é executado uma única vez, quando a classe é carregada na JVM (durante a inicialização da classe), antes de qualquer instância ser criada ou de qualquer membro `static` ser acessado.",
+    "É executado toda vez que uma nova instância da classe é criada, antes do construtor.",
+    "É executado apenas quando o método `main` da aplicação é chamado, independentemente da classe.",
+    "É executado sob demanda, sempre que um método `static` da classe é invocado.",
+    "É executado ao final da execução do programa, como um bloco de finalização (semelhante a `finally`)."
+  ],
+  "correctIndex": 0,
+  "explanation": "O bloco `static` roda apenas uma vez, no momento do carregamento da classe pela JVM, servindo para inicializar dados estáticos. Ele é diferente do construtor, que roda a cada instanciação. Não há relação com o método `main` de outras classes nem com finalização do programa.",
+  "tags": ["java", "class-loading"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

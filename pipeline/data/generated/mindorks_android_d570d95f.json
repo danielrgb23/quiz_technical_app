@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_d570d95f",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como é feita a navegação entre telas no Jetpack Compose?",
+  "options": [
+    "Usando a biblioteca Navigation Compose, que define um `NavHost` com destinos declarados via `composable(route)` e um `NavController` para navegar entre eles e gerenciar a pilha de retrocesso",
+    "Trocando manualmente o `setContentView` da Activity para cada nova tela, como era feito com Fragments",
+    "Usando `Intent` explícitos entre composables, da mesma forma que se navega entre Activities",
+    "O Compose não possui suporte a navegação; é obrigatório usar Fragments hospedando cada composable",
+    "Empilhando composables manualmente em uma lista mutável e desenhando apenas o último item, sem nenhuma biblioteca de suporte"
+  ],
+  "correctIndex": 0,
+  "explanation": "A Navigation Compose fornece `NavHost`, `NavController` e rotas declaradas com `composable(\"rota\")` para gerenciar a navegação e a back stack de forma declarativa, incluindo passagem de argumentos e deep links. Composables não usam `Intent` entre si (isso é para Activities), não é necessário Fragments, e implementar a navegação manualmente com listas é possível em teoria mas não é a prática recomendada nem descreve a solução oficial do Android.",
+  "tags": ["jetpack-compose", "navigation", "navcontroller"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

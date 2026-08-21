@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_2802306a",
+  "source": "mindorks_android",
+  "topic": "storage",
+  "level": 2,
+  "question": "O que é serialização em Java e como ela é implementada?",
+  "options": [
+    "É o processo de converter o estado de um objeto em uma sequência de bytes para armazenamento ou transmissão (e reconstruí-lo depois via deserialização); é implementada fazendo a classe implementar a interface marcadora `Serializable`, podendo customizar o processo com `writeObject`/`readObject` ou excluir campos com `transient`",
+    "É o processo de converter um objeto em XML exclusivamente, sendo `Serializable` uma classe abstrata que precisa ser estendida",
+    "É a técnica de dividir um objeto grande em vários objetos menores para economizar memória em tempo de execução",
+    "É implementada automaticamente por qualquer classe em Java, sem necessidade de implementar nenhuma interface",
+    "É o processo de compilar código Java para bytecode, sendo sinônimo de compilação"
+  ],
+  "correctIndex": 0,
+  "explanation": "Serialização transforma o estado de um objeto em bytes para persistência ou transmissão em rede; em Java, isso é feito implementando a interface marcadora `Serializable` (sem métodos obrigatórios), podendo customizar o comportamento com `writeObject`/`readObject` e excluir campos sensíveis com `transient`. Não está restrita a XML, não é automática para toda classe, e não tem relação com compilação para bytecode.",
+  "tags": ["java", "serialization", "storage"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

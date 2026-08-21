@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_40b88d19",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que são side effects (efeitos colaterais) no Jetpack Compose?",
+  "options": [
+    "São mudanças que acontecem fora do escopo de uma função Composable — como fazer uma chamada de rede, iniciar uma coroutine ou modificar uma variável externa — que precisam ser controladas com APIs específicas como LaunchedEffect, SideEffect e DisposableEffect para acontecer de forma previsível em relação ao ciclo de recomposição",
+    "São erros de compilação causados por Composables mal formatados que impedem o app de rodar",
+    "São animações padrão que o Compose aplica automaticamente a qualquer elemento de UI sem configuração",
+    "São bugs visuais causados exclusivamente por temas de cores incompatíveis entre light e dark mode",
+    "São Composables que retornam um valor Boolean indicando se a recomposição foi bem-sucedida"
+  ],
+  "correctIndex": 0,
+  "explanation": "Side effects são mudanças de estado que ocorrem fora do escopo da função Composable — por exemplo, disparar uma requisição de rede, escrever em um log, ou lançar uma coroutine — e que, se feitas diretamente no corpo do Composable, executariam a cada recomposição de forma imprevisível. Compose oferece APIs como LaunchedEffect (executa em uma coroutine ligada ao ciclo de vida da composição), SideEffect (executa após cada recomposição bem-sucedida) e DisposableEffect (limpa recursos quando o Composable sai de composição) para controlar isso de forma segura. Não são erros de compilação, animações automáticas, bugs de tema ou valores booleanos de retorno.",
+  "tags": ["android", "jetpack-compose", "side-effects", "concurrency"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

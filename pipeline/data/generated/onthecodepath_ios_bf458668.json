@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_bf458668",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Que cuidados você deve tomar ao implementar um `UITableViewController` que exibe imagens baixadas de um servidor remoto?",
+  "options": [
+    "Baixar a imagem apenas quando a célula entra em tela (em `cellForRowAt`), fazer o download de forma assíncrona em uma thread de background para não travar a UI, e, ao concluir o download, verificar se a célula ainda representa o mesmo item (pois pode ter sido reaproveitada por outro dado durante a rolagem) antes de atualizar a imagem na main thread — descartando o resultado se a célula já foi reutilizada.",
+    "Baixar todas as imagens de uma vez, de forma síncrona, no `viewDidLoad`, antes de exibir a tabela ao usuário.",
+    "Sempre atualizar a `UIImageView` da célula assim que o download terminar, independentemente de qual dado a célula representa no momento.",
+    "Realizar o download da imagem diretamente na main thread dentro de `cellForRowAt`, já que operações de rede são leves o suficiente para não impactar a UI.",
+    "Evitar reaproveitamento de células (`dequeueReusableCell`) para esse tipo de tabela, criando uma nova célula a cada linha para simplificar o gerenciamento das imagens."
+  ],
+  "correctIndex": 0,
+  "explanation": "O ponto crítico é lidar corretamente com a reutilização de células (`cell reuse`): como células são recicladas durante a rolagem, é preciso verificar se a célula que terminou o download ainda representa o mesmo item antes de atualizar a UI, e o download deve ser assíncrono para não bloquear a thread principal. Baixar tudo de forma síncrona no `viewDidLoad`, ignorar a reutilização de células ou fazer requisições de rede na main thread são práticas que degradam significativamente a experiência do usuário.",
+  "tags": ["ios", "uikit", "performance"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_57400fbf",
+  "source": "mindorks_android",
+  "topic": "networking",
+  "level": 2,
+  "question": "O que é uma Multipart Request no contexto de networking em Android?",
+  "options": [
+    "Um tipo de requisição HTTP (multipart/form-data) que permite enviar múltiplas partes em um único corpo de requisição, combinando dados textuais e arquivos binários (como imagens) — usada, por exemplo, com Retrofit e @Multipart para fazer upload de arquivos",
+    "Um mecanismo do Android que divide automaticamente uma única resposta JSON grande em múltiplas requisições menores para melhorar a performance",
+    "Um tipo de requisição exclusivo do WebSocket usado para enviar mensagens em tempo real fragmentadas",
+    "Uma técnica de cache HTTP que armazena partes diferentes da mesma resposta em bancos de dados separados",
+    "Um recurso do OkHttp que envia a mesma requisição para múltiplos servidores simultaneamente e usa a resposta mais rápida"
+  ],
+  "correctIndex": 0,
+  "explanation": "Multipart request usa o content-type multipart/form-data para enviar, em uma única requisição HTTP, diferentes partes de dados — por exemplo, campos de texto junto com arquivos binários como imagens ou vídeos. No Android, isso é comumente feito com Retrofit usando @Multipart, @Part e MultipartBody.Part, muito usado em uploads de foto de perfil ou anexos. Não tem relação com WebSocket, cache distribuído ou envio paralelo a múltiplos servidores.",
+  "tags": ["android", "networking", "retrofit", "http"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

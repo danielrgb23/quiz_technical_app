@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_04536f0c",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que é rememberCoroutineScope e quando ele é usado?",
+  "options": [
+    "É uma função Composable que fornece um CoroutineScope vinculado ao ponto da composição, útil para lançar coroutines em resposta a eventos de callback (como um clique em botão) que ocorrem fora de um Composable, ao contrário do LaunchedEffect que é atrelado diretamente à composição",
+    "É uma anotação que transforma qualquer função suspend em uma função Composable automaticamente",
+    "É uma classe usada para persistir coroutines em disco entre reinicializações do aplicativo",
+    "É um substituto direto do ViewModelScope que só pode ser usado fora de Composables",
+    "É a função responsável por pausar automaticamente todas as coroutines quando a tela perde o foco"
+  ],
+  "correctIndex": 0,
+  "explanation": "rememberCoroutineScope() retorna um CoroutineScope ligado ao ciclo de vida da composição, mas que pode ser usado para lançar coroutines fora do fluxo direto de composição — tipicamente dentro de callbacks de eventos, como onClick, onde não é possível chamar diretamente uma função suspend ou usar LaunchedEffect (que só pode existir dentro do corpo Composable). É diferente do LaunchedEffect, que dispara automaticamente durante a composição. Não é uma anotação, não persiste coroutines em disco, não é um substituto do viewModelScope e não pausa coroutines automaticamente.",
+  "tags": ["android", "jetpack-compose", "coroutines", "concurrency"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

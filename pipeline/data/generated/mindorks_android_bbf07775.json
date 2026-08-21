@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_bbf07775",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 3,
+  "question": "Como escolher entre Dagger 2 e Dagger-Hilt em um projeto Android?",
+  "options": [
+    "Hilt é preferível para a maioria dos apps Android por padronizar componentes ligados ao ciclo de vida (Application, Activity, Fragment, ViewModel) e reduzir boilerplate; Dagger 2 puro compensa em projetos multiplataforma (Java/Kotlin não-Android) ou quando é preciso um grafo de dependências totalmente customizado além dos padrões do Android",
+    "Dagger-Hilt deve ser sempre evitado porque é mais lento em runtime do que o Dagger 2 puro, já que usa reflexão para resolver dependências",
+    "Dagger 2 é exclusivo para apps que usam Java, enquanto Dagger-Hilt só funciona em projetos escritos inteiramente em Kotlin",
+    "A escolha não importa, pois Hilt e Dagger 2 geram exatamente o mesmo código e têm APIs idênticas",
+    "Dagger-Hilt deve ser usado apenas em testes unitários, enquanto Dagger 2 é reservado exclusivamente para o código de produção"
+  ],
+  "correctIndex": 0,
+  "explanation": "Hilt é construído sobre o Dagger 2 e adiciona componentes padronizados e escopos pré-definidos para as classes Android comuns, reduzindo drasticamente o boilerplate de configurar Components e Modules manualmente, sendo a recomendação padrão do Google para a maioria dos apps. Dagger 2 puro ainda faz sentido quando se precisa de controle total sobre a hierarquia de componentes ou em módulos Kotlin/Java sem dependência do framework Android. Ambos são compile-time (sem reflexão) e funcionam em Java e Kotlin.",
+  "tags": ["android", "dagger", "hilt", "dependency-injection"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

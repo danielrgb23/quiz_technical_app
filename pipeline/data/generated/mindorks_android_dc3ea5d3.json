@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_dc3ea5d3",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como proteger as chaves de API usadas em um app Android?",
+  "options": [
+    "Evitando embutir chaves diretamente no código-fonte ou em `strings.xml`; preferindo mantê-las fora do APK sempre que possível (chamadas via um backend proxy que guarda a chave no servidor), ou, quando isso não é viável, ofuscando com ProGuard/R8, armazenando via NDK (código nativo) para dificultar engenharia reversa, e usando restrições da própria chave (ex.: restrição por assinatura do app e SHA-1 no console do provedor).",
+    "Basta armazenar a chave como uma constante `private` em Kotlin, já que o modificador `private` impede que ela seja extraída do APK.",
+    "Compilar o app apenas em modo `release` já criptografa automaticamente todas as strings do código, tornando desnecessário qualquer cuidado adicional.",
+    "Armazenar a chave em `SharedPreferences` sem criptografia é suficiente, pois esse armazenamento não é acessível por outros apps nem por engenharia reversa.",
+    "É impossível proteger chaves de API em apps móveis, então a única solução real é não usar nenhuma chave de API."
+  ],
+  "correctIndex": 0,
+  "explanation": "Como o APK pode ser descompilado, a defesa mais robusta é nunca expor a chave real ao cliente — usando um backend intermediário — e, quando não for possível, aplicar ofuscação, código nativo e restrições da própria chave no provedor. `private` em Kotlin é apenas uma restrição de visibilidade em tempo de compilação e não impede engenharia reversa do APK; build `release` não criptografa strings automaticamente.",
+  "tags": ["android", "security", "api-keys"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

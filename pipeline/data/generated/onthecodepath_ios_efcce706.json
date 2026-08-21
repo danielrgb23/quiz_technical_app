@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_efcce706",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Qual é a diferença entre `weak`, `strong` e `unowned` no gerenciamento de memória do iOS?",
+  "options": [
+    "`strong` mantém e incrementa a contagem de referências; `weak` referencia sem incrementar a contagem e é sempre opcional (vira nil automaticamente); `unowned` também não incrementa a contagem, mas não é opcional e assume que o objeto sempre existirá enquanto for acessado",
+    "`strong` e `weak` incrementam igualmente a contagem de referências, mudando apenas a sintaxe; `unowned` é usado só para tipos valor como structs",
+    "`weak` incrementa a contagem de referências temporariamente até o fim do escopo; `strong` nunca incrementa contagem; `unowned` é sinônimo exato de `strong`",
+    "`unowned` sempre vira nil automaticamente quando o objeto referenciado é desalocado, assim como `weak`, mas com sintaxe não opcional",
+    "`weak` só pode ser usado em tipos de valor (structs/enums) e `unowned` só em classes finais"
+  ],
+  "correctIndex": 0,
+  "explanation": "`strong` é o padrão e mantém o objeto vivo incrementando sua contagem de referências; `weak` não incrementa a contagem, é sempre opcional e é automaticamente definida como nil quando o objeto é desalocado, sendo usada tipicamente em relações pai-filho e delegates; `unowned` também não incrementa a contagem, mas não é opcional, exigindo que o objeto exista sempre que for acessado, sob risco de crash. A opção correta descreve corretamente esse comportamento; as demais invertem ou inventam comportamentos que não existem no ARC.",
+  "tags": ["ios", "arc", "memory-management"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

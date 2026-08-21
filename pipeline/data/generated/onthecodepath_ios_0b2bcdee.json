@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_0b2bcdee",
+  "source": "onthecodepath_ios",
+  "topic": "concurrency",
+  "level": 2,
+  "question": "Qual é a diferença entre propriedades sintetizadas `atomic` e `non-atomic`?",
+  "options": [
+    "`atomic` (padrão) garante que o valor seja totalmente definido ou totalmente recuperado quando getters/setters são chamados simultaneamente, oferecendo mais segurança para concorrência; `nonatomic` é mais rápido, mas não é thread-safe e pode causar condições de corrida",
+    "`nonatomic` é o padrão e garante total thread-safety, enquanto `atomic` é opcional e mais rápido, mas inseguro",
+    "`atomic` impede completamente que a propriedade seja acessada por mais de uma thread ao mesmo tempo, bloqueando outras threads até a conclusão",
+    "`nonatomic` e `atomic` têm exatamente o mesmo comportamento em termos de performance e segurança, diferindo apenas na sintaxe",
+    "`atomic` só pode ser usado em propriedades do tipo `readonly`"
+  ],
+  "correctIndex": 0,
+  "explanation": "Propriedades são `atomic` por padrão, o que garante que o valor seja completamente definido pelo setter ou completamente recuperado pelo getter mesmo quando chamados simultaneamente por múltiplas threads, reduzindo (mas não eliminando totalmente) riscos de condição de corrida. `nonatomic` roda mais rápido, mas não oferece essa garantia, podendo causar acesso a valores inconsistentes (como nil) em cenários concorrentes. `atomic` não bloqueia outras threads indefinidamente nem restringe o uso a propriedades `readonly`.",
+  "tags": ["concurrency", "objective-c", "thread-safety"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

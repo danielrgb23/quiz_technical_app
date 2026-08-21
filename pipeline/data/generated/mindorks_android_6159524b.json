@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_6159524b",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Quais são as diferenças entre classes abstratas e interfaces em Java?",
+  "options": [
+    "Uma classe abstrata pode ter construtores, campos de estado e métodos concretos, e uma classe só pode estender uma abstrata (herança simples); uma interface tradicionalmente não guarda estado e uma classe pode implementar várias interfaces (herança múltipla de comportamento)",
+    "Classes abstratas e interfaces são idênticas em Java, a única diferença é a palavra-chave usada na declaração",
+    "Interfaces podem ter construtores e campos de instância mutáveis, enquanto classes abstratas não podem declarar nenhum método",
+    "Uma classe só pode implementar uma única interface, mas pode estender múltiplas classes abstratas ao mesmo tempo",
+    "Classes abstratas só podem ser usadas em pacotes internos do próprio JDK, nunca em código de aplicação"
+  ],
+  "correctIndex": 0,
+  "explanation": "Classes abstratas suportam construtores, campos e métodos com implementação, mas uma classe só pode estender uma delas. Interfaces não possuem estado (campos são implicitamente `public static final`) e uma classe pode implementar várias, viabilizando um tipo de herança múltipla de comportamento. As demais alternativas invertem essas regras ou inventam restrições que não existem na linguagem.",
+  "tags": ["java", "oop", "interfaces"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

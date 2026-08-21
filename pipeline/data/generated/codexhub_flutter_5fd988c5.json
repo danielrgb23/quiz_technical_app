@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_5fd988c5",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Como trabalhar com múltiplos flavors no Flutter?\n\n```sh\nflutter run --flavor dev -t lib/main_dev.dart\nflutter build apk --flavor prod -t lib/main_prod.dart\n```",
+  "options": [
+    "Definir productFlavors no android/app/build.gradle (dev, staging, prod com applicationId próprios), configurar schemes no Xcode para iOS, criar entry points Dart separados (main_dev.dart, main_prod.dart) e executar/buildar usando as flags --flavor e -t",
+    "Criar uma pasta de projeto Flutter inteiramente separada para cada ambiente e sincronizá-las manualmente a cada mudança",
+    "Usar apenas variáveis de ambiente do sistema operacional, já que o Flutter não tem suporte nativo a flavors",
+    "Definir flavors apenas no pubspec.yaml, sem necessidade de nenhuma configuração no lado Android ou iOS",
+    "Flavors só existem para Android; no iOS a única forma de ter múltiplos ambientes é publicar apps separados na App Store"
+  ],
+  "correctIndex": 0,
+  "explanation": "Flavors no Flutter combinam productFlavors no build.gradle (Android), schemes/configurações no Xcode (iOS) e entry points Dart distintos, executados com --flavor e -t apontando para o arquivo main correto. Não é necessário duplicar todo o projeto, o pubspec.yaml sozinho não configura flavors nativos, variáveis de ambiente do SO não substituem essa configuração, e o iOS também suporta múltiplos ambientes via schemes, sem exigir apps separados na loja.",
+  "tags": ["flutter", "flavors", "build"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

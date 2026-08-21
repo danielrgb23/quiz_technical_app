@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_dc5a1a29",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Qual é a diferença entre category e extension em Objective-C?",
+  "options": [
+    "Ambas permitem adicionar métodos a uma classe existente, mas extension só funciona se o código-fonte da classe estiver disponível em tempo de compilação (por isso não pode ser usada em classes como `NSString`, sendo necessário usar category)",
+    "Category só pode adicionar métodos de instância, enquanto extension só pode adicionar métodos de classe",
+    "Extension permite adicionar métodos a qualquer classe do sistema, mesmo sem acesso ao código-fonte, enquanto category exige o código-fonte disponível",
+    "Category e extension são termos sinônimos em Objective-C, sem nenhuma diferença prática",
+    "Extension é um recurso exclusivo do Swift e não existe em Objective-C"
+  ],
+  "correctIndex": 0,
+  "explanation": "Category e extension são semelhantes por permitirem adicionar métodos de instância e de classe a uma classe já existente. A diferença é que extension exige que o código-fonte da classe estendida esteja disponível em tempo de compilação, por isso não pode ser usada para classes do sistema como `NSString` — nesses casos usa-se category, que não tem essa restrição. As demais alternativas invertem essa relação ou inventam limitações inexistentes.",
+  "tags": ["ios", "objective-c", "class-extension"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_67bd6603",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é Recomposição (Recomposition) no Jetpack Compose?",
+  "options": [
+    "É o processo pelo qual o Compose reexecuta funções Composable cujos dados de entrada (State) mudaram, atualizando apenas as partes da UI afetadas, sem redesenhar toda a árvore de componentes",
+    "É o processo de recriar toda a Activity do zero sempre que qualquer valor de State muda em qualquer parte do app",
+    "É uma técnica de otimização que desabilita completamente a atualização da UI até que o usuário reinicie o aplicativo manualmente",
+    "É o nome dado ao processo de compilação do código Kotlin para bytecode antes de gerar o APK",
+    "É um mecanismo que converte automaticamente Composables em Views tradicionais do sistema Android View"
+  ],
+  "correctIndex": 0,
+  "explanation": "Recomposição é o mecanismo central do Compose: quando um State observado por uma função Composable muda, o Compose reexecuta (recompõe) apenas as funções Composable afetadas, de forma inteligente e eficiente, evitando redesenhar a árvore inteira ('skipping' de partes não afetadas). Não envolve recriar a Activity inteira, não é uma técnica que trava a UI, não tem relação com compilação para bytecode e não converte Composables em Views tradicionais.",
+  "tags": ["android", "jetpack-compose", "state"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

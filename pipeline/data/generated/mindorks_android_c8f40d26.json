@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_c8f40d26",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é o Lint e para que ele é usado?",
+  "options": [
+    "É uma ferramenta estática de análise de código do Android SDK que examina o projeto em busca de problemas de correção, segurança, performance, usabilidade e acessibilidade sem executar o app, gerando um relatório de avisos e sugestões",
+    "É uma ferramenta que executa testes de UI automatizados simulando toques do usuário na tela",
+    "É um serviço de nuvem do Google Play usado para distribuir builds de teste (beta) para testadores internos",
+    "É um framework de injeção de dependências alternativo ao Dagger, focado em projetos pequenos",
+    "É a ferramenta de profiling de memória e CPU integrada ao Android Studio para monitorar o app em execução"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Lint é uma ferramenta de análise estática incluída no Android SDK que varre o código-fonte e os recursos do projeto (sem executá-lo) procurando bugs potenciais, problemas de performance, práticas inseguras, strings não traduzidas e problemas de acessibilidade, entre outros, gerando um relatório com severidade classificada. Ele não roda testes de UI, não é um serviço de distribuição de builds, não é injeção de dependências e não é o Profiler (que monitora o app em runtime).",
+  "tags": ["android", "lint", "static-analysis", "tooling"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

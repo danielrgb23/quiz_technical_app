@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_25ebe5aa",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do widget `Expanded` no Flutter?",
+  "options": [
+    "Fazer com que um filho de `Row`, `Column` ou `Flex` ocupe o espaço restante disponível no eixo principal, dividindo-o proporcionalmente via a propriedade `flex` quando há múltiplos `Expanded`",
+    "Aumentar o tamanho da fonte de widgets de texto automaticamente para preencher o espaço disponível",
+    "Adicionar rolagem automática a um `Column` ou `Row` quando o conteúdo excede o tamanho da tela",
+    "Expandir a área de toque (hit test area) de um botão sem alterar seu tamanho visual",
+    "Forçar um widget a ocupar toda a tela, ignorando as restrições impostas pelo widget pai"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Expanded` faz com que um filho de `Row`, `Column` ou `Flex` preencha o espaço restante no eixo principal, e quando há mais de um `Expanded`, o espaço é dividido proporcionalmente conforme a propriedade `flex`. Ele não altera tamanho de fonte, não adiciona rolagem (isso é papel de `SingleChildScrollView` ou `ListView`) e não expande apenas a área de toque de um botão. Também não ignora as restrições do pai — ele opera dentro do espaço que o pai disponibiliza.",
+  "tags": [
+    "flutter",
+    "layout",
+    "flex"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

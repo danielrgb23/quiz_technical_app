@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_2e2c7d46",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Qual é a diferença entre `Integer` e `int` em Java?",
+  "options": [
+    "`int` é um tipo primitivo que armazena o valor diretamente e nunca é `null`; `Integer` é uma classe wrapper (objeto) que encapsula um `int`, pode ser `null`, possui métodos utilitários e é necessária para uso em coleções genéricas como `List<Integer>`",
+    "`int` e `Integer` são exatamente o mesmo tipo, apenas com nomes diferentes por compatibilidade histórica",
+    "`Integer` é mais rápido que `int` em todas as operações aritméticas, pois é otimizado pela JVM para cálculos",
+    "`int` pode ser `null`, enquanto `Integer` sempre precisa ter um valor padrão de zero",
+    "`Integer` é um tipo primitivo introduzido no Java 8 para substituir `int` em código moderno"
+  ],
+  "correctIndex": 0,
+  "explanation": "`int` é primitivo (armazenado diretamente, sem overhead de objeto, nunca `null`), enquanto `Integer` é a classe wrapper correspondente, usada quando é preciso um objeto — por exemplo, em `List<Integer>`, já que generics em Java não aceitam tipos primitivos diretamente. `Integer` tem overhead de boxing/unboxing e não é mais rápido; as demais alternativas invertem ou inventam características incorretas.",
+  "tags": ["java", "primitive-types", "wrapper-classes"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

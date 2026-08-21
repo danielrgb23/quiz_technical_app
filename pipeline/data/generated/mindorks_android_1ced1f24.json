@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_1ced1f24",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como funciona o gerenciamento de estado (state management) no Jetpack Compose?",
+  "options": [
+    "O estado é mantido em objetos State observáveis (criados com mutableStateOf e frequentemente combinados com remember para sobreviver a recomposições), seguindo o padrão de state hoisting — elevar o estado para um Composable ancestral que o passa como parâmetro e recebe callbacks para modificá-lo, mantendo Composables filhos sem estado (stateless) e mais reutilizáveis",
+    "O estado é sempre armazenado globalmente em variáveis estáticas Kotlin, compartilhadas por todos os Composables do app sem qualquer encapsulamento",
+    "O Compose gerencia estado automaticamente sem necessidade de nenhuma anotação, função ou padrão específico por parte do desenvolvedor",
+    "Cada Composable mantém seu próprio banco de dados SQLite interno para persistir o estado entre recomposições",
+    "O estado só pode ser gerenciado através de Intents explícitos passados entre Activities, como no sistema de Views tradicional"
+  ],
+  "correctIndex": 0,
+  "explanation": "No Compose, o estado é representado por objetos State (mutableStateOf) e frequentemente envolvido em remember para persistir entre recomposições (mas não entre mudanças de configuração, para o que se usa rememberSaveable). O padrão recomendado é o state hoisting: o estado é elevado para um Composable pai, que o repassa como parâmetro imutável e fornece callbacks (ex.: onValueChange) para os filhos solicitarem mudanças, mantendo os filhos stateless e testáveis. Não envolve variáveis globais estáticas, não é 'mágico' sem padrões, não usa SQLite por Composable e não depende de Intents.",
+  "tags": ["android", "jetpack-compose", "state", "architecture"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

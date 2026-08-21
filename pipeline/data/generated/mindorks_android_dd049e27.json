@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_dd049e27",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Como lidar com entrada do usuário e eventos no Jetpack Compose?",
+  "options": [
+    "Usando modifiers como `clickable` e `pointerInput` para gestos, e callbacks como `onClick` e `onValueChange` combinados com estado (via `remember`/`mutableStateOf`) para capturar e reagir às interações",
+    "Registrando um `BroadcastReceiver` global que escuta todos os toques na tela do dispositivo",
+    "Sobrescrevendo o método `onTouchEvent` da Activity, já que composables não têm suporte nativo a eventos de toque",
+    "Apenas através de XML de layout, já que o Compose delega toda a captura de eventos para o sistema de Views subjacente",
+    "Usando exclusivamente `LiveData` observado pela Activity, sem nenhuma interação direta do composable com o evento"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Compose oferece modifiers dedicados a interação, como `clickable`, `pointerInput`, `draggable`, e componentes como `TextField` expõem callbacks (`onValueChange`, `onClick`) que, combinados com estado observável, atualizam a UI reativamente. Não é necessário usar `onTouchEvent` da Activity, `BroadcastReceiver` ou depender de XML — o Compose tem seu próprio sistema de captura de gestos e eventos.",
+  "tags": ["jetpack-compose", "events", "user-input"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

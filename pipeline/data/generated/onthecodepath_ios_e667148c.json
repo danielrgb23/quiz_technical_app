@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_e667148c",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 2,
+  "question": "Quais são as diferenças entre os estados not-running, inactive, active, background e suspended de execução de um app iOS?",
+  "options": [
+    "Not-running é quando o app não foi lançado ou foi encerrado pelo sistema; inactive é um estado breve em que o app está em primeiro plano mas não recebe eventos (durante transições); active é o estado normal em primeiro plano, recebendo eventos; background ocorre quando o app está em segundo plano ainda executando código (geralmente a caminho de ser suspenso, ou quando lançado diretamente em segundo plano); suspended é quando o app está em memória, em segundo plano, mas sem executar nenhum código, podendo ser removido pelo sistema em caso de baixa memória.",
+    "Suspended é o estado normal de um app em primeiro plano recebendo eventos do usuário, equivalente ao estado active.",
+    "Background significa que o app foi completamente removido da memória pelo sistema e precisa ser relançado do zero.",
+    "Inactive é um estado permanente e de longa duração, no qual o app fica em segundo plano executando tarefas indefinidamente sem restrição de tempo.",
+    "Not-running é um estado em que o app está em primeiro plano, mas com a interface temporariamente congelada por uma chamada telefônica."
+  ],
+  "correctIndex": 0,
+  "explanation": "Esses cinco estados formam o ciclo de vida do app no iOS: not-running (não lançado/encerrado), inactive (transitório, em primeiro plano sem receber eventos), active (normal, em primeiro plano), background (executando código em segundo plano, geralmente por tempo limitado) e suspended (em memória, sem executar código, sujeito a remoção por baixa memória). As opções distratoras trocam essas definições — por exemplo, tratar suspended como equivalente a active, ou background como remoção total da memória — o que está incorreto.",
+  "tags": ["ios", "app-lifecycle"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

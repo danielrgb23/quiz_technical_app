@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_03a44c76",
+  "source": "mindorks_android",
+  "topic": "performance",
+  "level": 1,
+  "question": "Como medir o tempo de execução de um método em Android?",
+  "options": [
+    "Capturando timestamps com System.nanoTime() (ou System.currentTimeMillis()) antes e depois da chamada e calculando a diferença, ou usando ferramentas mais sofisticadas como o CPU Profiler do Android Studio e a API Trace/TraceCompat para medições em produção",
+    "Chamando o método getExecutionTime() disponível nativamente em qualquer classe Kotlin, que retorna automaticamente a duração da última execução",
+    "Adicionando a anotação @MeasureTime em cima do método, que o Android Runtime interpreta nativamente para logar a duração",
+    "Usando exclusivamente o Logcat, que já exibe por padrão o tempo de execução de cada método chamado no app",
+    "Definindo um breakpoint no debugger do Android Studio, já que ele calcula automaticamente e persiste o tempo de execução de métodos visitados"
+  ],
+  "correctIndex": 0,
+  "explanation": "A forma mais simples e direta é capturar o tempo antes e depois da execução com System.nanoTime() (mais preciso para intervalos curtos) e calcular a diferença; para análises mais completas, o Android Studio Profiler ou a API android.os.Trace permitem medições detalhadas, inclusive em builds de produção. Não existe um método getExecutionTime() nativo, nem uma anotação @MeasureTime interpretada pelo runtime, e o Logcat não mede tempo automaticamente nem o debugger persiste essa métrica.",
+  "tags": ["android", "performance", "profiling", "debugging"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

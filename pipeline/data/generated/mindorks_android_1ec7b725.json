@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_1ec7b725",
+  "source": "mindorks_android",
+  "topic": "kotlin",
+  "level": 2,
+  "question": "Como funciona o Kotlin Multiplatform (KMP)?",
+  "options": [
+    "Permite compartilhar código Kotlin (lógica de negócio, modelos, rede, persistência) entre diferentes plataformas (Android, iOS, web, desktop) usando blocos expect/actual para abstrair implementações específicas de cada plataforma, enquanto a UI geralmente permanece nativa em cada uma",
+    "É um framework de UI declarativa que renderiza a mesma interface gráfica em todas as plataformas, similar ao Flutter, sem necessidade de código nativo",
+    "É um recurso que compila automaticamente qualquer projeto Android para rodar em iOS sem nenhuma alteração de código",
+    "É uma biblioteca de testes que permite rodar os mesmos testes unitários em múltiplas versões do Android simultaneamente",
+    "É um serviço de nuvem da JetBrains que hospeda o backend do app automaticamente para múltiplas plataformas"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Kotlin Multiplatform permite compartilhar código Kotlin comum (como regras de negócio, modelos de dados, chamadas de rede) entre plataformas, usando expect/actual para declarar implementações específicas por plataforma quando necessário, mantendo geralmente a camada de UI nativa (embora exista Compose Multiplatform para UI compartilhada). Não compila automaticamente um projeto Android para iOS sem esforço, não é uma biblioteca de testes multi-versão e não é um serviço de hospedagem de backend.",
+  "tags": ["kotlin", "multiplatform", "kmp"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_4b5faca6",
+  "source": "codexhub_flutter",
+  "topic": "networking",
+  "level": 1,
+  "question": "Como fazer requisições HTTP no framework Flutter?",
+  "options": [
+    "Usando o pacote `http`, que fornece uma API simples para enviar requisições (como `http.get`) e receber respostas, verificando o `statusCode` e decodificando o corpo com `json.decode`",
+    "Usando exclusivamente o widget `FutureBuilder`, que já realiza chamadas HTTP internamente sem necessidade de pacotes adicionais",
+    "Requisições HTTP não são suportadas nativamente no Flutter; é necessário escrever código nativo em Kotlin e Swift para cada plataforma",
+    "Usando o pacote `sqflite`, que gerencia tanto requisições de rede quanto armazenamento local em um único pacote",
+    "Usando apenas `Socket` de baixo nível do Dart, já que pacotes HTTP de terceiros não são recomendados em produção"
+  ],
+  "correctIndex": 0,
+  "explanation": "O pacote `http` oferece uma API simples para requisições, como `http.get(url)`, permitindo verificar `response.statusCode` e decodificar o corpo da resposta com `json.decode`. `FutureBuilder` apenas constrói UI a partir de uma `Future`, não realiza chamadas HTTP por si só. Requisições HTTP são totalmente suportadas em Dart/Flutter sem necessidade de código nativo, `sqflite` é um pacote de banco de dados local (não de rede), e o uso de `Socket` bruto não é a prática recomendada para chamadas HTTP comuns.",
+  "tags": [
+    "flutter",
+    "http",
+    "networking"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

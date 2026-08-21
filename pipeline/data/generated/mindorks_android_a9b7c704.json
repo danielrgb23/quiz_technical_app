@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_a9b7c704",
+  "source": "mindorks_android",
+  "topic": "architecture",
+  "level": 1,
+  "question": "O que é um ViewModel e por que ele é útil?",
+  "options": [
+    "É um componente do Android Architecture Components projetado para armazenar e gerenciar dados relacionados à UI de forma consciente do ciclo de vida, sobrevivendo a mudanças de configuração (como rotação de tela) e evitando vazamentos ao não reter referências diretas a Views ou Activities",
+    "É a classe responsável por definir o layout XML de uma tela, substituindo o uso de arquivos de layout",
+    "É um componente que executa exclusivamente chamadas de rede diretamente, sem qualquer relação com estado de UI",
+    "É destruído e recriado automaticamente a cada rotação de tela, assim como a Activity",
+    "É uma classe do Room usada apenas para definir o schema do banco de dados local"
+  ],
+  "correctIndex": 0,
+  "explanation": "O ViewModel guarda e gerencia dados relacionados à UI de forma que sobrevive a mudanças de configuração, como rotação de tela, evitando recarregar dados desnecessariamente e evitando vazamentos de memória por não referenciar diretamente Views ou Activities. Ele não define layouts XML, não é destruído em rotações (esse é justamente seu diferencial em relação à Activity), não serve apenas para chamadas de rede e não é uma classe do Room.",
+  "tags": ["android", "viewmodel", "architecture"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

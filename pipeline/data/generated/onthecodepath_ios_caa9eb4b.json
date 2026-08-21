@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_caa9eb4b",
+  "source": "onthecodepath_ios",
+  "topic": "architecture",
+  "level": 1,
+  "question": "O que é o padrão de arquitetura MVC?",
+  "options": [
+    "MVC significa Model-View-Controller: um padrão de arquitetura de interface de usuário composto por três camadas — o Model, onde residem os dados e a persistência; a View, responsável pela interface visual, sem conhecimento do Model; e o Controller, que integra View e Model, coordenando a comunicação entre eles.",
+    "MVC significa Model-View-Component, onde o Component substitui a Controller e é responsável por armazenar diretamente os dados persistidos.",
+    "No MVC, a View se comunica diretamente com o Model sem qualquer intermediário, e o Controller serve apenas para configurar o tema visual da aplicação.",
+    "MVC é um padrão exclusivo de aplicações de backend/servidor e não se aplica ao desenvolvimento de interfaces mobile.",
+    "No MVC, o Model é responsável por renderizar a interface do usuário, enquanto a View armazena o estado dos dados da aplicação."
+  ],
+  "correctIndex": 0,
+  "explanation": "MVC separa responsabilidades em Model (dados/persistência), View (interface, sem conhecimento do Model) e Controller (intermediário que integra os dois). A View não deveria se comunicar diretamente com o Model sem o Controller, e o padrão é amplamente usado tanto em back-end quanto em interfaces mobile (é a base histórica do UIKit, por exemplo), o que invalida a opção que o restringe a servidores.",
+  "tags": ["architecture", "mvc", "ios"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

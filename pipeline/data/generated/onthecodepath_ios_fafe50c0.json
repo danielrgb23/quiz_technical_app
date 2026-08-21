@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_fafe50c0",
+  "source": "onthecodepath_ios",
+  "topic": "testing",
+  "level": 1,
+  "question": "Qual é o propósito de testes unitários/de UI e quais são seus benefícios? Considere o exemplo abaixo, em que um `UILabel` é atualizado após uma operação assíncrona:\n\n```swift\nDispatchQueue.global(qos: .default).async {\n    sleep(10)\n    DispatchQueue.main.async {\n        self.alert.text = \"Waiting over\"\n    }\n}\n```",
+  "options": [
+    "Testes unitários/de UI são a base do desenvolvimento orientado a testes (TDD): permitem codificar os requisitos antes de implementar o código, garantindo que partes isoladas do sistema se comportem conforme o esperado e continuem funcionando corretamente à medida que o código evolui",
+    "Servem apenas para medir o desempenho (performance) do app, sem verificar corretude funcional",
+    "São executados exclusivamente em produção, após o app já estar publicado na App Store",
+    "Substituem completamente a necessidade de code review, já que garantem ausência total de bugs",
+    "São usados apenas para testar chamadas de rede, não sendo aplicáveis a lógica de negócio ou UI"
+  ],
+  "correctIndex": 0,
+  "explanation": "Testes unitários/de UI são a base do desenvolvimento orientado a testes (TDD), permitindo codificar requisitos antes da implementação e verificar que partes isoladas do código (ou da interface) se comportam conforme especificado, ajudando a evitar regressões. Eles não medem apenas performance, não rodam só em produção, não substituem code review e se aplicam tanto à lógica de negócio quanto à UI e chamadas assíncronas, como no exemplo em que a atualização da UI precisa voltar para a main thread.",
+  "tags": ["testing", "tdd", "ios"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

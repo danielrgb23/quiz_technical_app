@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_4476c17c",
+  "source": "onthecodepath_ios",
+  "topic": "architecture",
+  "level": 1,
+  "question": "O que é o padrão de projeto Singleton?",
+  "options": [
+    "O padrão Singleton garante que exista apenas uma única instância de uma determinada classe durante todo o ciclo de vida da aplicação e fornece um ponto de acesso global a essa instância, geralmente criada de forma lazy (preguiçosa) na primeira vez que é necessária.",
+    "O Singleton permite criar múltiplas instâncias de uma classe, mas garante que todas compartilhem o mesmo estado interno sincronizado.",
+    "O Singleton é um padrão estrutural que define como duas classes incompatíveis podem se comunicar por meio de uma interface intermediária.",
+    "O Singleton cria uma nova instância da classe a cada chamada ao seu ponto de acesso, otimizando o uso de memória por meio de garbage collection agressivo.",
+    "O Singleton é usado exclusivamente para representar dados imutáveis (constantes) dentro de uma aplicação, sem qualquer noção de instância compartilhada."
+  ],
+  "correctIndex": 0,
+  "explanation": "A essência do Singleton é restringir a instanciação a um único objeto compartilhado, acessível globalmente, geralmente via inicialização lazy. Ele não envolve múltiplas instâncias sincronizadas (isso descaracterizaria o padrão), não é o padrão Adapter (comunicação entre interfaces incompatíveis) e não está relacionado a modelar constantes imutáveis.",
+  "tags": ["architecture", "design-patterns", "ios"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

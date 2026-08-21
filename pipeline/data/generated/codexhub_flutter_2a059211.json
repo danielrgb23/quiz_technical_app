@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_2a059211",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Qual é o propósito do widget `AnimatedSwitcher` no Flutter?",
+  "options": [
+    "Animar automaticamente a transição entre um widget filho antigo e um novo, quando o filho é trocado, usando uma animação customizável (como fade) sem precisar gerenciar `AnimationController` manualmente",
+    "Alternar entre múltiplas telas de navegação, funcionando como um substituto simplificado do `Navigator`",
+    "Ser um widget que exibe apenas um dos seus filhos por vez com base em um índice, sem qualquer animação de transição, assim como `IndexedStack`",
+    "Aplicar uma troca de tema (claro/escuro) animada em todo o app, disparada por um único widget na raiz da árvore",
+    "Alternar automaticamente entre imagens de um carrossel em intervalos de tempo fixos, sem necessidade de interação do usuário"
+  ],
+  "correctIndex": 0,
+  "explanation": "`AnimatedSwitcher` anima a transição entre um filho antigo e um novo sempre que o widget filho passado a ele muda (identificado por chave/tipo), aplicando uma animação como fade automaticamente e sem exigir gerenciamento manual de `AnimationController`. Ele não substitui o `Navigator` para navegação entre telas, e diferente de `IndexedStack`, ele efetivamente anima a troca em vez de apenas alternar sem transição. Ele também não é um mecanismo de troca de tema nem um carrossel automático de imagens — a troca do filho precisa ser disparada externamente, geralmente por uma mudança de estado.",
+  "tags": [
+    "flutter",
+    "animation",
+    "animatedswitcher"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

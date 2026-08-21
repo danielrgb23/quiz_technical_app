@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_76134f6d",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é code-splitting no Flutter e como ele ajuda?",
+  "options": [
+    "É a divisão do código do app em módulos menores e independentes, carregados sob demanda (via deferred components) em vez de tudo de uma vez, reduzindo o tempo de carregamento inicial e o uso de memória",
+    "É a divisão do código-fonte em múltiplos repositórios Git, um para cada funcionalidade do app",
+    "É uma técnica exclusiva de testes, usada para separar testes unitários de testes de integração",
+    "É o processo automático do compilador AOT que remove código não utilizado (tree shaking), sem envolver carregamento sob demanda",
+    "É a divisão da interface em múltiplos arquivos .dart, sem impacto algum em performance ou tempo de carregamento"
+  ],
+  "correctIndex": 0,
+  "explanation": "Code-splitting no Flutter refere-se ao carregamento sob demanda de partes do app (por exemplo, via deferred components), reduzindo o tempo de carregamento inicial e otimizando o uso de memória ao adiar recursos pouco usados. Não é sobre organização de repositórios Git, não é uma técnica de testes, é diferente de tree shaking (que remove código morto no build) e vai além de apenas separar arquivos .dart sem efeito em performance.",
+  "tags": ["flutter", "performance", "deferred-components"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

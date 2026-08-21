@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_40ee4731",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como o ViewModel funciona internamente no Android?",
+  "options": [
+    "O ViewModelProvider mantém um ViewModelStore associado ao ciclo de vida da Activity/Fragment (sobrevivendo a mudanças de configuração), retornando a mesma instância enquanto o escopo existir e chamando onCleared() só quando o escopo é destruído definitivamente",
+    "O ViewModel é recriado a cada mudança de configuração, mas seus dados são salvos automaticamente no SavedInstanceState via serialização Parcelable",
+    "O ViewModel é uma instância singleton global compartilhada por todo o aplicativo, independente de qual Activity ou Fragment o solicitou",
+    "O ViewModel funciona armazenando seu estado em SharedPreferences internamente sempre que o método onPause() da Activity é chamado",
+    "O ViewModel é destruído e recriado toda vez que o Fragment perde e recupera o foco, mesmo sem mudança de configuração"
+  ],
+  "correctIndex": 0,
+  "explanation": "Internamente, o ViewModelProvider usa um ViewModelStore vinculado ao ViewModelStoreOwner (Activity/Fragment) via NonConfigurationInstances, o que permite que a mesma instância de ViewModel sobreviva a mudanças de configuração como rotação de tela. Quando o escopo (Activity/Fragment) é finalizado de forma definitiva — não por rotação —, o ViewModelStore chama clear() em todos os ViewModels, disparando onCleared(). Não há serialização em SavedInstanceState nem persistência em disco automática, e não é um singleton global.",
+  "tags": ["android", "viewmodel", "architecture", "lifecycle"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

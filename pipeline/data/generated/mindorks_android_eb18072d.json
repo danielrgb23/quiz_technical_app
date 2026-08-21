@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_eb18072d",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Quando você deveria usar um `Fragment` em vez de uma `Activity`?",
+  "options": [
+    "Quando se deseja reutilizar partes da interface (UI modular) em diferentes telas ou orientações, compor múltiplas seções dentro de uma mesma Activity (ex.: layout mestre-detalhe em tablets) ou navegar entre telas sem recriar toda a Activity",
+    "Sempre, pois a partir do Android 10 o uso de Activity foi descontinuado em favor de Fragments",
+    "Apenas quando o app precisa acessar a câmera ou sensores do dispositivo",
+    "Quando o app não precisa de nenhuma navegação entre telas",
+    "Quando se quer evitar o uso do `AndroidManifest.xml`, já que Fragments não precisam ser declarados nele"
+  ],
+  "correctIndex": 0,
+  "explanation": "Fragments permitem construir UI modular e reutilizável, hospedada dentro de uma Activity, o que facilita adaptar layouts a diferentes tamanhos de tela (como mestre-detalhe em tablets) e compor múltiplas seções ou fluxos de navegação sem recriar a Activity inteira. A alternativa sobre depreciação de Activity é falsa, e as demais associam Fragments a recursos (câmera, Manifest) que não são a razão real de sua escolha.",
+  "tags": ["android", "fragment", "activity"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

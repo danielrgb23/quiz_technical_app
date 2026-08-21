@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_1daf4dcc",
+  "source": "onthecodepath_ios",
+  "topic": "swift",
+  "level": 2,
+  "question": "Qual é a diferença entre um struct e uma class em Swift?",
+  "options": [
+    "Structs são tipos de valor (armazenados na stack, copiados ao serem atribuídos) enquanto classes são tipos de referência (armazenadas na heap); além disso, apenas classes suportam herança, type casting, deinitializers e contagem de referências (múltiplas referências ao mesmo objeto)",
+    "Structs suportam herança de outras structs, mas classes não suportam herança de outras classes",
+    "Classes são sempre mais rápidas que structs porque são armazenadas na stack",
+    "Structs e classes são idênticas em Swift, exceto pela palavra-chave usada na declaração",
+    "Apenas structs podem ter deinitializers (`deinit`), pois são gerenciadas por ARC"
+  ],
+  "correctIndex": 0,
+  "explanation": "A diferença fundamental é que structs são tipos de valor — copiados quando atribuídos ou passados, tipicamente armazenados na stack — enquanto classes são tipos de referência, armazenadas na heap, permitindo que múltiplas variáveis apontem para a mesma instância. Além disso, apenas classes suportam herança, type casting em runtime, deinitializers (`deinit`) e contagem de referências via ARC. Structs não suportam herança de outras structs, e é justamente o inverso do que a segunda alternativa afirma.",
+  "tags": ["swift", "structs", "classes"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

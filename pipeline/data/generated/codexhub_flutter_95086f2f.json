@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_95086f2f",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Como implementar internacionalização (i18n) em um app Flutter?",
+  "options": [
+    "Adicionar o pacote flutter_localizations no pubspec.yaml, configurar localizationsDelegates e supportedLocales no MaterialApp, criar arquivos .arb com as traduções por idioma e usar o comando flutter gen-l10n para gerar as classes de localização acessadas via AppLocalizations.of(context)",
+    "Criar uma pasta 'lang' com arquivos .json e carregá-los manualmente via HTTP a cada troca de tela",
+    "Duplicar todo o código-fonte do app para cada idioma suportado, mantendo builds separados",
+    "Usar apenas o pacote intl sem nenhuma configuração no MaterialApp, já que o Flutter detecta o idioma automaticamente sem delegates",
+    "Internacionalização não é suportada nativamente pelo Flutter e exige um plugin nativo escrito em Kotlin e Swift"
+  ],
+  "correctIndex": 0,
+  "explanation": "O fluxo padrão do Flutter usa flutter_localizations, arquivos .arb por idioma e o gerador gen-l10n para produzir a classe AppLocalizations, configurada via localizationsDelegates e supportedLocales no MaterialApp. Não é necessário duplicar o app, carregar JSON manualmente por HTTP, nem escrever plugins nativos, e apenas usar o pacote intl sem configurar delegates não é suficiente.",
+  "tags": ["flutter", "i18n", "localization"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

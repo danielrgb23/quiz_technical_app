@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_c7284b01",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é o propósito do widget `Scaffold` no Flutter?",
+  "options": [
+    "Fornecer a estrutura visual básica de uma tela seguindo o Material Design, incluindo suporte para `AppBar`, `Drawer`, `FloatingActionButton`, `BottomNavigationBar` e a área de conteúdo principal (`body`)",
+    "Gerenciar exclusivamente a navegação entre rotas, substituindo a necessidade do widget `Navigator`",
+    "Ser um widget de baixo nível usado apenas para desenhar formas customizadas na tela via `Canvas`",
+    "Controlar o ciclo de vida da aplicação, como pausar e retomar o app em segundo plano",
+    "Armazenar o estado global do app, funcionando como uma alternativa ao `Provider` ou `Bloc`"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Scaffold` implementa a estrutura visual básica do Material Design, organizando elementos como `AppBar`, `Drawer`, `FloatingActionButton` e o `body` da tela. Ele não substitui o `Navigator` (que trata da pilha de rotas) nem é usado para desenho customizado via `Canvas` (isso é papel do `CustomPainter`). `Scaffold` também não controla o ciclo de vida do app nem funciona como um gerenciador de estado global.",
+  "tags": [
+    "flutter",
+    "scaffold",
+    "material-design"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

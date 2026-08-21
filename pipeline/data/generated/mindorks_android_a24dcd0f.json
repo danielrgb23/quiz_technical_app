@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_a24dcd0f",
+  "source": "mindorks_android",
+  "topic": "storage",
+  "level": 2,
+  "question": "Como criptografar dados no Android?",
+  "options": [
+    "Usando a biblioteca `EncryptedSharedPreferences`/`EncryptedFile` do Jetpack Security (que usa o `Android Keystore` para gerenciar chaves com segurança) para dados pequenos, ou criptografando manualmente com APIs de criptografia da JVM (ex.: AES via `javax.crypto`) para arquivos e bancos de dados, mantendo as chaves protegidas no Keystore",
+    "Armazenando os dados em `SharedPreferences` normal, que já é criptografado nativamente pelo Android desde a API 21",
+    "Convertendo os dados para Base64 antes de salvar, o que já é considerado uma forma segura de criptografia",
+    "Compactando o arquivo em formato ZIP com senha, que é o método oficialmente recomendado pelo Android para dados sensíveis",
+    "Armazenando os dados apenas em variáveis estáticas na memória, evitando gravação em disco"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Android oferece a biblioteca Jetpack Security (`EncryptedSharedPreferences`, `EncryptedFile`), que usa o `Android Keystore` para proteger as chaves de criptografia com suporte de hardware quando disponível; para casos mais customizados, pode-se usar APIs de criptografia padrão da JVM como AES. `SharedPreferences` comum não é criptografado por padrão, Base64 é apenas codificação (não criptografia) e não oferece segurança real, e ZIP com senha não é um mecanismo recomendado pelo Android para dados sensíveis.",
+  "tags": ["android", "security", "storage"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

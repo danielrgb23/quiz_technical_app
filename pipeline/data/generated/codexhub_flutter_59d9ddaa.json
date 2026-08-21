@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_59d9ddaa",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 1,
+  "question": "O que são operadores null-aware (cientes de nulo) em Dart? Cite exemplos.",
+  "options": [
+    "São operadores que permitem realizar computações com base em um valor ser nulo ou não, como `?.` (acesso condicional), `??` (valor padrão) e `??=` (atribuição condicional)",
+    "São operadores exclusivos para comparar dois objetos e verificar se são referências idênticas na memória",
+    "São operadores usados apenas dentro de blocos `try-catch` para capturar exceções de tipo `NullPointerException`",
+    "São operadores matemáticos que arredondam valores `double` para o inteiro mais próximo quando o resultado seria nulo",
+    "São operadores introduzidos exclusivamente para uso em testes unitários para simular valores ausentes"
+  ],
+  "correctIndex": 0,
+  "explanation": "Operadores null-aware permitem lidar com valores potencialmente nulos de forma concisa: `?.` chama um método/getter apenas se o objeto não for nulo, `??` retorna um valor alternativo quando a expressão à esquerda é nula, e `??=` atribui um valor apenas se a variável ainda for nula. Eles não comparam identidade de objetos, não fazem parte de `try-catch`, não arredondam números e não são exclusivos de testes.",
+  "tags": [
+    "dart",
+    "null-safety",
+    "operators"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_bec5b175",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 2,
+  "question": "O que é um método de extensão (`extension method`) em Dart?",
+  "options": [
+    "É um recurso que permite adicionar novas funcionalidades a tipos existentes (como `String` ou `Widget`) sem modificar a classe original ou usar herança",
+    "É uma forma de estender uma classe abstrata adicionando implementações obrigatórias aos métodos herdados",
+    "É um mecanismo para importar bibliotecas externas com um nome customizado usando `as`",
+    "É um tipo especial de mixin que só pode ser aplicado a classes `final`",
+    "É a forma de declarar métodos privados que só podem ser acessados dentro do mesmo arquivo"
+  ],
+  "correctIndex": 0,
+  "explanation": "Extension methods permitem adicionar novos métodos e getters a um tipo já existente, como as classes do core do Dart (`String`, `Widget` etc.), sem precisar herdar ou modificar a classe original, usando a palavra-chave `extension`. Não se trata de herança de classes abstratas, de importação de bibliotecas, de mixins restritos a classes `final` nem de controle de visibilidade de membros privados.",
+  "tags": [
+    "dart",
+    "extensions",
+    "language-features"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_942f3919",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é o Android Data Binding?",
+  "options": [
+    "Uma biblioteca de suporte do Android Jetpack que permite vincular componentes de UI em layouts XML diretamente a fontes de dados no código, usando expressões declarativas em vez de chamadas manuais como findViewById",
+    "Uma ferramenta de build do Gradle usada exclusivamente para compilar recursos de imagem e converter drawables em formatos vetoriais",
+    "Um mecanismo de serialização que converte objetos Kotlin em JSON automaticamente para chamadas de rede",
+    "Um sistema de injeção de dependências que substitui o Dagger para conectar Activities e ViewModels",
+    "Uma API do Android usada para sincronizar dados entre dispositivos via Bluetooth"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Data Binding Library, parte do Jetpack, permite escrever expressões nos próprios layouts XML para vincular views a propriedades de objetos de dados (como um ViewModel), eliminando código boilerplate de findViewById e atualizações manuais de UI. Ele gera classes de binding em tempo de compilação. Não é uma ferramenta de build de imagens, nem um serializador JSON, nem um framework de injeção de dependências ou sincronização Bluetooth.",
+  "tags": ["android", "databinding", "jetpack", "ui"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

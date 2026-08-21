@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_4c86706d",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Qual é o propósito do widget `LayoutBuilder` no Flutter?\n\n```dart\nLayoutBuilder(\n  builder: (BuildContext context, BoxConstraints constraints) {\n    return Container(\n      width: constraints.maxWidth * 0.5,\n      height: constraints.maxHeight * 0.5,\n      child: Text('This widget will take up 50% of the available space'),\n    );\n  },\n);\n```",
+  "options": [
+    "Obter as `BoxConstraints` (largura/altura mínima e máxima) impostas pelo widget pai e construir os widgets filhos com base nessas restrições, permitindo layouts responsivos",
+    "Obter o tamanho da tela do dispositivo diretamente, sem depender das restrições impostas pelo widget pai imediato",
+    "Substituir o `MediaQuery` para detectar mudanças no tema (claro/escuro) do sistema",
+    "Adicionar animações automáticas de transição entre diferentes tamanhos de tela",
+    "Armazenar em cache o resultado do último `build()` para evitar reconstruções desnecessárias"
+  ],
+  "correctIndex": 0,
+  "explanation": "`LayoutBuilder` fornece as `BoxConstraints` do widget pai através de seu builder, permitindo construir filhos que se adaptam ao espaço disponível localmente — diferente do `MediaQuery`, que reflete o tamanho da tela inteira, não as restrições do pai imediato. Ele não trata de tema claro/escuro, não adiciona animações automaticamente e não funciona como mecanismo de cache de builds.",
+  "tags": [
+    "flutter",
+    "layout",
+    "responsive-ui"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

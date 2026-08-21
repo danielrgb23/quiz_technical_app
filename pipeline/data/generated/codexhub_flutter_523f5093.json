@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_523f5093",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Como usar o widget `Positioned` no Flutter?\n\n```dart\nStack(\n  children: [\n    Positioned(\n      left: 10,\n      top: 10,\n      child: Text('Hi there!'),\n    ),\n    Positioned(\n      right: 10,\n      bottom: 10,\n      child: Text('Bye there!'),\n    ),\n  ],\n),\n```",
+  "options": [
+    "Dentro de um `Stack`, usando propriedades opcionais como `left`, `top`, `right` e `bottom` para posicionar precisamente um filho em relação às bordas do `Stack`",
+    "Dentro de uma `Column` ou `Row`, para definir a ordem em que os widgets filhos aparecem na tela",
+    "Como um substituto do `Padding`, aplicando espaçamento interno em qualquer widget sem depender de um `Stack`",
+    "Apenas fora de um `Stack`, geralmente como filho direto de um `Scaffold`, para fixar widgets na tela inteira",
+    "Para posicionar um widget em coordenadas absolutas de tela, ignorando completamente o widget pai mais próximo"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Positioned` só funciona como filho direto (ou descendente através de certos widgets) de um `Stack`, usando `left`, `top`, `right` e `bottom` para posicionar o filho em relação às bordas do `Stack`. Ele não é usado em `Column`/`Row` para ordenar widgets, nem substitui `Padding`. Ele não funciona fora de um `Stack` e não posiciona em coordenadas absolutas da tela — a posição é sempre relativa aos limites do `Stack` que o contém.",
+  "tags": [
+    "flutter",
+    "stack",
+    "positioned"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

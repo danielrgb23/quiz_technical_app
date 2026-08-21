@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_6437f567",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "Como o gerenciamento de memória é feito no iOS?",
+  "options": [
+    "Através do ARC (Automatic Reference Counting), que incrementa e decrementa a contagem de referências fortes em tempo de compilação e desaloca o objeto quando essa contagem chega a zero",
+    "Através de um coletor de lixo (garbage collector) que roda periodicamente em uma thread separada, como na JVM",
+    "Através de alocação manual obrigatória com `malloc` e `free` em todo o código Swift",
+    "Através de um contador de referências calculado apenas em tempo de execução, sem nenhuma participação do compilador",
+    "Através de páginas de memória virtual gerenciadas exclusivamente pelo kernel, sem qualquer contagem de referências"
+  ],
+  "correctIndex": 0,
+  "explanation": "O iOS usa ARC (Automatic Reference Counting), que insere automaticamente, em tempo de compilação, chamadas de retain/release para gerenciar o ciclo de vida de objetos: quando a contagem de referências fortes chega a zero, o objeto é desalocado. Diferente de garbage collection, o ARC não roda em uma thread separada nem resolve ciclos de referência automaticamente, sendo necessário usar `weak`/`unowned` para evitar retain cycles.",
+  "tags": ["ios", "memory-management", "arc"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

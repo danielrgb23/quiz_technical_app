@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_aa8c7ec7",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é a diferença entre `WidgetsApp` e `MaterialApp` no Flutter?",
+  "options": [
+    "`WidgetsApp` é um widget conveniente que agrupa funcionalidades comuns de app (navegação, etc.); `MaterialApp` é construído sobre ele e adiciona funcionalidades específicas do Material Design",
+    "`WidgetsApp` só funciona em iOS e `MaterialApp` só funciona em Android",
+    "São a mesma classe, `MaterialApp` é apenas um apelido (alias) de `WidgetsApp` sem nenhuma diferença de funcionalidade",
+    "`MaterialApp` é a classe base do Flutter e `WidgetsApp` é construído sobre ela para adicionar o Material Design",
+    "`WidgetsApp` é usado apenas em testes automatizados e nunca deve aparecer em código de produção"
+  ],
+  "correctIndex": 0,
+  "explanation": "`WidgetsApp` é o widget base que fornece funcionalidades comuns de aplicação, como navegação básica, sem impor um estilo visual. `MaterialApp` é construído em cima do `WidgetsApp` e adiciona recursos específicos do Material Design, como `AnimatedTheme`. Não é obrigatório usar `MaterialApp`: existe `CupertinoApp` para visual iOS ou é possível customizar totalmente. As demais alternativas invertem a hierarquia ou inventam restrições de plataforma que não existem.",
+  "tags": [
+    "flutter",
+    "widgets",
+    "material"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

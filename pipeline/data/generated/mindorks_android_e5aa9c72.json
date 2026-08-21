@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_e5aa9c72",
+  "source": "mindorks_android",
+  "topic": "kotlin",
+  "level": 3,
+  "question": "O que é a palavra-chave reified no Kotlin?",
+  "options": [
+    "É um modificador usado em parâmetros de tipo de funções inline que permite acessar o tipo genérico T em tempo de execução (por exemplo, para usar T::class ou is T), algo que normalmente não é possível devido ao type erasure da JVM",
+    "É uma palavra-chave usada para tornar uma classe imutável, impedindo que suas propriedades sejam alteradas após a criação",
+    "É um modificador que transforma uma função suspend em uma função síncrona automaticamente",
+    "É usada para declarar variáveis que podem ser nulas sem a necessidade do operador ?",
+    "É um recurso exclusivo de coroutines usado para cancelar um Job automaticamente após seu término"
+  ],
+  "correctIndex": 0,
+  "explanation": "reified só pode ser usado em parâmetros de tipo de funções inline e permite que o tipo genérico seja preservado em tempo de execução (contornando o type erasure da JVM), possibilitando operações como T::class ou verificações is T dentro da função. Não tem relação com imutabilidade de classes, não transforma funções suspend em síncronas, não trata de nulabilidade e não é um mecanismo de cancelamento de coroutines.",
+  "tags": ["kotlin", "generics", "inline"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

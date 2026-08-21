@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_e1aa25c3",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Em quais situações faz sentido declarar o valor de um objeto como `final` em Java?",
+  "options": [
+    "Quando se quer impedir a reatribuição da referência após a inicialização, deixando explícita a intenção de imutabilidade, garantindo thread-safety mais simples para valores compartilhados e permitindo o uso da variável dentro de classes anônimas ou lambdas",
+    "Apenas quando o valor precisa ser alterado com frequência dentro de loops, para otimizar a performance de escrita",
+    "Somente quando a variável é do tipo `String`, pois outros tipos não podem ser declarados como `final`",
+    "Quando se deseja que o valor seja recalculado automaticamente a cada acesso pela JVM",
+    "`final` só pode ser aplicado a métodos e classes, nunca a variáveis ou campos"
+  ],
+  "correctIndex": 0,
+  "explanation": "Declarar algo como `final` comunica intenção de imutabilidade da referência, ajuda a evitar bugs de reatribuição acidental, simplifica raciocínio sobre concorrência para valores compartilhados, e é exigido (ou efetivamente exigido) para variáveis capturadas por classes anônimas e lambdas. `final` pode ser aplicado a variáveis, campos, métodos e classes — não é exclusivo de `String` nem de métodos/classes, e não implica recálculo automático.",
+  "tags": ["java", "final", "immutability"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

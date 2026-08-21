@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_9f508ebf",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Quais são as diferenças entre JIT e AOT?",
+  "options": [
+    "JIT (Just-in-Time) compila o código em tempo de execução, é usado em desenvolvimento (viabilizando hot reload) e gera binários menores com erros detectados em runtime; AOT (Ahead-of-Time) compila antes da execução, é usado em produção, gera binários maiores e mais rápidos com erros detectados em tempo de compilação",
+    "JIT e AOT são a mesma técnica de compilação, apenas nomes diferentes usados por Android e iOS respectivamente",
+    "AOT é usado apenas em modo debug para permitir hot reload, e JIT é usado exclusivamente em builds de release",
+    "JIT compila o código apenas uma vez durante o build e nunca mais é executado em runtime, ao contrário do AOT",
+    "AOT gera binários menores que JIT, mas é mais lento em tempo de execução por depender de interpretação"
+  ],
+  "correctIndex": 0,
+  "explanation": "No Flutter, JIT compila em tempo de execução e é usado em modo debug (permitindo hot reload), enquanto AOT compila antecipadamente durante o build e é usado em modo release para melhor performance e binário otimizado, com erros de compilação detectados antes da execução. A relação debug/release é o oposto do afirmado nos distratores, JIT e AOT não são sinônimos, e AOT tipicamente gera binários maiores (não menores) que rodam mais rápido, sem depender de interpretação em runtime.",
+  "tags": ["flutter", "dart", "compilation"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

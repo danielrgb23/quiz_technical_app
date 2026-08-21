@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_1c96165f",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Como lidar com entrada do usuário (user input) no Flutter?",
+  "options": [
+    "Usando widgets como `TextField`, `Checkbox`, `Radio`, `Slider` ou `GestureDetector`, anexando callbacks (como `onChanged`) que atualizam o estado da aplicação e chamando `setState()` para reconstruir a UI",
+    "É necessário escrever código nativo em Kotlin/Swift, pois o Flutter não possui widgets próprios para capturar entrada do usuário",
+    "Toda entrada do usuário deve ser processada exclusivamente através de streams do pacote `rxdart`, sem uso de callbacks nativos dos widgets",
+    "Basta declarar o widget na árvore; o Flutter atualiza o estado automaticamente sem necessidade de `setState()` ou gerenciamento de estado",
+    "Somente através de plugins de terceiros, já que o SDK do Flutter não oferece suporte nativo a formulários ou campos de texto"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Flutter oferece widgets nativos como `TextField`, `Checkbox` e `GestureDetector` que expõem callbacks (por exemplo `onChanged`) para capturar a interação do usuário; ao receber o evento, atualiza-se o estado e chama-se `setState()` para refletir a mudança na UI. Não é necessário código nativo nem `rxdart` para casos básicos. O Flutter também não atualiza a UI automaticamente sem `setState()` (ou um mecanismo equivalente de gerenciamento de estado), e o suporte a formulários e campos de texto já vem no SDK, sem depender de plugins externos.",
+  "tags": [
+    "flutter",
+    "user-input",
+    "state-management"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_c4ff6290",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Para que serve o widget `AspectRatio` no Flutter?",
+  "options": [
+    "Garante que um widget mantenha uma proporção específica entre largura e altura, independentemente do tamanho do container pai, ajustando automaticamente a dimensão restante",
+    "Define a orientação da tela (retrato ou paisagem) em que o app deve ser exibido",
+    "Redimensiona imagens automaticamente para o tamanho exato da tela do dispositivo, ignorando a proporção original",
+    "Controla a taxa de atualização (frame rate) das animações do widget filho",
+    "Ajusta o brilho e o contraste da imagem exibida com base na proporção da tela"
+  ],
+  "correctIndex": 0,
+  "explanation": "`AspectRatio` recebe uma razão largura/altura como argumento e ajusta as dimensões do filho para manter essa proporção, calculando automaticamente a dimensão restante, útil para criar formas fixas como quadrados ou retângulos. Não controla orientação de tela, não redimensiona ignorando proporção, não define frame rate de animações e não ajusta brilho/contraste.",
+  "tags": [
+    "flutter",
+    "layout",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

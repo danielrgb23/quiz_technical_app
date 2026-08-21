@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_82358c77",
+  "source": "codexhub_flutter",
+  "topic": "testing",
+  "level": 1,
+  "question": "Como funciona o processo de testes em um app Flutter?",
+  "options": [
+    "Envolve escrever testes unitários (funções/widgets isolados) e testes de integração (fluxo completo do app), usando o pacote `flutter_test` com funções como `test()` e `expect()`, geralmente integrados a um pipeline de CI/CD",
+    "Consiste apenas em rodar o app manualmente em um emulador antes de publicar, sem necessidade de escrever código de teste",
+    "É feito exclusivamente através do Flutter DevTools, que gera testes automaticamente a partir do código-fonte",
+    "Só é possível testar a camada visual (widgets), já que Dart não permite testar lógica de negócio isoladamente",
+    "Requer obrigatoriamente um dispositivo físico conectado, pois testes não podem rodar em ambiente simulado"
+  ],
+  "correctIndex": 0,
+  "explanation": "O Flutter oferece o pacote `flutter_test` para escrever testes unitários (lógica isolada), de widget (componentes de UI) e de integração (fluxo completo do app), combinados a testes manuais e automação via CI/CD. Testar manualmente sem código de teste não escala nem garante regressão coberta. O DevTools é uma ferramenta de profiling e depuração, não um gerador automático de testes. Dart permite testar tanto lógica de negócio quanto widgets, e testes rodam normalmente em ambientes simulados como emuladores/CI.",
+  "tags": [
+    "flutter",
+    "testing",
+    "ci-cd"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

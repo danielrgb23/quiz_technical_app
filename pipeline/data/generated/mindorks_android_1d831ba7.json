@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_1d831ba7",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como atualizar um item específico em um `RecyclerView`?",
+  "options": [
+    "Atualizando o item na estrutura de dados do `Adapter` e chamando `notifyItemChanged(position)` (ou `DiffUtil` para atualizações mais complexas), o que redesenha apenas o item alterado em vez de toda a lista",
+    "Chamando `notifyDataSetChanged()`, que é a única forma de atualizar um item individual em um RecyclerView",
+    "Removendo o `RecyclerView` da tela e recriando-o do zero com `setAdapter()` toda vez que um item muda",
+    "Alterando diretamente a View do item na tela via `findViewById`, sem tocar na lista de dados do Adapter",
+    "Chamando `invalidate()` na Activity inteira para forçar a redesenho de toda a interface"
+  ],
+  "correctIndex": 0,
+  "explanation": "A forma eficiente é atualizar os dados subjacentes e chamar `notifyItemChanged(position)` (ou usar `DiffUtil` para calcular e aplicar diferenças de forma otimizada), o que faz o RecyclerView redesenhar apenas o item afetado. `notifyDataSetChanged()` funciona mas é ineficiente pois redesenha toda a lista; alterar a View diretamente sem atualizar os dados causa inconsistência quando a View for reciclada; recriar o RecyclerView inteiro é extremamente custoso.",
+  "tags": ["android", "recyclerview", "adapter"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

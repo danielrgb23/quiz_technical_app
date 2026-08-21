@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_2bc1948b",
+  "source": "codexhub_flutter",
+  "topic": "dart",
+  "level": 2,
+  "question": "Como mixins diferem de interfaces em Dart?\n\n```dart\nmixin Walker {\n  void walk() => print(\"Walking\");\n}\n\nclass Person with Walker {\n  // Person pode usar walk()\n}\n\nclass Animal {\n  void eat();\n}\n\nclass Dog implements Animal {\n  @override\n  void eat() => print(\"Dog eating\");\n}\n```",
+  "options": [
+    "Mixins (declarados com mixin e aplicados com with) permitem reutilizar código de implementação entre classes sem herança tradicional; interfaces (implementadas com implements) definem apenas um contrato de métodos a serem implementados, sem reaproveitar código",
+    "Mixins e interfaces são idênticos em Dart, ambos definidos com a palavra-chave interface e aplicados com implements",
+    "Interfaces permitem reutilizar implementação de métodos, enquanto mixins apenas definem assinaturas sem código",
+    "Uma classe pode usar apenas um mixin por vez, mas pode implementar múltiplas interfaces simultaneamente",
+    "Mixins só podem ser aplicados a classes abstratas, enquanto interfaces só podem ser implementadas por classes concretas"
+  ],
+  "correctIndex": 0,
+  "explanation": "Mixins fornecem reutilização de implementação de código através da palavra-chave with, enquanto interfaces (implementadas via implements) apenas definem um contrato de métodos que a classe deve implementar, sem reaproveitar código. É o oposto do afirmado nos distratores 2 e 3, uma classe pode aplicar múltiplos mixins simultaneamente (não apenas um), e mixins podem ser aplicados a classes concretas normalmente, sem restrição a classes abstratas.",
+  "tags": ["dart", "mixins", "oop"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

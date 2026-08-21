@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_7d857e85",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 3,
+  "question": "Como criar Layouts customizados (Custom Layouts) no Jetpack Compose?",
+  "options": [
+    "Usando o composable `Layout`, onde é possível medir (`measure`) e posicionar (`place`) manualmente os elementos filhos, definindo um algoritmo de layout próprio, ou criando um `LayoutModifier` para customizar a medição de um único composable",
+    "Estendendo a classe `ViewGroup` do sistema de Views e depois embutindo-a via `AndroidView`, já que o Compose não permite criar layouts próprios",
+    "Usando apenas combinações de `Row` e `Column` aninhados, pois o Compose não expõe nenhuma API de baixo nível para medir e posicionar filhos manualmente",
+    "Criando uma anotação customizada `@CustomLayout` que o compilador do Kotlin interpreta automaticamente para gerar o algoritmo de posicionamento",
+    "Sobrescrevendo `onMeasure` e `onLayout` dentro do corpo de uma função `@Composable`, da mesma forma que em uma View tradicional"
+  ],
+  "correctIndex": 0,
+  "explanation": "O composable `Layout` dá acesso de baixo nível ao ciclo de medição e posicionamento, permitindo implementar algoritmos de layout totalmente customizados dentro do próprio Compose, sem depender do sistema de Views. Também é possível customizar a medição de um composable específico usando `LayoutModifier`. Não existe anotação `@CustomLayout`, não é necessário usar `ViewGroup`/`AndroidView`, e composables não implementam `onMeasure`/`onLayout` (isso é próprio das Views).",
+  "tags": ["jetpack-compose", "custom-layout", "layout"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

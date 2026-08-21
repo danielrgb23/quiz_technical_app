@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_16762dd1",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é a diferença entre `padding` e `margin` no Flutter?",
+  "options": [
+    "`padding` é o espaço interno entre o conteúdo de um widget e sua borda, aumentando o tamanho do próprio widget; `margin` é o espaço externo entre o widget e seus vizinhos/contêiner pai, posicionando-o sem alterar seu conteúdo interno",
+    "`padding` e `margin` são sinônimos em Flutter e podem ser usados de forma intercambiável em qualquer widget",
+    "`margin` é aplicado apenas a widgets de texto, enquanto `padding` só pode ser usado em widgets de imagem",
+    "`padding` afeta apenas o eixo horizontal do widget, enquanto `margin` afeta apenas o eixo vertical",
+    "`margin` é o espaço interno de um widget e `padding` é o espaço externo, o inverso do conceito usado em CSS"
+  ],
+  "correctIndex": 0,
+  "explanation": "`padding` adiciona espaço interno entre o conteúdo e a borda do widget, aumentando suas dimensões; `margin` adiciona espaço externo entre o widget e o que está ao seu redor, posicionando-o sem alterar seu conteúdo. Eles não são sinônimos nem estão restritos a texto ou imagem, e nenhum dos dois é limitado a apenas um eixo. Além disso, o conceito segue a mesma lógica do CSS, não o inverso.",
+  "tags": [
+    "flutter",
+    "layout",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

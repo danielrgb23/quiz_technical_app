@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_78fd622f",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é a propriedade `resizeToAvoidBottomInset` do `Scaffold`? Quando deve ser usada?",
+  "options": [
+    "É uma propriedade booleana que determina se o corpo do `Scaffold` deve ser redimensionado para evitar que o teclado virtual cubra os campos de entrada de texto",
+    "É uma propriedade que define a cor de fundo do `Scaffold` quando o teclado é exibido",
+    "É uma propriedade usada para ajustar automaticamente o tamanho da fonte com base no tamanho da tela",
+    "É uma propriedade que controla se a `AppBar` deve ficar fixa ou rolar junto com o conteúdo",
+    "É uma propriedade obrigatória usada para definir a orientação (retrato ou paisagem) da tela"
+  ],
+  "correctIndex": 0,
+  "explanation": "`resizeToAvoidBottomInset` é uma propriedade booleana do `Scaffold` que controla se o corpo da tela deve ser redimensionado quando o teclado virtual aparece, evitando que ele cubra campos de formulário ou entrada de texto. Não tem relação com cor de fundo, tamanho de fonte, comportamento da `AppBar` ou orientação de tela, que são controlados por outras propriedades/APIs.",
+  "tags": [
+    "flutter",
+    "scaffold",
+    "keyboard"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

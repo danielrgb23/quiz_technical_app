@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_df8d650b",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "Para que serve a diretiva `@synthesize` em Objective-C?",
+  "options": [
+    "Gera automaticamente os métodos getter e setter para uma propriedade declarada",
+    "Marca uma propriedade como thread-safe, impedindo acessos concorrentes",
+    "Declara uma propriedade como somente leitura, removendo o setter automaticamente",
+    "Cria uma cópia profunda (deep copy) da propriedade sempre que ela é acessada",
+    "Converte automaticamente uma propriedade de instância em uma propriedade de classe (`static`)"
+  ],
+  "correctIndex": 0,
+  "explanation": "`@synthesize` gera automaticamente a implementação dos métodos acessores (getter e setter) para uma propriedade declarada com `@property`, além de criar a variável de instância correspondente quando necessário. Não tem relação com thread-safety, cópia profunda ou tornar a propriedade de classe — esses comportamentos dependem de outros atributos como `atomic`/`nonatomic` e `copy`.",
+  "tags": ["ios", "objective-c", "properties"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

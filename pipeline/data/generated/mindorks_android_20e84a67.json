@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_20e84a67",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que é um Module no Dagger?",
+  "options": [
+    "Uma classe anotada com @Module que contém métodos anotados com @Provides (ou @Binds), responsáveis por informar ao Dagger como criar instâncias de dependências que não podem ser construídas diretamente via @Inject no construtor, como interfaces ou classes de bibliotecas externas",
+    "Uma interface que define quais Activities e Fragments podem receber injeção de dependências no aplicativo",
+    "Um pacote Gradle separado que precisa ser publicado para que o Dagger funcione corretamente no projeto",
+    "Uma anotação usada para marcar o escopo de vida de um objeto, equivalente ao @Singleton",
+    "Uma classe que substitui o AndroidManifest.xml para declarar permissões usadas pelas dependências injetadas"
+  ],
+  "correctIndex": 0,
+  "explanation": "Um Module no Dagger é uma classe anotada com @Module cujos métodos @Provides (ou @Binds em versões mais recentes) ensinam o Dagger a construir objetos que não podem simplesmente ter @Inject no construtor — por exemplo, instâncias de interfaces, classes de terceiros ou objetos que exigem configuração customizada (como um Retrofit ou OkHttpClient). Modules são incluídos em Components para compor o grafo de dependências. Não é um pacote Gradle, nem substitui o AndroidManifest, nem define escopo de vida sozinho.",
+  "tags": ["android", "dagger", "dependency-injection"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

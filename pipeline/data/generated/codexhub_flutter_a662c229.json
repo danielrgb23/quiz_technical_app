@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_a662c229",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "Como implementar uma transição customizada entre telas no Flutter?\n\n```dart\nNavigator.push(\n  context,\n  PageRouteBuilder(\n    pageBuilder: (context, animation, secondaryAnimation) => NewScreen(),\n    transitionsBuilder: (context, animation, secondaryAnimation, child) {\n      final begin = Offset(1.0, 0.0);\n      final end = Offset.zero;\n      final tween = Tween(begin: begin, end: end);\n      final offsetAnimation = animation.drive(tween);\n\n      return SlideTransition(position: offsetAnimation, child: child);\n    },\n  ),\n);\n```",
+  "options": [
+    "Usar PageRouteBuilder, definindo a tela em pageBuilder e a animação em transitionsBuilder com widgets como SlideTransition, FadeTransition ou combinações personalizadas, passando o resultado para Navigator.push",
+    "Trocar o widget MaterialApp por CupertinoApp, que aplica transições customizadas automaticamente sem código adicional",
+    "Usar apenas Navigator.pushNamed, que já permite customizar a animação passando um parâmetro 'transition'",
+    "Sobrescrever o método build do Scaffold de destino para incluir manualmente a lógica de animação de entrada",
+    "Utilizar o widget AnimatedContainer envolvendo a chamada de Navigator.push para animar a transição"
+  ],
+  "correctIndex": 0,
+  "explanation": "PageRouteBuilder permite definir a tela de destino em pageBuilder e controlar a animação de transição em transitionsBuilder usando widgets como SlideTransition ou FadeTransition combinados com Animation e Tween. Trocar para CupertinoApp não dá controle customizado, Navigator.pushNamed não tem parâmetro 'transition' nativo para isso, e AnimatedContainer ou sobrescrever build do Scaffold não são a forma correta de animar a navegação entre rotas.",
+  "tags": ["flutter", "navigation", "animation"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

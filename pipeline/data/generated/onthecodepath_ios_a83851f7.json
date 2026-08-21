@@ -1,0 +1,19 @@
+{
+  "id": "onthecodepath_ios_a83851f7",
+  "source": "onthecodepath_ios",
+  "topic": "ios",
+  "level": 1,
+  "question": "O que é Auto Layout?",
+  "options": [
+    "É um sistema usado para calcular dinamicamente o tamanho e a posição das views com base em restrições (constraints) definidas entre elas",
+    "É uma técnica para desenhar views manualmente pixel a pixel usando coordenadas absolutas fixas",
+    "É um framework exclusivo para animações de transição entre telas, sem relação com posicionamento de views",
+    "É um mecanismo que substitui completamente o uso de `UIView`, exigindo apenas `SwiftUI`",
+    "É um sistema que calcula o layout apenas em tempo de compilação, sem nenhum ajuste em tempo de execução"
+  ],
+  "correctIndex": 0,
+  "explanation": "Auto Layout é o sistema usado no UIKit para calcular dinamicamente, em tempo de execução, o tamanho e a posição das views com base em restrições (constraints) que definem relações entre elas (como margens, alinhamentos e proporções), permitindo que a interface se adapte a diferentes tamanhos de tela e orientações. Não se trata de posicionamento absoluto fixo, de um framework de animação, nem de algo exclusivo do SwiftUI, e seus cálculos ocorrem em tempo de execução, não apenas em compilação.",
+  "tags": ["ios", "uikit", "layout"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

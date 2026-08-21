@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_95e23107",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é `View` no Android?",
+  "options": [
+    "É a classe base para os componentes de interface de usuário (blocos de construção da UI), responsável por ocupar uma área retangular na tela, desenhar seu conteúdo e tratar eventos de interação, como toques",
+    "É a classe responsável por gerenciar o ciclo de vida das Activities e Fragments do aplicativo",
+    "É um componente exclusivo para exibir listas de dados, substituído atualmente pelo `RecyclerView`",
+    "É o arquivo XML que define o layout de uma tela, sem relação direta com código Java/Kotlin",
+    "É a classe usada para persistir dados localmente, análoga a uma tabela de banco de dados"
+  ],
+  "correctIndex": 0,
+  "explanation": "`View` é a superclasse de todos os componentes de UI no Android (botões, textos, imagens, etc.), responsável por desenho, layout e tratamento de eventos de interação do usuário. Ela não gerencia ciclo de vida de Activity/Fragment, não é exclusiva para listas, não é o próprio arquivo XML (que apenas declara a hierarquia de Views) e não tem relação com persistência de dados.",
+  "tags": ["android", "ui", "view"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

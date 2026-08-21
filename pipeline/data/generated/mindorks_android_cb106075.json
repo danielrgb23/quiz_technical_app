@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_cb106075",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Qual é a diferença entre iteradores fail-fast e fail-safe em Java?",
+  "options": [
+    "Iteradores fail-fast (como os de `ArrayList` e `HashMap`) lançam `ConcurrentModificationException` se a coleção for estruturalmente modificada durante a iteração, pois operam diretamente sobre a coleção original; iteradores fail-safe (como os de `CopyOnWriteArrayList` ou `ConcurrentHashMap`) operam sobre uma cópia ou snapshot, permitindo modificações concorrentes sem lançar exceção, embora possam não refletir as mudanças mais recentes.",
+    "Fail-fast iteradores nunca lançam exceções, enquanto fail-safe sempre lançam `ConcurrentModificationException` ao detectar qualquer modificação.",
+    "A diferença é apenas de desempenho: fail-safe é sempre mais rápido que fail-fast, sem nenhuma outra distinção funcional.",
+    "Fail-fast é usado exclusivamente em coleções não sincronizadas, enquanto fail-safe é obrigatório em qualquer coleção multithread, sendo a única opção disponível para elas.",
+    "Iteradores fail-safe modificam a coleção original diretamente e de forma segura para múltiplas threads, sem uso de cópias."
+  ],
+  "correctIndex": 0,
+  "explanation": "Fail-fast detecta modificações estruturais via um contador de modificação (`modCount`) e falha rapidamente lançando `ConcurrentModificationException`. Fail-safe evita esse problema iterando sobre uma cópia, ao custo de consumo extra de memória e possível leitura de dados desatualizados. As demais opções invertem ou distorcem esse comportamento.",
+  "tags": ["java", "collections", "concurrency"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

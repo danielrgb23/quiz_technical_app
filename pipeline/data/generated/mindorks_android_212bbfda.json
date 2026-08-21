@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_212bbfda",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que é `SpannableString`?",
+  "options": [
+    "É uma implementação concreta da interface `Spannable` para strings de tamanho fixo, na qual é possível aplicar `Span`s de estilo a trechos específicos do texto, mas sem poder alterar o conteúdo textual em si depois de criada",
+    "É uma classe usada para converter um `String` em um `Int` de forma segura, evitando exceptions de parsing",
+    "É a versão thread-safe de `String` no Kotlin, usada em ambientes com múltiplas threads",
+    "É um tipo de coleção (semelhante a uma `List<String>`) usada para armazenar textos traduzidos em diferentes idiomas",
+    "É uma anotação usada para marcar Strings que não podem ser nulas em Kotlin"
+  ],
+  "correctIndex": 0,
+  "explanation": "`SpannableString` é uma implementação de `Spannable` cujo conteúdo textual é fixo (não pode ser editado após criado), mas permite aplicar e remover `Span`s de estilo em trechos do texto — diferente de `SpannableStringBuilder`, que também permite editar o texto. As demais alternativas confundem o conceito com conversão de tipos, thread-safety, coleções ou anotações de nullability, que não têm relação com `SpannableString`.",
+  "tags": ["android", "text", "ui"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

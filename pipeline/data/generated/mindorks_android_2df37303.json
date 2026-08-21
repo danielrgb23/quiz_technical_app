@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_2df37303",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "O que é o Gradle?",
+  "options": [
+    "É a ferramenta de automação de build usada oficialmente pelo Android Studio para compilar, testar, empacotar e gerenciar dependências de projetos Android, configurada por scripts (build.gradle ou build.gradle.kts) que definem tarefas e configurações do projeto",
+    "É a linguagem de programação usada para escrever a lógica de negócio de aplicativos Android nativos",
+    "É um banco de dados embutido usado pelo Android para persistir dados localmente no dispositivo",
+    "É o emulador oficial do Android Studio usado para testar aplicativos sem um dispositivo físico",
+    "É um serviço de nuvem do Google Play usado para publicar aplicativos diretamente na loja"
+  ],
+  "correctIndex": 0,
+  "explanation": "Gradle é o sistema de build usado pelo Android Studio para compilar código-fonte, gerenciar dependências (bibliotecas externas), executar testes, aplicar ProGuard/R8 e gerar os artefatos finais (APK/AAB), configurado via arquivos build.gradle ou build.gradle.kts com uma DSL baseada em Groovy ou Kotlin. Não é uma linguagem de aplicação, banco de dados, emulador ou serviço de publicação — essas são ferramentas/tecnologias distintas do ecossistema Android.",
+  "tags": ["android", "gradle", "build", "tooling"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

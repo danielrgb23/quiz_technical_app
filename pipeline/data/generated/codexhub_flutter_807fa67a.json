@@ -1,0 +1,19 @@
+{
+  "id": "codexhub_flutter_807fa67a",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 1,
+  "question": "Qual é a diferença entre Cupertino e Material Design no Flutter?",
+  "options": [
+    "Cupertino é o kit de widgets com estilo iOS, focado em minimalismo, translucidez e uma navegação baseada em barra de abas na parte inferior; Material Design é o kit de widgets com estilo Android, com cores vibrantes, tipografia marcante e efeitos de profundidade, tradicionalmente associado a navegação em drawer",
+    "Cupertino é usado apenas para aplicativos web, enquanto Material Design é exclusivo para aplicativos mobile nativos",
+    "Cupertino e Material Design são a mesma coisa, apenas nomes diferentes para o mesmo conjunto de widgets do Flutter",
+    "Cupertino é um framework de gerenciamento de estado e Material Design é um sistema de roteamento",
+    "Material Design só pode ser usado em iOS e Cupertino só pode ser usado em Android"
+  ],
+  "correctIndex": 0,
+  "explanation": "Cupertino replica a linguagem visual da Apple (minimalista, translúcida, com navegação típica de iOS), enquanto Material Design segue as diretrizes do Google (cores vivas, sombras e profundidade). Ambos são conjuntos de widgets do Flutter que podem ser usados em qualquer plataforma, não são exclusivos de uma plataforma nem sinônimos, e não têm relação com gerenciamento de estado ou roteamento.",
+  "tags": ["flutter", "ui", "cupertino", "material"],
+  "language": "pt-BR",
+  "generated_answer": false
+}

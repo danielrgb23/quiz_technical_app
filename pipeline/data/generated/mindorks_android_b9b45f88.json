@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_b9b45f88",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 1,
+  "question": "Quais são os modificadores de acesso (access modifiers) em Java e o que cada um faz?",
+  "options": [
+    "`public` (acessível de qualquer lugar), `protected` (acessível no mesmo pacote e por subclasses), `default`/package-private, sem modificador (acessível apenas no mesmo pacote) e `private` (acessível apenas dentro da própria classe)",
+    "`public`, `static`, `final` e `abstract`, que juntos controlam quem pode acessar um membro da classe",
+    "`internal`, `protected`, `private` e `open`, os quatro únicos níveis de visibilidade suportados pela linguagem Java",
+    "Apenas `public` e `private` existem em Java; `protected` e o modificador default foram removidos a partir do Java 8",
+    "`global`, `local`, `restricted` e `hidden`, usados para controlar a visibilidade de métodos e classes"
+  ],
+  "correctIndex": 0,
+  "explanation": "Java define quatro níveis de acesso: `private` (só na própria classe), default/package-private (mesmo pacote, sem palavra-chave), `protected` (pacote + subclasses) e `public` (qualquer lugar). `static`, `final` e `abstract` não são modificadores de acesso, e os termos `internal`/`open` pertencem ao Kotlin, não ao Java.",
+  "tags": ["java", "access-modifiers", "oop"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_55eeb2b0",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é o widget `FutureBuilder` no Flutter e como ele é usado para construir UI dinâmica?",
+  "options": [
+    "É um widget que constrói a UI com base no estado de uma `Future` (aguardando, com dados ou com erro), usando um callback `builder` que recebe um `AsyncSnapshot` para decidir o que renderizar em cada caso",
+    "É um widget que executa uma `Future` repetidamente em loop até que ela retorne um valor não nulo",
+    "É um widget usado exclusivamente para animações de transição entre telas que dependem de resultados assíncronos",
+    "É uma classe que substitui o `StreamBuilder` para lidar apenas com streams de dados contínuos, e não com `Future`s",
+    "É um widget que bloqueia a interface do usuário até que a `Future` seja concluída, sem permitir renderizar estados intermediários"
+  ],
+  "correctIndex": 0,
+  "explanation": "`FutureBuilder` escuta uma `Future` e reconstrói a UI conforme seu estado muda: enquanto pendente pode mostrar um indicador de carregamento, quando completa com dados exibe o resultado, e quando completa com erro exibe uma mensagem de erro, tudo através do `AsyncSnapshot` recebido no `builder`. Ele não executa a `Future` em loop, não é voltado a transições de tela, não substitui `StreamBuilder` (que lida com `Stream`) e não bloqueia a UI — permite renderizar estados intermediários.",
+  "tags": [
+    "flutter",
+    "async",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

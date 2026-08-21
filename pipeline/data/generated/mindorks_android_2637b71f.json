@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_2637b71f",
+  "source": "mindorks_android",
+  "topic": "storage",
+  "level": 2,
+  "question": "O que é ORM (Object-Relational Mapping)? Como funciona?",
+  "options": [
+    "É uma técnica que mapeia objetos do código (classes) para tabelas de um banco de dados relacional (e vice-versa), permitindo manipular dados usando objetos e métodos em vez de escrever SQL diretamente; no Android, um exemplo é o Room, que gera automaticamente o código de acesso a dados a partir de anotações em classes e interfaces",
+    "É um protocolo de rede usado para sincronizar dados entre o app e um servidor remoto em tempo real",
+    "É uma técnica de compactação de imagens usada para reduzir o tamanho de recursos (`drawables`) no APK",
+    "É um padrão de arquitetura que substitui completamente o uso de `SharedPreferences` para qualquer tipo de dado",
+    "É um mecanismo do sistema operacional que converte automaticamente arquivos XML de layout em código Java compilado"
+  ],
+  "correctIndex": 0,
+  "explanation": "ORM mapeia entre o modelo orientado a objetos do código e o modelo relacional do banco de dados, permitindo trabalhar com objetos/classes em vez de SQL manual; no Android, o Room é o exemplo mais comum, gerando código de acesso a dados (DAO) a partir de anotações. As demais alternativas confundem o conceito com rede, compactação de imagens, SharedPreferences ou compilação de layouts, que não têm relação com ORM.",
+  "tags": ["android", "database", "room"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

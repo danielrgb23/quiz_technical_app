@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_29eb4b05",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Para que servem os métodos `hashCode()` e `equals()` em Java?",
+  "options": [
+    "`equals()` define igualdade lógica entre objetos e `hashCode()` gera um valor numérico usado por coleções baseadas em hash (`HashMap`, `HashSet`); o contrato exige que objetos considerados iguais por `equals()` tenham o mesmo `hashCode()`",
+    "Ambos servem exclusivamente para ordenar elementos em uma `List`, sendo alternativas ao `Comparator`",
+    "`hashCode()` criptografa o objeto para armazenamento seguro em disco, e `equals()` verifica a integridade dessa criptografia",
+    "`equals()` é usado apenas para comparar tipos primitivos, e `hashCode()` só existe em classes que implementam `Serializable`",
+    "Servem para gerar automaticamente o `toString()` de uma classe, sem nenhuma relação com estruturas de dados baseadas em hash"
+  ],
+  "correctIndex": 0,
+  "explanation": "Estruturas como `HashMap` e `HashSet` usam `hashCode()` para localizar o 'bucket' onde um elemento deve estar e `equals()` para confirmar igualdade dentro desse bucket; por isso o contrato exige que objetos iguais por `equals()` produzam o mesmo `hashCode()` (o inverso não é obrigatório). Não têm relação com ordenação de listas, criptografia ou geração de `toString()`, nem `equals()` é restrito a tipos primitivos.",
+  "tags": ["java", "hashcode", "equals"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

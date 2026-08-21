@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_a4e186eb",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "Como a classe `String` é implementada internamente em Java e por que ela foi projetada como imutável?",
+  "options": [
+    "Internamente é apoiada em um array de caracteres (ou bytes, dependendo da versão da JVM) que nunca é modificado após a criação; ela é imutável para permitir o cache no String Pool, garantir thread-safety sem sincronização e permitir cachear o hashCode com segurança",
+    "É implementada como uma lista encadeada mutável de caracteres, e a imutabilidade é apenas uma convenção de estilo sem garantia da JVM",
+    "É implementada como um wrapper em torno de `StringBuilder`, e cada `String` compartilha o mesmo buffer mutável entre todas as instâncias",
+    "Foi feita imutável exclusivamente para reduzir o tamanho do bytecode gerado pelo compilador, sem nenhuma relação com segurança ou concorrência",
+    "Internamente usa um array primitivo que pode ser alterado via reflection sem nenhuma restrição, tornando a imutabilidade apenas parcial e sempre reversível em produção"
+  ],
+  "correctIndex": 0,
+  "explanation": "`String` guarda seus caracteres em um array interno final, e qualquer operação que 'modifica' uma String na verdade cria uma nova instância. Essa imutabilidade viabiliza o String Pool (reuso seguro de literais), garante que Strings possam ser compartilhadas entre threads sem sincronização, e permite cachear o hashCode calculado uma única vez. As demais opções descrevem implementações incorretas (lista encadeada, StringBuilder compartilhado) ou motivações erradas.",
+  "tags": ["java", "string", "immutability"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

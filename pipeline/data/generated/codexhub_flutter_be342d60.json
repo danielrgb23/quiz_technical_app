@@ -1,0 +1,23 @@
+{
+  "id": "codexhub_flutter_be342d60",
+  "source": "codexhub_flutter",
+  "topic": "flutter",
+  "level": 2,
+  "question": "O que é o `InheritedWidget` no Flutter?",
+  "options": [
+    "É uma classe usada para propagar dados para baixo na árvore de widgets, permitindo que widgets descendentes acessem esses dados sem precisar passá-los explicitamente por cada nível intermediário",
+    "É um widget que herda automaticamente o estilo visual do widget pai mais próximo, sem necessidade de configuração",
+    "É uma classe usada apenas para definir rotas nomeadas na navegação do app",
+    "É um mixin aplicado a `StatelessWidget` para adicionar suporte a animações implícitas",
+    "É uma classe abstrata usada exclusivamente para persistir dados localmente entre sessões do app"
+  ],
+  "correctIndex": 0,
+  "explanation": "`InheritedWidget` permite compartilhar dados (como tema ou locale) com widgets descendentes em qualquer profundidade da árvore, sem precisar passá-los manualmente por cada widget intermediário, sendo acessado via `context`. Ele não herda estilo automaticamente, não define rotas, não é um mixin de animação e não persiste dados entre sessões — são conceitos distintos.",
+  "tags": [
+    "flutter",
+    "state-management",
+    "widgets"
+  ],
+  "language": "pt-BR",
+  "generated_answer": false
+}

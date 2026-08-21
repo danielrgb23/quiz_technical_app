@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_d7775a39",
+  "source": "mindorks_android",
+  "topic": "android",
+  "level": 2,
+  "question": "O que é `Spannable` no Android?",
+  "options": [
+    "É uma interface que representa um texto mutável no qual é possível aplicar múltiplos estilos e metadados (`Span`) a trechos específicos — como cor, negrito, tamanho de fonte ou links clicáveis — sem precisar dividir o texto em várias Views",
+    "É uma classe usada exclusivamente para formatar datas e horas em um `TextView`",
+    "É um componente de layout usado para dividir a tela em múltiplas colunas de texto",
+    "É a API responsável por traduzir automaticamente o texto de um app para outros idiomas",
+    "É um tipo de animação aplicada a Views de texto durante a transição entre telas"
+  ],
+  "correctIndex": 0,
+  "explanation": "`Spannable` é uma interface de texto mutável que permite aplicar `Span`s (marcações de estilo ou comportamento, como cor, negrito ou clique) a trechos específicos de uma string, tudo dentro de um único `TextView`. Não tem relação com formatação de data/hora, layout em colunas, tradução automática ou animações de transição.",
+  "tags": ["android", "text", "ui"],
+  "language": "pt-BR",
+  "generated_answer": true
+}

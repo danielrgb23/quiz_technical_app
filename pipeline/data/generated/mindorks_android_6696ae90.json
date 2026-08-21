@@ -1,0 +1,19 @@
+{
+  "id": "mindorks_android_6696ae90",
+  "source": "mindorks_android",
+  "topic": "kotlin",
+  "level": 2,
+  "question": "O que é a anotação `@JvmStatic` em Kotlin?",
+  "options": [
+    "Uma anotação usada em membros de um `companion object` (ou `object`) que gera, adicionalmente, um método estático real na classe Java correspondente, permitindo chamá-lo sem referenciar `Companion` a partir do código Java",
+    "Uma anotação que transforma qualquer função de extensão em uma função estática do Kotlin, eliminando a necessidade de importar a extensão",
+    "Uma anotação que força o compilador Kotlin a executar a função em uma thread separada durante a inicialização da JVM",
+    "Uma anotação usada para marcar uma variável como `final` e impedir que ela seja sobrescrita por subclasses",
+    "Uma anotação que converte uma `data class` em uma classe singleton acessível estaticamente"
+  ],
+  "correctIndex": 0,
+  "explanation": "Por padrão, membros de um `companion object` são compilados como membros de instância da classe interna `Companion`, exigindo `Classe.Companion.metodo()` a partir do Java. `@JvmStatic` faz o compilador gerar também um método estático verdadeiro em bytecode, permitindo chamar `Classe.metodo()` diretamente do Java, o que é útil em código Kotlin consumido por Java (ex.: bibliotecas). As demais opções descrevem comportamentos que não correspondem ao propósito real da anotação, como threads, extensões ou singletons.",
+  "tags": ["kotlin", "interop", "jvm"],
+  "language": "pt-BR",
+  "generated_answer": true
+}
