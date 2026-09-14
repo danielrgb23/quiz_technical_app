@@ -6,6 +6,7 @@ import '../data/data_sources/bank_asset_data_source.dart';
 import '../data/data_sources/bank_remote_data_source.dart';
 import '../data/data_sources/flagged_remote_data_source.dart';
 import '../data/data_sources/progress_remote_data_source.dart';
+import '../data/data_sources/stats_remote_data_source.dart';
 import '../data/db/question_bank_db.dart';
 import '../domain/services/connectivity_provider.dart';
 
@@ -37,6 +38,9 @@ abstract class QuestionBankModule {
   @LazySingleton(as: FlaggedRemoteDataSource)
   FakeFlaggedRemoteDataSource fakeFlaggedRemote() =>
       FakeFlaggedRemoteDataSource();
+
+  @LazySingleton(as: StatsRemoteDataSource)
+  FakeStatsRemoteDataSource fakeStatsRemote() => FakeStatsRemoteDataSource();
 
   @LazySingleton(as: ConnectivityProvider)
   StaticConnectivityProvider connectivity() =>

@@ -10,7 +10,16 @@ abstract class SecureStorage {
 
 @LazySingleton(as: SecureStorage)
 class SecureStorageImpl implements SecureStorage {
-  SecureStorageImpl() : _storage = const FlutterSecureStorage();
+  SecureStorageImpl()
+    : _storage = const FlutterSecureStorage(
+        // Nunca sai deste aparelho: sem isso, o Keychain/Keystore entra no
+        // backup do iCloud/Google e pode restaurar sessão em outro device
+        // sem re-autenticação (ver plano de segurança de backup).
+        iOptions: IOSOptions(
+          accessibility: KeychainAccessibility.first_unlock_this_device,
+        ),
+        aOptions: AndroidOptions(encryptedSharedPreferences: true),
+      );
 
   final FlutterSecureStorage _storage;
 

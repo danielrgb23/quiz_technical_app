@@ -20,5 +20,8 @@ analyzer:
     - "**/*.gr.dart"
     - "**/l10n/generated/**"
     - "**/generated/**"
+    - "**/build/**"
+    - "**/ios/**"
+    - "**/android/**"
   errors:
     invalid_annotation_target: ignore

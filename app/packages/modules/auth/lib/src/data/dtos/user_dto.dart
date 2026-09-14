@@ -15,10 +15,20 @@ abstract class UserDto with _$UserDto {
     required String name,
     @JsonKey(name: 'avatar_url') String? avatarUrl,
     @JsonKey(name: 'is_email_verified') @Default(false) bool isEmailVerified,
+    @JsonKey(name: 'is_anonymous') @Default(false) bool isAnonymous,
   }) = _UserDto;
 
   factory UserDto.fromJson(Map<String, dynamic> json) =>
       _$UserDtoFromJson(json);
+
+  factory UserDto.fromEntity(User user) => UserDto(
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    avatarUrl: user.avatarUrl,
+    isEmailVerified: user.isEmailVerified,
+    isAnonymous: user.isAnonymous,
+  );
 
   User toEntity() => User(
     id: id,
@@ -26,5 +36,6 @@ abstract class UserDto with _$UserDto {
     name: name,
     avatarUrl: avatarUrl,
     isEmailVerified: isEmailVerified,
+    isAnonymous: isAnonymous,
   );
 }

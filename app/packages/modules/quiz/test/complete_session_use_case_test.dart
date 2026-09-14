@@ -9,7 +9,11 @@ void main() {
 
   setUp(() {
     storage = FakeLocalStorage();
-    useCase = CompleteSessionUseCase(storage, StreakService());
+    useCase = CompleteSessionUseCase(
+      storage,
+      StreakService(),
+      FakeStatsSyncGateway(),
+    );
   });
 
   QuizSession sessionWith(List<Answer> answers) => QuizSession(

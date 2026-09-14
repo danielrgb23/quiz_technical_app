@@ -12,4 +12,5 @@ export 'src/domain/services/streak_service.dart';
 export 'src/domain/use_cases/answer_question_use_case.dart';
 export 'src/domain/use_cases/complete_session_use_case.dart';
 export 'src/domain/use_cases/get_user_stats_use_case.dart';
+export 'src/domain/use_cases/raw_local_stats_use_cases.dart';
 export 'src/domain/use_cases/start_session_use_case.dart';

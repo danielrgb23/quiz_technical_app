@@ -19,5 +19,11 @@
   "logout": "Logout",
   "@logout": { "description": "Logout button" },
   "logoutConfirm": "Are you sure you want to logout?",
-  "@logoutConfirm": { "description": "Logout confirmation" }
+  "@logoutConfirm": { "description": "Logout confirmation" },
+  "cancel": "Cancel",
+  "@cancel": { "description": "Cancel button" },
+  "guestBannerMessage": "You're browsing as a guest",
+  "@guestBannerMessage": { "description": "Shown on the profile page for anonymous sessions" },
+  "guestCreateAccount": "Create account / Log in",
+  "@guestCreateAccount": { "description": "Button prompting a guest to create an account or log in" }
 }

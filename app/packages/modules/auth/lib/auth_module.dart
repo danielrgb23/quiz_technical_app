@@ -1,9 +1,17 @@
 // Domain
 export 'src/domain/entities/user.dart';
 export 'src/domain/repositories/auth_repository.dart';
+export 'src/domain/services/account_merge_service.dart';
+export 'src/domain/services/biometric_auth_service.dart';
+export 'src/domain/services/biometric_fake_service.dart';
+export 'src/domain/services/biometric_preferences.dart';
 export 'src/domain/use_cases/login_use_case.dart';
 export 'src/domain/use_cases/logout_use_case.dart';
 export 'src/domain/use_cases/get_current_user_use_case.dart';
+export 'src/domain/use_cases/register_use_case.dart';
+export 'src/domain/use_cases/login_anonymously_use_case.dart';
+export 'src/domain/use_cases/link_with_email_password_use_case.dart';
+export 'src/domain/use_cases/login_with_google_use_case.dart';
 
 // Data
 export 'src/data/dtos/user_dto.dart';

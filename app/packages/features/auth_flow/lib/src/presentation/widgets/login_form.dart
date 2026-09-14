@@ -67,10 +67,29 @@ class _LoginFormState extends State<LoginForm> {
           ),
           const SizedBox(height: AppSpacing.md),
           DsButton(
+            label: l10n.continueWithGoogle,
+            variant: DsButtonVariant.outlined,
+            icon: Icons.g_mobiledata,
+            isLoading: widget.isLoading,
+            onPressed: widget.isLoading
+                ? null
+                : () => context.read<LoginCubit>().loginWithGoogle(),
+          ),
+          const SizedBox(height: AppSpacing.md),
+          DsButton(
             label: l10n.register,
             variant: DsButtonVariant.text,
             onPressed: () =>
                 AutoRouter.of(context).pushPath(AppRoutes.register),
+          ),
+          const SizedBox(height: AppSpacing.md),
+          DsButton(
+            label: l10n.continueAsGuest,
+            variant: DsButtonVariant.text,
+            isLoading: widget.isLoading,
+            onPressed: widget.isLoading
+                ? null
+                : () => context.read<LoginCubit>().continueAsGuest(),
           ),
         ],
       ),

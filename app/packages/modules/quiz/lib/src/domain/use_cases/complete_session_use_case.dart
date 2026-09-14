@@ -1,5 +1,6 @@
 import 'package:core/core.dart';
 import 'package:injectable/injectable.dart';
+import 'package:question_bank_module/question_bank.dart';
 
 import '../entities/quiz_session.dart';
 import '../entities/session_result.dart';
@@ -18,10 +19,15 @@ const _kStreakLastCompletedAtKey = 'quiz_streak_last_completed_at';
 /// o streak via [StreakService] e persiste o novo total via [LocalStorage].
 @lazySingleton
 class CompleteSessionUseCase {
-  CompleteSessionUseCase(this._localStorage, this._streakService);
+  CompleteSessionUseCase(
+    this._localStorage,
+    this._streakService,
+    this._statsSyncGateway,
+  );
 
   final LocalStorage _localStorage;
   final StreakService _streakService;
+  final StatsSyncGateway _statsSyncGateway;
 
   Future<Result<SessionResult>> call(
     QuizSession session, {
@@ -58,6 +64,11 @@ class CompleteSessionUseCase {
     await _localStorage.setString(
       _kStreakLastCompletedAtKey,
       effectiveNow.toIso8601String(),
+    );
+    await _statsSyncGateway.enqueueStats(
+      xpTotal: newXpTotal,
+      streakDays: newStreak,
+      streakLastCompletedAt: effectiveNow,
     );
 
     return Result.success(

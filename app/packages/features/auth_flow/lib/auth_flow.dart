@@ -1,6 +1,8 @@
 export 'src/presentation/bloc/login_cubit.dart';
+export 'src/presentation/bloc/register_cubit.dart';
 export 'src/presentation/pages/login_page.dart';
 export 'src/presentation/pages/register_page.dart';
+export 'src/presentation/pages/biometric_lock_page.dart';
 export 'src/l10n/generated/auth_localizations.dart';
 export 'src/di/auth_flow_di.dart';
 export 'src/di/auth_flow_di.module.dart';

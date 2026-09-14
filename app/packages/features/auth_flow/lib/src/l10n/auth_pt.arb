@@ -14,5 +14,20 @@
   "register": "Cadastrar",
   "forgotPassword": "Esqueceu a senha?",
   "dontHaveAccount": "Não tem uma conta?",
-  "alreadyHaveAccount": "Já tem uma conta?"
+  "alreadyHaveAccount": "Já tem uma conta?",
+  "nameRequired": "Nome é obrigatório",
+  "continueAsGuest": "Continuar como convidado",
+  "continueWithGoogle": "Continuar com Google",
+  "guestOfflineHint": "Você está offline — o modo convidado sincroniza quando a conexão voltar",
+  "upgradeAccountTitle": "Criar uma conta",
+  "upgradeAccountHint": "Salve seu progresso criando uma conta",
+  "accountExistsMessage": "Já existe uma conta com o e-mail {email}. Faça login para mesclar seu progresso.",
+  "biometricEnableTitle": "Usar biometria?",
+  "biometricEnableMessage": "Desbloqueie o app mais rápido da próxima vez com Face ID/Touch ID, em vez de digitar sua senha de novo.",
+  "biometricEnableConfirm": "Ativar",
+  "biometricEnableDismiss": "Agora não",
+  "biometricLockTitle": "App bloqueado",
+  "biometricLockMessage": "Use a biometria para continuar",
+  "biometricLockRetry": "Tentar novamente",
+  "biometricLockUseLogout": "Sair da conta"
 }

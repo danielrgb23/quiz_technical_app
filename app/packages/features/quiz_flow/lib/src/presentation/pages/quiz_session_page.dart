@@ -31,7 +31,6 @@ class QuizSessionPage extends StatefulWidget {
 
 class _QuizSessionPageState extends State<QuizSessionPage> {
   late final QuizSessionCubit _cubit;
-  bool _allowPop = false;
 
   @override
   void initState() {
@@ -68,25 +67,32 @@ class _QuizSessionPageState extends State<QuizSessionPage> {
     return result ?? false;
   }
 
+  Future<void> _handleBackPressed(BuildContext context) async {
+    final state = _cubit.state;
+    final isTerminal =
+        state is QuizSessionSummary ||
+        state is QuizSessionEmpty ||
+        state is QuizSessionError;
+    final shouldPop = isTerminal ? true : await _confirmAbandon(context);
+    // Unconditional pop: bypasses PopScope's canPop guard, which we keep
+    // permanently false so the system back gesture always routes through
+    // this confirmation flow. Using router.maybePop() here would re-check
+    // canPop and get blocked again, requiring a second tap to actually pop.
+    if (shouldPop && context.mounted) {
+      context.router.pop();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = QuizLocalizations.of(context)!;
     return BlocProvider.value(
       value: _cubit,
       child: PopScope(
-        canPop: _allowPop,
+        canPop: false,
         onPopInvokedWithResult: (didPop, _) async {
           if (didPop) return;
-          final state = _cubit.state;
-          final isTerminal =
-              state is QuizSessionSummary ||
-              state is QuizSessionEmpty ||
-              state is QuizSessionError;
-          final shouldPop = isTerminal ? true : await _confirmAbandon(context);
-          if (shouldPop && context.mounted) {
-            setState(() => _allowPop = true);
-            await context.router.maybePop();
-          }
+          await _handleBackPressed(context);
         },
         child: Scaffold(
           body: BlocBuilder<QuizSessionCubit, QuizSessionState>(
@@ -98,10 +104,12 @@ class _QuizSessionPageState extends State<QuizSessionPage> {
               QuizSessionQuestion() => _QuestionView(
                 state: state,
                 cubit: _cubit,
+                onBack: () => _handleBackPressed(context),
               ),
               QuizSessionFeedback() => _FeedbackView(
                 state: state,
                 cubit: _cubit,
+                onBack: () => _handleBackPressed(context),
               ),
               QuizSessionSummary(result: final result) => _SummaryView(
                 result: result,
@@ -141,10 +149,15 @@ class _EmptyView extends StatelessWidget {
 }
 
 class _QuestionView extends StatelessWidget {
-  const _QuestionView({required this.state, required this.cubit});
+  const _QuestionView({
+    required this.state,
+    required this.cubit,
+    required this.onBack,
+  });
 
   final QuizSessionQuestion state;
   final QuizSessionCubit cubit;
+  final VoidCallback onBack;
 
   @override
   Widget build(BuildContext context) {
@@ -158,6 +171,13 @@ class _QuestionView extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                IconButton(
+                  onPressed: onBack,
+                  icon: const Icon(Icons.arrow_back),
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                ),
+                const SizedBox(width: AppSpacing.sm),
                 Expanded(
                   child: LinearProgressIndicator(
                     value: (state.index) / state.total,
@@ -211,10 +231,15 @@ class _QuestionView extends StatelessWidget {
 }
 
 class _FeedbackView extends StatefulWidget {
-  const _FeedbackView({required this.state, required this.cubit});
+  const _FeedbackView({
+    required this.state,
+    required this.cubit,
+    required this.onBack,
+  });
 
   final QuizSessionFeedback state;
   final QuizSessionCubit cubit;
+  final VoidCallback onBack;
 
   @override
   State<_FeedbackView> createState() => _FeedbackViewState();
@@ -235,9 +260,20 @@ class _FeedbackViewState extends State<_FeedbackView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              l10n.questionProgressLabel(state.index + 1, state.total),
-              style: Theme.of(context).textTheme.labelMedium,
+            Row(
+              children: [
+                IconButton(
+                  onPressed: widget.onBack,
+                  icon: const Icon(Icons.arrow_back),
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                ),
+                const SizedBox(width: AppSpacing.sm),
+                Text(
+                  l10n.questionProgressLabel(state.index + 1, state.total),
+                  style: Theme.of(context).textTheme.labelMedium,
+                ),
+              ],
             ),
             const SizedBox(height: AppSpacing.sm),
             Expanded(

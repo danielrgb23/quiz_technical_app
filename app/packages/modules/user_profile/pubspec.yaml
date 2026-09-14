@@ -14,6 +14,9 @@ dependencies:
     sdk: flutter
   core:
     path: ../../core
+  auth_module:
+    path: ../auth
+  firebase_storage: ^13.0.4
   get_it: ^8.0.3
   injectable: ^2.5.0
   freezed_annotation: ^3.0.0

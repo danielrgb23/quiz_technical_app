@@ -20,11 +20,14 @@ dependencies:
     path: ../../design_system
   user_profile_module:
     path: ../../modules/user_profile
+  auth_module:
+    path: ../../modules/auth
   auto_route: ^11.0.0
   flutter_bloc: ^9.1.0
   get_it: ^8.0.3
   injectable: ^2.5.0
   freezed_annotation: ^3.0.0
+  image_picker: ^1.1.2
 
 dev_dependencies:
   flutter_test:

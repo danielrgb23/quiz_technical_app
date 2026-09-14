@@ -16,6 +16,7 @@ import 'package:shared/shared.dart';
 import 'package:stats_flow/stats_flow.dart';
 import 'package:user_profile_module/user_profile_module.dart';
 
+import '../services/real_account_merge_service.dart';
 import 'injection.config.dart';
 
 final getIt = GetIt.instance;
@@ -42,6 +43,8 @@ Future<void> configureDependencies(String environment) async {
 
   if (environment == 'dev') {
     _registerDevOverrides();
+  } else {
+    _registerStgProdOverrides();
   }
 }
 
@@ -52,6 +55,16 @@ Future<void> bootstrapQuestionBank() async {
   await bankSync.ensureSeeded();
   unawaited(bankSync.syncIfNeeded());
   getIt<ProgressSyncQueue>().start();
+  // If guest mode started offline (see AuthRepository.loginAnonymously),
+  // upgrade the local-only placeholder to a real Firebase anonymous uid
+  // now that there's a chance we're online. Best-effort, never blocks.
+  unawaited(getIt<AuthRepository>().retryPendingGuestLogin());
+  // Covers the returning-user case (login/register pages already handle
+  // the fresh-login case themselves — see auth_flow's LoginPage/RegisterPage).
+  final uid = getIt<AuthRepository>().currentUid;
+  if (uid != null) {
+    unawaited(getIt<NotificationService>().initialize(uid: uid));
+  }
 }
 
 /// Replaces real data sources with in-memory fakes for local development.
@@ -72,7 +85,55 @@ void _registerDevOverrides() {
       FakeHomeRemoteDataSource.new,
     );
     getIt.registerLazySingleton<ProfileRemoteDataSource>(
-      FakeProfileRemoteDataSource.new,
+      () => FakeProfileRemoteDataSource(getIt<AuthRepository>()),
+    );
+    // Firebase-backed by default (see [AnalyticsServiceImpl] /
+    // [CrashReportingServiceImpl]); dev never calls Firebase per the
+    // firebase-integration spec, so no-op fakes take over here.
+    getIt.registerLazySingleton<AnalyticsService>(FakeAnalyticsService.new);
+    getIt.registerLazySingleton<CrashReportingService>(
+      FakeCrashReportingService.new,
+    );
+    getIt.registerLazySingleton<NotificationService>(
+      FakeNotificationService.new,
+    );
+    getIt.registerLazySingleton<AvatarUploadService>(
+      FakeAvatarUploadService.new,
+    );
+    getIt.registerLazySingleton<BiometricAuthService>(
+      FakeBiometricAuthService.new,
+    );
+  } finally {
+    getIt.allowReassignment = previousAllowReassignment;
+  }
+}
+
+/// Wires the real Firestore-backed remotes and connectivity in stg/prod,
+/// replacing question_bank's default fakes (see [QuestionBankModule]).
+void _registerStgProdOverrides() {
+  final previousAllowReassignment = getIt.allowReassignment;
+  getIt.allowReassignment = true;
+  try {
+    getIt.registerLazySingleton<ProgressRemoteDataSource>(
+      FirestoreProgressDataSource.new,
+    );
+    getIt.registerLazySingleton<FlaggedRemoteDataSource>(
+      FirestoreFlaggedDataSource.new,
+    );
+    getIt.registerLazySingleton<StatsRemoteDataSource>(
+      FirestoreStatsDataSource.new,
+    );
+    getIt.registerLazySingleton<ConnectivityProvider>(
+      () => ConnectivityProviderAdapter(getIt<ConnectivityService>()),
+    );
+    getIt.registerLazySingleton<AccountMergeService>(
+      () => RealAccountMergeService(
+        getIt<AuthRepository>(),
+        getIt<ProgressRepository>(),
+        getIt<GetRawLocalStatsUseCase>(),
+        getIt<SetRawLocalStatsUseCase>(),
+        FirestoreProgressReader(),
+      ),
     );
   } finally {
     getIt.allowReassignment = previousAllowReassignment;

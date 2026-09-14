@@ -14,9 +14,17 @@ dependencies:
     sdk: flutter
   core:
     path: ../core
+  question_bank_module:
+    path: ../modules/question_bank
   get_it: ^8.0.3
   injectable: ^2.5.0
   connectivity_plus: ^6.1.4
+  firebase_analytics: ^12.1.0
+  firebase_crashlytics: ^5.0.5
+  firebase_auth: ^6.1.0
+  cloud_firestore: ^6.1.0
+  firebase_messaging: ^16.0.4
+  firebase_app_check: ^0.4.1
 
 dev_dependencies:
   flutter_test:

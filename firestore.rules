@@ -1,0 +1,64 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Manifest do banco de questões — leitura pública, escrita só via
+    // Admin SDK (pipeline/CI), nunca pelo app.
+    match /banks/{version} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Progresso do usuário: só o próprio uid lê/escreve o que é seu.
+    // Cobre tanto users/{uid}/progress/{questionId} quanto o doc
+    // reservado users/{uid}/progress/_stats (XP/streak).
+    match /users/{uid}/progress/{progressId} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if request.auth != null
+        && request.auth.uid == uid
+        && isValidProgressShape(progressId, request.resource.data);
+    }
+
+    // Tokens de push (FCM) do próprio usuário — dono lê/escreve o que é
+    // seu; ninguém mais lê (evita vazar tokens de outros usuários).
+    match /users/{uid}/fcm_tokens/{tokenId} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Qualquer outro subcaminho de users/{uid} fica bloqueado por padrão
+    // (nenhum allow casa) — nada além de progress/fcm_tokens é lido/escrito
+    // hoje.
+
+    // Reports de questão: qualquer usuário autenticado (inclusive
+    // anônimo) pode criar o próprio report; ninguém lê/edita/apaga pelo
+    // client (revisão roda via Admin SDK, fora das rules).
+    match /flagged_questions/{reportId} {
+      allow create: if request.auth != null
+        && request.resource.data.reportedBy == request.auth.uid
+        && request.resource.data.questionId is string
+        && request.resource.data.questionId.size() > 0
+        && request.resource.data.questionId.size() < 200;
+      allow read, update, delete: if false;
+    }
+
+    function isValidProgressShape(progressId, data) {
+      return progressId == '_stats'
+        ? isValidStats(data)
+        : isValidQuestionProgress(data);
+    }
+
+    function isValidStats(data) {
+      return data.xpTotal is int && data.xpTotal >= 0 && data.xpTotal < 10000000
+        && data.streakDays is int && data.streakDays >= 0 && data.streakDays < 100000
+        && (!('streakLastCompletedAt' in data) || data.streakLastCompletedAt == null
+            || data.streakLastCompletedAt is string);
+    }
+
+    function isValidQuestionProgress(data) {
+      return data.correctCount is int && data.correctCount >= 0 && data.correctCount < 100000
+        && data.wrongCount is int && data.wrongCount >= 0 && data.wrongCount < 100000
+        && data.consecutiveCorrect is int && data.consecutiveCorrect >= 0 && data.consecutiveCorrect < 100000;
+    }
+  }
+}

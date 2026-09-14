@@ -18,6 +18,9 @@ dependencies:
   injectable: ^2.5.0
   freezed_annotation: ^3.0.0
   json_annotation: ^4.11.0
+  firebase_auth: ^6.1.0
+  google_sign_in: ^6.3.0
+  local_auth: ^2.3.0
 
 dev_dependencies:
   flutter_test:

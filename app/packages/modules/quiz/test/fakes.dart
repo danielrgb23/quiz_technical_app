@@ -67,6 +67,19 @@ class FakeProgressRepository implements ProgressRepository {
   }
 }
 
+class FakeStatsSyncGateway implements StatsSyncGateway {
+  final List<({int xpTotal, int streakDays})> received = [];
+
+  @override
+  Future<void> enqueueStats({
+    required int xpTotal,
+    required int streakDays,
+    DateTime? streakLastCompletedAt,
+  }) async {
+    received.add((xpTotal: xpTotal, streakDays: streakDays));
+  }
+}
+
 class FakeLocalStorage implements LocalStorage {
   final Map<String, Object> _values = {};
 

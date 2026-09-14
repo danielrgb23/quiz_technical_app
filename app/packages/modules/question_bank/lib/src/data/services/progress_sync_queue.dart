@@ -9,6 +9,7 @@ import '../../domain/entities/question_progress.dart';
 import '../../domain/services/connectivity_provider.dart';
 import '../data_sources/flagged_remote_data_source.dart';
 import '../data_sources/progress_remote_data_source.dart';
+import '../data_sources/stats_remote_data_source.dart';
 import '../db/question_bank_db.dart';
 
 /// Drena a fila `pending_sync` para os espelhos remotos quando há rede.
@@ -23,12 +24,14 @@ class ProgressSyncQueue {
     this._db,
     this._progressRemote,
     this._flaggedRemote,
+    this._statsRemote,
     this._connectivity,
   );
 
   final QuestionBankDb _db;
   final ProgressRemoteDataSource _progressRemote;
   final FlaggedRemoteDataSource _flaggedRemote;
+  final StatsRemoteDataSource _statsRemote;
   final ConnectivityProvider _connectivity;
 
   StreamSubscription<bool>? _subscription;
@@ -84,6 +87,16 @@ class ProgressSyncQueue {
     final json = jsonDecode(item.payloadJson) as Map<String, dynamic>;
     if (item.type == 'flagged') {
       await _flaggedRemote.reportFlag(json['questionId'] as String);
+      return;
+    }
+    if (item.type == 'stats') {
+      await _statsRemote.upsert(
+        xpTotal: json['xpTotal'] as int? ?? 0,
+        streakDays: json['streakDays'] as int? ?? 0,
+        streakLastCompletedAt: json['streakLastCompletedAt'] != null
+            ? DateTime.parse(json['streakLastCompletedAt'] as String)
+            : null,
+      );
       return;
     }
     await _progressRemote.upsert(

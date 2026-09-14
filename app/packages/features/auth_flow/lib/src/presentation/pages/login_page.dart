@@ -1,11 +1,13 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
-import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../l10n/generated/auth_localizations.dart';
+import '../auth_success_handler.dart';
 import '../bloc/login_cubit.dart';
 import '../widgets/login_form.dart';
 
@@ -24,7 +26,7 @@ class LoginPage extends StatelessWidget {
         body: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
             if (state is LoginSuccess) {
-              context.router.pushPath(AppRoutes.home);
+              unawaited(handleAuthSuccess(context, state.user));
             } else if (state is LoginFailure) {
               ScaffoldMessenger.of(
                 context,

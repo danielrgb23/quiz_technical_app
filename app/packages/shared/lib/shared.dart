@@ -1,5 +1,16 @@
+export 'src/app_check/app_check_bootstrap.dart';
+export 'src/analytics/analytics_fake_service.dart';
 export 'src/analytics/analytics_service.dart';
+export 'src/crash_reporting/crash_reporting_fake_service.dart';
 export 'src/crash_reporting/crash_reporting_service.dart';
+export 'src/notifications/notification_fake_service.dart';
+export 'src/notifications/notification_service.dart';
+export 'src/notifications/firebase_notification_service.dart';
 export 'src/connectivity/connectivity_service.dart';
+export 'src/sync/connectivity_provider_adapter.dart';
+export 'src/sync/firestore_flagged_data_source.dart';
+export 'src/sync/firestore_progress_data_source.dart';
+export 'src/sync/firestore_progress_reader.dart';
+export 'src/sync/firestore_stats_data_source.dart';
 export 'src/di/shared_module.dart';
 export 'src/di/shared_module.module.dart';

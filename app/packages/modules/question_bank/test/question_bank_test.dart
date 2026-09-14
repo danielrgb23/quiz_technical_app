@@ -162,6 +162,7 @@ void main() {
         db,
         remote,
         FakeFlaggedRemoteDataSource(),
+        FakeStatsRemoteDataSource(),
         connectivity,
       );
 
@@ -187,6 +188,7 @@ void main() {
         db,
         remote,
         FakeFlaggedRemoteDataSource(),
+        FakeStatsRemoteDataSource(),
         connectivity,
       );
 
@@ -232,6 +234,7 @@ void main() {
         db,
         progressRemote,
         flaggedRemote,
+        FakeStatsRemoteDataSource(),
         connectivity,
       );
 
@@ -256,6 +259,7 @@ void main() {
         db,
         progressRemote,
         flaggedRemote,
+        FakeStatsRemoteDataSource(),
         connectivity,
       );
 

@@ -9,5 +9,8 @@
   "save": "Guardar",
   "retry": "Reintentar",
   "logout": "Cerrar sesión",
-  "logoutConfirm": "¿Estás seguro de que quieres cerrar sesión?"
+  "logoutConfirm": "¿Estás seguro de que quieres cerrar sesión?",
+  "cancel": "Cancelar",
+  "guestBannerMessage": "Estás navegando como invitado",
+  "guestCreateAccount": "Crear cuenta / Iniciar sesión"
 }

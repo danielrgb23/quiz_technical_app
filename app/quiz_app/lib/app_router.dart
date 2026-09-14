@@ -8,16 +8,31 @@ import 'package:profile_flow/profile_flow.dart';
 import 'package:quiz_flow/quiz_flow.dart';
 import 'package:stats_flow/stats_flow.dart';
 
+import 'routing/auth_guard.dart';
+import 'routing/biometric_guard.dart';
+
 part 'app_router.gr.dart';
 
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {
+  final _authGuard = AuthGuard();
+  final _biometricGuard = BiometricGuard();
+
   @override
   List<AutoRoute> get routes => [
-    AutoRoute(page: HomeRoute.page, path: AppRoutes.home, initial: true),
+    AutoRoute(
+      page: HomeRoute.page,
+      path: AppRoutes.home,
+      initial: true,
+      guards: [_authGuard, _biometricGuard],
+    ),
     AutoRoute(page: HomeItemDetailRoute.page, path: AppRoutes.homeDetail),
     AutoRoute(page: LoginRoute.page, path: AppRoutes.login),
     AutoRoute(page: RegisterRoute.page, path: AppRoutes.register),
+    AutoRoute(
+      page: BiometricLockRoute.page,
+      path: AppRoutes.biometricLock,
+    ),
     AutoRoute(page: OnboardingRoute.page, path: AppRoutes.onboarding),
     AutoRoute(page: ProfileRoute.page, path: AppRoutes.profile),
     AutoRoute(page: EditProfileRoute.page, path: AppRoutes.editProfile),

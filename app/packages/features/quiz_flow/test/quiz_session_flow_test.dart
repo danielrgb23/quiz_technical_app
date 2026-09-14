@@ -20,7 +20,11 @@ void main() {
       () => QuizSessionCubit(
         StartSessionUseCase(questionRepo, progressRepo),
         AnswerQuestionUseCase(progressRepo, SpacedRepetitionScheduler()),
-        CompleteSessionUseCase(localStorage, StreakService()),
+        CompleteSessionUseCase(
+          localStorage,
+          StreakService(),
+          FakeStatsSyncGateway(),
+        ),
         GetUserStatsUseCase(
           localStorage,
           questionRepo,
