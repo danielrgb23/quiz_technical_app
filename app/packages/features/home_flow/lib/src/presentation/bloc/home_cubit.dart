@@ -14,19 +14,24 @@ abstract class HomeState with _$HomeState {
     required List<String> topics,
     required int streakDays,
     required int xpTotal,
+    @Default({}) Map<String, PathProgress> paths,
   }) = HomeLoaded;
   const factory HomeState.failure(String message) = HomeFailure;
 }
 
-/// ViewModel do dashboard (spec-03): tópicos disponíveis e streak atual,
-/// usados para navegar para a pré-sessão por tópico e para o desafio diário.
+/// ViewModel do dashboard (spec-03): tópicos (roadmaps) com o progresso de
+/// cada trilha, streak atual e acesso ao desafio diário.
 @injectable
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this._questionRepository, this._getUserStatsUseCase)
-    : super(const HomeState.initial());
+  HomeCubit(
+    this._questionRepository,
+    this._getUserStatsUseCase,
+    this._learningPathService,
+  ) : super(const HomeState.initial());
 
   final QuestionRepository _questionRepository;
   final GetUserStatsUseCase _getUserStatsUseCase;
+  final LearningPathService _learningPathService;
 
   Future<void> loadDashboard() async {
     emit(const HomeState.loading());
@@ -37,10 +42,18 @@ class HomeCubit extends Cubit<HomeState> {
       return;
     }
 
+    final topics = topicsResult.dataOrNull!;
+    // Cada tópico é um roadmap independente; mostramos o progresso de todos.
+    final paths = {
+      for (final topic in topics)
+        topic: await _learningPathService.progress(topic),
+    };
+
     final statsResult = await _getUserStatsUseCase();
     emit(
       HomeState.loaded(
-        topics: topicsResult.dataOrNull!,
+        topics: topics,
+        paths: paths,
         streakDays: statsResult.dataOrNull?.streakDays ?? 0,
         xpTotal: statsResult.dataOrNull?.xpTotal ?? 0,
       ),

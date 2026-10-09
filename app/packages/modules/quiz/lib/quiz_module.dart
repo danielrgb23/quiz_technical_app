@@ -7,6 +7,7 @@ export 'src/domain/entities/quiz_session.dart';
 export 'src/domain/entities/session_mode.dart';
 export 'src/domain/entities/session_result.dart';
 export 'src/domain/entities/user_stats.dart';
+export 'src/domain/services/learning_path_service.dart';
 export 'src/domain/services/spaced_repetition_scheduler.dart';
 export 'src/domain/services/streak_service.dart';
 export 'src/domain/use_cases/answer_question_use_case.dart';

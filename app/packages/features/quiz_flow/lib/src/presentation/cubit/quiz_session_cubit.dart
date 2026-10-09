@@ -20,6 +20,7 @@ class QuizSessionCubit extends Cubit<QuizSessionState> {
     this._getUserStatsUseCase,
     this._questionReportRepository,
     this._analyticsService,
+    this._learningPathService,
   ) : super(const QuizSessionState.loading());
 
   final StartSessionUseCase _startSessionUseCase;
@@ -28,8 +29,10 @@ class QuizSessionCubit extends Cubit<QuizSessionState> {
   final GetUserStatsUseCase _getUserStatsUseCase;
   final QuestionReportRepository _questionReportRepository;
   final AnalyticsService _analyticsService;
+  final LearningPathService _learningPathService;
 
   QuizSession? _session;
+  int? _lesson;
   int _streakDays = 0;
   DateTime? _questionStartedAt;
 
@@ -39,8 +42,10 @@ class QuizSessionCubit extends Cubit<QuizSessionState> {
     required SessionMode mode,
     String? topic,
     int size = 10,
+    int? lesson,
   }) async {
     emit(const QuizSessionState.loading());
+    _lesson = lesson;
 
     final statsResult = await _getUserStatsUseCase();
     _streakDays = statsResult.dataOrNull?.streakDays ?? 0;
@@ -49,6 +54,7 @@ class QuizSessionCubit extends Cubit<QuizSessionState> {
       mode: mode,
       topic: topic,
       size: size,
+      lesson: lesson,
     );
     if (result.isFailure) {
       emit(QuizSessionState.error(result.failureOrNull!.message));
@@ -159,11 +165,53 @@ class QuizSessionCubit extends Cubit<QuizSessionState> {
           ),
         );
       }
-      emit(QuizSessionState.summary(sessionResult));
+      final outcome = await _recordLesson(nextSession, sessionResult);
+      final wrongIds = {
+        for (final a in sessionResult.wrongAnswers) a.questionId,
+      };
+      emit(
+        QuizSessionState.summary(
+          sessionResult,
+          lesson: outcome,
+          wrongQuestions: [
+            for (final q in nextSession.questions)
+              if (wrongIds.contains(q.id)) q,
+          ],
+        ),
+      );
       return;
     }
 
     _emitCurrentQuestion();
+  }
+
+  Future<LessonOutcome?> _recordLesson(
+    QuizSession session,
+    SessionResult result,
+  ) async {
+    final lesson = _lesson;
+    final topic = session.topic;
+    if (lesson == null || topic == null || session.mode != SessionMode.topic) {
+      return null;
+    }
+    final passed = LearningPathService.passed(
+      correct: result.correctCount,
+      total: result.totalQuestions,
+    );
+    final unlocked = await _learningPathService.recordLessonResult(
+      topic: topic,
+      lesson: lesson,
+      correct: result.correctCount,
+      total: result.totalQuestions,
+    );
+    return LessonOutcome(
+      lesson: lesson,
+      passed: passed,
+      ratio: result.totalQuestions == 0
+          ? 0
+          : result.correctCount / result.totalQuestions,
+      newlyUnlocked: unlocked,
+    );
   }
 
   /// Report de questão (botão discreto na tela de feedback).

@@ -24,5 +24,103 @@
   "dailyChallengeTitle": "Desafio diário",
   "questionProgressLabel": "{index}/{total}",
   "flipToExplanationHint": "Toque no card para ver a explicação",
-  "flipToQuestionHint": "Toque no card para voltar"
+  "flipToQuestionHint": "Toque no card para voltar",
+  "pathUnitLabel": "UNIDADE",
+  "pathStartBubble": "COMEÇAR",
+  "pathLockedMessage": "Acerte pelo menos {needed}% na lição anterior para desbloquear.",
+  "pathEmptyMessage": "Nenhuma questão neste tópico ainda.",
+  "pathLoadError": "Não foi possível carregar a trilha.",
+  "pathRetry": "Tentar novamente",
+  "pathLessonsProgress": "{done}/{total} lições",
+  "pathLessonSemantics": "Lição {n}",
+  "@pathLessonsProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@pathLessonSemantics": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryPassedTitle": "Lição concluída!",
+  "summaryFailedTitle": "Quase lá!",
+  "summaryDoneTitle": "Sessão concluída!",
+  "summaryPassedSubtitle": "Você acertou {pct}% e liberou a próxima lição.",
+  "summaryPassedRepeatSubtitle": "Você acertou {pct}%. Ótimo reforço!",
+  "summaryFailedSubtitle": "Você precisa de pelo menos {needed}% de acertos para avançar. Revise e tente de novo!",
+  "summaryDoneSubtitle": "Você acertou {pct}% das questões.",
+  "summaryNextUnlocked": "Próxima lição liberada!",
+  "summaryGoalLabel": "Meta {needed}%",
+  "summaryAccuracyCaption": "de acertos",
+  "summaryStatXp": "XP",
+  "summaryStatCorrect": "Acertos",
+  "summaryStatStreak": "Sequência",
+  "summaryStreakDays": "{days, plural, =1{1 dia} other{{days} dias}}",
+  "summaryReviewTitle": "Para revisar",
+  "summaryContinue": "Continuar",
+  "summaryRetry": "Tentar novamente",
+  "summaryBackToPath": "Voltar à trilha",
+  "summaryFinish": "Concluir",
+  "flipTabQuestion": "Pergunta",
+  "flipTabExplanation": "Explicação",
+  "flipCtaSeeExplanation": "Toque para ver a explicação",
+  "flipCtaBackToQuestion": "Toque para voltar à pergunta",
+  "flipCardSemantics": "Card que vira: toque para alternar entre pergunta e explicação",
+  "@summaryPassedSubtitle": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryPassedRepeatSubtitle": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryFailedSubtitle": {
+    "placeholders": {
+      "needed": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryDoneSubtitle": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryGoalLabel": {
+    "placeholders": {
+      "needed": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pathLockedMessage": {
+    "placeholders": {
+      "needed": {
+        "type": "int"
+      }
+    }
+  }
 }

@@ -21,10 +21,16 @@ class StartSessionUseCase {
     required SessionMode mode,
     String? topic,
     int size = 10,
+    int? lesson,
     DateTime? now,
   }) async {
     final effectiveNow = now ?? DateTime.now();
     final questionsResult = switch (mode) {
+      SessionMode.topic when lesson != null => await _byLesson(
+        topic!,
+        lesson,
+        size,
+      ),
       SessionMode.topic => await _byTopic(topic!, size, effectiveNow),
       SessionMode.review => await _review(effectiveNow),
       SessionMode.daily => await _daily(effectiveNow),
@@ -42,6 +48,22 @@ class StartSessionUseCase {
         startedAt: effectiveNow,
       ),
     );
+  }
+
+  /// Lição fixa da trilha: questões do tópico ordenadas por id, em blocos de
+  /// [size]; refazer a lição repete as mesmas questões.
+  Future<Result<List<Question>>> _byLesson(
+    String topic,
+    int lesson,
+    int size,
+  ) async {
+    final result = await _questionRepository.getByTopic(topic);
+    if (result.isFailure) return result;
+    final sorted = List<Question>.from(result.dataOrNull!)
+      ..sort((a, b) => a.id.compareTo(b.id));
+    final start = lesson * size;
+    if (start >= sorted.length) return Result.success(const []);
+    return Result.success(sorted.skip(start).take(size).toList());
   }
 
   Future<Result<List<Question>>> _byTopic(

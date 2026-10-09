@@ -2,7 +2,11 @@
   "@@locale": "en",
   "preSessionTitle": "Quiz: {topic}",
   "@preSessionTitle": {
-    "placeholders": { "topic": { "type": "String" } }
+    "placeholders": {
+      "topic": {
+        "type": "String"
+      }
+    }
   },
   "questionPageTitle": "Question",
   "questionCountLabel": "Number of questions",
@@ -14,17 +18,29 @@
   "summaryScoreLabel": "{correct}/{total} correct",
   "@summaryScoreLabel": {
     "placeholders": {
-      "correct": { "type": "int" },
-      "total": { "type": "int" }
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "xpEarnedLabel": "+{xp} XP",
   "@xpEarnedLabel": {
-    "placeholders": { "xp": { "type": "int" } }
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
   },
   "streakLabel": "{days} day streak",
   "@streakLabel": {
-    "placeholders": { "days": { "type": "int" } }
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
   },
   "newSessionButtonLabel": "New session",
   "wrongAnswersTitle": "Missed questions",
@@ -40,10 +56,112 @@
   "questionProgressLabel": "{index}/{total}",
   "@questionProgressLabel": {
     "placeholders": {
-      "index": { "type": "int" },
-      "total": { "type": "int" }
+      "index": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
     }
   },
   "flipToExplanationHint": "Tap the card to see the explanation",
-  "flipToQuestionHint": "Tap the card to go back"
+  "flipToQuestionHint": "Tap the card to go back",
+  "pathUnitLabel": "UNIT",
+  "pathStartBubble": "START",
+  "pathLockedMessage": "Get at least {needed}% on the previous lesson to unlock this one.",
+  "pathEmptyMessage": "No questions in this topic yet.",
+  "pathLoadError": "Couldn't load the path.",
+  "pathRetry": "Try again",
+  "pathLessonsProgress": "{done}/{total} lessons",
+  "pathLessonSemantics": "Lesson {n}",
+  "@pathLessonsProgress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@pathLessonSemantics": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "summaryPassedTitle": "Lesson complete!",
+  "summaryFailedTitle": "Almost there!",
+  "summaryDoneTitle": "Session complete!",
+  "summaryPassedSubtitle": "You got {pct}% and unlocked the next lesson.",
+  "summaryPassedRepeatSubtitle": "You got {pct}%. Great practice!",
+  "summaryFailedSubtitle": "You need at least {needed}% correct to move on. Review and try again!",
+  "summaryDoneSubtitle": "You got {pct}% of the questions right.",
+  "summaryNextUnlocked": "Next lesson unlocked!",
+  "summaryGoalLabel": "Goal {needed}%",
+  "summaryAccuracyCaption": "correct",
+  "summaryStatXp": "XP",
+  "summaryStatCorrect": "Correct",
+  "summaryStatStreak": "Streak",
+  "summaryStreakDays": "{days, plural, =1{1 day} other{{days} days}}",
+  "summaryReviewTitle": "To review",
+  "summaryContinue": "Continue",
+  "summaryRetry": "Try again",
+  "summaryBackToPath": "Back to path",
+  "summaryFinish": "Done",
+  "flipTabQuestion": "Question",
+  "flipTabExplanation": "Explanation",
+  "flipCtaSeeExplanation": "Tap to see the explanation",
+  "flipCtaBackToQuestion": "Tap to go back to the question",
+  "flipCardSemantics": "Flip card: tap to switch between question and explanation",
+  "@summaryPassedSubtitle": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryPassedRepeatSubtitle": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryFailedSubtitle": {
+    "placeholders": {
+      "needed": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryDoneSubtitle": {
+    "placeholders": {
+      "pct": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryGoalLabel": {
+    "placeholders": {
+      "needed": {
+        "type": "int"
+      }
+    }
+  },
+  "@summaryStreakDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@pathLockedMessage": {
+    "placeholders": {
+      "needed": {
+        "type": "int"
+      }
+    }
+  }
 }

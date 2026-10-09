@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:core/core.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:quiz_module/quiz_module.dart';
 
 import '../../l10n/generated/home_localizations.dart';
 import '../bloc/home_cubit.dart';
@@ -55,17 +58,26 @@ class _HomeContent extends StatelessWidget {
           ),
         ],
       ),
-      body: switch (state) {
-        HomeInitial() || HomeLoading() => const DsLoading(),
-        HomeLoaded(:final topics, :final streakDays, :final xpTotal) =>
-          _DashboardBody(
-            topics: topics,
-            streakDays: streakDays,
-            xpTotal: xpTotal,
-            l10n: l10n,
-          ),
-        _ => const SizedBox.shrink(),
-      },
+      body: SafeArea(
+        top: false,
+        child: switch (state) {
+          HomeInitial() || HomeLoading() => const DsLoading(),
+          HomeLoaded(
+            :final topics,
+            :final streakDays,
+            :final xpTotal,
+            :final paths,
+          ) =>
+            _DashboardBody(
+              topics: topics,
+              paths: paths,
+              streakDays: streakDays,
+              xpTotal: xpTotal,
+              l10n: l10n,
+            ),
+          _ => const SizedBox.shrink(),
+        },
+      ),
     );
   }
 }
@@ -73,12 +85,14 @@ class _HomeContent extends StatelessWidget {
 class _DashboardBody extends StatelessWidget {
   const _DashboardBody({
     required this.topics,
+    required this.paths,
     required this.streakDays,
     required this.xpTotal,
     required this.l10n,
   });
 
   final List<String> topics;
+  final Map<String, PathProgress> paths;
   final int streakDays;
   final int xpTotal;
   final HomeLocalizations l10n;
@@ -105,7 +119,7 @@ class _DashboardBody extends StatelessWidget {
               child: _GameCta(
                 label: l10n.reviewCta,
                 icon: Icons.replay_circle_filled_rounded,
-                color: AppColors.primary,
+                color: AppColors.lilac,
                 onTap: () => context.router.pushPath(AppRoutes.review),
               ),
             ),
@@ -131,8 +145,14 @@ class _DashboardBody extends StatelessWidget {
               child: _TopicCard(
                 topic: topic,
                 index: i,
-                onTap: () =>
-                    context.router.pushPath(AppRoutes.quizTopicPath(topic)),
+                progress: paths[topic],
+                l10n: l10n,
+                onTap: () async {
+                  await context.router.pushPath(AppRoutes.quizTopicPath(topic));
+                  if (context.mounted) {
+                    unawaited(context.read<HomeCubit>().loadDashboard());
+                  }
+                },
               ),
             ),
       ],
@@ -177,10 +197,7 @@ class _ProgressHero extends StatelessWidget {
                 icon: Icons.local_fire_department,
                 label: l10n.streakLabel(streakDays),
               ),
-              _StatBadge(
-                icon: Icons.star,
-                label: l10n.xpTotalLabel(xpTotal),
-              ),
+              _StatBadge(icon: Icons.star, label: l10n.xpTotalLabel(xpTotal)),
             ],
           ),
           const SizedBox(height: AppSpacing.lg),
@@ -190,15 +207,15 @@ class _ProgressHero extends StatelessWidget {
               Text(
                 l10n.levelLabel(level),
                 style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  color: Colors.white,
+                  color: AppColors.onPrimary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
                 l10n.xpToNextLevelLabel(xpToNextLevel),
-                style: Theme.of(
-                  context,
-                ).textTheme.labelSmall?.copyWith(color: Colors.white70),
+                style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  color: AppColors.onPrimary.withValues(alpha: 0.7),
+                ),
               ),
             ],
           ),
@@ -208,8 +225,8 @@ class _ProgressHero extends StatelessWidget {
             child: LinearProgressIndicator(
               value: progress,
               minHeight: 10,
-              backgroundColor: Colors.white.withValues(alpha: 0.35),
-              valueColor: const AlwaysStoppedAnimation(Colors.white),
+              backgroundColor: Colors.white.withValues(alpha: 0.55),
+              valueColor: const AlwaysStoppedAnimation(AppColors.onPrimary),
             ),
           ),
         ],
@@ -228,12 +245,12 @@ class _StatBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, color: Colors.white, size: 22),
+        Icon(icon, color: AppColors.onPrimary, size: 22),
         const SizedBox(width: AppSpacing.xs),
         Text(
           label,
           style: Theme.of(context).textTheme.titleSmall?.copyWith(
-            color: Colors.white,
+            color: AppColors.onPrimary,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -270,13 +287,13 @@ class _GameCta extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Icon(icon, color: Colors.white, size: 32),
+              Icon(icon, color: AppColors.onPrimary, size: 32),
               const SizedBox(height: AppSpacing.sm),
               Text(
                 label,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                  color: Colors.white,
+                  color: AppColors.onPrimary,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -289,11 +306,12 @@ class _GameCta extends StatelessWidget {
 }
 
 const _topicPalette = [
-  AppColors.primary,
-  AppColors.secondaryVariant,
-  AppColors.streak,
-  AppColors.xpDark,
   AppColors.primaryVariant,
+  AppColors.secondaryVariant,
+  AppColors.xpDark,
+  AppColors.lilac,
+  AppColors.rose,
+  AppColors.sky,
 ];
 
 const _topicIcons = {
@@ -313,36 +331,72 @@ class _TopicCard extends StatelessWidget {
   const _TopicCard({
     required this.topic,
     required this.index,
+    required this.progress,
+    required this.l10n,
     required this.onTap,
   });
 
   final String topic;
   final int index;
+  final PathProgress? progress;
+  final HomeLocalizations l10n;
   final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
     final color = _topicPalette[index % _topicPalette.length];
     final icon = _topicIcons[topic] ?? Icons.school_outlined;
+    final progress = this.progress;
+    final ratio = progress == null || progress.total == 0
+        ? 0.0
+        : progress.completed / progress.total;
 
     return DsCard(
       onTap: onTap,
       child: Row(
         children: [
           CircleAvatar(
-            backgroundColor: color.withValues(alpha: 0.15),
+            backgroundColor: color.withValues(alpha: 0.2),
             child: Icon(icon, color: color),
           ),
           const SizedBox(width: AppSpacing.md),
           Expanded(
-            child: Text(
-              topic,
-              style: Theme.of(
-                context,
-              ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  topic,
+                  style: Theme.of(
+                    context,
+                  ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+                ),
+                if (progress != null && progress.total > 0) ...[
+                  const SizedBox(height: AppSpacing.xs),
+                  ClipRRect(
+                    borderRadius: AppRadius.borderRadiusSm,
+                    child: LinearProgressIndicator(
+                      value: ratio,
+                      minHeight: 6,
+                      color: color,
+                    ),
+                  ),
+                  const SizedBox(height: AppSpacing.xs),
+                  Text(
+                    l10n.topicLessonsLabel(progress.completed, progress.total),
+                    style: Theme.of(
+                      context,
+                    ).textTheme.labelSmall?.copyWith(color: AppColors.grey600),
+                  ),
+                ],
+              ],
             ),
           ),
-          const Icon(Icons.chevron_right),
+          Icon(
+            progress?.isFinished ?? false
+                ? Icons.emoji_events_rounded
+                : Icons.chevron_right,
+            color: progress?.isFinished ?? false ? AppColors.xpDark : null,
+          ),
         ],
       ),
     );

@@ -123,4 +123,43 @@ void main() {
       isNot(day2.dataOrNull!.questions.map((q) => q.id).toList()),
     );
   });
+
+  test('lição fixa: blocos por id, repetíveis', () async {
+    questionRepo = FakeQuestionRepository([
+      for (var i = 0; i < 7; i++) makeQuestion('q$i'),
+    ]);
+    useCase = StartSessionUseCase(questionRepo, progressRepo);
+
+    final first = await useCase.call(
+      mode: SessionMode.topic,
+      topic: 'flutter',
+      size: 5,
+      lesson: 0,
+    );
+    final second = await useCase.call(
+      mode: SessionMode.topic,
+      topic: 'flutter',
+      size: 5,
+      lesson: 1,
+    );
+    final again = await useCase.call(
+      mode: SessionMode.topic,
+      topic: 'flutter',
+      size: 5,
+      lesson: 0,
+    );
+
+    expect(first.dataOrNull!.questions.map((q) => q.id), [
+      'q0',
+      'q1',
+      'q2',
+      'q3',
+      'q4',
+    ]);
+    expect(second.dataOrNull!.questions.map((q) => q.id), ['q5', 'q6']);
+    expect(
+      again.dataOrNull!.questions.map((q) => q.id),
+      first.dataOrNull!.questions.map((q) => q.id),
+    );
+  });
 }

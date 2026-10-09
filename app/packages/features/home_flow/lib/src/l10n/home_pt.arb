@@ -5,12 +5,30 @@
   "retry": "Tentar novamente",
   "featured": "Destaque",
   "viewAll": "Ver tudo",
-  "streakLabel": "{days} dias",
+  "streakLabel": "{days, plural, =1{1 dia} other{{days} dias}}",
   "xpTotalLabel": "{xp} XP",
   "levelLabel": "Nível {level}",
   "xpToNextLevelLabel": "Faltam {xp} XP",
   "dailyChallengeCta": "Desafio diário",
   "reviewCta": "Revisão",
   "topicsTitle": "Tópicos",
-  "noTopicsMessage": "Nenhum tópico disponível ainda."
+  "noTopicsMessage": "Nenhum tópico disponível ainda.",
+  "topicLessonsLabel": "{done}/{total} lições",
+  "@topicLessonsLabel": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakLabel": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
 }
