@@ -1,6 +1,7 @@
 # Pipeline de Questões (Spec 01)
 
-Baixa perguntas de entrevista mobile de repos open source no GitHub, converte cada par
+Baixa perguntas de entrevista de repos open source no GitHub (hoje de mobile; qualquer
+área técnica pode ser adicionada em `sources.yaml`), converte cada par
 pergunta/resposta em questão de múltipla escolha (5 alternativas + explicação) via LLM
 e exporta um banco JSON versionado para o app Flutter.
 

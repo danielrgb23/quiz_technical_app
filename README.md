@@ -1,35 +1,40 @@
 # Quiz Technical App
 
-> Estude para entrevistas técnicas de mobile (Android, iOS, Flutter e System Design) do jeito
-> que você aprende idiomas: lições curtas, trilha de progresso, streak diário e repetição
-> espaçada — tudo funcionando offline.
+> Plataforma de estudo para entrevistas técnicas, do jeito que você aprende idiomas: trilhas
+> (roadmaps) de lições curtas, streak diário e repetição espaçada — tudo funcionando offline.
+> O conteúdo inicial é de **desenvolvimento mobile** (Android, iOS, Flutter, System Design), e a
+> estrutura foi feita para crescer para **qualquer área técnica**.
 
 ## A ideia
 
-Entrevistas técnicas de mobile cobram um volume enorme de conceitos (ciclo de vida, concorrência,
-gerenciamento de estado, arquitetura, performance, system design…), e o material para estudar
-está espalhado em listas gigantes de perguntas em repositórios do GitHub, sem ordem, sem
+Entrevistas técnicas cobram um volume enorme de conceitos, e o material para estudar costuma
+estar espalhado em listas gigantes de perguntas em repositórios do GitHub, sem ordem, sem
 feedback e sem nenhum jeito de saber o que você já domina. Ler a lista inteira uma vez não
 fixa nada — o que fixa é **praticar, errar, ler a explicação e rever na hora certa**.
 
-O **Quiz Technical App** transforma essas listas em um app de estudo:
+O **Quiz Technical App** transforma essas listas em um app de estudo, e **cada tópico vira um
+roadmap**. Hoje o banco cobre mobile (ciclo de vida, concorrência, gerenciamento de estado,
+arquitetura, performance, system design…), mas nada no app é específico de mobile: novas áreas
+— backend, dados, DevOps, front-end, segurança, cloud, algoritmos, o que for — entram apenas
+adicionando fontes e perguntas ao banco (veja
+[Adicionando novas áreas e roadmaps](#adicionando-novas-áreas-e-roadmaps)).
 
 - **Pratique em vez de só ler**: perguntas de múltipla escolha com 5 alternativas embaralhadas
   a cada exibição e uma explicação de cada resposta (toque no card para virá-lo).
-- **Trilha de aprendizado**: cada tópico é um roadmap com lições de 5 questões, no estilo
+- **Roadmaps de aprendizado**: cada tópico é uma trilha de lições de 5 questões, no estilo
   Duolingo. A próxima lição só libera com **pelo menos 80% de acertos**, e você pode ter
-  várias trilhas em andamento ao mesmo tempo.
+  várias trilhas em andamento ao mesmo tempo, cada uma com o seu progresso.
 - **Repetição espaçada**: errou? A questão volta na revisão em 1 dia; acertou várias vezes
   seguidas? Os intervalos crescem (1d/3d/7d/21d). Você gasta tempo no que ainda não sabe.
-- **Hábito**: streak diário, XP, níveis e desafio diário (10 questões novas por dia) para
-  manter a constância — que é o que realmente prepara para entrevistas.
+- **Hábito**: streak diário, XP, níveis e desafio diário (10 questões por dia) para manter a
+  constância — que é o que realmente prepara para entrevistas.
 - **Offline-first**: o banco de questões vem embarcado no app; dá para estudar no metrô, sem
   internet.
 
-**Para quem é**: quem está se preparando para vagas de desenvolvimento mobile e quer um jeito
-estruturado e leve de revisar conceitos, e quem quer acompanhar o próprio progresso por tópico.
-O objetivo do projeto é **reduzir o atrito de estudar**: você abre o app, faz uma lição de
-poucos minutos e sabe exatamente o que revisar a seguir.
+**Para quem é**: quem está se preparando para vagas técnicas e quer um jeito estruturado e leve
+de revisar conceitos e acompanhar o próprio progresso por tópico — hoje com foco em quem busca
+vagas de mobile. O objetivo do projeto é **reduzir o atrito de estudar**: você abre o app, faz
+uma lição de poucos minutos e sabe exatamente o que revisar a seguir.
 
 ## Baixe e teste o app (Android)
 
@@ -104,7 +109,7 @@ recentes (trilha, resultado, sons, paleta pastel) estão em
 ## De onde vêm as questões (coleta de dados de repositórios)
 
 O conteúdo do app **não é copiado de uma única fonte nem digitado à mão**: ele é gerado por um
-pipeline reprodutível a partir de repositórios públicos de perguntas de entrevista.
+pipeline reprodutível a partir de repositórios públicos de perguntas de entrevista (hoje, de mobile).
 
 **O que é coletado.** Apenas o **markdown público** (`README.md`) de repositórios listados
 explicitamente em [`pipeline/sources.yaml`](pipeline/sources.yaml) — nada de issues, pull
@@ -146,6 +151,24 @@ os ids são determinísticos (reexecutar não duplica) e há uma estimativa de c
 isso o app tem o botão **Reportar questão**, que registra o id em uma coleção protegida do
 Firestore para revisão. Se você é autor de um dos repositórios e quer ajustar ou remover o uso do
 seu conteúdo, abra uma issue.
+
+## Adicionando novas áreas e roadmaps
+
+O app não tem nenhum tópico fixo no código: a lista de roadmaps da Home vem dos `topic`
+presentes no banco de questões, e cada tópico ganha automaticamente a sua trilha, o seu
+progresso e a sua entrada na revisão e nas estatísticas. Para abrir uma nova área:
+
+1. **Adicione uma fonte** em [`pipeline/sources.yaml`](pipeline/sources.yaml) (`repo`, `files`,
+   `topic_default`, `license` e o `parser`), ou escreva as questões diretamente no formato do
+   banco (`question`, 5 `options`, `correctIndex`, `explanation`, `topic`, `level`).
+2. **Gere e exporte** com o pipeline (`pipeline run` e depois `pipeline export --bump`), que
+   valida, deduplica e cria a nova versão do banco com o checksum.
+3. **Publique a versão**: embarque o JSON em `app/quiz_app/assets/question_bank/` (ou publique
+   no Firestore, que o app sincroniza validando o checksum). Os novos tópicos aparecem como
+   novos roadmaps, sem mudar código.
+4. *(Opcional)* Dê um ícone ao tópico no mapa de ícones da Home
+   ([`home_page.dart`](app/packages/features/home_flow/lib/src/presentation/pages/home_page.dart));
+   sem isso, o app usa um ícone padrão.
 
 ## Dados do usuário e privacidade
 
