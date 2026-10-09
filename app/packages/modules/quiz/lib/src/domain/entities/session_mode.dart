@@ -1,4 +1,4 @@
-/// Modos de sessão de quiz (spec-03-features-quiz.md).
+/// Modos de sessão de quiz (docs/specs/03-features-quiz.md).
 enum SessionMode {
   /// N questões de um tópico, priorizando não vistas e revisões vencidas.
   topic,

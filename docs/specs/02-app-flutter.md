@@ -1,5 +1,7 @@
 # Spec 02 — App Flutter: Setup sobre o Boilerplate (Firebase + Offline + Deeplinks)
 
+> **Spec original (documento histórico).** O que mudou desde então está em [`README.md`](README.md); o comportamento atual vive em [`openspec/`](../../openspec/).
+
 ## Objetivo
 Montar a fundação do app de quiz usando o **prodevcom/flutter-mono-repo** (MIT) como base, aproveitando o que ele já resolve e implementando apenas o que é específico do produto: Firebase, offline-first e deeplinks.
 

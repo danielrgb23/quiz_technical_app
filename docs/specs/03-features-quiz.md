@@ -1,5 +1,7 @@
 # Spec 03 — Features do Quiz (modules/quiz + features/quiz_flow)
 
+> **Spec original (documento histórico).** O que mudou desde então está em [`README.md`](README.md); o comportamento atual vive em [`openspec/`](../../openspec/).
+
 ## Objetivo
 Implementar o produto em si sobre a base da Spec 02: sessões de quiz estilo Duolingo (5 alternativas, explicação no erro), progresso, repetição espaçada e gamificação leve.
 

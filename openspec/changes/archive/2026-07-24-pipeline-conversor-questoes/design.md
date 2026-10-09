@@ -2,7 +2,7 @@
 
 ## Context
 
-O pipeline é um projeto Python novo, sem código existente. Ele transforma markdown de 4 repos GitHub (spec-01-conversor.md lista as fontes e licenças) em um banco JSON de MCQs consumido pelo app Flutter. Roda localmente na máquina do dev; o upload para Firebase é etapa manual posterior. A geração usa a API da Anthropic e tem custo por chamada, então idempotência e dry-run são requisitos de primeira classe.
+O pipeline é um projeto Python novo, sem código existente. Ele transforma markdown de 4 repos GitHub (docs/specs/01-conversor.md lista as fontes e licenças) em um banco JSON de MCQs consumido pelo app Flutter. Roda localmente na máquina do dev; o upload para Firebase é etapa manual posterior. A geração usa a API da Anthropic e tem custo por chamada, então idempotência e dry-run são requisitos de primeira classe.
 
 ## Goals / Non-Goals
 

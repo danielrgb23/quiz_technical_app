@@ -1,5 +1,7 @@
 # Spec 01 — Script de Download e Conversão de Perguntas
 
+> **Spec original (documento histórico).** O que mudou desde então está em [`README.md`](README.md); o comportamento atual vive em [`openspec/`](../../openspec/).
+
 ## Objetivo
 Pipeline que baixa perguntas de entrevista mobile de repositórios open source no GitHub, converte cada par pergunta/resposta em uma questão de múltipla escolha (5 alternativas) com explicação, e gera um banco de dados JSON versionado para consumo pelo app Flutter.
 

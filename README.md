@@ -99,9 +99,9 @@ depois.
    erro → revisão em 1 dia; acertos consecutivos → intervalos crescentes (1d/3d/7d/21d). Isso
    alimenta o modo **Revisão** e o **streak diário**.
 
-Detalhes de design de cada etapa estão em [`spec-01-conversor.md`](spec-01-conversor.md)
-(pipeline), [`spec-02-app-flutter.md`](spec-02-app-flutter.md) (fundação do app) e
-[`spec-03-features-quiz.md`](spec-03-features-quiz.md) (features do quiz). As mudanças mais
+Detalhes de design de cada etapa estão em [`docs/specs/01-conversor.md`](docs/specs/01-conversor.md)
+(pipeline), [`docs/specs/02-app-flutter.md`](docs/specs/02-app-flutter.md) (fundação do app) e
+[`docs/specs/03-features-quiz.md`](docs/specs/03-features-quiz.md) (features do quiz) — com um [índice das specs](docs/specs/README.md). As mudanças mais
 recentes (trilha, resultado, sons, paleta pastel) estão em
 [`app/docs/ux-refresh.md`](app/docs/ux-refresh.md) e em
 [`openspec/changes/`](openspec/changes/).
