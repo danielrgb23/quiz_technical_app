@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shared/shared.dart';
 
 import '../../l10n/generated/profile_localizations.dart';
 import '../bloc/profile_cubit.dart';
@@ -48,7 +49,6 @@ class ProfilePage extends StatelessWidget {
     );
     if (confirmed != true || !context.mounted) return;
     await GetIt.I<LogoutUseCase>()();
-    GetIt.I<BiometricSessionGate>().unlocked = false;
     if (context.mounted) {
       unawaited(context.router.replacePath(AppRoutes.login));
     }
@@ -63,113 +63,126 @@ class ProfilePage extends StatelessWidget {
       create: (_) => GetIt.I<ProfileCubit>()..loadProfile(),
       child: Scaffold(
         appBar: AppBar(title: Text(l10n.profileTitle)),
-        body: BlocBuilder<ProfileCubit, ProfileState>(
-          builder: (context, state) => switch (state) {
-            ProfileInitial() || ProfileLoading() => const DsLoading(),
-            ProfileLoaded(:final profile) => ListView(
-              padding: const EdgeInsets.all(AppSpacing.md),
-              children: isGuest
-                  ? [
-                      DsCard(
-                        child: Padding(
-                          padding: const EdgeInsets.all(AppSpacing.md),
-                          child: Column(
-                            children: [
-                              Text(
-                                l10n.guestBannerMessage,
-                                textAlign: TextAlign.center,
-                              ),
-                              const SizedBox(height: AppSpacing.sm),
-                              DsButton(
-                                label: l10n.guestCreateAccount,
-                                onPressed: () => context.router.pushPath(
-                                  AppRoutes.register,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ]
-                  : [
-                      Center(
-                        child: Stack(
-                          children: [
-                            _Avatar(avatarUrl: profile.avatarUrl),
-                            Positioned(
-                              right: 0,
-                              bottom: 0,
-                              child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).colorScheme.primary,
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Theme.of(
-                                      context,
-                                    ).colorScheme.surface,
-                                    width: 2,
+        body: SafeArea(
+          top: false,
+          child: BlocBuilder<ProfileCubit, ProfileState>(
+            builder: (context, state) => switch (state) {
+              ProfileInitial() || ProfileLoading() => const DsLoading(),
+              ProfileLoaded(:final profile) => ListView(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                children: [
+                  ...(isGuest
+                      ? [
+                          DsCard(
+                            child: Padding(
+                              padding: const EdgeInsets.all(AppSpacing.md),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    l10n.guestBannerMessage,
+                                    textAlign: TextAlign.center,
                                   ),
-                                ),
-                                child: IconButton(
-                                  onPressed: () => _pickAvatar(context),
-                                  icon: const Icon(Icons.camera_alt, size: 18),
-                                  color: Theme.of(
-                                    context,
-                                  ).colorScheme.onPrimary,
-                                  padding: const EdgeInsets.all(6),
-                                  constraints: const BoxConstraints(),
-                                ),
+                                  const SizedBox(height: AppSpacing.sm),
+                                  DsButton(
+                                    label: l10n.guestCreateAccount,
+                                    onPressed: () => context.router.pushPath(
+                                      AppRoutes.register,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
+                          ),
+                        ]
+                      : [
+                          Center(
+                            child: Stack(
+                              children: [
+                                _Avatar(avatarUrl: profile.avatarUrl),
+                                Positioned(
+                                  right: 0,
+                                  bottom: 0,
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.primary,
+                                      shape: BoxShape.circle,
+                                      border: Border.all(
+                                        color: Theme.of(
+                                          context,
+                                        ).colorScheme.surface,
+                                        width: 2,
+                                      ),
+                                    ),
+                                    child: IconButton(
+                                      onPressed: () => _pickAvatar(context),
+                                      icon: const Icon(
+                                        Icons.camera_alt,
+                                        size: 18,
+                                      ),
+                                      color: Theme.of(
+                                        context,
+                                      ).colorScheme.onPrimary,
+                                      padding: const EdgeInsets.all(6),
+                                      constraints: const BoxConstraints(),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: AppSpacing.md),
+                          Text(
+                            profile.name,
+                            style: Theme.of(context).textTheme.headlineSmall,
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: AppSpacing.xs),
+                          Text(
+                            profile.email,
+                            style: Theme.of(context).textTheme.bodyMedium,
+                            textAlign: TextAlign.center,
+                          ),
+                          if (profile.bio != null) ...[
+                            const SizedBox(height: AppSpacing.md),
+                            Text(profile.bio!, textAlign: TextAlign.center),
                           ],
-                        ),
-                      ),
-                      const SizedBox(height: AppSpacing.md),
-                      Text(
-                        profile.name,
-                        style: Theme.of(context).textTheme.headlineSmall,
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(height: AppSpacing.xs),
-                      Text(
-                        profile.email,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                        textAlign: TextAlign.center,
-                      ),
-                      if (profile.bio != null) ...[
-                        const SizedBox(height: AppSpacing.md),
-                        Text(profile.bio!, textAlign: TextAlign.center),
-                      ],
-                      const SizedBox(height: AppSpacing.lg),
-                      DsButton(
-                        label: l10n.editProfile,
-                        variant: DsButtonVariant.outlined,
-                        onPressed: () =>
-                            context.router.pushPath(AppRoutes.editProfile),
-                      ),
-                      const SizedBox(height: AppSpacing.md),
-                      DsButton(
-                        label: l10n.logout,
-                        variant: DsButtonVariant.text,
-                        onPressed: () => _confirmLogout(context),
-                      ),
-                    ],
-            ),
-            ProfileFailure(:final message) => Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(message),
-                  const SizedBox(height: AppSpacing.md),
-                  DsButton(
-                    label: l10n.retry,
-                    onPressed: () => context.read<ProfileCubit>().loadProfile(),
-                  ),
+                          const SizedBox(height: AppSpacing.lg),
+                          DsButton(
+                            label: l10n.editProfile,
+                            variant: DsButtonVariant.outlined,
+                            onPressed: () =>
+                                context.router.pushPath(AppRoutes.editProfile),
+                          ),
+                          const SizedBox(height: AppSpacing.md),
+                          DsButton(
+                            label: l10n.logout,
+                            variant: DsButtonVariant.text,
+                            onPressed: () => _confirmLogout(context),
+                          ),
+                        ]),
+                  const SizedBox(height: AppSpacing.lg),
+                  const _SoundToggle(),
                 ],
               ),
-            ),
-            _ => const SizedBox.shrink(),
-          },
+              ProfileFailure(:final message) => Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(message),
+                    const SizedBox(height: AppSpacing.md),
+                    DsButton(
+                      label: l10n.retry,
+                      onPressed: () =>
+                          context.read<ProfileCubit>().loadProfile(),
+                    ),
+                  ],
+                ),
+              ),
+              _ => const SizedBox.shrink(),
+            },
+          ),
         ),
       ),
     );
@@ -195,6 +208,41 @@ class _Avatar extends StatelessWidget {
       backgroundImage: isRemote
           ? NetworkImage(avatarUrl!)
           : FileImage(File(avatarUrl!)) as ImageProvider,
+    );
+  }
+}
+
+class _SoundToggle extends StatefulWidget {
+  const _SoundToggle();
+
+  @override
+  State<_SoundToggle> createState() => _SoundToggleState();
+}
+
+class _SoundToggleState extends State<_SoundToggle> {
+  final _sound = GetIt.I<SoundService>();
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_sound.load().then((_) => mounted ? setState(() {}) : null));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = ProfileLocalizations.of(context)!;
+    return DsCard(
+      padding: EdgeInsets.zero,
+      child: SwitchListTile(
+        secondary: const Icon(Icons.volume_up_rounded),
+        title: Text(l10n.soundEffects),
+        value: _sound.enabled,
+        onChanged: (value) async {
+          await _sound.setEnabled(value);
+          if (value) unawaited(_sound.play(Sfx.tap));
+          if (mounted) setState(() {});
+        },
+      ),
     );
   }
 }

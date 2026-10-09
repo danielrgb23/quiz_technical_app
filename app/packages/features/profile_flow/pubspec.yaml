@@ -16,6 +16,8 @@ dependencies:
     sdk: flutter
   core:
     path: ../../core
+  shared:
+    path: ../../shared
   design_system:
     path: ../../design_system
   user_profile_module:

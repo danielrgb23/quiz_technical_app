@@ -1,3 +1,6 @@
+export 'src/audio/audioplayers_sound_service.dart';
+export 'src/audio/sound_fake_service.dart';
+export 'src/audio/sound_service.dart';
 export 'src/app_check/app_check_bootstrap.dart';
 export 'src/analytics/analytics_fake_service.dart';
 export 'src/analytics/analytics_service.dart';

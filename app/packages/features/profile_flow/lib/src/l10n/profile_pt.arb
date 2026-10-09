@@ -12,5 +12,6 @@
   "logoutConfirm": "Tem certeza que deseja sair?",
   "cancel": "Cancelar",
   "guestBannerMessage": "Você está navegando como convidado",
-  "guestCreateAccount": "Criar conta / Entrar"
+  "guestCreateAccount": "Criar conta / Entrar",
+  "soundEffects": "Efeitos sonoros"
 }

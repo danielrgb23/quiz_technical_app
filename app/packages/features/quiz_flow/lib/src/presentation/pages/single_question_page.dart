@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared/shared.dart';
 
 import '../../l10n/generated/quiz_localizations.dart';
 import '../cubit/single_question_cubit.dart';
@@ -42,7 +45,20 @@ class _SingleQuestionPageState extends State<SingleQuestionPage> {
       value: _cubit,
       child: Scaffold(
         appBar: AppBar(title: Text(l10n.questionPageTitle)),
-        body: BlocBuilder<SingleQuestionCubit, SingleQuestionState>(
+        body: BlocConsumer<SingleQuestionCubit, SingleQuestionState>(
+          listenWhen: (prev, next) =>
+              next is SingleQuestionLoaded &&
+              next.answer != null &&
+              !(prev is SingleQuestionLoaded && prev.answer != null),
+          listener: (context, state) {
+            if (state is SingleQuestionLoaded && state.answer != null) {
+              unawaited(
+                GetIt.I<SoundService>().play(
+                  state.answer!.isCorrect ? Sfx.correct : Sfx.wrong,
+                ),
+              );
+            }
+          },
           builder: (context, state) => switch (state) {
             SingleQuestionLoading() => const DsLoading(),
             SingleQuestionNotFound() => Center(
@@ -102,7 +118,10 @@ class _LoadedViewState extends State<_LoadedView> {
                         ? Theme.of(context).colorScheme.primaryContainer
                         : null;
                     return DsCard(
-                      onTap: () => cubit.selectOption(optionIndex),
+                      onTap: () {
+                        unawaited(GetIt.I<SoundService>().play(Sfx.tap));
+                        cubit.selectOption(optionIndex);
+                      },
                       child: Container(
                         color: color,
                         child: Text(state.question.options[optionIndex]),

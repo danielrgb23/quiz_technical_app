@@ -1,29 +1,56 @@
 {
   "@@locale": "en",
   "profileTitle": "Profile",
-  "@profileTitle": { "description": "Profile page title" },
+  "@profileTitle": {
+    "description": "Profile page title"
+  },
   "editProfile": "Edit Profile",
-  "@editProfile": { "description": "Edit profile button" },
+  "@editProfile": {
+    "description": "Edit profile button"
+  },
   "name": "Name",
-  "@name": { "description": "Name field" },
+  "@name": {
+    "description": "Name field"
+  },
   "email": "Email",
-  "@email": { "description": "Email field" },
+  "@email": {
+    "description": "Email field"
+  },
   "phone": "Phone",
-  "@phone": { "description": "Phone field" },
+  "@phone": {
+    "description": "Phone field"
+  },
   "bio": "Bio",
-  "@bio": { "description": "Bio field" },
+  "@bio": {
+    "description": "Bio field"
+  },
   "save": "Save",
-  "@save": { "description": "Save button" },
+  "@save": {
+    "description": "Save button"
+  },
   "retry": "Retry",
-  "@retry": { "description": "Retry button" },
+  "@retry": {
+    "description": "Retry button"
+  },
   "logout": "Logout",
-  "@logout": { "description": "Logout button" },
+  "@logout": {
+    "description": "Logout button"
+  },
   "logoutConfirm": "Are you sure you want to logout?",
-  "@logoutConfirm": { "description": "Logout confirmation" },
+  "@logoutConfirm": {
+    "description": "Logout confirmation"
+  },
   "cancel": "Cancel",
-  "@cancel": { "description": "Cancel button" },
+  "@cancel": {
+    "description": "Cancel button"
+  },
   "guestBannerMessage": "You're browsing as a guest",
-  "@guestBannerMessage": { "description": "Shown on the profile page for anonymous sessions" },
+  "@guestBannerMessage": {
+    "description": "Shown on the profile page for anonymous sessions"
+  },
   "guestCreateAccount": "Create account / Log in",
-  "@guestCreateAccount": { "description": "Button prompting a guest to create an account or log in" }
+  "@guestCreateAccount": {
+    "description": "Button prompting a guest to create an account or log in"
+  },
+  "soundEffects": "Sound effects"
 }

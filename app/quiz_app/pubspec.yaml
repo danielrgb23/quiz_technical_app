@@ -82,3 +82,4 @@ flutter:
   generate: true
   assets:
     - assets/question_bank/
+    - assets/sounds/
