@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "installations": {
+    "claude": {
+      "package:marionette_flutter": {
+        "skills": [
+          {
+            "name": "marionette-flutter-drive-app",
+            "installedAt": "2026-10-09T13:07:40.598155Z",
+            "contentHash": "uyOK43+wxgy/lW7Jw2MFkA==",
+            "path": "skills/marionette-flutter-drive-app"
+          }
+        ]
+      }
+    }
+  }
+}

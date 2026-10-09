@@ -5,14 +5,28 @@ import '../env/env_config.dart';
 class AppLogger {
   AppLogger._();
 
-  static final logger_pkg.Logger _logger = logger_pkg.Logger(
-    printer: logger_pkg.PrettyPrinter(
-      methodCount: 0,
-      errorMethodCount: 5,
-      lineLength: 80,
-    ),
-    level: EnvConfig.isProd ? logger_pkg.Level.warning : logger_pkg.Level.debug,
-  );
+  static logger_pkg.Logger _logger = _build();
+
+  static logger_pkg.Logger _build({logger_pkg.LogOutput? extraOutput}) {
+    return logger_pkg.Logger(
+      printer: logger_pkg.PrettyPrinter(
+        methodCount: 0,
+        errorMethodCount: 5,
+        lineLength: 80,
+      ),
+      level:
+          EnvConfig.isProd ? logger_pkg.Level.warning : logger_pkg.Level.debug,
+      output: extraOutput == null
+          ? null
+          : logger_pkg.MultiOutput([logger_pkg.ConsoleOutput(), extraOutput]),
+    );
+  }
+
+  /// Mirrors every log line to [output] in addition to the console
+  /// (e.g. the Marionette log collector in debug builds).
+  static void attachOutput(logger_pkg.LogOutput output) {
+    _logger = _build(extraOutput: output);
+  }
 
   static void debug(String message, {String? tag}) {
     _logger.d(_format(message, tag));
