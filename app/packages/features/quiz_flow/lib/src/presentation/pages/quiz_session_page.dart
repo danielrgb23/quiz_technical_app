@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
@@ -5,10 +7,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:question_bank_module/question_bank.dart';
 import 'package:quiz_module/quiz_module.dart';
+import 'package:shared/shared.dart';
 
 import '../../l10n/generated/quiz_localizations.dart';
 import '../cubit/quiz_session_cubit.dart';
 import '../cubit/quiz_session_state.dart';
+import '../widgets/lesson_summary_view.dart';
 
 /// Sessão de quiz: questão → feedback → resumo (spec-03). Cobre os modos
 /// topic (via pré-sessão), review e daily (deeplink `/daily`).
@@ -18,12 +22,16 @@ class QuizSessionPage extends StatefulWidget {
     required this.mode,
     this.topic,
     this.size = 10,
+    this.lesson,
     super.key,
   });
 
   final SessionMode mode;
   final String? topic;
   final int size;
+
+  /// Índice da lição na trilha do tópico (só no modo topic).
+  final int? lesson;
 
   @override
   State<QuizSessionPage> createState() => _QuizSessionPageState();
@@ -36,13 +44,41 @@ class _QuizSessionPageState extends State<QuizSessionPage> {
   void initState() {
     super.initState();
     _cubit = GetIt.I<QuizSessionCubit>()
-      ..start(mode: widget.mode, topic: widget.topic, size: widget.size);
+      ..start(
+        mode: widget.mode,
+        topic: widget.topic,
+        size: widget.size,
+        lesson: widget.lesson,
+      );
   }
 
   @override
   void dispose() {
     _cubit.close();
     super.dispose();
+  }
+
+  void _restart() => _cubit.start(
+    mode: widget.mode,
+    topic: widget.topic,
+    size: widget.size,
+    lesson: widget.lesson,
+  );
+
+  void _playSoundFor(QuizSessionState state) {
+    final sound = GetIt.I<SoundService>();
+    switch (state) {
+      case QuizSessionFeedback(:final answer):
+        unawaited(sound.play(answer.isCorrect ? Sfx.correct : Sfx.wrong));
+      case QuizSessionSummary(:final lesson):
+        unawaited(
+          sound.play(
+            lesson == null || lesson.passed ? Sfx.complete : Sfx.wrong,
+          ),
+        );
+      default:
+        break;
+    }
   }
 
   Future<bool> _confirmAbandon(BuildContext context) async {
@@ -95,7 +131,9 @@ class _QuizSessionPageState extends State<QuizSessionPage> {
           await _handleBackPressed(context);
         },
         child: Scaffold(
-          body: BlocBuilder<QuizSessionCubit, QuizSessionState>(
+          body: BlocConsumer<QuizSessionCubit, QuizSessionState>(
+            listenWhen: (prev, next) => prev.runtimeType != next.runtimeType,
+            listener: (context, state) => _playSoundFor(state),
             builder: (context, state) => switch (state) {
               QuizSessionLoading() => const DsLoading(),
               QuizSessionEmpty() => _EmptyView(
@@ -111,8 +149,14 @@ class _QuizSessionPageState extends State<QuizSessionPage> {
                 cubit: _cubit,
                 onBack: () => _handleBackPressed(context),
               ),
-              QuizSessionSummary(result: final result) => _SummaryView(
-                result: result,
+              QuizSessionSummary() => LessonSummaryView(
+                summary: state,
+                onPrimary: () => switch (state.lesson) {
+                  null => context.router.popUntilRoot(),
+                  LessonOutcome(passed: true) => context.router.pop(),
+                  _ => _restart(),
+                },
+                onSecondary: () => context.router.pop(),
               ),
               QuizSessionError(message: final message) => DsError(
                 message: message,
@@ -211,7 +255,10 @@ class _QuestionView extends StatelessWidget {
                   return _AlternativeCard(
                     text: state.current.options[optionIndex],
                     selected: state.selectedIndex == optionIndex,
-                    onTap: () => cubit.selectOption(optionIndex),
+                    onTap: () {
+                      unawaited(GetIt.I<SoundService>().play(Sfx.tap));
+                      cubit.selectOption(optionIndex);
+                    },
                   );
                 },
               ),
@@ -276,12 +323,24 @@ class _FeedbackViewState extends State<_FeedbackView> {
               ],
             ),
             const SizedBox(height: AppSpacing.sm),
+            _FlipTabs(
+              showBack: _showBack,
+              questionLabel: l10n.flipTabQuestion,
+              explanationLabel: l10n.flipTabExplanation,
+              onChanged: (showBack) => setState(() => _showBack = showBack),
+            ),
+            const SizedBox(height: AppSpacing.md),
             Expanded(
               child: DsFlipCard(
                 key: ValueKey(state.current.id),
+                peek: true,
                 showBack: _showBack,
                 onFlip: (showBack) => setState(() => _showBack = showBack),
                 front: _FlashCardFace(
+                  cta: _FlipCta(
+                    icon: Icons.touch_app_rounded,
+                    label: l10n.flipCtaSeeExplanation,
+                  ),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -301,19 +360,18 @@ class _FeedbackViewState extends State<_FeedbackView> {
                               onTap: null,
                             ),
                           ),
-                        const SizedBox(height: AppSpacing.sm),
-                        _FlipHint(
-                          icon: Icons.flip,
-                          label: l10n.flipToExplanationHint,
-                        ),
                       ],
                     ),
                   ),
                 ),
                 back: _FlashCardFace(
+                  cta: _FlipCta(
+                    icon: Icons.flip_camera_android_rounded,
+                    label: l10n.flipCtaBackToQuestion,
+                  ),
                   color: isCorrect
-                      ? AppColors.success.withValues(alpha: 0.08)
-                      : AppColors.error.withValues(alpha: 0.06),
+                      ? AppColors.success.withValues(alpha: 0.18)
+                      : AppColors.error.withValues(alpha: 0.10),
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -337,11 +395,6 @@ class _FeedbackViewState extends State<_FeedbackView> {
                         Text(
                           state.current.explanation,
                           style: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        const SizedBox(height: AppSpacing.lg),
-                        _FlipHint(
-                          icon: Icons.flip_camera_android_outlined,
-                          label: l10n.flipToQuestionHint,
                         ),
                       ],
                     ),
@@ -378,9 +431,12 @@ class _FeedbackViewState extends State<_FeedbackView> {
 }
 
 class _FlashCardFace extends StatelessWidget {
-  const _FlashCardFace({required this.child, this.color});
+  const _FlashCardFace({required this.child, required this.cta, this.color});
 
   final Widget child;
+
+  /// Botão-dica fixo na base do card ("toque para virar").
+  final Widget cta;
   final Color? color;
 
   @override
@@ -390,96 +446,177 @@ class _FlashCardFace extends StatelessWidget {
       height: double.infinity,
       child: Card(
         color: color,
-        shape: RoundedRectangleBorder(borderRadius: AppRadius.borderRadiusLg),
-        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: AppRadius.borderRadiusLg,
+          side: BorderSide(
+            color: AppColors.primaryVariant.withValues(alpha: 0.5),
+            width: 2,
+          ),
+        ),
+        elevation: 4,
         child: Padding(
-          padding: const EdgeInsets.all(AppSpacing.lg),
-          child: child,
+          padding: const EdgeInsets.fromLTRB(
+            AppSpacing.lg,
+            AppSpacing.lg,
+            AppSpacing.lg,
+            AppSpacing.md,
+          ),
+          child: Column(
+            children: [
+              Expanded(child: child),
+              const SizedBox(height: AppSpacing.sm),
+              cta,
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class _FlipHint extends StatelessWidget {
-  const _FlipHint({required this.icon, required this.label});
+/// Faixa fixa no rodapé do card que deixa claro que ele gira ao toque.
+class _FlipCta extends StatefulWidget {
+  const _FlipCta({required this.icon, required this.label});
 
   final IconData icon;
   final String label;
 
   @override
+  State<_FlipCta> createState() => _FlipCtaState();
+}
+
+class _FlipCtaState extends State<_FlipCta>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _pulse = AnimationController(
+    vsync: this,
+    duration: const Duration(milliseconds: 900),
+  )..repeat(reverse: true);
+
+  @override
+  void dispose() {
+    _pulse.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(icon, size: 16, color: Theme.of(context).colorScheme.outline),
-        const SizedBox(width: AppSpacing.xs),
-        Text(
-          label,
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-            color: Theme.of(context).colorScheme.outline,
-          ),
+    return AnimatedBuilder(
+      animation: _pulse,
+      builder: (context, child) => Transform.scale(
+        scale: 1 + 0.025 * Curves.easeInOut.transform(_pulse.value),
+        child: child,
+      ),
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(
+          vertical: AppSpacing.md,
+          horizontal: AppSpacing.md,
         ),
-      ],
+        decoration: BoxDecoration(
+          color: AppColors.primary.withValues(alpha: 0.35),
+          borderRadius: AppRadius.borderRadiusLg,
+          border: Border.all(color: AppColors.primaryVariant, width: 2),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(widget.icon, color: AppColors.onPrimary),
+            const SizedBox(width: AppSpacing.sm),
+            Flexible(
+              child: Text(
+                widget.label,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: AppColors.onPrimary,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ),
+            const SizedBox(width: AppSpacing.xs),
+            const Icon(Icons.sync_rounded, color: AppColors.onPrimary),
+          ],
+        ),
+      ),
     );
   }
 }
 
-class _SummaryView extends StatelessWidget {
-  const _SummaryView({required this.result});
+/// Alternador "Pergunta | Explicação" acima do card: segundo caminho,
+/// explícito, para virar o card.
+class _FlipTabs extends StatelessWidget {
+  const _FlipTabs({
+    required this.showBack,
+    required this.questionLabel,
+    required this.explanationLabel,
+    required this.onChanged,
+  });
 
-  final SessionResult result;
+  final bool showBack;
+  final String questionLabel;
+  final String explanationLabel;
+  final ValueChanged<bool> onChanged;
 
   @override
   Widget build(BuildContext context) {
-    final l10n = QuizLocalizations.of(context)!;
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.all(AppSpacing.lg),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              l10n.summaryTitle,
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            const SizedBox(height: AppSpacing.lg),
-            Text(
-              l10n.summaryScoreLabel(
-                result.correctCount,
-                result.totalQuestions,
-              ),
-            ),
-            Text(l10n.xpEarnedLabel(result.xpEarned)),
-            Text(l10n.streakLabel(result.streakDays)),
-            if (result.wrongAnswers.isNotEmpty) ...[
-              const SizedBox(height: AppSpacing.lg),
+    return Container(
+      padding: const EdgeInsets.all(4),
+      decoration: BoxDecoration(
+        color: AppColors.grey200,
+        borderRadius: BorderRadius.circular(AppRadius.full),
+      ),
+      child: Row(
+        children: [
+          _tab(
+            context,
+            questionLabel,
+            Icons.help_outline_rounded,
+            !showBack,
+            () => onChanged(false),
+          ),
+          _tab(
+            context,
+            explanationLabel,
+            Icons.lightbulb_outline_rounded,
+            showBack,
+            () => onChanged(true),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _tab(
+    BuildContext context,
+    String label,
+    IconData icon,
+    bool selected,
+    VoidCallback onTap,
+  ) {
+    return Expanded(
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: selected ? null : onTap,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          padding: const EdgeInsets.symmetric(vertical: AppSpacing.sm),
+          decoration: BoxDecoration(
+            color: selected ? AppColors.primary : Colors.transparent,
+            borderRadius: BorderRadius.circular(AppRadius.full),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 18, color: AppColors.onPrimary),
+              const SizedBox(width: AppSpacing.xs),
               Text(
-                l10n.wrongAnswersTitle,
-                style: Theme.of(context).textTheme.titleSmall,
-              ),
-              const SizedBox(height: AppSpacing.sm),
-              Expanded(
-                child: ListView(
-                  children: [
-                    for (final answer in result.wrongAnswers)
-                      ListTile(
-                        leading: const Icon(Icons.close, color: Colors.red),
-                        title: Text(answer.questionId),
-                      ),
-                  ],
+                label,
+                style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                  color: AppColors.onPrimary,
+                  fontWeight: selected ? FontWeight.w800 : FontWeight.w600,
                 ),
               ),
-            ] else
-              const Spacer(),
-            const SizedBox(height: AppSpacing.lg),
-            SizedBox(
-              width: double.infinity,
-              child: DsButton(
-                label: l10n.newSessionButtonLabel,
-                onPressed: () => context.router.popUntilRoot(),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -523,9 +660,9 @@ class _AlternativeCard extends StatelessWidget {
     Color? color;
     if (revealed) {
       if (correct == true) {
-        color = Colors.green.withValues(alpha: 0.15);
+        color = AppColors.success.withValues(alpha: 0.3);
       } else if (selected && correct == false) {
-        color = Colors.red.withValues(alpha: 0.15);
+        color = AppColors.error.withValues(alpha: 0.18);
       }
     } else if (selected) {
       color = Theme.of(context).colorScheme.primaryContainer;
@@ -533,17 +670,15 @@ class _AlternativeCard extends StatelessWidget {
 
     return DsCard(
       onTap: onTap,
-      child: Container(
-        color: color,
-        child: Row(
-          children: [
-            Expanded(child: Text(text)),
-            if (revealed && correct == true)
-              const Icon(Icons.check, color: Colors.green),
-            if (revealed && selected && correct == false)
-              const Icon(Icons.close, color: Colors.red),
-          ],
-        ),
+      color: color,
+      child: Row(
+        children: [
+          Expanded(child: Text(text)),
+          if (revealed && correct == true)
+            const Icon(Icons.check, color: AppColors.successDark),
+          if (revealed && selected && correct == false)
+            const Icon(Icons.close, color: AppColors.error),
+        ],
       ),
     );
   }
