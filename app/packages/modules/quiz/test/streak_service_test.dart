@@ -61,6 +61,45 @@ void main() {
     expect(streak, 3);
   });
 
+  group('contagem por dia de calendário', () {
+    int next(int streak, DateTime last, DateTime now) =>
+        service.computeStreakOnSessionCompleted(
+          previousStreak: streak,
+          lastCompletedAt: last,
+          completedAt: now,
+        );
+
+    test('virada de mês (31/jan -> 1/fev) soma', () {
+      expect(next(2, DateTime(2026, 1, 31, 22), DateTime(2026, 2, 1, 7)), 3);
+    });
+
+    test('virada de ano (31/dez -> 1/jan) soma', () {
+      expect(next(9, DateTime(2025, 12, 31, 23), DateTime(2026, 1, 1, 1)), 10);
+    });
+
+    test('ano bissexto (28/fev -> 29/fev -> 1/mar) soma nos dois dias', () {
+      expect(next(1, DateTime(2028, 2, 28), DateTime(2028, 2, 29)), 2);
+      expect(next(2, DateTime(2028, 2, 29), DateTime(2028, 3, 1)), 3);
+    });
+
+    test('mais de 24h mas só um dia de calendário de diferença soma', () {
+      // 08:00 de segunda -> 23:00 de terça = 39h depois, ainda dia seguinte.
+      expect(next(4, DateTime(2026, 1, 12, 8), DateTime(2026, 1, 13, 23)), 5);
+    });
+
+    test('pulou um dia de calendário (qualquer horário) zera', () {
+      expect(next(4, DateTime(2026, 1, 12, 0, 1), DateTime(2026, 1, 14)), 1);
+    });
+
+    test('relógio voltou no tempo: mantém o streak, não zera nem soma', () {
+      expect(next(6, DateTime(2026, 1, 12), DateTime(2026, 1, 9)), 6);
+    });
+
+    test('vários dias de gap zera para 1', () {
+      expect(next(30, DateTime(2026, 1, 1), DateTime(2026, 3, 1)), 1);
+    });
+  });
+
   group('currentStreak (exibição sem sessão completada hoje)', () {
     test('nunca completou sessão -> 0', () {
       final streak = service.currentStreak(

@@ -101,4 +101,76 @@ void main() {
 
     expect(result.dataOrNull!.wrongAnswers.map((a) => a.questionId), ['f2']);
   });
+
+  group('streak ao longo dos dias', () {
+    final answered = sessionWith([
+      const Answer(
+        questionId: 'f1',
+        selectedIndex: 0,
+        isCorrect: true,
+        elapsedMs: 100,
+      ),
+    ]);
+
+    Future<int> complete(DateTime day) async {
+      final result = await useCase.call(answered, now: day);
+      return result.dataOrNull!.streakDays;
+    }
+
+    test('dias seguidos somam; segunda sessão no mesmo dia não soma', () async {
+      expect(await complete(DateTime(2026, 1, 10, 9)), 1);
+      expect(await complete(DateTime(2026, 1, 11, 9)), 2);
+      expect(await complete(DateTime(2026, 1, 11, 21)), 2);
+      expect(await complete(DateTime(2026, 1, 12, 7)), 3);
+      expect(await complete(DateTime(2026, 1, 13, 22)), 4);
+    });
+
+    test('perder um dia reseta para 1 e volta a somar a partir daí', () async {
+      expect(await complete(DateTime(2026, 1, 10)), 1);
+      expect(await complete(DateTime(2026, 1, 11)), 2);
+      expect(await complete(DateTime(2026, 1, 12)), 3);
+      // Pulou 13/jan e 14/jan.
+      expect(await complete(DateTime(2026, 1, 15)), 1);
+      expect(await complete(DateTime(2026, 1, 16)), 2);
+    });
+  });
+
+  test(
+    'perder um dia: exibe 0 até concluir uma sessão; ao concluir vira 1',
+    () async {
+      final stats = GetUserStatsUseCase(
+        storage,
+        FakeQuestionRepository(const []),
+        FakeProgressRepository(),
+        StreakService(),
+      );
+      final answered = sessionWith([
+        const Answer(
+          questionId: 'f1',
+          selectedIndex: 0,
+          isCorrect: true,
+          elapsedMs: 100,
+        ),
+      ]);
+      Future<int> shown(DateTime now) async =>
+          (await stats.call(now: now)).dataOrNull!.streakDays;
+
+      await useCase.call(answered, now: DateTime(2026, 1, 10, 9));
+      await useCase.call(answered, now: DateTime(2026, 1, 11, 9));
+      await useCase.call(answered, now: DateTime(2026, 1, 12, 9));
+      expect(await shown(DateTime(2026, 1, 12, 20)), 3);
+      // 13/jan ainda dá tempo (dia da graça); 14/jan o streak já quebrou.
+      expect(await shown(DateTime(2026, 1, 13, 8)), 3);
+      expect(await shown(DateTime(2026, 1, 14, 8)), 0);
+
+      // Voltou a estudar em 14/jan: a sessão concluída inicia nova sequência.
+      final result = await useCase.call(
+        answered,
+        now: DateTime(2026, 1, 14, 9),
+      );
+      expect(result.dataOrNull!.streakDays, 1);
+      expect(await shown(DateTime(2026, 1, 14, 20)), 1);
+      expect(await shown(DateTime(2026, 1, 16, 8)), 0);
+    },
+  );
 }
