@@ -43,6 +43,10 @@ Future<void> configureDependencies(String environment) async {
 
   if (environment == 'dev') {
     _registerDevOverrides();
+    // Recupera a sessão fake persistida (equivalente ao refresh token do
+    // Firebase em stg/prod) antes do AuthGuard rodar.
+    await (getIt<AuthRemoteDataSource>() as FakeAuthRemoteDataSource)
+        .restoreSession();
   } else {
     _registerStgProdOverrides();
   }
@@ -76,7 +80,7 @@ void _registerDevOverrides() {
   getIt.allowReassignment = true;
   try {
     getIt.registerLazySingleton<AuthRemoteDataSource>(
-      FakeAuthRemoteDataSource.new,
+      () => FakeAuthRemoteDataSource(getIt<SecureStorage>()),
     );
     getIt.registerLazySingleton<AuthLocalDataSource>(
       FakeAuthLocalDataSource.new,
@@ -99,9 +103,6 @@ void _registerDevOverrides() {
     );
     getIt.registerLazySingleton<AvatarUploadService>(
       FakeAvatarUploadService.new,
-    );
-    getIt.registerLazySingleton<BiometricAuthService>(
-      FakeBiometricAuthService.new,
     );
   } finally {
     getIt.allowReassignment = previousAllowReassignment;

@@ -21,13 +21,5 @@
   "guestOfflineHint": "Estás sin conexión — el modo invitado se sincronizará al volver la conexión",
   "upgradeAccountTitle": "Crear una cuenta",
   "upgradeAccountHint": "Guarda tu progreso creando una cuenta",
-  "accountExistsMessage": "Ya existe una cuenta con el correo {email}. Inicia sesión para fusionar tu progreso.",
-  "biometricEnableTitle": "¿Usar biometría?",
-  "biometricEnableMessage": "Desbloquea la app más rápido la próxima vez con Face ID/Touch ID en vez de escribir tu contraseña de nuevo.",
-  "biometricEnableConfirm": "Activar",
-  "biometricEnableDismiss": "Ahora no",
-  "biometricLockTitle": "App bloqueada",
-  "biometricLockMessage": "Usa la biometría para continuar",
-  "biometricLockRetry": "Intentar de nuevo",
-  "biometricLockUseLogout": "Cerrar sesión"
+  "accountExistsMessage": "Ya existe una cuenta con el correo {email}. Inicia sesión para fusionar tu progreso."
 }

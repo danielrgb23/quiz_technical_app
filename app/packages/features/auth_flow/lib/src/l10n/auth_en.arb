@@ -1,66 +1,96 @@
 {
   "@@locale": "en",
   "loginTitle": "Login",
-  "@loginTitle": { "description": "Login page title" },
+  "@loginTitle": {
+    "description": "Login page title"
+  },
   "registerTitle": "Register",
-  "@registerTitle": { "description": "Register page title" },
+  "@registerTitle": {
+    "description": "Register page title"
+  },
   "email": "Email",
-  "@email": { "description": "Email field label" },
+  "@email": {
+    "description": "Email field label"
+  },
   "emailHint": "Enter your email",
-  "@emailHint": { "description": "Email field hint" },
+  "@emailHint": {
+    "description": "Email field hint"
+  },
   "emailRequired": "Email is required",
-  "@emailRequired": { "description": "Email required validation" },
+  "@emailRequired": {
+    "description": "Email required validation"
+  },
   "password": "Password",
-  "@password": { "description": "Password field label" },
+  "@password": {
+    "description": "Password field label"
+  },
   "passwordHint": "Enter your password",
-  "@passwordHint": { "description": "Password field hint" },
+  "@passwordHint": {
+    "description": "Password field hint"
+  },
   "passwordRequired": "Password is required",
-  "@passwordRequired": { "description": "Password required validation" },
+  "@passwordRequired": {
+    "description": "Password required validation"
+  },
   "name": "Name",
-  "@name": { "description": "Name field label" },
+  "@name": {
+    "description": "Name field label"
+  },
   "nameHint": "Enter your name",
-  "@nameHint": { "description": "Name field hint" },
+  "@nameHint": {
+    "description": "Name field hint"
+  },
   "login": "Login",
-  "@login": { "description": "Login button label" },
+  "@login": {
+    "description": "Login button label"
+  },
   "register": "Register",
-  "@register": { "description": "Register button label" },
+  "@register": {
+    "description": "Register button label"
+  },
   "forgotPassword": "Forgot password?",
-  "@forgotPassword": { "description": "Forgot password link" },
+  "@forgotPassword": {
+    "description": "Forgot password link"
+  },
   "dontHaveAccount": "Don't have an account?",
-  "@dontHaveAccount": { "description": "Register prompt" },
+  "@dontHaveAccount": {
+    "description": "Register prompt"
+  },
   "alreadyHaveAccount": "Already have an account?",
-  "@alreadyHaveAccount": { "description": "Login prompt" },
+  "@alreadyHaveAccount": {
+    "description": "Login prompt"
+  },
   "nameRequired": "Name is required",
-  "@nameRequired": { "description": "Name required validation" },
+  "@nameRequired": {
+    "description": "Name required validation"
+  },
   "continueAsGuest": "Continue as guest",
-  "@continueAsGuest": { "description": "Anonymous sign-in button" },
+  "@continueAsGuest": {
+    "description": "Anonymous sign-in button"
+  },
   "continueWithGoogle": "Continue with Google",
-  "@continueWithGoogle": { "description": "Google sign-in button" },
+  "@continueWithGoogle": {
+    "description": "Google sign-in button"
+  },
   "guestOfflineHint": "You're offline — guest mode will sync once you're back online",
-  "@guestOfflineHint": { "description": "Shown when starting guest mode without connectivity" },
+  "@guestOfflineHint": {
+    "description": "Shown when starting guest mode without connectivity"
+  },
   "upgradeAccountTitle": "Create an account",
-  "@upgradeAccountTitle": { "description": "Title for linking a guest session to a real account" },
+  "@upgradeAccountTitle": {
+    "description": "Title for linking a guest session to a real account"
+  },
   "upgradeAccountHint": "Save your progress by creating an account",
-  "@upgradeAccountHint": { "description": "Hint shown to guest users prompting account creation" },
+  "@upgradeAccountHint": {
+    "description": "Hint shown to guest users prompting account creation"
+  },
   "accountExistsMessage": "An account already exists for {email}. Log in to merge your progress.",
   "@accountExistsMessage": {
     "description": "Shown when linking fails because the email is already registered",
-    "placeholders": { "email": { "type": "String" } }
-  },
-  "biometricEnableTitle": "Use biometrics?",
-  "@biometricEnableTitle": { "description": "Biometric opt-in dialog title" },
-  "biometricEnableMessage": "Unlock the app faster next time with Face ID/Touch ID instead of typing your password again.",
-  "@biometricEnableMessage": { "description": "Biometric opt-in dialog message" },
-  "biometricEnableConfirm": "Enable",
-  "@biometricEnableConfirm": { "description": "Biometric opt-in confirm button" },
-  "biometricEnableDismiss": "Not now",
-  "@biometricEnableDismiss": { "description": "Biometric opt-in dismiss button" },
-  "biometricLockTitle": "App locked",
-  "@biometricLockTitle": { "description": "Biometric lock screen title" },
-  "biometricLockMessage": "Use biometrics to continue",
-  "@biometricLockMessage": { "description": "Biometric lock screen message" },
-  "biometricLockRetry": "Try again",
-  "@biometricLockRetry": { "description": "Biometric lock screen retry button" },
-  "biometricLockUseLogout": "Log out",
-  "@biometricLockUseLogout": { "description": "Biometric lock screen logout fallback" }
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  }
 }

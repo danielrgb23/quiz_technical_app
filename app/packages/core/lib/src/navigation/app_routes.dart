@@ -10,7 +10,6 @@ abstract final class AppRoutes {
   static String homeDetailPath(String id) => '/home/$id';
   static const login = '/login';
   static const register = '/register';
-  static const biometricLock = '/biometric-lock';
   static const onboarding = '/onboarding';
   static const profile = '/profile';
   static const editProfile = '/edit-profile';

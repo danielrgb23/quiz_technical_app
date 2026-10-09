@@ -9,14 +9,12 @@ import 'package:quiz_flow/quiz_flow.dart';
 import 'package:stats_flow/stats_flow.dart';
 
 import 'routing/auth_guard.dart';
-import 'routing/biometric_guard.dart';
 
 part 'app_router.gr.dart';
 
 @AutoRouterConfig()
 class AppRouter extends RootStackRouter {
   final _authGuard = AuthGuard();
-  final _biometricGuard = BiometricGuard();
 
   @override
   List<AutoRoute> get routes => [
@@ -24,20 +22,16 @@ class AppRouter extends RootStackRouter {
       page: HomeRoute.page,
       path: AppRoutes.home,
       initial: true,
-      guards: [_authGuard, _biometricGuard],
+      guards: [_authGuard],
     ),
     AutoRoute(page: HomeItemDetailRoute.page, path: AppRoutes.homeDetail),
     AutoRoute(page: LoginRoute.page, path: AppRoutes.login),
     AutoRoute(page: RegisterRoute.page, path: AppRoutes.register),
-    AutoRoute(
-      page: BiometricLockRoute.page,
-      path: AppRoutes.biometricLock,
-    ),
     AutoRoute(page: OnboardingRoute.page, path: AppRoutes.onboarding),
     AutoRoute(page: ProfileRoute.page, path: AppRoutes.profile),
     AutoRoute(page: EditProfileRoute.page, path: AppRoutes.editProfile),
     // Deeplinks do quiz (quizapp:// e App/Universal Links) — Spec 03
-    AutoRoute(page: PreSessionRoute.page, path: AppRoutes.quizTopic),
+    AutoRoute(page: TopicPathRoute.page, path: AppRoutes.quizTopic),
     AutoRoute(page: SingleQuestionRoute.page, path: AppRoutes.question),
     AutoRoute(page: DailyChallengeRoute.page, path: AppRoutes.daily),
     AutoRoute(page: ReviewRoute.page, path: AppRoutes.review),
