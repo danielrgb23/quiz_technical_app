@@ -1,16 +1,77 @@
 # Quiz Technical App
 
-App de estudo estilo Duolingo para entrevistas técnicas mobile (Android/iOS/Flutter/System
-Design). O usuário responde questões de múltipla escolha organizadas por tópico, erra, lê a
-explicação, e o app agenda a repetição espaçada da questão para reforçar o aprendizado — com
-streak diário e XP para gamificar o hábito.
+> Estude para entrevistas técnicas de mobile (Android, iOS, Flutter e System Design) do jeito
+> que você aprende idiomas: lições curtas, trilha de progresso, streak diário e repetição
+> espaçada — tudo funcionando offline.
 
-O projeto tem duas partes independentes:
+## A ideia
+
+Entrevistas técnicas de mobile cobram um volume enorme de conceitos (ciclo de vida, concorrência,
+gerenciamento de estado, arquitetura, performance, system design…), e o material para estudar
+está espalhado em listas gigantes de perguntas em repositórios do GitHub, sem ordem, sem
+feedback e sem nenhum jeito de saber o que você já domina. Ler a lista inteira uma vez não
+fixa nada — o que fixa é **praticar, errar, ler a explicação e rever na hora certa**.
+
+O **Quiz Technical App** transforma essas listas em um app de estudo:
+
+- **Pratique em vez de só ler**: perguntas de múltipla escolha com 5 alternativas embaralhadas
+  a cada exibição e uma explicação de cada resposta (toque no card para virá-lo).
+- **Trilha de aprendizado**: cada tópico é um roadmap com lições de 5 questões, no estilo
+  Duolingo. A próxima lição só libera com **pelo menos 80% de acertos**, e você pode ter
+  várias trilhas em andamento ao mesmo tempo.
+- **Repetição espaçada**: errou? A questão volta na revisão em 1 dia; acertou várias vezes
+  seguidas? Os intervalos crescem (1d/3d/7d/21d). Você gasta tempo no que ainda não sabe.
+- **Hábito**: streak diário, XP, níveis e desafio diário (10 questões novas por dia) para
+  manter a constância — que é o que realmente prepara para entrevistas.
+- **Offline-first**: o banco de questões vem embarcado no app; dá para estudar no metrô, sem
+  internet.
+
+**Para quem é**: quem está se preparando para vagas de desenvolvimento mobile e quer um jeito
+estruturado e leve de revisar conceitos, e quem quer acompanhar o próprio progresso por tópico.
+O objetivo do projeto é **reduzir o atrito de estudar**: você abre o app, faz uma lição de
+poucos minutos e sabe exatamente o que revisar a seguir.
+
+## Baixe e teste o app (Android)
+
+> Versão **1.0.0** (build de produção, assinada e ofuscada) — Android 7.0+ (API 24).
+
+| | |
+|---|---|
+| **Download** | [⬇️ Baixar o APK (última versão em *Releases*)](https://github.com/danielrgb23/quiz_technical_app/releases/latest) |
+| **SHA-256 do APK 1.0.0** | `11f73eea26a4df8faf365d5500490894337d6e5410d268de21d2c685d159415d` |
+| **Pacote** | `com.quizmobile.app` |
+
+**Como instalar**
+
+1. Baixe o `app-prod-release.apk` pelo link acima direto no celular.
+2. Abra o arquivo; se o Android pedir, permita **"Instalar apps desconhecidos"** para o
+   navegador/gerenciador de arquivos usado.
+3. Abra o **Quiz Mobile**, toque em **Continuar como convidado** (ou entre com e-mail/Google) e
+   escolha um tópico para iniciar a primeira lição.
+
+Confira a integridade do arquivo baixado: `shasum -a 256 app-prod-release.apk` deve bater com o
+hash da tabela acima.
+
+### 🎬 Vídeo de demonstração
+
+<!-- Substitua o link abaixo pelo vídeo (YouTube/Drive/Loom) ou use um GIF em docs/media/. -->
+**[▶️ Assista ao vídeo de demonstração](#)** — _link em breve_.
+
+<!-- Exemplo de GIF: ![Demo do app](docs/media/demo.gif) -->
+
+> **Mantenedor — publicar uma versão:** gere o APK (`cd app && make build-quiz-apk-prod`; saída
+> em `app/quiz_app/build/app/outputs/flutter-apk/app-prod-release.apk`) e publique com
+> `gh release create v1.0.0 app/quiz_app/build/app/outputs/flutter-apk/app-prod-release.apk
+> --title "Quiz Mobile 1.0.0"`. Atualize o SHA-256 acima a cada versão. A assinatura usa o
+> keystore fora do repositório referenciado em `app/quiz_app/android/key.properties`
+> (gitignored) — veja [Build de produção](#build-de-produção-apk-assinado).
+
+## O projeto tem duas partes independentes
 
 | Parte | O que faz | Stack |
 |---|---|---|
 | [`pipeline/`](pipeline/) | Baixa perguntas de entrevista de repositórios open source, gera questões de múltipla escolha via LLM e exporta um banco JSON versionado | Python 3.11+ |
-| [`app/`](app/) | App Flutter que consome esse banco e roda o quiz offline-first, com progresso, repetição espaçada e estatísticas | Flutter/Dart |
+| [`app/`](app/) | App Flutter que consome esse banco e roda o quiz offline-first, com trilhas, progresso, repetição espaçada e estatísticas | Flutter/Dart |
 
 O `pipeline` roda de forma manual/periódica (não em runtime do app) para gerar novas versões
 do banco de questões; o `app` importa esse banco na primeira execução e sincroniza atualizações
@@ -35,7 +96,74 @@ depois.
 
 Detalhes de design de cada etapa estão em [`spec-01-conversor.md`](spec-01-conversor.md)
 (pipeline), [`spec-02-app-flutter.md`](spec-02-app-flutter.md) (fundação do app) e
-[`spec-03-features-quiz.md`](spec-03-features-quiz.md) (features do quiz).
+[`spec-03-features-quiz.md`](spec-03-features-quiz.md) (features do quiz). As mudanças mais
+recentes (trilha, resultado, sons, paleta pastel) estão em
+[`app/docs/ux-refresh.md`](app/docs/ux-refresh.md) e em
+[`openspec/changes/`](openspec/changes/).
+
+## De onde vêm as questões (coleta de dados de repositórios)
+
+O conteúdo do app **não é copiado de uma única fonte nem digitado à mão**: ele é gerado por um
+pipeline reprodutível a partir de repositórios públicos de perguntas de entrevista.
+
+**O que é coletado.** Apenas o **markdown público** (`README.md`) de repositórios listados
+explicitamente em [`pipeline/sources.yaml`](pipeline/sources.yaml) — nada de issues, pull
+requests, contribuidores, dados de usuários ou qualquer conteúdo fora desses arquivos. Cada
+fonte declara o repositório, os arquivos, o tópico padrão e, obrigatoriamente, a **licença**.
+
+| Fonte | Tópico | Licença | Questões no banco atual |
+|---|---|---|---|
+| [MindorksOpenSource/android-interview-questions](https://github.com/MindorksOpenSource/android-interview-questions) | Android | Apache-2.0 | 107 |
+| [thecodexhub/flutter-interview-questions](https://github.com/thecodexhub/flutter-interview-questions) | Flutter | MIT | 88 |
+| [onthecodepath/iOS-Interview-Questions](https://github.com/onthecodepath/iOS-Interview-Questions) | iOS | MIT | 41 |
+| [weeeBox/mobile-system-design](https://github.com/weeeBox/mobile-system-design) | System Design | MIT | 1 |
+| Geradas internamente com revisão manual (cobrir Dart, Kotlin, performance etc.) | vários | — | 30 |
+
+O banco embarcado atual (versão 3) tem **267 questões** em 14 tópicos (Android, Flutter, iOS,
+Dart, performance, storage, concorrência, arquitetura, system design, Kotlin, state management,
+Swift, networking e testes).
+
+**Como é processado.**
+
+1. **Download com cache por hash** (`fetch`): cada arquivo é guardado com seu SHA-256; se o
+   conteúdo não mudou, nada é refeito e nenhuma chamada extra é feita.
+2. **Extração heurística** (`parse`): títulos/listas viram pares pergunta/resposta. Cada fonte
+   tem um mínimo esperado de pares (`min_expected_pairs`); se uma mudança de estrutura no repo
+   derrubar a extração, o resultado anterior é **preservado** em vez de ser sobrescrito.
+3. **Transformação por LLM** (`generate`): cada par vira uma questão de múltipla escolha com 5
+   alternativas plausíveis e uma explicação. Nas fontes que só têm a pergunta (sem resposta), o
+   LLM escreve a resposta e a questão recebe a marca `generated_answer: true` (137 das 267
+   questões atuais) para ficar rastreável.
+4. **Validação e deduplicação** (`validate`): schema estrito, descarte de falhas e de perguntas
+   repetidas — tudo que é rejeitado vai para `data/review/` com o motivo, para revisão humana.
+5. **Exportação versionada** (`export`): `questions_v<N>.json` + `manifest.json` com versão,
+   contagem, **fontes e licenças** (atribuição) e checksum SHA-256 que o app confere antes de
+   aplicar qualquer atualização.
+
+**Cuidados.** A geração é manual e deliberada (não roda em CI, para controlar custo e conteúdo),
+os ids são determinísticos (reexecutar não duplica) e há uma estimativa de custo antes de gerar
+(`generate --dry-run`). Como parte do texto é produzida por LLM, **pode haver imprecisões**: por
+isso o app tem o botão **Reportar questão**, que registra o id em uma coleção protegida do
+Firestore para revisão. Se você é autor de um dos repositórios e quer ajustar ou remover o uso do
+seu conteúdo, abra uma issue.
+
+## Dados do usuário e privacidade
+
+O app foi pensado para coletar o mínimo necessário:
+
+- **Conta**: Firebase Authentication — convidado (anônimo), e-mail/senha ou Google. A sessão é
+  mantida no aparelho (refresh token do Firebase) e não há mais login por biometria.
+- **Progresso**: o progresso por questão, XP e streak ficam **no aparelho** (SQLite/
+  armazenamento local) e, para quem tem conta, são sincronizados no Firestore em
+  `users/{uid}/progress`, com regras que só permitem ler/gravar o **próprio** documento. O
+  progresso de convidado é mesclado à conta ao fazer login.
+- **Telemetria**: eventos de uso anônimos (início/fim de sessão, questão respondida com tópico,
+  nível e acerto/erro, streak) via Firebase Analytics e relatórios de falhas via Crashlytics,
+  apenas nos builds de homologação/produção — o flavor `dev` nunca fala com o Firebase.
+- **Notificações**: o token FCM é guardado em `users/{uid}/fcm_tokens` para o envio de notificações push.
+- **Segurança**: tokens e cache de usuário em armazenamento seguro (Keychain/Keystore), App Check
+  habilitado e build de produção ofuscado. O banco de questões é público (somente leitura).
+- O app não exibe anúncios e não vende dados.
 
 ---
 
@@ -121,10 +249,29 @@ flutter run --flavor dev --dart-define-from-file=env/dev.json
 
 ```bash
 make build-quiz-apk-dev    # APK dev
-make build-quiz-apk-prod   # APK prod
+make build-quiz-apk-prod   # APK prod de release (assinado + ofuscado)
 make build-quiz-ios-dev    # iOS dev (--no-codesign)
 make build-quiz-ios-prod   # iOS prod (--no-codesign)
 ```
+
+### Build de produção (APK assinado)
+
+```bash
+cd app
+make build-quiz-apk-prod
+# saída: app/quiz_app/build/app/outputs/flutter-apk/app-prod-release.apk
+```
+
+Equivale a `flutter build apk --release --flavor prod -t lib/main_prod.dart
+--dart-define-from-file=env/prod.json --obfuscate --split-debug-info=build/symbols`. Guarde a
+pasta `build/symbols` de cada release para desofuscar stack traces do Crashlytics.
+
+A assinatura usa o keystore apontado por `app/quiz_app/android/key.properties`
+(**gitignored**, com `storeFile`, `storePassword`, `keyAlias` e `keyPassword`; o `.jks` fica fora
+do repositório). Sem esse arquivo, o build de release cai na chave de debug — serve para testar,
+mas **não** para publicar. O build de produção exige também o `google-services.json` e o
+`firebase_options.dart` do projeto Firebase (ambos gitignored). Para iOS é necessário assinar
+pelo Xcode (`make build-quiz-ios-prod` gera sem assinatura).
 
 ### Qualidade e testes
 
@@ -175,8 +322,8 @@ a começar por [`02-architecture.md`](app/docs/02-architecture.md).
 
 ## Modos de sessão
 
-- **Por tópico**: N questões de um tópico, priorizando as ainda não vistas e as vencidas para
-  revisão.
+- **Trilha por tópico**: cada tópico é um roadmap de lições de 5 questões (blocos fixos);
+  a próxima lição só libera com >= 80% de acertos e dá para refazer qualquer lição.
 - **Revisão**: apenas questões com repetição vencida (`nextReviewAt <= now`), de qualquer
   tópico.
 - **Desafio diário**: 10 questões fixas por dia (seed pela data), acessível via deeplink
