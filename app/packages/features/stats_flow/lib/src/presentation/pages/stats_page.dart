@@ -41,18 +41,21 @@ class _StatsPageState extends State<StatsPage> {
       value: _cubit,
       child: Scaffold(
         appBar: AppBar(title: Text(l10n.statsTitle)),
-        body: BlocBuilder<StatsCubit, StatsState>(
-          builder: (context, state) => switch (state) {
-            StatsLoading() => const DsLoading(),
-            StatsError(message: final message) => DsError(
-              message: message,
-              onRetry: _cubit.load,
-            ),
-            StatsLoaded(stats: final stats) => _StatsView(
-              stats: stats,
-              l10n: l10n,
-            ),
-          },
+        body: SafeArea(
+          top: false,
+          child: BlocBuilder<StatsCubit, StatsState>(
+            builder: (context, state) => switch (state) {
+              StatsLoading() => const DsLoading(),
+              StatsError(message: final message) => DsError(
+                message: message,
+                onRetry: _cubit.load,
+              ),
+              StatsLoaded(stats: final stats) => _StatsView(
+                stats: stats,
+                l10n: l10n,
+              ),
+            },
+          ),
         ),
       ),
     );

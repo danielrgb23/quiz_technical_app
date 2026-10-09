@@ -29,40 +29,43 @@ class RegisterPage extends StatelessWidget {
             isGuestUpgrade ? l10n.upgradeAccountTitle : l10n.registerTitle,
           ),
         ),
-        body: BlocConsumer<RegisterCubit, RegisterState>(
-          listener: (context, state) {
-            switch (state) {
-              case RegisterSuccess(:final user):
-                unawaited(handleAuthSuccess(context, user));
-              case RegisterAccountExists(:final email):
-                // A conta já existe — a mesclagem de progresso roda no
-                // login com essas mesmas credenciais (ver LinkAnonymous
-                // orchestration no app-level, M4). replacePath em vez de
-                // pushPath pra não empilhar Login duas vezes quando o
-                // Cadastrar já veio da tela de Login.
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(l10n.accountExistsMessage(email))),
-                );
-                context.router.replacePath(AppRoutes.login);
-              case RegisterFailure(:final message):
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text(message)));
-              case RegisterInitial() || RegisterLoading():
-                break;
-            }
-          },
-          builder: (context, state) {
-            final isLoading = state is RegisterLoading;
-            return Padding(
-              padding: const EdgeInsets.all(AppSpacing.md),
-              child: _RegisterForm(
-                isLoading: isLoading,
-                isGuestUpgrade: isGuestUpgrade,
-                hint: isGuestUpgrade ? l10n.upgradeAccountHint : null,
-              ),
-            );
-          },
+        body: SafeArea(
+          top: false,
+          child: BlocConsumer<RegisterCubit, RegisterState>(
+            listener: (context, state) {
+              switch (state) {
+                case RegisterSuccess(:final user):
+                  unawaited(handleAuthSuccess(context, user));
+                case RegisterAccountExists(:final email):
+                  // A conta já existe — a mesclagem de progresso roda no
+                  // login com essas mesmas credenciais (ver LinkAnonymous
+                  // orchestration no app-level, M4). replacePath em vez de
+                  // pushPath pra não empilhar Login duas vezes quando o
+                  // Cadastrar já veio da tela de Login.
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l10n.accountExistsMessage(email))),
+                  );
+                  context.router.replacePath(AppRoutes.login);
+                case RegisterFailure(:final message):
+                  ScaffoldMessenger.of(
+                    context,
+                  ).showSnackBar(SnackBar(content: Text(message)));
+                case RegisterInitial() || RegisterLoading():
+                  break;
+              }
+            },
+            builder: (context, state) {
+              final isLoading = state is RegisterLoading;
+              return Padding(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                child: _RegisterForm(
+                  isLoading: isLoading,
+                  isGuestUpgrade: isGuestUpgrade,
+                  hint: isGuestUpgrade ? l10n.upgradeAccountHint : null,
+                ),
+              );
+            },
+          ),
         ),
       ),
     );

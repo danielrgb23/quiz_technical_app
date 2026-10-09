@@ -46,7 +46,10 @@ class _DetailScaffold extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(item?.title ?? '')),
-      body: item == null ? const DsLoading() : _DetailBody(item: item),
+      body: SafeArea(
+        top: false,
+        child: item == null ? const DsLoading() : _DetailBody(item: item),
+      ),
     );
   }
 }

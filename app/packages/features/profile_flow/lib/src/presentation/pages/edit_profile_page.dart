@@ -14,26 +14,29 @@ class EditProfilePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.editProfile)),
-      body: Padding(
-        padding: const EdgeInsets.all(AppSpacing.md),
-        child: Column(
-          children: [
-            DsTextField(label: l10n.name),
-            const SizedBox(height: AppSpacing.md),
-            DsTextField(
-              label: l10n.email,
-              keyboardType: TextInputType.emailAddress,
-            ),
-            const SizedBox(height: AppSpacing.md),
-            DsTextField(label: l10n.phone, keyboardType: TextInputType.phone),
-            const SizedBox(height: AppSpacing.md),
-            DsTextField(label: l10n.bio),
-            const SizedBox(height: AppSpacing.lg),
-            DsButton(
-              label: l10n.save,
-              onPressed: () => context.router.maybePop(),
-            ),
-          ],
+      body: SafeArea(
+        top: false,
+        child: Padding(
+          padding: const EdgeInsets.all(AppSpacing.md),
+          child: Column(
+            children: [
+              DsTextField(label: l10n.name),
+              const SizedBox(height: AppSpacing.md),
+              DsTextField(
+                label: l10n.email,
+                keyboardType: TextInputType.emailAddress,
+              ),
+              const SizedBox(height: AppSpacing.md),
+              DsTextField(label: l10n.phone, keyboardType: TextInputType.phone),
+              const SizedBox(height: AppSpacing.md),
+              DsTextField(label: l10n.bio),
+              const SizedBox(height: AppSpacing.lg),
+              DsButton(
+                label: l10n.save,
+                onPressed: () => context.router.maybePop(),
+              ),
+            ],
+          ),
         ),
       ),
     );

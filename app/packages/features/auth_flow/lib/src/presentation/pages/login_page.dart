@@ -23,23 +23,26 @@ class LoginPage extends StatelessWidget {
       create: (_) => GetIt.I<LoginCubit>(),
       child: Scaffold(
         appBar: AppBar(title: Text(l10n.loginTitle)),
-        body: BlocConsumer<LoginCubit, LoginState>(
-          listener: (context, state) {
-            if (state is LoginSuccess) {
-              unawaited(handleAuthSuccess(context, state.user));
-            } else if (state is LoginFailure) {
-              ScaffoldMessenger.of(
-                context,
-              ).showSnackBar(SnackBar(content: Text(state.message)));
-            }
-          },
-          builder: (context, state) {
-            final isLoading = state is LoginLoading;
-            return Padding(
-              padding: const EdgeInsets.all(AppSpacing.md),
-              child: LoginForm(isLoading: isLoading),
-            );
-          },
+        body: SafeArea(
+          top: false,
+          child: BlocConsumer<LoginCubit, LoginState>(
+            listener: (context, state) {
+              if (state is LoginSuccess) {
+                unawaited(handleAuthSuccess(context, state.user));
+              } else if (state is LoginFailure) {
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text(state.message)));
+              }
+            },
+            builder: (context, state) {
+              final isLoading = state is LoginLoading;
+              return Padding(
+                padding: const EdgeInsets.all(AppSpacing.md),
+                child: LoginForm(isLoading: isLoading),
+              );
+            },
+          ),
         ),
       ),
     );
