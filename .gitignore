@@ -10,3 +10,6 @@ __pycache__/
 pipeline/data/raw/
 pipeline/data/parsed/
 # Conteúdo gerado (generated/validated/output/review) é versionado
+
+# macOS
+.DS_Store
